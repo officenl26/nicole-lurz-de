@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Nicole Lurz — Heilpraktikerin mit BWL-Hirn. Ich helfe Frauen dabei, zu verstehen, was wirklich in ihrem Körper passiert — und was sie selbst verändern können." />
+<title>Nicole Lurz · Heilpraktikerin &amp; Mentorin</title>
+<link rel="canonical" href="https://nicole-lurz.de/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nicole-lurz.de/" />
+<meta property="og:title" content="Nicole Lurz · Heilpraktikerin &amp; Mentorin" />
+<meta property="og:description" content="Heilpraktikerin mit BWL-Hirn. Ich helfe Frauen dabei, zu verstehen, was wirklich in ihrem Körper passiert — und was sie selbst verändern können." />
+<meta property="og:image" content="https://nicole-lurz.de/images/nicole-hero.jpg" />
+<meta property="og:locale" content="de_DE" />
+<style>
+/* ═══ FONTS ═══ */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/inter-400.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/inter-500.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/inter-600.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/spectral-regular.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/spectral-500.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/spectral-italic.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:500;font-display:swap;src:url('fonts/spectral-500-italic.ttf') format('truetype')}
+
+/* ═══ TOKENS ═══ */
+:root{
+  --papier:#F2F6F2;
+  --tiefe:#143247;
+  --marine:#1B4C93;
+  --salbei:#7AA890;
+  --sage-bright:#9CC3AC;
+  --tinte:#2C3E35;
+  --tinte-soft:#4A5E52;
+  --tinte-mute:#7A8F82;
+  --line:#D8E4DC;
+  --wrap:1080px;
+}
+
+/* ═══ RESET ═══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--papier);
+  color:var(--tinte);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+em{font-style:italic}
+
+/* ═══ TYPO ═══ */
+h1,h2,h3{font-family:'Spectral',Georgia,serif;font-weight:500;line-height:1.18;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,5vw,3.6rem)}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
+h3{font-size:clamp(1.2rem,2vw,1.5rem)}
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-bright);margin-bottom:14px}
+.lede{font-size:1.1rem;color:var(--tinte-soft);line-height:1.7;max-width:54ch}
+
+/* ═══ LAYOUT ═══ */
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+
+/* ═══ NAV ═══ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 0;
+  background:rgba(242,246,242,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--wrap);margin:0 auto;padding:0 28px;
+}
+.nl-name{font-family:'Spectral',serif;font-size:1.18rem;font-weight:500;letter-spacing:.01em;color:var(--tiefe)}
+.nl-name em{color:var(--marine);font-style:italic}
+.nl-sub{font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--salbei);margin-top:3px}
+.nav-cta{
+  display:inline-block;
+  padding:10px 22px;
+  background:var(--marine);
+  color:#fff;
+  border-radius:6px;
+  font-size:.9rem;font-weight:600;
+  transition:background .18s;
+}
+.nav-cta:hover{background:var(--tiefe)}
+
+/* ═══ HERO ═══ */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:100vh;
+  padding-top:72px;
+}
+.hero-text{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 60px 80px 28px;
+  padding-left:max(28px, calc((100vw - var(--wrap)) / 2 + 28px));
+}
+.hero-text h1{margin-bottom:24px}
+.hero-text h1 em{color:var(--marine)}
+.hero-lede{font-size:1.12rem;color:var(--tinte-soft);line-height:1.72;max-width:46ch;margin-bottom:38px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-link{font-size:.92rem;color:var(--marine);font-weight:600;border-bottom:1.5px solid var(--salbei);padding-bottom:2px;transition:color .18s}
+.hero-link:hover{color:var(--tiefe)}
+.hero-photo{position:relative;overflow:hidden;background:var(--tiefe)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.hero-photo::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg, var(--papier) 0%, transparent 18%);
+}
+
+/* ═══ BUTTON ═══ */
+.btn{
+  display:inline-block;
+  padding:15px 34px;
+  border-radius:6px;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;
+  transition:background .18s, transform .14s;
+  cursor:pointer;
+  text-align:center;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--marine);color:#fff}
+.btn-primary:hover{background:var(--tiefe)}
+.btn-ghost{background:transparent;color:var(--tiefe);border:1.5px solid var(--tiefe)}
+.btn-ghost:hover{background:var(--tiefe);color:#fff}
+
+/* ═══ JUNI BLOCK ═══ */
+.juni-block{
+  background:var(--tiefe);
+  color:var(--papier);
+  padding:100px 0;
+}
+.juni-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.juni-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(156,195,172,.15);
+  border:1px solid rgba(156,195,172,.35);
+  border-radius:100px;
+  padding:6px 16px;
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sage-bright);
+  margin-bottom:22px;
+}
+.juni-block h2{color:var(--papier);margin-bottom:20px}
+.juni-block h2 em{color:var(--sage-bright)}
+.juni-block .lede{color:rgba(242,246,242,.75);margin-bottom:0}
+.juni-details{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(156,195,172,.2);
+  border-radius:14px;
+  padding:38px 42px;
+}
+.juni-offer-name{
+  font-family:'Spectral',serif;font-size:1.4rem;font-weight:500;
+  color:var(--sage-bright);margin-bottom:6px;
+}
+.juni-price-row{
+  display:flex;align-items:baseline;gap:14px;
+  margin:20px 0 8px;
+}
+.juni-price-now{
+  font-family:'Spectral',serif;font-size:2.8rem;font-weight:500;
+  color:var(--papier);line-height:1;
+}
+.juni-price-later{
+  font-size:.88rem;color:rgba(242,246,242,.45);
+  text-decoration:line-through;
+}
+.juni-price-label{font-size:.8rem;color:rgba(242,246,242,.55);margin-bottom:26px}
+.juni-includes{
+  list-style:none;
+  margin-bottom:30px;
+  display:flex;flex-direction:column;gap:9px;
+}
+.juni-includes li{
+  font-size:.94rem;color:rgba(242,246,242,.8);
+  padding-left:20px;position:relative;
+}
+.juni-includes li::before{content:'→';position:absolute;left:0;color:var(--sage-bright);font-size:.8rem;top:2px}
+.juni-plaetze{
+  font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--sage-bright);margin-top:8px;
+}
+
+/* ═══ KONTAKT ═══ */
+.kontakt{padding:100px 0}
+.kontakt-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+  margin-top:60px;
+}
+.kontakt-text h3{margin-bottom:14px}
+.kontakt-text h3 em{color:var(--marine)}
+.kontakt-text p{color:var(--tinte-soft);line-height:1.72}
+.kontakt-links{
+  display:flex;flex-direction:column;gap:16px;
+  margin-top:8px;
+}
+.kontakt-link{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 22px;
+  border:1.5px solid var(--line);
+  border-radius:10px;
+  color:var(--tinte);
+  transition:border-color .18s, background .18s;
+}
+.kontakt-link:hover{border-color:var(--salbei);background:rgba(122,168,144,.06)}
+.kontakt-link svg{flex-shrink:0;color:var(--marine)}
+.kl-label{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tinte-mute)}
+.kl-value{font-size:1rem;font-weight:500;color:var(--tiefe);margin-top:2px}
+
+/* ═══ FOOTER ═══ */
+footer{
+  background:var(--tiefe);color:rgba(242,246,242,.55);
+  padding:36px 0;font-size:.84rem;
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.footer-links{display:flex;gap:24px}
+.footer-links a{color:rgba(242,246,242,.45);transition:color .18s}
+.footer-links a:hover{color:rgba(242,246,242,.8)}
+
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-text{padding:110px 28px 60px}
+  .hero-photo{height:420px}
+  .hero-photo::after{background:linear-gradient(180deg, var(--papier) 0%, transparent 20%)}
+  .juni-inner,.kontakt-grid{grid-template-columns:1fr;gap:48px}
+  .juni-details{padding:28px 26px}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+}
+@media(max-width:600px){
+  .nav-cta{display:none}
+  .juni-price-now{font-size:2.2rem}
+  .kontakt{padding:70px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="/" aria-label="Nicole Lurz Startseite">
+      <div class="nl-name">Nicole <em>Lurz</em></div>
+      <div class="nl-sub">Heilpraktikerin · Mentorin</div>
+    </a>
+    <a href="/juni/" class="nav-cta">Juni-Aktion &rarr;</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow reveal">Heilpraktikerin mit BWL-Hirn</div>
+    <h1 class="reveal">Ich helfe dir zu verstehen, was wirklich in deinem Körper <em>passiert.</em></h1>
+    <p class="hero-lede reveal">Chronische Erschöpfung, hormonelle Beschwerden, ein Gefühl, das du nicht benennen kannst — ich schaue dorthin, wo andere aufgehört haben zu suchen. Ganzheitlich, messbar, mit einem klaren Plan.</p>
+    <div class="hero-actions reveal">
+      <a href="/juni/" class="btn btn-primary">Zur Juni-Aktion</a>
+      <a href="#kontakt" class="hero-link">Kontakt aufnehmen</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="images/nicole-hero.jpg" alt="Nicole Lurz, Heilpraktikerin mit BWL-Hirn" loading="eager" />
+  </div>
+</section>
+
+<!-- ═══ JUNI-AKTION ═══ -->
+<section class="juni-block" aria-labelledby="juni-heading">
+  <div class="wrap">
+    <div class="juni-inner">
+      <div class="reveal">
+        <div class="juni-badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M6 3v3l2 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Nur bis 30. Juni 2026
+        </div>
+        <h2 id="juni-heading">Dein Körper sendet Signale. <em>Zeit, ihnen zuzuhören.</em></h2>
+        <p class="lede" style="margin-top:20px">In 90 Minuten verbinde ich deine Symptome zu einem Bild — und gebe dir einen schriftlichen Fahrplan, der wirklich zu dir passt. Vor Ort in Wiesloch oder online per Zoom.</p>
+      </div>
+      <div class="juni-details reveal">
+        <div class="juni-offer-name">Regenerationsanalyse &amp; Blind Spot Check</div>
+        <div class="juni-price-row">
+          <div class="juni-price-now">330 €</div>
+          <div class="juni-price-later">530 €</div>
+        </div>
+        <div class="juni-price-label">bis 30. Juni 2026 · ab Juli 530 € als Mini-Programm</div>
+        <ul class="juni-includes">
+          <li>90 Minuten Tiefenanalyse</li>
+          <li>Schriftlicher Statusbericht &amp; Fahrplan</li>
+          <li>Kostenfreier Klarheits-Call vorab</li>
+          <li>Vor Ort (Bioresonanz) oder online (Zoom)</li>
+        </ul>
+        <a href="/juni/" class="btn btn-primary" style="width:100%;display:block">Jetzt Klarheits-Call buchen</a>
+        <p class="juni-plaetze" style="margin-top:16px;text-align:center">Nur 10 Plätze im Juni</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KONTAKT ═══ -->
+<section class="kontakt" id="kontakt" aria-labelledby="kontakt-heading">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Kontakt</div>
+      <h2 id="kontakt-heading">Direkt in <em>Verbindung.</em></h2>
+    </div>
+    <div class="kontakt-grid">
+      <div class="kontakt-text reveal">
+        <h3>Du hast eine Frage<br>oder weißt noch nicht, <em>wo du anfängst?</em></h3>
+        <p style="margin-top:16px">Schreib mir — ich antworte persönlich, werktags innerhalb von 24 Stunden. Wenn du dir unsicher bist, ob mein Ansatz zu dir passt, ist ein kurzes Gespräch oft der einfachste erste Schritt.</p>
+      </div>
+      <div class="kontakt-links reveal">
+        <a href="mailto:hallo@nicole-lurz.de" class="kontakt-link">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div>
+            <div class="kl-label">E-Mail</div>
+            <div class="kl-value">hallo@nicole-lurz.de</div>
+          </div>
+        </a>
+        <a href="https://wa.me/4917993832388" class="kontakt-link" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <div>
+            <div class="kl-label">WhatsApp</div>
+            <div class="kl-value">Direkt schreiben</div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/nicole.lurz/" class="kontakt-link" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <div>
+            <div class="kl-label">Instagram</div>
+            <div class="kl-value">@nicole.lurz</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span>&copy; 2026 Nicole Lurz</span>
+      <nav class="footer-links" aria-label="Rechtliches">
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
