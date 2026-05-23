@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1A14">
+<title>Danke · Nicole Lurz</title>
+<link rel="stylesheet" href="premium.css">
+<style>
+  /* ── Danke-Seite spezifisch ── */
+  .danke-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 1.5rem 5rem;
+    text-align: center;
+  }
+  .danke-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(122, 168, 144, 0.12);
+    border: 2px solid rgba(122, 168, 144, 0.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2.4rem;
+    animation: danke-pop 0.6s var(--ease) 0.2s both;
+  }
+  .danke-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .danke-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    animation: danke-up 0.7s var(--ease) 0.35s both;
+  }
+  .danke-h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    color: var(--head);
+    line-height: 1.18;
+    margin-bottom: 1.4rem;
+    animation: danke-up 0.7s var(--ease) 0.45s both;
+  }
+  .danke-h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .danke-sub {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto 3.5rem;
+    animation: danke-up 0.7s var(--ease) 0.55s both;
+  }
+  /* ── Was jetzt passiert ── */
+  .danke-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto 4rem;
+    animation: danke-up 0.7s var(--ease) 0.65s both;
+  }
+  .danke-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    text-align: left;
+  }
+  .danke-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(122, 168, 144, 0.12);
+    border: 1px solid rgba(122, 168, 144, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 1px;
+  }
+  .danke-step-text strong {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--head);
+    margin-bottom: 0.2rem;
+  }
+  .danke-step-text span {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  /* ── Vorbereitung ── */
+  .danke-prep {
+    max-width: 580px;
+    margin: 0 auto 4rem;
+    background: var(--bg-card-2);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    text-align: left;
+    animation: danke-up 0.7s var(--ease) 0.75s both;
+  }
+  .danke-prep-label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+  }
+  .danke-prep h3 {
+    font-family: var(--font-serif);
+    font-size: 1.22rem;
+    font-weight: 500;
+    color: var(--head);
+    margin-bottom: 1.2rem;
+    line-height: 1.35;
+  }
+  .danke-prep ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .danke-prep ul li {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .danke-prep ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.82rem;
+    top: 0.05em;
+  }
+  /* ── CTA ── */
+  .danke-cta-wrap {
+    animation: danke-up 0.7s var(--ease) 0.85s both;
+  }
+  .danke-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .danke-back:hover { color: var(--accent); }
+  .danke-back svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s;
+  }
+  .danke-back:hover svg { transform: translateX(-3px); }
+  /* ── Nav minimal ── */
+  .nav-danke { justify-content: center; }
+  .nav-danke .nav-links,
+  .nav-danke .nav-cta,
+  .nav-danke .nav-burger { display: none !important; }
+  /* ── Animations ── */
+  @keyframes danke-pop {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+  }
+  @keyframes danke-up {
+    from { transform: translateY(18px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── CURSOR & GRAIN ── -->
+<div class="cursor cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ── NAV MINIMAL ── -->
+<header class="nav nav-danke" id="nav">
+  <div class="nav-inner">
+    <a href="premium.html" class="nav-logo">
+      <span class="lf">Nicole</span><span class="ll">Lurz</span>
+    </a>
+  </div>
+</header>
+
+<!-- ── HAUPTINHALT ── -->
+<main class="danke-wrap">
+
+  <!-- Icon -->
+  <div class="danke-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  </div>
+
+  <!-- Headline -->
+  <p class="danke-eyebrow">Klarheits-Call · Anfrage eingegangen</p>
+  <h1 class="danke-h1">Du hast den ersten<br><em>Schritt gemacht.</em></h1>
+  <p class="danke-sub">
+    Deine Anfrage ist angekommen. Schau jetzt in dein Postfach — dort findest du alles, was du für den nächsten Schritt brauchst.
+  </p>
+
+  <!-- Was jetzt passiert -->
+  <div class="danke-steps" role="list">
+    <div class="danke-step" role="listitem">
+      <div class="danke-step-num">1</div>
+      <div class="danke-step-text">
+        <strong>Schau in dein E-Mail-Postfach</strong>
+        <span>Du erhältst in Kürze eine Nachricht mit dem Buchungslink und allen Details zu unserem Gespräch.</span>
+      </div>
+    </div>
+    <div class="danke-step" role="listitem">
+      <div class="danke-step-num">2</div>
+      <div class="danke-step-text">
+        <strong>Wähle deinen Wunschtermin</strong>
+        <span>Such dir einen Moment aus, in dem du in Ruhe sprechen kannst — ohne Ablenkung, ohne Zeitdruck.</span>
+      </div>
+    </div>
+    <div class="danke-step" role="listitem">
+      <div class="danke-step-num">3</div>
+      <div class="danke-step-text">
+        <strong>Wir sprechen</strong>
+        <span>30 Minuten. Kein Verkaufsgespräch. Klarheit darüber, wo genau du stehst und was als nächstes gebraucht wird.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vorbereitung -->
+  <div class="danke-prep">
+    <p class="danke-prep-label">Damit unser Gespräch noch tiefer wirkt</p>
+    <h3>Nimm dir heute Abend 5 Minuten:</h3>
+    <ul>
+      <li>Schreib auf, was dich gerade am meisten kostet — an Energie, an Klarheit, an Leichtigkeit.</li>
+      <li>Wann hast du dich zuletzt wirklich gut gefühlt? Was war damals anders?</li>
+      <li>Welche Frage trägst du mit dir, die du noch niemandem gestellt hast?</li>
+    </ul>
+  </div>
+
+  <!-- Zurück -->
+  <div class="danke-cta-wrap">
+    <a href="premium.html" class="danke-back">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Zurück zur Startseite
+    </a>
+  </div>
+
+</main>
+
+<!-- ── FOOTER MINIMAL ── -->
+<footer class="footer" style="padding: 2.5rem 0;">
+  <div class="container footer-inner">
+    <p class="footer-copy">© 2026 Nicole Lurz · <a href="/impressum" style="color: inherit; opacity: 0.6;">Impressum</a> · <a href="/datenschutz" style="color: inherit; opacity: 0.6;">Datenschutz</a></p>
+  </div>
+</footer>
+
+<script>
+  // Minimales cursor-init ohne GSAP
+  (function(){
+    var dot = document.getElementById('cursorDot');
+    var ring = document.getElementById('cursorRing');
+    if (!dot || !ring) return;
+    document.addEventListener('mousemove', function(e){
+      dot.style.transform = 'translate(' + (e.clientX - 4) + 'px,' + (e.clientY - 4) + 'px)';
+      ring.style.transform = 'translate(' + (e.clientX - 20) + 'px,' + (e.clientY - 20) + 'px)';
+    });
+    // Nav scroll
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function(){
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ich finde mit dir heraus, warum dein Körper diese Signale sendet. Und stelle dein System so ein, dass es wieder für dich arbeitet. The Inner Shift · 1:1-Begleitung mit Nicole Lurz.">
+<meta name="theme-color" content="#0F1A14">
+<meta property="og:title" content="The Inner Shift · Nicole Lurz">
+<meta property="og:description" content="Du weißt, dass etwas nicht stimmt. Dein Befund sagt etwas anderes. 12 Wochen 1:1-Begleitung mit Nicole Lurz.">
+<meta property="og:type" content="website">
+<title>The Inner Shift · 1:1-Begleitung · Nicole Lurz</title>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="premium.css">
+<style>
+/* ════════════════════════════════════════════════════
+   INNER SHIFT · Salespage-spezifische Styles
+   Palette: Tannenmoos-Twilight · premium.css als Basis
+   ════════════════════════════════════════════════════ */
+
+/* ── Hero ── */
+.is-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 9rem 0 6rem;
+}
+.is-hero canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.is-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--narrow);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.is-hero .eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.4rem;
+}
+.is-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--head);
+  line-height: 1.15;
+  margin-bottom: 1.6rem;
+}
+.is-hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.is-hero .hero-sub {
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 2.2vw, 1.18rem);
+  color: var(--text-muted);
+  line-height: 1.72;
+  max-width: 620px;
+  margin: 0 auto 2.8rem;
+}
+.is-hero .cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* ── Problem ── */
+.is-problem {
+  background: var(--bg-card);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+.is-symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+  margin: 3rem 0;
+}
+.is-symptom-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+}
+.is-symptom-card p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0;
+}
+.is-symptom-card p strong {
+  display: block;
+  color: var(--head);
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+.is-bridge {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
+.is-bridge p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  font-weight: 400;
+  color: var(--head);
+  line-height: 1.45;
+  font-style: italic;
+}
+/* ── Drei Ebenen ── */
+.is-ebenen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  margin: 3.5rem 0 2rem;
+}
+@media (max-width: 720px) {
+  .is-ebenen-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+}
+.is-ebene {
+  background: var(--bg-card-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.is-ebene::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0.6;
+}
+.is-ebene-num {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+.is-ebene h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--head);
+  margin-bottom: 0.7rem;
+}
+.is-ebene p {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0;
+}
+.is-reihenfolge {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1.6rem 2rem;
+  background: rgba(122, 168, 144, 0.07);
+  border: 1px solid rgba(122, 168, 144, 0.2);
+  border-radius: 12px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.is-reihenfolge p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+.is-reihenfolge strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--head);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+/* ── 4 Phasen ── */
+.is-phasen {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 3.5rem 0 2rem;
+  position: relative;
+}
+.is-phasen::before {
+  content: '';
+  position: absolute;
+  left: 32px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), rgba(122,168,144,0.1));
+}
+@media (max-width: 640px) {
+  .is-phasen::before { left: 24px; }
+}
+.is-phase {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.is-phase:last-child { border-bottom: none; }
+.is-phase-dot {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg-card-2);
+  border: 2px solid rgba(122,168,144,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+}
+@media (max-width: 640px) {
+  .is-phase-dot { width: 48px; height: 48px; }
+  .is-phase { gap: 1.2rem; }
+}
+.is-phase-num {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.is-phase-n {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--head);
+  line-height: 1;
+}
+.is-phase-body {
+  padding-top: 0.6rem;
+  flex: 1;
+}
+.is-phase-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--head);
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
+}
+.is-phase-body p {
+  font-family: var(--font-sans);
+  font-size: 0.93rem;
+  color: var(--text);
+  line-height: 1.68;
+  margin-bottom: 1rem;
+}
+.is-phase-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.is-phase-body ul li {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding-left: 1.4rem;
+  position: relative;
+  line-height: 1.55;
+}
+.is-phase-body ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0.4rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+  top: -1px;
+}
+.is-phase-result {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+  padding: 0.6rem 1rem;
+  background: rgba(122,168,144,0.08);
+  border-radius: 6px;
+  display: inline-block;
+}
+/* ── Transformation Stories ── */
+.is-stories {
+  background: var(--bg-d-deep);
+  position: relative;
+  overflow: hidden;
+}
+.is-stories canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+.is-stories-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.is-story {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.is-story:last-child { border-bottom: none; }
+.is-story-lead {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 400;
+  color: var(--head);
+  line-height: 1.35;
+  margin-bottom: 0.8rem;
+}
+.is-story-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.72;
+  max-width: 580px;
+}
+.is-story-marker {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+/* ── High Performance Quote Bridge ── */
+.is-hp-quote {
+  background: var(--bg);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.is-hp-quote p {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+.is-hp-quote strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--head);
+  font-style: italic;
+}
+/* ── Deliverables ── */
+.is-deliverables {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin: 3rem 0;
+}
+.is-deliverable {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.3rem 1.5rem;
+}
+.is-deliverable-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(122,168,144,0.1);
+  border: 1px solid rgba(122,168,144,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.is-deliverable-icon svg {
+  width: 17px; height: 17px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.is-deliverable-text strong {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--head);
+  margin-bottom: 0.2rem;
+}
+.is-deliverable-text span {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+/* ── Ablauf (12 Wochen) ── */
+.is-ablauf-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 3rem 0;
+  max-width: 680px;
+}
+.is-ablauf-step {
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+.is-ablauf-marker {
+  flex-shrink: 0;
+  min-width: 100px;
+  padding-top: 2px;
+}
+.is-ablauf-marker span {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  line-height: 1.3;
+}
+.is-ablauf-marker .woche {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--head);
+  font-style: italic;
+  display: block;
+  margin-top: 0.15rem;
+}
+.is-ablauf-content {
+  border-left: 2px solid var(--line);
+  padding-left: 1.4rem;
+  flex: 1;
+}
+.is-ablauf-content strong {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--head);
+  margin-bottom: 0.3rem;
+}
+.is-ablauf-content p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.62;
+  margin: 0;
+}
+.is-ablauf-note {
+  max-width: 580px;
+  margin: 2rem 0 0;
+  padding: 1.2rem 1.5rem;
+  background: rgba(122,168,144,0.06);
+  border: 1px solid rgba(122,168,144,0.18);
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.is-ablauf-note strong { color: var(--head); font-weight: 500; }
+/* ── 7 Doktoren ── */
+.is-doktoren-intro {
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+.is-doktoren-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.is-doktor {
+  background: var(--bg-card-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+}
+.is-doktor::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent), transparent);
+  opacity: 0.5;
+}
+.is-doktor-name {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--head);
+  margin-bottom: 0.3rem;
+}
+.is-doktor-impuls {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+/* ── Für wen ── */
+.is-fuerwen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+@media (max-width: 640px) {
+  .is-fuerwen-grid { grid-template-columns: 1fr; }
+}
+.is-fuerwen-col {
+  background: var(--bg-card-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.8rem;
+}
+.is-fuerwen-col.yes { border-left: 3px solid var(--accent); }
+.is-fuerwen-col.no  { border-left: 3px solid rgba(122,168,144,0.3); }
+.is-fuerwen-col h3 {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+.is-fuerwen-col.yes h3 { color: var(--accent); }
+.is-fuerwen-col.no  h3 { color: var(--text-muted); }
+.is-fuerwen-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.is-fuerwen-col ul li {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.55;
+  padding-left: 1.4rem;
+  position: relative;
+}
+.is-fuerwen-col.yes ul li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-size: 0.82rem; font-weight: 700; }
+.is-fuerwen-col.no  ul li::before { content: '—'; position: absolute; left: 0; color: var(--text-muted); font-size: 0.82rem; }
+/* ── Zwei Wege ── */
+.is-wege-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  margin: 3.5rem 0;
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .is-wege-grid { grid-template-columns: 1fr; }
+}
+.is-weg {
+  background: var(--bg-card-2);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 2.4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.is-weg.featured {
+  border-color: rgba(122,168,144,0.4);
+  box-shadow: 0 0 0 1px rgba(122,168,144,0.12), 0 24px 48px rgba(0,0,0,0.35);
+}
+.is-weg.featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), rgba(149,192,168,0.5));
+}
+.is-weg-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: 100px;
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 1.4rem;
+  align-self: flex-start;
+}
+.is-weg-badge.soon {
+  background: rgba(122,168,144,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(122,168,144,0.3);
+}
+.is-weg h3 {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--head);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.is-weg-sub {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.8rem;
+  line-height: 1.55;
+}
+.is-weg-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+.is-weg-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.is-weg-list li svg {
+  flex-shrink: 0;
+  width: 16px; height: 16px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-top: 2px;
+}
+.is-weg-price {
+  margin-bottom: 1.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line-soft);
+}
+.is-weg-price .amount {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--head);
+  line-height: 1;
+}
+.is-weg-price .note {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+.is-anrechnung {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--accent);
+  margin-bottom: 1.4rem;
+  padding: 0.7rem 1rem;
+  background: rgba(122,168,144,0.08);
+  border-radius: 7px;
+  line-height: 1.5;
+}
+/* ── Nicole ── */
+.is-nicole {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  max-width: 720px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .is-nicole { flex-direction: column; gap: 2rem; text-align: center; }
+  .is-nicole img { margin: 0 auto; }
+}
+.is-nicole img {
+  width: 160px;
+  height: 200px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: 85% 20%;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+}
+.is-nicole-text p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.72;
+  margin-bottom: 1rem;
+}
+.is-nicole-text p:last-child { margin-bottom: 0; }
+.is-nicole-name {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+.is-nicole-sign {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--accent);
+  margin-top: 0.5rem;
+}
+/* ── Sektion-Titel ── */
+.is-section-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+.is-h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--head);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.is-h2 em { font-style: italic; color: var(--accent); }
+.is-lead {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  color: var(--text-muted);
+  line-height: 1.72;
+  max-width: 620px;
+}
+/* ── FAQ ── */
+.is-faq {
+  max-width: 680px;
+  margin: 3rem auto 0;
+}
+/* ── Final CTA ── */
+.is-final {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.is-final canvas {
+  position: absolute;
+  inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+.is-final-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.is-final h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--head);
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+}
+.is-final h2 em { font-style: italic; color: var(--accent); }
+.is-final p {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+/* ── Nav ── */
+.is-page .nav-links { display: none !important; }
+</style>
+</head>
+<body class="is-page">
+
+<!-- ── CURSOR · GRAIN · PROGRESS ── -->
+<div class="cursor cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ── NAVIGATION ── -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="premium.html" class="nav-logo" data-magnetic data-magnetic-strength="0.25">
+      <span class="lf">Nicole</span><span class="ll">Lurz</span>
+    </a>
+    <a href="#wege" class="nav-cta" data-magnetic data-magnetic-strength="0.35">
+      <span class="label">Jetzt bewerben</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" style="display:none"></button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     1 · HERO
+══════════════════════════════════════════ -->
+<section class="is-hero">
+  <canvas id="isHeroAurora" aria-hidden="true"></canvas>
+  <div class="is-hero-inner">
+    <p class="eyebrow reveal">The Inner Shift · 1:1-Begleitung</p>
+    <h1 data-reveal-words>Du weißt, dass etwas nicht stimmt. <em>Dein Befund sagt etwas anderes.</em></h1>
+    <p class="hero-sub reveal" data-delay="0.15">
+      Für Frauen mit viel Verantwortung, die merken: Mit meinem Körper stimmt etwas nicht. Die Untersuchungen sind unauffällig. Du hast schon vieles ausprobiert. Aber nichts hat wirklich gegriffen.
+    </p>
+    <div class="cta-row reveal" data-delay="0.28">
+      <a href="#vip" class="cta cta-primary cta-magnetic" data-magnetic data-magnetic-strength="0.4">
+        <span class="cta-shimmer"></span>
+        <span class="label">VIP 1:1 · Jetzt bewerben</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="#gruppe" class="cta cta-secondary">
+        <span class="label">Gruppe Oktober 2026</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     2 · PROBLEM
+══════════════════════════════════════════ -->
+<section class="section is-problem" id="problem">
+  <div class="container">
+    <p class="is-section-tag reveal">Das kennen viele</p>
+    <h2 class="is-h2 reveal">Du hast schon vieles versucht.<br><em>Und bist trotzdem noch hier.</em></h2>
+    <p class="is-lead reveal" data-delay="0.08">
+      Du hast schon vieles ausprobiert. Manches hat kurzfristig geholfen. Nichts hat wirklich gegriffen.
+    </p>
+    <p class="is-lead reveal" data-delay="0.14" style="margin-top: 0.8rem;">
+      Und gleichzeitig hältst du alles. Bist stark, organisiert, verlässlich. Aber wenn du ehrlich bist: Innerlich weißt du, dass das so nicht bleiben kann.
+    </p>
+    <div class="is-symptom-grid">
+      <div class="is-symptom-card reveal" data-delay="0.05">
+        <p><strong>Befunde: unauffällig.</strong> Dein Körper sagt etwas anderes. Du weißt nicht, wem du glauben sollst.</p>
+      </div>
+      <div class="is-symptom-card reveal" data-delay="0.1">
+        <p><strong>Symptome kommen und gehen.</strong> Ohne Muster. Ohne Erklärung. Du kannst sie nicht einordnen.</p>
+      </div>
+      <div class="is-symptom-card reveal" data-delay="0.15">
+        <p><strong>Vieles versucht.</strong> Manches hat kurzfristig geholfen. Nichts hat wirklich gegriffen.</p>
+      </div>
+      <div class="is-symptom-card reveal" data-delay="0.2">
+        <p><strong>Du führst. Du hältst. Du gibst.</strong> Aber wenn du ehrlich bist: Innerlich oft leer, müde, orientierungslos.</p>
+      </div>
+    </div>
+    <div class="is-bridge reveal">
+      <p>Diese Erschöpfung hat einen Ursprung. Und einen Namen. Wir finden ihn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     3 · WAS HIER ANDERS IST
+══════════════════════════════════════════ -->
+<section class="section" id="ansatz">
+  <div class="container">
+    <p class="is-section-tag reveal">Das ist kein weiteres Symptom-Management</p>
+    <h2 class="is-h2 reveal">Du arbeitest nicht an Symptomen.<br><em>Du arbeitest an dem, was sie erzeugt.</em></h2>
+    <p class="is-lead reveal" data-delay="0.1">
+      Auf drei Ebenen gleichzeitig. In genau dieser Reihenfolge. Das ist der Unterschied.
+    </p>
+    <div class="is-ebenen-grid">
+      <div class="is-ebene reveal" data-delay="0.05">
+        <p class="is-ebene-num">Ebene 01</p>
+        <h3>Körper</h3>
+        <p>Nervensystem, Immunsystem und Stoffwechsel kommen wieder in Regulation. Ohne diese Basis trägt alles andere nicht.</p>
+      </div>
+      <div class="is-ebene reveal" data-delay="0.12">
+        <p class="is-ebene-num">Ebene 02</p>
+        <h3>Nervensystem</h3>
+        <p>Dein Körper kommt aus dem dauerhaften Alarmzustand. Nicht durch Willenskraft. Durch das richtige Signal.</p>
+      </div>
+      <div class="is-ebene reveal" data-delay="0.19">
+        <p class="is-ebene-num">Ebene 03</p>
+        <h3>Identität</h3>
+        <p>Du hörst auf, gegen dich zu arbeiten. Wer du bist, wenn du nicht mehr gegen deinen eigenen Körper kämpfst.</p>
+      </div>
+    </div>
+    <div class="is-reihenfolge reveal">
+      <p>Die Reihenfolge ist entscheidend.</p>
+      <strong>Erst Energie. Dann Transformation.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     4 · DER WEG · 4 PHASEN
+══════════════════════════════════════════ -->
+<section class="section" id="weg" style="background: var(--bg-card);">
+  <div class="container narrow">
+    <p class="is-section-tag reveal">Der Weg</p>
+    <h2 class="is-h2 reveal">Vier Phasen.<br><em>Eine Richtung.</em></h2>
+    <p class="is-lead reveal" data-delay="0.1">Jede Phase baut auf der vorherigen auf. Keine Abkürzungen. Aber ein klarer Weg.</p>
+
+    <div class="is-phasen">
+
+      <div class="is-phase reveal">
+        <div class="is-phase-dot">
+          <span class="is-phase-num">Phase</span>
+          <span class="is-phase-n">1</span>
+        </div>
+        <div class="is-phase-body">
+          <h3>Der blinde Fleck wird sichtbar.</h3>
+          <p>Du verstehst zum ersten Mal, warum dein Körper so reagiert. Die Signale ergeben Sinn. Du hörst auf, ziellos zu suchen.</p>
+          <ul>
+            <li>Deine Symptome haben eine Erklärung</li>
+            <li>Die Zusammenhänge werden klar</li>
+            <li>Die drei Hebel deines Systems sind benannt</li>
+          </ul>
+          <p class="is-phase-result">Du siehst, was vorher unsichtbar war.</p>
+        </div>
+      </div>
+
+      <div class="is-phase reveal">
+        <div class="is-phase-dot">
+          <span class="is-phase-num">Phase</span>
+          <span class="is-phase-n">2</span>
+        </div>
+        <div class="is-phase-body">
+          <h3>Dein System kommt aus dem Alarm.</h3>
+          <p>Dein Körper bekommt das Signal, das er gebraucht hat. Nicht mehr Druck. Sondern Sicherheit.</p>
+          <ul>
+            <li>Dein Nervensystem fährt runter</li>
+            <li>Erste spürbare Entlastung entsteht</li>
+            <li>Dein Körper beginnt, wieder zu regulieren</li>
+          </ul>
+          <p class="is-phase-result">Energie kommt zurück.</p>
+        </div>
+      </div>
+
+      <div class="is-phase reveal">
+        <div class="is-phase-dot">
+          <span class="is-phase-num">Phase</span>
+          <span class="is-phase-n">3</span>
+        </div>
+        <div class="is-phase-body">
+          <h3>Du hörst auf, gegen dich zu arbeiten.</h3>
+          <p>Emotionen, Werte, Identität. Wer bist du, wenn du nicht mehr gegen deinen Körper arbeitest? Jetzt verändert sich dein Alltag. Nicht durch mehr Disziplin. Durch andere Entscheidungen.</p>
+          <ul>
+            <li>Du erkennst deine Muster früher</li>
+            <li>Du übergehst dich nicht mehr</li>
+            <li>Du triffst andere Entscheidungen, ohne es zu erzwingen</li>
+          </ul>
+          <p class="is-phase-result">Dein Leben passt sich deinem System an.</p>
+        </div>
+      </div>
+
+      <div class="is-phase reveal">
+        <div class="is-phase-dot">
+          <span class="is-phase-num">Phase</span>
+          <span class="is-phase-n">4</span>
+        </div>
+        <div class="is-phase-body">
+          <h3>Dein Körper wird wieder verlässlich.</h3>
+          <p>Stabilität entsteht. Nicht weil du dich zusammenreißt. Sondern weil dein System wieder verlässlich ist.</p>
+          <ul>
+            <li>Du kannst dich selbst regulieren</li>
+            <li>Dein Körper reagiert nicht mehr unkontrolliert</li>
+            <li>Du bekommst Sicherheit zurück</li>
+          </ul>
+          <p class="is-phase-result">Du führst dich selbst. Nicht mehr umgekehrt.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     5 · WAS SICH VERÄNDERT (Stories)
+══════════════════════════════════════════ -->
+<section class="section is-stories" id="veraenderung">
+  <canvas id="isStoriesAurora" aria-hidden="true"></canvas>
+  <div class="container">
+    <p class="is-section-tag reveal" style="text-align:center;">Was sich konkret verändert</p>
+    <h2 class="is-h2 reveal" style="text-align:center; margin: 0 auto 1rem;">Das Leben danach.</h2>
+    <p class="is-lead reveal" style="text-align:center; margin: 0 auto 0;" data-delay="0.1">Nicht als Versprechen. Als Beschreibung dessen, was möglich ist, wenn dein System wieder für dich arbeitet.</p>
+  </div>
+  <div class="is-stories-inner" style="margin-top: 4rem;">
+
+    <div class="is-story reveal">
+      <span class="is-story-marker">Morgens</span>
+      <p class="is-story-lead">Du wachst auf. Und dein erster Gedanke ist nicht mehr: <em>„Wie soll ich heute durch den Tag kommen?"</em></p>
+      <p class="is-story-body">Nicht weil du dich dazu entschieden hast. Weil dein Körper aufgehört hat, dagegen zu arbeiten.</p>
+    </div>
+
+    <div class="is-story reveal">
+      <span class="is-story-marker">Im Meeting</span>
+      <p class="is-story-lead">Du bist ruhig im Kopf. Kannst zuhören, reagieren, entscheiden.</p>
+      <p class="is-story-body">Statt innerlich komplett überfordert zu sein, während du nach außen alles zusammenhältst.</p>
+    </div>
+
+    <div class="is-story reveal">
+      <span class="is-story-marker">Im Alltag</span>
+      <p class="is-story-lead">Dein Tag hat nicht mehr diesen Einbruch am Mittag, wo du dich nur noch durchziehst.</p>
+      <p class="is-story-body">Dein Energieniveau wird stabiler. Nicht perfekt. Aber verlässlich genug, dass du planen kannst.</p>
+    </div>
+
+    <div class="is-story reveal">
+      <span class="is-story-marker">Im Körper</span>
+      <p class="is-story-lead">Du merkst früher, was dir nicht gut tut. Und handelst, bevor dein Körper dich stoppt.</p>
+      <p class="is-story-body">Du kennst dein System. Du vertraust ihm wieder.</p>
+    </div>
+
+    <div class="is-story reveal">
+      <span class="is-story-marker">Von außen</span>
+      <p class="is-story-lead">Menschen sagen: <em>„Irgendwas ist anders an dir."</em></p>
+      <p class="is-story-body">Nicht weil du dich anstrengst. Weil es von innen kommt.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     High Performance Bridge
+══════════════════════════════════════════ -->
+<div class="is-hp-quote">
+  <p>Gesundheit &amp; Leadership</p>
+  <strong>High Performance beginnt im Nervensystem.</strong>
+</div>
+
+<!-- ══════════════════════════════════════════
+     6 · WAS KONKRET ENTHALTEN IST
+══════════════════════════════════════════ -->
+<section class="section" id="inhalt">
+  <div class="container">
+    <p class="is-section-tag reveal">Was du bekommst</p>
+    <h2 class="is-h2 reveal">Der Rahmen,<br><em>der trägt.</em></h2>
+    <p class="is-lead reveal" data-delay="0.1">Kein Template. Kein Programm von der Stange. Jede Begleitung wird auf Basis deiner Medical Blind Spot Analyse individuell aufgebaut.</p>
+    <div class="is-deliverables">
+      <div class="is-deliverable reveal" data-delay="0.05">
+        <div class="is-deliverable-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <div class="is-deliverable-text">
+          <strong>Medical Blind Spot Analyse</strong>
+          <span>Dein Einstieg. Wir finden die 3 Hebel, auf die sich alles aufbaut.</span>
+        </div>
+      </div>
+      <div class="is-deliverable reveal" data-delay="0.09">
+        <div class="is-deliverable-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+        </div>
+        <div class="is-deliverable-text">
+          <strong>6 × 1:1 Sessions</strong>
+          <span>Alle zwei Wochen, jeweils 60 Minuten. Individuell auf deine 3 Hebel abgestimmt.</span>
+        </div>
+      </div>
+      <div class="is-deliverable reveal" data-delay="0.13">
+        <div class="is-deliverable-icon">
+          <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        </div>
+        <div class="is-deliverable-text">
+          <strong>5–6 Check-ins</strong>
+          <span>15–30 Minuten zwischen den Calls. Wir justieren auf Basis der Impulse aus dem Blind Spot Check.</span>
+        </div>
+      </div>
+      <div class="is-deliverable reveal" data-delay="0.17">
+        <div class="is-deliverable-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <div class="is-deliverable-text">
+          <strong>WhatsApp-Support</strong>
+          <span>Mo–Fr, Antwort innerhalb von 24 Stunden. Du bist nie allein mit dem, was gerade hochkommt.</span>
+        </div>
+      </div>
+      <div class="is-deliverable reveal" data-delay="0.21">
+        <div class="is-deliverable-icon">
+          <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        </div>
+        <div class="is-deliverable-text">
+          <strong>Individuelle Tools</strong>
+          <span>Audios, Atemübungen, SOS-Strategien aus den 7 Doktoren. Abgestimmt auf dein System.</span>
+        </div>
+      </div>
+      <div class="is-deliverable reveal" data-delay="0.25">
+        <div class="is-deliverable-icon">
+          <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        </div>
+        <div class="is-deliverable-text">
+          <strong>Klarer 90-Tage-Plan</strong>
+          <span>Dein Start. Was wann passiert. Keine Unklarheit über die nächsten Schritte.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     7 · ABLAUF
+══════════════════════════════════════════ -->
+<section class="section" id="ablauf" style="background: var(--bg-card);">
+  <div class="container">
+    <p class="is-section-tag reveal">Wie es läuft</p>
+    <h2 class="is-h2 reveal">Was in den<br><em>12 Wochen passiert.</em></h2>
+    <p class="is-lead reveal" data-delay="0.1">Kein festes Protokoll. Aber ein klarer Rhythmus, der Sicherheit gibt.</p>
+
+    <div class="is-ablauf-steps">
+      <div class="is-ablauf-step reveal">
+        <div class="is-ablauf-marker">
+          <span>Woche</span>
+          <span class="woche">1 – 2</span>
+        </div>
+        <div class="is-ablauf-content">
+          <strong>Medical Blind Spot Analyse · Einstieg</strong>
+          <p>Wir schauen auf dein System. Vier Ebenen, ein Blick. Die drei Hebel, die deinen Körper gerade am meisten kosten, werden sichtbar. Dein individueller Plan steht.</p>
+        </div>
+      </div>
+      <div class="is-ablauf-step reveal">
+        <div class="is-ablauf-marker">
+          <span>Woche</span>
+          <span class="woche">2 – 6</span>
+        </div>
+        <div class="is-ablauf-content">
+          <strong>Nervensystemregulation · Session 1– 3</strong>
+          <p>Alle zwei Wochen 60 Minuten 1:1. Dein Körper kommt aus dem Alarm. Wir arbeiten mit den Impulsen, die dein System gerade braucht.</p>
+        </div>
+      </div>
+      <div class="is-ablauf-step reveal">
+        <div class="is-ablauf-marker">
+          <span>Woche</span>
+          <span class="woche">6 – 10</span>
+        </div>
+        <div class="is-ablauf-content">
+          <strong>Emotionen, Werte, Identität · Session 4– 5</strong>
+          <p>Wer bist du, wenn du aufhörst, gegen dich zu arbeiten? Hier gehen wir tiefer. In die Muster, die dein System auf Stand-by halten.</p>
+        </div>
+      </div>
+      <div class="is-ablauf-step reveal">
+        <div class="is-ablauf-marker">
+          <span>Woche</span>
+          <span class="woche">10 – 12</span>
+        </div>
+        <div class="is-ablauf-content">
+          <strong>Stabilisierung · Session 6</strong>
+          <p>Dein Körper ist verlässlicher geworden. Wir sichern, was entstanden ist. Du gehst mit einem Plan für die Zeit danach.</p>
+        </div>
+      </div>
+      <div class="is-ablauf-step reveal">
+        <div class="is-ablauf-marker">
+          <span>Laufend</span>
+          <span class="woche">5– 6 Check-ins</span>
+        </div>
+        <div class="is-ablauf-content">
+          <strong>Justieren zwischen den Sessions</strong>
+          <p>15–30 Minuten. Nicht nach Protokoll. Wir justieren auf Basis der Impulse, die der Blind Spot Check gezeigt hat. Genau da, wo es gerade gebraucht wird.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="is-ablauf-note reveal"><strong>WhatsApp Mo–Fr, Antwort innerhalb 24 Stunden.</strong> Du bist nie allein mit dem, was zwischen den Calls hochkommt.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     8 · DIE 7 DOKTOREN
+══════════════════════════════════════════ -->
+<section class="section" id="doktoren">
+  <div class="container">
+    <p class="is-section-tag reveal">Dein Werkzeugkasten</p>
+    <h2 class="is-h2 reveal">Die sieben Doktoren.</h2>
+    <div class="is-doktoren-intro">
+      <p class="is-lead reveal" data-delay="0.1">Du bekommst Impulse aus sieben Quellen. Kein Pflichtprogramm. Keine Regeln. Impulse, die dein System einladen, sich zu regulieren.</p>
+    </div>
+    <div class="is-doktoren-grid">
+      <div class="is-doktor reveal" data-delay="0.05">
+        <p class="is-doktor-name">Dr. Verbindung</p>
+        <p class="is-doktor-impuls">Wer und was dich trägt.</p>
+      </div>
+      <div class="is-doktor reveal" data-delay="0.08">
+        <p class="is-doktor-name">Dr. Story</p>
+        <p class="is-doktor-impuls">Was du dir erzählst. Und was davon wirklich stimmt.</p>
+      </div>
+      <div class="is-doktor reveal" data-delay="0.11">
+        <p class="is-doktor-name">Dr. Bewegung</p>
+        <p class="is-doktor-impuls">Was deinem Körper hilft, sich zu regulieren.</p>
+      </div>
+      <div class="is-doktor reveal" data-delay="0.14">
+        <p class="is-doktor-name">Dr. Atmung</p>
+        <p class="is-doktor-impuls">Dein direktester Zugang zum Nervensystem.</p>
+      </div>
+      <div class="is-doktor reveal" data-delay="0.17">
+        <p class="is-doktor-name">Dr. Nahrung</p>
+        <p class="is-doktor-impuls">Was dein System braucht. Was es gerade kostet.</p>
+      </div>
+      <div class="is-doktor reveal" data-delay="0.20">
+        <p class="is-doktor-name">Dr. Naturkontakt</p>
+        <p class="is-doktor-impuls">Der einfachste Reset, den es gibt.</p>
+      </div>
+      <div class="is-doktor reveal" data-delay="0.23">
+        <p class="is-doktor-name">Dr. Pharma</p>
+        <p class="is-doktor-impuls">Was natürlich unterstützt. Was weglassen hilft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     9 · FÜR WEN / NICHT FÜR WEN
+══════════════════════════════════════════ -->
+<section class="section" id="fuerwen" style="background: var(--bg-card);">
+  <div class="container narrow">
+    <p class="is-section-tag reveal" style="text-align:center;">Ehrliche Einschätzung</p>
+    <h2 class="is-h2 reveal" style="text-align:center; margin: 0 auto 1rem;">Für wen das richtig ist.<br><em>Und für wen nicht.</em></h2>
+    <p class="is-lead reveal" style="text-align:center; margin: 0 auto 2.5rem;" data-delay="0.1">Eine ehrliche Selbsteinschätzung, bevor du dich bewirbst. Wir beide sparen Zeit.</p>
+    <div class="is-fuerwen-grid">
+      <div class="is-fuerwen-col yes reveal">
+        <h3>Du bist hier richtig, wenn</h3>
+        <ul>
+          <li>du weißt, dass dein Körper mehr braucht als eine neue Diagnose</li>
+          <li>du bereit bist, tiefer zu schauen als Symptome</li>
+          <li>du 12 Wochen in echte Veränderung investieren willst</li>
+          <li>du führst, trägst, gibst und innerlich weißt: so geht es nicht weiter</li>
+          <li>du den Medical Blind Spot Check bereits gemacht hast oder als Einstieg nimmst</li>
+        </ul>
+      </div>
+      <div class="is-fuerwen-col no reveal" data-delay="0.1">
+        <h3>Nicht für dich, wenn</h3>
+        <ul>
+          <li>du eine schnelle Lösung suchst</li>
+          <li>du nur wissen willst, was du anders essen sollst</li>
+          <li>du noch keine Bereitschaft hast, deine Identität anzuschauen</li>
+          <li>du ein fertiges Programm willst, das du einfach abarbeitest</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     10 · DEIN WEG · ZWEI VARIANTEN
+══════════════════════════════════════════ -->
+<section class="section" id="wege">
+  <div class="container">
+    <p class="is-section-tag reveal" style="text-align:center;">Wähle deinen Weg</p>
+    <h2 class="is-h2 reveal" style="text-align:center; margin: 0 auto 1rem;">Dasselbe Ziel.<br><em>Zwei Wege dorthin.</em></h2>
+    <p class="is-lead reveal" style="text-align:center; margin: 0 auto 2.5rem;" data-delay="0.1">
+      The Inner Shift gibt es als intensives 1:1-Programm und ab Oktober 2026 als Gruppenformat. Die Transformation ist dieselbe. Der Rahmen ist unterschiedlich.
+    </p>
+
+    <div class="is-wege-grid">
+
+      <!-- VIP 1:1 -->
+      <div class="is-weg featured reveal" id="vip">
+        <span class="is-weg-badge">Jetzt offen</span>
+        <h3>VIP 1:1</h3>
+        <p class="is-weg-sub">Maximal individuell. Dein Programm, deine 3 Hebel, dein Tempo. Für Frauen, die den direkten Weg wollen.</p>
+        <ul class="is-weg-list">
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Medical Blind Spot Analyse als Einstieg
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Individueller Plan basierend auf deinen 3 Hebeln
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            6 × 1:1 Sessions + 5–6 Check-ins
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            WhatsApp-Support Mo–Fr, 24h
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Individuelle Tools aus den 7 Doktoren
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            3–6 Monate · Bewerbung erforderlich
+          </li>
+        </ul>
+        <div class="is-weg-price">
+          <div class="amount">3.000 – 3.500 €</div>
+          <p class="note">Individuelle Absprache nach Kennenlerngespräch. Ratenzahlung möglich.</p>
+        </div>
+        <p class="is-anrechnung">Hast du bereits den Medical Blind Spot Check gemacht? Deine 590 € werden vollständig angerechnet.</p>
+        <!-- HINWEIS: Deine WhatsApp-Nummer eintragen (z.B. 4917612345678 für +49 176 12345678) -->
+        <a href="https://wa.me/49XXXXXXXXX?text=Hallo%20Nicole%2C%20ich%20m%C3%B6chte%20mich%20f%C3%BCr%20The%20Inner%20Shift%20VIP%20bewerben." class="cta cta-primary" target="_blank" rel="noopener">
+          <span class="cta-shimmer"></span>
+          <span class="label">Jetzt bewerben</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- GRUPPE -->
+      <div class="is-weg reveal" id="gruppe" data-delay="0.1">
+        <span class="is-weg-badge soon">Oktober 2026</span>
+        <h3>Gruppenmentoring</h3>
+        <p class="is-weg-sub">Dieselbe Tiefe. Mit dem Rückenwind einer Gruppe von Frauen, die denselben Weg gehen.</p>
+        <ul class="is-weg-list">
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            The Inner Shift im Gruppenformat
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Gemeinschaft mit Frauen auf demselben Weg
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Start: Oktober 2026
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Alle Details via Warteliste
+          </li>
+        </ul>
+        <div class="is-weg-price">
+          <div class="amount" style="font-size:1.3rem; color: var(--text-muted);">Preis folgt</div>
+          <p class="note">Warteliste sichert dir Erstinformation und Early-Bird-Konditionen.</p>
+        </div>
+        <!-- HINWEIS: Wartelisten-Link einfügen (nForms-Formular oder Mailchimp) -->
+        <a href="mailto:hallo@nicole-lurz.de?subject=Warteliste%20Inner%20Shift%20Gruppe%20Oktober%202026" class="cta cta-secondary">
+          <span class="label">Auf die Warteliste</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     11 · ÜBER NICOLE
+══════════════════════════════════════════ -->
+<section class="section" id="ueber" style="background: var(--bg-card);">
+  <div class="container">
+    <p class="is-section-tag reveal" style="text-align:center;">Wer ich bin</p>
+    <div class="is-nicole reveal" data-delay="0.1">
+      <img src="images/nicole-about.jpg" alt="Nicole Lurz, Gesundheitsstrategin und Heilpraktikerin" loading="lazy">
+      <div class="is-nicole-text">
+        <p class="is-nicole-name">Nicole Lurz · Gesundheitsstrategin · Heilpraktikerin · Mentorin</p>
+        <p>
+          Ich bin Heilpraktikerin. Diplom-Betriebswirtin. Fachmentorin am Mojo-Institut für Regenerative Medizin. Seit 14 Jahren in der Heilpraxis, über 1.500 Klientinnen begleitet.
+        </p>
+        <p>
+          Ich sehe Symptome. Und ich sehe Systeme. Beides gleichzeitig. Das ist es, was meinen Blick anders macht.
+        </p>
+        <p>
+          Ich bin nicht deine Cheerleaderin. Ich bin deine Strategin. Ich sage dir nicht, was du hören willst. Ich sage dir, was du wissen musst.
+        </p>
+        <p>
+          Ich kenne diesen Weg von innen. Ich weiß, wie es ist, wenn alle Befunde unauffällig sind und dein Körper trotzdem sagt: Das stimmt nicht. Den Satz „Damit müssen Sie leben" habe ich nicht akzeptiert. Das werde ich für dich auch nicht tun.
+        </p>
+        <p class="is-nicole-sign">Deine Nicole</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     12 · FAQ
+══════════════════════════════════════════ -->
+<section class="section" id="faq">
+  <div class="container">
+    <p class="is-section-tag reveal" style="text-align:center;">Häufige Fragen</p>
+    <h2 class="is-h2 reveal" style="text-align:center; margin: 0 auto 3rem;">Was du dich vielleicht fragst.</h2>
+
+    <div class="is-faq">
+      <details class="faq-item reveal">
+        <summary>Für wen ist The Inner Shift geeignet?</summary>
+        <p>Für Frauen mit viel Verantwortung, die merken: Mit meinem Körper stimmt etwas nicht. Die Befunde sind unauffällig, aber das Gefühl bleibt. Du hast schon vieles versucht und weißt, dass du einen anderen Ansatz brauchst. Einen, der tiefer geht.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Was ist der Unterschied zum Medical Blind Spot Check?</summary>
+        <p>Der Medical Blind Spot Check ist der Einstieg: Wir finden, was bisher unsichtbar war. Die 3 Hebel werden benannt. The Inner Shift ist der Prozess danach. Er baut direkt auf dem auf, was wir im Blind Spot Check gefunden haben. Die Check-ins justieren auf Basis dieser Impulse, so lange wie nötig.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Wie funktioniert die Bewerbung?</summary>
+        <p>Du schreibst mir kurz über WhatsApp, was dich bewegt und warum du denkst, dass The Inner Shift dein nächster Schritt ist. Ich stelle dir einige Fragen, um zu verstehen, wo du stehst. Wenn ich denke, dass mein Ansatz zu dir passt, laden wir uns zu einem Kennenlerngespräch über TidyCal ein.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Ich habe bereits den Blind Spot Check gemacht. Wird das angerechnet?</summary>
+        <p>Ja. Deine 590 € werden vollständig auf das VIP 1:1-Programm angerechnet. The Inner Shift baut sowieso auf dem auf, was im Blind Spot Check sichtbar geworden ist.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Ist das eine medizinische Behandlung?</summary>
+        <p>Nein. The Inner Shift ist ein Begleitungsprogramm auf Basis naturheilkundlicher Ansätze und Nervensystemarbeit. Es ersetzt keine medizinische Diagnose oder Behandlung. Es arbeitet dort, wo die klassische Medizin keine Antworten mehr findet.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Ich habe keine Zeit für ein intensives Programm.</summary>
+        <p>Wie viel Zeit kostet dich gerade die Erschöpfung? Das hier ist nicht mehr Aufwand. Es ist anderer Aufwand. Mit einem Ziel.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Was kostet das Gruppenmentoring?</summary>
+        <p>Der genaue Preis und das Format werden kurz vor Start angekündigt. Wer auf der Warteliste steht, bekommt alle Informationen zuerst und hat Zugang zu Early-Bird-Konditionen.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     13 · FINAL CTA
+══════════════════════════════════════════ -->
+<section class="section is-final" id="cta">
+  <canvas id="isFinalAurora" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="is-final-inner">
+      <p class="is-section-tag reveal">Der nächste Schritt</p>
+      <h2 class="reveal">Ich finde mit dir heraus,<br>warum dein Körper diese Signale sendet.<br><em>Und wir stellen dein System so ein,<br>dass es wieder für dich arbeitet.</em></h2>
+      <p class="reveal" data-delay="0.15">
+        Schreib mir kurz über WhatsApp, was dich bewegt. Ich melde mich innerhalb von 24 Stunden.
+      </p>
+      <div class="cta-row center reveal" data-delay="0.28">
+        <!-- HINWEIS: WhatsApp-Nummer aktualisieren -->
+        <a href="https://wa.me/49XXXXXXXXX?text=Hallo%20Nicole%2C%20ich%20m%C3%B6chte%20mich%20f%C3%BCr%20The%20Inner%20Shift%20bewerben." class="cta cta-primary cta-large cta-magnetic" data-magnetic data-magnetic-strength="0.45" target="_blank" rel="noopener">
+          <span class="cta-shimmer"></span>
+          <span class="label">Jetzt bewerben</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p style="font-family: var(--font-sans); font-size: 0.82rem; color: var(--text-muted); margin-top: 1.5rem;">
+        Oder: <a href="premium.html" style="color: var(--accent); text-decoration: none;">Zurück zur Startseite</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></div>
+    <p class="footer-sub">Gesundheit &amp; Leadership · High Performance beginnt im Nervensystem</p>
+    <nav class="footer-links" aria-label="Footer-Navigation">
+      <a href="premium.html">Startseite</a>
+      <a href="blind-spot-check.html">Blind Spot Check</a>
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+    </nav>
+    <p class="footer-copy">© 2026 Nicole Lurz · Alle Rechte vorbehalten</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="premium.js"></script>
+<script>
+(function () {
+  function initAurora(canvasId, colors) {
+    var canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var orbs = [];
+    function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+    colors.forEach(function (c) {
+      orbs.push({ x: Math.random(), y: Math.random(), r: 0.35 + Math.random() * 0.3,
+        vx: (Math.random() - 0.5) * 0.00018, vy: (Math.random() - 0.5) * 0.00018, color: c });
+    });
+    function draw() {
+      var w = canvas.width, h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+      orbs.forEach(function (o) {
+        o.x += o.vx; o.y += o.vy;
+        if (o.x < -0.1) o.x = 1.1; if (o.x > 1.1) o.x = -0.1;
+        if (o.y < -0.1) o.y = 1.1; if (o.y > 1.1) o.y = -0.1;
+        var gx = o.x * w, gy = o.y * h, gr = o.r * Math.max(w, h);
+        var grad = ctx.createRadialGradient(gx, gy, 0, gx, gy, gr);
+        grad.addColorStop(0, o.color); grad.addColorStop(1, 'transparent');
+        ctx.fillStyle = grad; ctx.fillRect(0, 0, w, h);
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+  var p = ['rgba(122,168,144,0.22)','rgba(61,90,46,0.38)','rgba(149,192,168,0.14)','rgba(31,45,36,0.48)','rgba(122,168,144,0.10)'];
+  initAurora('isHeroAurora', p);
+  initAurora('isStoriesAurora', p);
+  initAurora('isFinalAurora', p);
+})();
+</script>
+</body>
+</html>

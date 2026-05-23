@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Juni-Aktion bei Nicole Lurz: Regenerationsanalyse vor Ort oder Blind Spot Check online. Ein Termin, der deine Symptome zu einem Bild verbindet, mit schriftlichem Fahrplan. Bis 30. Juni zum Preis von 330 Euro statt 530 Euro." />
+<meta name="theme-color" content="#143247" />
+<meta name="robots" content="noindex, follow" />
+<title>Juni-Aktion · Regenerationsanalyse &amp; Blind Spot Check · Nicole Lurz</title>
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Du weißt, dass etwas nicht stimmt. Endlich hört dir jemand zu." />
+<meta property="og:description" content="Regenerationsanalyse vor Ort oder Blind Spot Check online. Bis 30. Juni zum alten Preis. Nur 10 Plätze." />
+<meta property="og:locale" content="de_DE" />
+
+<style>
+/* ═══════════════ FONTS ═══════════════ */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/inter-400.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/inter-500.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/inter-600.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/spectral-regular.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/spectral-500.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/spectral-italic.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:500;font-display:swap;src:url('fonts/spectral-500-italic.ttf') format('truetype')}
+
+/* ═══════════════ TOKENS ═══════════════ */
+:root{
+  --papier:#F2F6F2;
+  --offwhite:#E8EFE6;
+  --weiss:#FBFDFB;
+  --tiefe:#143247;
+  --marine-deep:#1B3A5C;
+  --marine:#1B4C93;
+  --marine-hover:#163F7C;
+  --waldgruen:#3D5A2E;
+  --apfelgruen:#7AA890;
+  --salbei:#7A8F4E;
+  --tannenmoos:#0F1A14;
+  --tinte:#1C1C1C;
+  --tinte-soft:rgba(28,28,28,.66);
+  --tinte-mute:rgba(28,28,28,.46);
+  --line:rgba(27,58,92,.14);
+  --line-dark:rgba(122,168,144,.22);
+  --sage-bright:#9CC3AC;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --wrap:1120px;
+  --narrow:760px;
+}
+
+/* ═══════════════ RESET ═══════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--papier);
+  color:var(--tinte);
+  line-height:1.68;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+em{font-style:italic}
+::selection{background:var(--apfelgruen);color:var(--tannenmoos)}
+
+/* ═══════════════ LAYOUT ═══════════════ */
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.narrow{max-width:var(--narrow);margin:0 auto}
+section{padding:104px 0}
+.sec-tint{background:var(--offwhite)}
+.sec-dark{background:var(--tiefe);color:#DCE6DE}
+.sec-dark h2,.sec-dark h3{color:var(--papier)}
+
+/* ═══════════════ TYPO ═══════════════ */
+h1,h2,h3,h4{font-family:'Spectral',Georgia,serif;font-weight:500;line-height:1.16;letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,5.4vw,3.85rem)}
+h2{font-size:clamp(1.9rem,3.8vw,2.85rem)}
+h3{font-size:clamp(1.3rem,2.2vw,1.7rem)}
+h1 em,h2 em,h3 em{color:var(--marine)}
+.sec-dark h1 em,.sec-dark h2 em,.sec-dark h3 em{color:var(--sage-bright)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--marine);margin-bottom:22px;
+}
+.sec-dark .eyebrow{color:var(--sage-bright)}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;display:block}
+.eyebrow.center{justify-content:center}
+
+.lede{font-size:1.16rem;color:var(--tinte-soft);line-height:1.7}
+.sec-dark .lede{color:rgba(220,230,222,.82)}
+
+.sec-head{max-width:680px;margin-bottom:54px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{margin-bottom:18px}
+
+/* ═══════════════ BUTTONS ═══════════════ */
+.btn{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;
+  padding:17px 32px;border-radius:4px;cursor:pointer;border:none;
+  transition:transform .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease);
+  line-height:1;
+}
+.btn .arw{transition:transform .3s var(--ease)}
+.btn:hover .arw{transform:translateX(5px)}
+.btn-primary{background:var(--marine);color:var(--papier);box-shadow:0 8px 26px rgba(27,76,147,.26)}
+.btn-primary:hover{background:var(--marine-hover);transform:translateY(-2px);box-shadow:0 12px 32px rgba(27,76,147,.32)}
+.btn-light{background:var(--sage-bright);color:var(--tannenmoos);box-shadow:0 8px 26px rgba(0,0,0,.28)}
+.btn-light:hover{background:#B0D2BE;transform:translateY(-2px)}
+.btn-lg{padding:20px 38px;font-size:1.06rem}
+.cta-note{font-size:.9rem;color:var(--tinte-mute);margin-top:14px}
+.sec-dark .cta-note{color:rgba(220,230,222,.6)}
+
+/* ═══════════════ PROGRESS + NAV ═══════════════ */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--marine);z-index:1000;transition:width .1s linear}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 28px;transition:background .35s var(--ease),box-shadow .35s var(--ease),padding .35s var(--ease);
+}
+.nav.scrolled{background:rgba(242,246,242,.96);box-shadow:0 1px 0 var(--line);padding:12px 28px;backdrop-filter:blur(8px)}
+.nav-logo{display:flex;flex-direction:column;line-height:1.12}
+.nl-name{font-family:'Spectral',serif;font-size:1.22rem;font-weight:500;letter-spacing:.01em;color:var(--tiefe)}
+.nl-name em{color:var(--marine);font-style:italic}
+.nl-sub{font-size:.6rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--salbei);margin-top:4px}
+.nav .btn{padding:12px 22px;font-size:.92rem}
+.nav-cta-sm{display:flex}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero{padding:150px 0 96px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.hero h1{margin-bottom:24px}
+.hero .lede{margin-bottom:30px;max-width:30em}
+.hero-anchors{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;list-style:none}
+.hero-anchors li{
+  font-size:.84rem;font-weight:500;color:var(--marine-deep);
+  background:var(--weiss);border:1px solid var(--line);
+  padding:8px 15px;border-radius:3px;
+}
+.hero-trust{
+  display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;
+  padding-top:26px;border-top:1px solid var(--line);
+  font-size:.86rem;color:var(--tinte-mute);font-weight:500;
+}
+.hero-trust span{display:flex;align-items:center;gap:8px}
+.hero-trust span::before{content:"";width:5px;height:5px;background:var(--apfelgruen);border-radius:50%}
+.hero-visual{position:relative}
+.hero-frame{
+  position:relative;border-radius:5px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,50,71,.18);
+}
+.hero-frame img{width:100%;height:540px;object-fit:cover;object-position:center 22%}
+.hero-vline{position:absolute;top:-26px;left:34px;width:2px;height:54px;background:var(--apfelgruen)}
+.hero-tag{
+  position:absolute;left:-22px;bottom:38px;
+  background:var(--tiefe);color:var(--papier);
+  padding:18px 22px;max-width:230px;border-radius:4px;
+  box-shadow:0 18px 40px rgba(20,50,71,.32);
+}
+.hero-tag .t-lbl{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-bright);font-weight:600;margin-bottom:6px}
+.hero-tag .t-txt{font-size:.92rem;line-height:1.5;color:rgba(242,246,242,.9)}
+
+/* ═══════════════ SPIEGEL ═══════════════ */
+.spiegel-list{list-style:none;display:grid;gap:2px;margin-top:8px}
+.spiegel-item{
+  display:flex;gap:18px;align-items:flex-start;
+  background:var(--weiss);border:1px solid var(--line);
+  padding:22px 24px;
+}
+.spiegel-item:first-child{border-radius:5px 5px 0 0}
+.spiegel-item:last-child{border-radius:0 0 5px 5px}
+.spiegel-ic{flex-shrink:0;width:30px;height:30px;color:var(--marine)}
+.spiegel-item p{font-size:1.05rem;color:var(--tinte);padding-top:2px}
+.spiegel-close{
+  margin-top:34px;font-family:'Spectral',serif;font-size:1.4rem;
+  line-height:1.5;color:var(--tiefe);font-style:italic;max-width:34em;
+}
+.spiegel-close strong{font-style:normal;font-weight:500;color:var(--marine);border-bottom:2px solid var(--apfelgruen)}
+
+/* ═══════════════ PERSPEKTIVE ═══════════════ */
+.persp-lead{max-width:42em;margin-bottom:18px;font-size:1.1rem;color:rgba(220,230,222,.86)}
+.energie-block{text-align:center;padding:58px 0 50px;margin:14px 0}
+.energie-vline{width:2px;height:60px;background:var(--sage-bright);margin:0 auto 26px;opacity:.7}
+.energie-word{
+  font-family:'Spectral',serif;font-style:italic;font-weight:500;
+  font-size:clamp(3.4rem,11vw,7rem);color:var(--sage-bright);
+  line-height:1;letter-spacing:-.02em;
+}
+.energie-sub{margin-top:22px;font-size:1.08rem;color:rgba(220,230,222,.8);max-width:32em;margin-inline:auto}
+.systems{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:18px 0 44px}
+.system{
+  background:rgba(122,168,144,.07);border:1px solid var(--line-dark);
+  padding:30px 26px;border-radius:5px;
+}
+.system .s-ic{width:38px;height:38px;color:var(--sage-bright);margin-bottom:18px}
+.system h4{font-size:1.22rem;color:var(--papier);margin-bottom:10px}
+.system p{font-size:.96rem;color:rgba(220,230,222,.76);line-height:1.62}
+.tiger{
+  border-left:2px solid var(--sage-bright);padding:6px 0 6px 30px;
+  max-width:46em;margin:0 0 18px;
+}
+.tiger p{font-size:1.06rem;color:rgba(220,230,222,.88);margin-bottom:16px}
+.tiger p:last-child{margin-bottom:0}
+.tiger .q{font-family:'Spectral',serif;font-style:italic;color:var(--sage-bright);font-size:1.12rem}
+.persp-conclude{
+  font-family:'Spectral',serif;font-size:1.5rem;line-height:1.5;
+  color:var(--papier);max-width:30em;margin-top:38px;
+}
+.persp-conclude em{color:var(--sage-bright)}
+
+/* ═══════════════ ZWEI WEGE ═══════════════ */
+.wege-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.weg{
+  background:var(--weiss);border:1px solid var(--line);
+  border-radius:6px;padding:38px 34px;display:flex;flex-direction:column;
+  position:relative;transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.weg:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(20,50,71,.13)}
+.weg-top{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.weg-badge{
+  font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 11px;border-radius:3px;
+}
+.weg-badge.vor-ort{background:var(--marine);color:var(--papier)}
+.weg-badge.online{background:var(--waldgruen);color:var(--papier)}
+.weg h3{margin-bottom:6px;color:var(--tiefe)}
+.weg-meta{font-size:.9rem;color:var(--tinte-mute);margin-bottom:22px;font-weight:500}
+.weg-list{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:24px}
+.weg-list li{display:flex;gap:12px;font-size:.97rem;color:var(--tinte-soft);line-height:1.55}
+.weg-list svg{flex-shrink:0;width:19px;height:19px;color:var(--apfelgruen);margin-top:3px}
+.weg-foot{
+  margin-top:auto;padding-top:20px;border-top:1px solid var(--line);
+  font-size:.95rem;font-style:italic;color:var(--marine-deep);
+}
+.wege-bridge{
+  margin-top:34px;text-align:center;background:var(--tiefe);color:var(--papier);
+  padding:40px 38px;border-radius:6px;
+}
+.wege-bridge p{font-size:1.12rem;max-width:36em;margin:0 auto 24px;color:rgba(242,246,242,.92)}
+.wege-bridge .hl{color:var(--sage-bright);font-style:italic;font-family:'Spectral',serif}
+
+/* ═══════════════ BEKOMMST + ABLAUF ═══════════════ */
+.bekommst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:64px}
+.bk-item{background:var(--weiss);border:1px solid var(--line);padding:26px 26px}
+.bk-item svg{width:24px;height:24px;color:var(--marine);margin-bottom:13px}
+.bk-item h4{font-size:1.06rem;color:var(--tiefe);margin-bottom:7px;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0}
+.bk-item p{font-size:.95rem;color:var(--tinte-soft);line-height:1.58}
+.ablauf-head{font-family:'Spectral',serif;font-size:1.5rem;color:var(--tiefe);margin-bottom:30px}
+.ablauf{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step}
+.step{position:relative;padding-top:24px}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-family:'Spectral',serif;font-size:1rem;font-weight:600;color:var(--marine);
+  position:absolute;top:0;left:0;
+}
+.step::after{content:"";position:absolute;top:7px;left:34px;right:0;height:1px;background:var(--line)}
+.step:last-child::after{display:none}
+.step h4{font-size:1.04rem;color:var(--tiefe);margin:10px 0 7px;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0}
+.step p{font-size:.92rem;color:var(--tinte-soft);line-height:1.55}
+
+/* ═══════════════ FÜR WEN ═══════════════ */
+.fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fw-col{padding:34px 32px;border-radius:6px}
+.fw-yes{background:var(--weiss);border:1px solid var(--line)}
+.fw-no{background:transparent;border:1px dashed var(--tinte-mute)}
+.fw-col h3{font-size:1.22rem;margin-bottom:22px;color:var(--tiefe)}
+.fw-col ul{list-style:none;display:flex;flex-direction:column;gap:15px}
+.fw-col li{display:flex;gap:13px;font-size:1rem;line-height:1.55;color:var(--tinte-soft)}
+.fw-col li svg{flex-shrink:0;width:21px;height:21px;margin-top:2px}
+.fw-yes li svg{color:var(--waldgruen)}
+.fw-no li svg{color:var(--tinte-mute)}
+
+/* ═══════════════ ÜBER MICH ═══════════════ */
+.ueber-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:54px;align-items:center}
+.ueber-photo{position:relative;border-radius:6px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 54px rgba(20,50,71,.16)}
+.ueber-photo img{width:100%;height:480px;object-fit:cover;object-position:center 18%}
+.ueber-body h2{margin-bottom:20px}
+.ueber-body p{margin-bottom:16px;color:var(--tinte-soft)}
+.ueber-body p strong{color:var(--tiefe);font-weight:600}
+.ueber-stats{display:flex;gap:30px;margin-top:26px;flex-wrap:wrap}
+.ueber-stat .num{font-family:'Spectral',serif;font-size:2rem;color:var(--marine);line-height:1}
+.ueber-stat .lbl{font-size:.84rem;color:var(--tinte-mute);margin-top:5px}
+
+/* ═══════════════ STIMMEN ═══════════════ */
+.stimmen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.stimme{
+  background:var(--weiss);border:1px solid var(--line);
+  border-radius:6px;padding:30px 28px;display:flex;flex-direction:column;
+}
+.stimme-stars{color:var(--salbei);letter-spacing:2px;margin-bottom:14px;font-size:.95rem}
+.stimme-q{font-size:1rem;line-height:1.62;color:var(--tinte);margin-bottom:18px;flex-grow:1}
+.stimme-meta{font-size:.88rem;color:var(--tinte-mute);font-weight:500;padding-top:16px;border-top:1px solid var(--line)}
+.stimme.placeholder{background:transparent;border:1px dashed var(--marine);justify-content:center;text-align:center}
+.stimme.placeholder .ph-lbl{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--marine);font-weight:600;margin-bottom:12px}
+.stimme.placeholder p{font-size:.92rem;color:var(--tinte-soft);line-height:1.6}
+
+/* ═══════════════ FAQ ═══════════════ */
+.faq-list{max-width:var(--narrow);margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{
+  cursor:pointer;list-style:none;padding:24px 44px 24px 0;position:relative;
+  font-family:'Spectral',serif;font-size:1.16rem;color:var(--tiefe);
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:"+";position:absolute;right:6px;top:21px;
+  font-size:1.5rem;color:var(--marine);transition:transform .3s var(--ease);font-family:'Inter',sans-serif;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item .faq-a{padding:0 44px 26px 0;color:var(--tinte-soft);font-size:1rem;line-height:1.68}
+
+/* ═══════════════ INVESTITION ═══════════════ */
+.invest-prices{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:680px;margin:0 auto 16px}
+.price-card{border-radius:6px;padding:34px 30px;text-align:center}
+.price-now{background:rgba(156,195,172,.12);border:2px solid var(--sage-bright)}
+.price-later{background:rgba(122,168,144,.05);border:1px solid var(--line-dark)}
+.price-lbl{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.price-now .price-lbl{color:var(--sage-bright)}
+.price-later .price-lbl{color:rgba(220,230,222,.6)}
+.price-val{font-family:'Spectral',serif;font-size:3.2rem;line-height:1;color:var(--papier)}
+.price-later .price-val{color:rgba(220,230,222,.62)}
+.price-card .price-meta{font-size:.88rem;margin-top:12px;color:rgba(220,230,222,.7)}
+.invest-scarcity{
+  display:flex;align-items:center;gap:14px;justify-content:center;
+  max-width:680px;margin:24px auto 0;
+  background:rgba(156,195,172,.1);border:1px solid var(--line-dark);
+  padding:18px 24px;border-radius:5px;
+}
+.invest-scarcity svg{width:26px;height:26px;color:var(--sage-bright);flex-shrink:0}
+.invest-scarcity p{font-size:.98rem;color:rgba(220,230,222,.9);text-align:left}
+.invest-scarcity strong{color:var(--papier)}
+.invest-how{max-width:620px;margin:36px auto 0;text-align:center}
+.invest-how h3{color:var(--papier);font-size:1.35rem;margin-bottom:12px}
+.invest-how p{color:rgba(220,230,222,.84);font-size:1.02rem}
+.invest-close{
+  text-align:center;margin:50px auto 0;max-width:24em;
+  font-family:'Spectral',serif;font-size:1.7rem;line-height:1.4;color:var(--papier);
+}
+.invest-close em{color:var(--sage-bright)}
+.invest-cta{text-align:center;margin-top:34px}
+
+/* ═══════════════ HWG ═══════════════ */
+.hwg-note{
+  background:var(--weiss);border:1px solid var(--line);border-left:3px solid var(--apfelgruen);
+  padding:22px 26px;border-radius:4px;margin-bottom:16px;
+}
+.hwg-note strong{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--waldgruen);margin-bottom:8px}
+.hwg-note p{font-size:.94rem;color:var(--tinte-soft);line-height:1.62}
+
+/* ═══════════════ FOOTER ═══════════════ */
+.footer{background:var(--tannenmoos);color:rgba(242,246,242,.6);padding:54px 0 38px}
+.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+.footer-logo{font-family:'Spectral',serif;font-size:1.3rem;color:var(--papier)}
+.footer-logo em{color:var(--sage-bright);font-style:italic}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;font-size:.88rem}
+.footer-links a{transition:color .2s}
+.footer-links a:hover{color:var(--sage-bright)}
+.footer-copy{width:100%;margin-top:30px;padding-top:24px;border-top:1px solid rgba(242,246,242,.1);font-size:.82rem;color:rgba(242,246,242,.4)}
+
+/* ═══════════════ CTA-BAND ═══════════════ */
+.cta-band{margin-top:42px;display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.cta-band.center{align-items:center;text-align:center}
+.cta-benefit{margin-top:40px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.cta-benefit.center{align-items:center;text-align:center}
+.cta-benefit p{font-size:1.1rem;line-height:1.62;max-width:36em;color:var(--tinte-soft)}
+.sec-dark .cta-benefit p{color:rgba(220,230,222,.9)}
+
+/* ═══════════════ TRUST-BAR ═══════════════ */
+.trustbar{padding:0;background:var(--tiefe)}
+.trustbar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark)}
+.trust-item{text-align:center;padding:34px 18px;background:var(--tiefe)}
+.tb-top{display:block;font-family:'Spectral',serif;font-size:1.6rem;color:var(--papier);line-height:1.1}
+.tb-top .star{color:var(--sage-bright)}
+.tb-lbl{display:block;font-size:.84rem;color:rgba(220,230,222,.62);margin-top:6px}
+
+/* ═══════════════ REVEAL ═══════════════ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media(max-width:920px){
+  section{padding:78px 0}
+  .hero{padding:128px 0 70px}
+  .hero-grid,.ueber-grid{grid-template-columns:1fr;gap:46px}
+  .hero-visual{order:-1}
+  .hero-frame img{height:380px}
+  .hero-tag{left:14px;bottom:14px;max-width:200px}
+  .systems,.stimmen-grid,.ablauf{grid-template-columns:1fr}
+  .step::after{display:none}
+  .wege-grid,.bekommst-grid,.fw-grid,.invest-prices{grid-template-columns:1fr}
+  .ueber-photo{order:-1;max-width:380px;margin:0 auto}
+  .ueber-photo img{height:400px}
+}
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .nav{padding:14px 20px}
+  .nl-name{font-size:1.08rem}
+  .nav .btn .label-long{display:none}
+  .hero-tag{position:static;margin-top:16px;max-width:none}
+  .spiegel-item{flex-direction:column;gap:10px}
+  .energie-word{font-size:3.2rem}
+  .trustbar-grid{grid-template-columns:1fr 1fr}
+  .invest-scarcity{flex-direction:column;text-align:center}
+  .invest-scarcity p{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-logo">
+    <span class="nl-name">Nicole <em>Lurz</em></span>
+    <span class="nl-sub">Heilpraktikerin · Mentorin</span>
+  </a>
+  <a href="https://tidycal.com/nicole-lurz/mbsc" target="_blank" rel="noopener" class="btn btn-primary">
+    <span class="label-long">Klarheits-Call buchen</span><span class="arw" aria-hidden="true">&rarr;</span>
+  </a>
+</nav>
+
+<main id="top">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text reveal">
+        <div class="eyebrow">Nur 10 Plätze im Juni</div>
+        <h1>Du weißt, dass etwas nicht stimmt. <em>Endlich hört dir jemand zu.</em></h1>
+        <p class="lede">Kein Vertrösten, kein „das ist nur der Stress". Sondern ein Termin, der deine Symptome zu einem Bild verbindet, und ein Fahrplan, der zu deinem Alltag passt.</p>
+        <ul class="hero-anchors">
+          <li>Erkennen</li>
+          <li>Verstehen</li>
+          <li>Umsetzen</li>
+        </ul>
+        <div class="cta-band">
+          <a href="https://tidycal.com/nicole-lurz/mbsc" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            Kostenfreien Klarheits-Call buchen <span class="arw" aria-hidden="true">&rarr;</span>
+          </a>
+          <p class="cta-note">Im Klarheits-Call klären wir gemeinsam, ob die Analyse dein nächster Schritt ist. Ohne Verkaufsdruck.</p>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-vline" aria-hidden="true"></div>
+        <div class="hero-frame">
+          <img src="images/nicole-hero.jpg" alt="Nicole Lurz, Heilpraktikerin in Wiesloch" />
+        </div>
+        <div class="hero-tag">
+          <div class="t-lbl">Zwei Formate</div>
+          <div class="t-txt">Regenerationsanalyse vor Ort oder Blind Spot Check online.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST-BAR ═══ -->
+<section class="trustbar">
+  <div class="wrap">
+    <div class="trustbar-grid reveal">
+      <div class="trust-item">
+        <span class="tb-top">14 Jahre</span>
+        <span class="tb-lbl">in eigener Heilpraxis</span>
+      </div>
+      <div class="trust-item">
+        <span class="tb-top">1.500+</span>
+        <span class="tb-lbl">begleitete Frauen</span>
+      </div>
+      <div class="trust-item">
+        <span class="tb-top">5,0 <span class="star">★</span></span>
+        <span class="tb-lbl">auf ProvenExpert</span>
+      </div>
+      <div class="trust-item">
+        <span class="tb-top">Mentorin</span>
+        <span class="tb-lbl">am Mojo-Institut</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2 · SPIEGELMOMENT ═══ -->
+<section class="sec-tint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Kommt dir das bekannt vor</div>
+      <h2>Du funktionierst noch. Aber gesund <em>fühlt sich anders an.</em></h2>
+      <p class="lede">Du spürst seit Wochen oder Monaten, dass etwas nicht rund läuft. Und trotzdem bleibst du ohne Antwort.</p>
+    </div>
+    <ul class="spiegel-list reveal">
+      <li class="spiegel-item">
+        <svg class="spiegel-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+        <p>Du spürst, dass etwas nicht in Ordnung ist. Aber du hörst nur: „Wir beobachten das erstmal."</p>
+      </li>
+      <li class="spiegel-item">
+        <svg class="spiegel-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h8"/><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z"/></svg>
+        <p>„Das ist der Stress, entspannen Sie sich mal." Und du gehst wieder ohne Antwort nach Hause.</p>
+      </li>
+      <li class="spiegel-item">
+        <svg class="spiegel-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <p>Dein Arzt schaut nicht richtig hin. Er kann dir nicht sagen, was du selbst noch tun kannst.</p>
+      </li>
+      <li class="spiegel-item">
+        <svg class="spiegel-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+        <p>Du fühlst dich nicht aufgehoben. Deine Fragen wirst du einfach nicht los.</p>
+      </li>
+      <li class="spiegel-item">
+        <svg class="spiegel-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M5 12H2"/><path d="M22 12h-3"/><circle cx="12" cy="12" r="4"/></svg>
+        <p>Du willst dich nicht damit abfinden, dass das jetzt einfach zum Älterwerden gehört.</p>
+      </li>
+    </ul>
+    <p class="spiegel-close reveal">Du willst keine Beruhigung. Du willst <strong>Antworten, Lösungen und Klarheit.</strong> Genau dafür ist dieser Termin gemacht.</p>
+  </div>
+</section>
+
+<!-- ═══ 3 · PERSPEKTIVWECHSEL ═══ -->
+<section class="sec-dark">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:720px">
+      <div class="eyebrow">Der andere Blick</div>
+      <h2>Die meisten fragen: Was macht krank. <em>Ich frage: Was hält gesund.</em></h2>
+    </div>
+    <p class="persp-lead reveal">Dein Körper ist phänomenal. Er hält dich jahrelang in Balance. Er kompensiert, gleicht aus, steckt vieles weg. In der Akutmedizin schaut jede Fachrichtung durch ihre eigene Lupe. Beschwerden, die zusammengehören, werden dabei selten zusammen gedacht.</p>
+    <p class="persp-lead reveal">Wie wäre es mit einem Perspektivwechsel? Weg von der Frage nach den Ursachen von Krankheit. Hin zu der Frage: Was sind eigentlich die Faktoren von chronischer Gesundheit?</p>
+
+    <div class="energie-block reveal">
+      <div class="energie-vline" aria-hidden="true"></div>
+      <div class="energie-word">Energie.</div>
+      <p class="energie-sub">Alles beginnt mit Energie. Und alles endet mit fehlender Energie. Wenn du diesen einen Punkt verstehst, wird der Rest einfach.</p>
+    </div>
+
+    <p class="persp-lead reveal">Also stellen wir zwei Fragen. Wird in deinen Zellen, in den Mitochondrien, überhaupt genug Energie produziert? Und wie sieht es mit der Verteilung aus? Drei Systeme entscheiden darüber. Sie sind die Gatekeeper.</p>
+
+    <div class="systems">
+      <div class="system reveal">
+        <svg class="s-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-7 4 14 2-7h6"/></svg>
+        <h4>Nervensystem</h4>
+        <p>Es entscheidet, ob du zwischen Anspannung und Erholung umschalten kannst. Steckt es im Dauer-Alarm, blockiert es jede Regeneration.</p>
+      </div>
+      <div class="system reveal">
+        <svg class="s-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 8c4 0 4 4 7 4s3-4 7-4"/><path d="M5 16c4 0 4-4 7-4"/></svg>
+        <h4>Immunsystem</h4>
+        <p>Es ist dein Schutz und dein Frühwarnsystem. Bei Dauerstress entstehen stille Entzündungen, die selbst wieder Stress sind.</p>
+      </div>
+      <div class="system reveal">
+        <svg class="s-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+        <h4>Stoffwechsel</h4>
+        <p>Hier entsteht deine Energie. Und hier geht sie verloren. Stimmt die Produktion nicht, hilft auch das beste Vorhaben nicht.</p>
+      </div>
+    </div>
+
+    <div class="tiger reveal">
+      <p>Dein Nervensystem und dein Immunsystem sind evolutionär egoistisch. Sie sind für dein Überleben zuständig. Steht ein Säbelzahntiger hinter dir, fragt dein Körper nicht, ob gerade die Verdauung Energie braucht. Die gesamte Energie geht ins Überleben. Evolutionär genau richtig.</p>
+      <p>Heute hat jede von uns ihren eigenen chronischen Säbelzahntiger. Dein Stammhirn stellt dabei immer nur zwei Fragen: <span class="q">Bin ich sicher? Und wenn nicht, habe ich Ressourcen?</span></p>
+      <p>Solange genug Energie da ist, läuft alles. Geht sie über die Zeit aus, kippt das System. Das Nervensystem zieht Ressourcen ab, das Immunsystem leidet, stille Entzündungen entstehen. Ein Teufelskreis. So entstehen über die Zeit chronische Beschwerden, oft ganz leise, mit Symptomen, die sich schwer greifen lassen.</p>
+    </div>
+
+    <p class="persp-conclude reveal">Den durchbrichst du nicht mit dem nächsten Supplement, mehr Sport oder noch gesünderer Ernährung allein. Sondern nur, wenn deine drei Systeme wieder ins Gleichgewicht kommen und dein Nervensystem beide Fragen mit <em>Ja</em> beantworten kann.</p>
+
+    <div class="cta-benefit reveal">
+      <p>Genau hier setzt die Analyse an. Im kostenfreien Klarheits-Call findest du heraus, wo dein System gerade steht und welcher Hebel bei dir zuerst dran ist.</p>
+      <a href="https://tidycal.com/nicole-lurz/mbsc" target="_blank" rel="noopener" class="btn btn-light btn-lg">
+        Kostenfreien Klarheits-Call buchen <span class="arw" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 · ZWEI WEGE ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow center">Zwei Wege, ein Ziel</div>
+      <h2>Du musst dich <em>nicht sofort festlegen.</em></h2>
+      <p class="lede">Es gibt die Analyse in zwei Formaten. Die Inhalte sind weitgehend gleich, der Unterschied liegt im Ablauf und in der Diagnostik vor Ort. Im Klarheits-Call finden wir gemeinsam heraus, welches zu dir passt.</p>
+    </div>
+    <div class="wege-grid">
+      <div class="weg reveal">
+        <div class="weg-top"><span class="weg-badge vor-ort">Vor Ort</span></div>
+        <h3>Regenerationsanalyse</h3>
+        <div class="weg-meta">90 Minuten · Praxis Wiesloch</div>
+        <ul class="weg-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Ausführliche Anamnese im persönlichen Gespräch</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>HRV-Messung, Bioimpedanz und Multiscan vor Ort</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Bioresonanz zu Belastungs- und Regulationsmustern</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Auswertung deiner vorhandenen Laborwerte</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Schriftlicher Statusbericht und 12-Wochen-Fahrplan</li>
+        </ul>
+        <div class="weg-foot">Für dich, wenn du in der Region bist und die Messungen vor Ort mitnehmen willst.</div>
+      </div>
+      <div class="weg reveal">
+        <div class="weg-top"><span class="weg-badge online">Online</span></div>
+        <h3>Blind Spot Check</h3>
+        <div class="weg-meta">90 Minuten · per Zoom</div>
+        <ul class="weg-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Ausführlicher Fragebogen zu deiner Vorgeschichte</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Upload und Sichtung deiner bestehenden Befunde</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Auswertung deiner vorhandenen Laborwerte</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>Schriftliches Protokoll und individueller Fahrplan</li>
+        </ul>
+        <div class="weg-foot">Für dich, wenn du ortsunabhängig bist und von überall starten willst.</div>
+      </div>
+    </div>
+    <div class="wege-bridge reveal">
+      <p>Welches Format zu dir passt, findest du nicht allein heraus. Genau dafür gibt es den <span class="hl">kostenfreien Klarheits-Call.</span> Wir schauen gemeinsam auf deine Situation, und du entscheidest danach in Ruhe.</p>
+      <a href="https://tidycal.com/nicole-lurz/mbsc" target="_blank" rel="noopener" class="btn btn-light btn-lg">
+        Klarheits-Call buchen <span class="arw" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5 · WAS SICH VERÄNDERT + ABLAUF ═══ -->
+<section class="sec-tint">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Was sich verändert</div>
+      <h2>Was du nach dem Termin <em>wirklich hast.</em></h2>
+      <p class="lede">Nicht noch eine Diagnose, die in der Schublade landet. Sondern das, was bisher gefehlt hat.</p>
+    </div>
+    <div class="bekommst-grid reveal">
+      <div class="bk-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z"/></svg>
+        <h4>Du verstehst endlich, was los ist</h4>
+        <p>Aus „irgendwas stimmt nicht" wird ein klares Bild. Du weißt, was in deinem System passiert und warum.</p>
+      </div>
+      <div class="bk-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg>
+        <h4>Du wirst endlich ernst genommen</h4>
+        <p>Jemand schaut auf das Ganze, nicht auf ein einzelnes Symptom. 90 Minuten, in denen es nur um dich geht.</p>
+      </div>
+      <div class="bk-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 3 6v15l6-3 6 3 6-3V3l-6 3-6-3Z"/><path d="M9 3v15M15 6v15"/></svg>
+        <h4>Du hast einen Plan statt offener Fragen</h4>
+        <p>Du gehst nicht mit einem „probieren Sie mal" nach Hause, sondern mit einem Fahrplan, der dir die Reihenfolge zeigt.</p>
+      </div>
+      <div class="bk-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h4>Du bist nicht mehr allein damit</h4>
+        <p>Du hast eine Fachfrau an deiner Seite, die deine Fragen wirklich beantwortet, in deiner Sprache.</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="ablauf-head">So läuft dein Termin.</div>
+      <div class="ablauf">
+        <div class="step">
+          <h4>Klarheits-Call</h4>
+          <p>Kostenfrei, 20 bis 30 Minuten. Wir klären, ob und welches Format passt, und ob weitere Blutwerte sinnvoll sind.</p>
+        </div>
+        <div class="step">
+          <h4>Vorbereitung</h4>
+          <p>Du füllst deinen Fragebogen aus und lädst deine Befunde hoch. Ich werte vorab aus.</p>
+        </div>
+        <div class="step">
+          <h4>90-Minuten-Deep-Dive</h4>
+          <p>Vor Ort oder per Zoom. Gespräch, Diagnostik und die Einordnung deiner Situation.</p>
+        </div>
+        <div class="step">
+          <h4>Dein Fahrplan</h4>
+          <p>Du bekommst deinen schriftlichen Statusbericht mit priorisiertem 12-Wochen-Fahrplan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · FÜR WEN ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow center">Ehrliche Einschätzung</div>
+      <h2>Für wen das richtig ist. <em>Und für wen nicht.</em></h2>
+      <p class="lede">Eine ehrliche Selbsteinschätzung, bevor du den Klarheits-Call buchst. Wir beide sparen Zeit.</p>
+    </div>
+    <div class="fw-grid">
+      <div class="fw-col fw-yes reveal">
+        <h3>Das passt zu dir, wenn</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>du Klarheit und echte Antworten willst, statt der nächsten Pflaster-drauf-Taktik.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>du verstehen willst, was in deinem Körper passiert, statt Symptome wegzudrücken.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>du bereit bist, Selbstverantwortung für deine Gesundheit zu übernehmen.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>du bereit bist, selbst etwas zu verändern, auch wenn es nur kleine Stellschrauben sind.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>du dich nicht damit abfinden willst, dass Erschöpfung zum Älterwerden gehört.</li>
+        </ul>
+      </div>
+      <div class="fw-col fw-no reveal">
+        <h3>Das passt nicht zu dir, wenn</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>du eine Wunderlösung über Nacht erwartest. Diese Arbeit ist gründlich, nicht schnell.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>du möchtest, dass jemand dein Problem löst, ganz ohne dein Mitwirken.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>du schulmedizinische Diagnostik grundsätzlich ablehnst. Sie bleibt die Basis.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>du in einem akuten medizinischen Notfall bist. Dann gehört das zuerst zum Arzt.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-benefit center reveal">
+      <p>Wenn du dich wiedererkennst: Im kostenfreien Klarheits-Call klären wir gemeinsam, ob die Analyse dein nächster Schritt ist. Unverbindlich und ohne Verkaufsdruck.</p>
+      <a href="https://tidycal.com/nicole-lurz/mbsc" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+        Kostenfreien Klarheits-Call buchen <span class="arw" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · ÜBER MICH ═══ -->
+<section class="sec-tint">
+  <div class="wrap">
+    <div class="ueber-grid">
+      <div class="ueber-photo reveal">
+        <img src="images/nicole-about.jpg" alt="Nicole Lurz, Heilpraktikerin mit BWL-Hirn, Wiesloch" />
+      </div>
+      <div class="ueber-body reveal">
+        <div class="eyebrow">Warum ich hinschaue</div>
+        <h2>Ich sehe nicht ein Symptom. <em>Ich sehe dein System.</em></h2>
+        <p>Eigentlich wollte ich immer Medizin studieren. Der Mensch hat mich schon in der Schule fasziniert, über den Sport und den Bio-Leistungskurs. Doch erst bin ich in die BWL abgebogen und habe als Prozess- und Unternehmensberaterin gearbeitet.</p>
+        <p>Zurückgeholt hat mich mein eigener Körper. Er hat mir mehr als einmal die rote Karte gezeigt. Einmal stand ich kurz vor dem Burnout, weil ich den falschen Weg ging. Und dann kam mein Kinderwunsch. Von der Kinderwunschpraxis hatte ich mir etwas anderes erhofft. Stattdessen wurde ich rein mechanisch betrachtet, als Funktion, nicht als Mensch.</p>
+        <p>Da wusste ich, wie ich es nicht machen will. Heute bin ich <strong>Heilpraktikerin mit BWL-Hirn.</strong> Ich denke in Systemen und Zusammenhängen und sehe deinen Körper nicht als Sammlung von Symptomen, sondern als System, das sich lesen lässt.</p>
+        <p>14 Jahre Heilpraxis, über 1.500 begleitete Frauen und Mentorin der Ausbildung Chronisch Gesund am Mojo-Institut. Mein Ansatz bleibt klar statt kompliziert: keine Erkenntnisse in Fachchinesisch, sondern Zusammenhänge, die du verstehst und selbst umsetzt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8 · STIMMEN ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow center">Stimmen</div>
+      <h2>Was Frauen zurückspiegeln, <em>die hingeschaut haben.</em></h2>
+    </div>
+    <div class="stimmen-grid">
+      <article class="stimme reveal">
+        <div class="stimme-stars" aria-hidden="true">★★★★★</div>
+        <p class="stimme-q">„Besonders schätze ich die einfühlsame Art. Es wird aufmerksam zugehört, individuell auf die persönliche Situation eingegangen und der Körper als Ganzes betrachtet, nicht nur einzelne Symptome. Ich habe einen klaren Plan erhalten, der mir verständlich zeigt, woran ich arbeiten kann."</p>
+        <div class="stimme-meta">Jasmin · Google-Bewertung</div>
+      </article>
+      <article class="stimme reveal">
+        <div class="stimme-stars" aria-hidden="true">★★★★★</div>
+        <p class="stimme-q">„Frau Lurz verfügt über fundiertes Fachwissen und große Empathie. Durch ihre Betrachtung entwickelt sie sehr individuelle Lösungsansätze. Ich habe deutlich mehr Energie und Elan, bin fokussierter, und mein Schlaf hat sich spürbar verbessert."</p>
+        <div class="stimme-meta">Manuela · Google-Bewertung</div>
+      </article>
+      <article class="stimme placeholder reveal">
+        <div class="ph-lbl">Platzhalter · Blind Spot Check</div>
+        <p>Hier kommt eine echte Stimme zum Blind Spot Check, sobald Nicole sie gesammelt hat. Format: Vorname, Ausgangssituation in einem Satz, konkretes Ergebnis, Originalzitat.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9 · FAQ ═══ -->
+<section class="sec-tint">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow center">Bevor du buchst</div>
+      <h2>Gut zu <em>wissen.</em></h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item" open>
+        <summary>Übernimmt die Krankenkasse die Kosten?</summary>
+        <div class="faq-a">Es ist eine Heilpraktiker-Leistung. Gesetzliche Krankenkassen übernehmen sie nicht. Geh auch als Privatversicherte davon aus, dass du einen großen Teil selbst trägst. Was in deinem Fall möglich ist, klären wir gern in deinem Klarheits-Call.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Ersetzt die Analyse meinen Arztbesuch?</summary>
+        <div class="faq-a">Nein. Die Analyse ergänzt deine ärztliche Betreuung, sie ersetzt sie nicht. Bei akuten oder ungeklärten Beschwerden bleibt die schulmedizinische Abklärung der erste Schritt. Bestehende Befunde, Laborwerte und Medikamentenpläne fließen in die Analyse mit ein.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Ich habe schon so viel probiert. Warum sollte das anders sein?</summary>
+        <div class="faq-a">Weil hier nicht ein einzelnes Symptom im Fokus steht, sondern dein System. Die meisten Frauen kommen erst, nachdem sie an vielen Stellen gesucht haben. Oft liegt der rote Faden genau dort, wo bisher niemand hingeschaut hat.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Was ist der Unterschied zwischen den beiden Formaten?</summary>
+        <div class="faq-a">Inhaltlich sind sie weitgehend gleich. Bei der Regenerationsanalyse vor Ort kommen Bioresonanz und Multiscan als Messverfahren dazu. Der Blind Spot Check läuft komplett online über Fragebogen, Befund-Upload und Zoom. Im kostenfreien Klarheits-Call finden wir gemeinsam heraus, welches Format zu dir passt.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Wie schnell merke ich etwas?</summary>
+        <div class="faq-a">Eine erste Klarheit über deine Situation hast du direkt nach dem 90-Minuten-Termin. Wie sich darüber hinaus etwas verändert, ist individuell und hängt davon ab, was du umsetzt und wie dein Körper reagiert. Der Fahrplan ist so gebaut, dass du sofort handlungsfähig bist.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Muss ich mich vorbereiten?</summary>
+        <div class="faq-a">Du füllst einen Anamnesefragebogen aus und lädst vorhandene Befunde hoch, also Laborwerte, Arztbriefe und Medikamentenpläne. Schon der Fragebogen ist wertvoll: Er bringt dich dazu, dich intensiver mit dir selbst zu beschäftigen. Oft tauchen dabei eigene Fragen und Ziele auf. Genau die nehmen wir mit in den Termin.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10 · INVESTITION ═══ -->
+<section class="sec-dark" id="aktion">
+  <div class="wrap">
+    <div class="sec-head center reveal" style="margin-left:auto;margin-right:auto">
+      <div class="eyebrow center">Deine Investition</div>
+      <h2>Bis 30. Juni noch <em>zum alten Preis.</em></h2>
+      <p class="lede">Ab Juli gibt es die Analyse nur noch als erweitertes Mini-Programm für 530 €. Wer im Juni bucht, sichert sich die Analyse zum alten Preis.</p>
+    </div>
+    <div class="invest-prices reveal">
+      <div class="price-card price-now">
+        <div class="price-lbl">Bis 30. Juni 2026</div>
+        <div class="price-val">330 €</div>
+        <div class="price-meta">Regenerationsanalyse oder Blind Spot Check</div>
+      </div>
+      <div class="price-card price-later">
+        <div class="price-lbl">Ab 1. Juli 2026</div>
+        <div class="price-val">530 €</div>
+        <div class="price-meta">Dann nur noch als Mini-Programm mit 14-Tage-Begleitung und Check-in</div>
+      </div>
+    </div>
+    <div class="invest-scarcity reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <p><strong>Im Juni gibt es nur 10 Plätze.</strong> Jede Analyse braucht volle Aufmerksamkeit und mehrere Stunden Vorbereitung. Mehr geht nicht, ohne dass die Qualität leidet.</p>
+    </div>
+    <div class="invest-how reveal">
+      <h3>So sicherst du dir den Preis</h3>
+      <p>Buche bis Ende Juni deinen kostenfreien Klarheits-Call und sichere dir darin deinen Termin für die Regenerationsanalyse oder den Blind Spot Check. Dann gilt für dich der Preis von 330 € statt 530 €.</p>
+    </div>
+    <p class="invest-close reveal">Du kannst weiter warten. <em>Oder jetzt herausfinden, was dein Körper dir sagt.</em></p>
+    <div class="invest-cta reveal">
+      <a href="https://tidycal.com/nicole-lurz/mbsc" target="_blank" rel="noopener" class="btn btn-light btn-lg">
+        Kostenfreien Klarheits-Call buchen <span class="arw" aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="cta-note">20 bis 30 Minuten · unverbindlich · ohne Verkaufsdruck</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 11 · HWG-HINWEIS ═══ -->
+<section>
+  <div class="wrap narrow">
+    <div class="sec-head reveal" style="margin-bottom:28px">
+      <div class="eyebrow">Wichtiger Hinweis</div>
+      <h2>Damit du eine <em>fundierte Entscheidung</em> treffen kannst.</h2>
+    </div>
+    <div class="hwg-note reveal">
+      <strong>Zu den Verfahren</strong>
+      <p>HRV-Messung, segmentale Bioimpedanz und Bioresonanz stammen aus der naturheilkundlichen Erfahrungsmedizin und sind wissenschaftlich nicht abschließend bewertet. Sie ergänzen die schulmedizinische Diagnostik, sie ersetzen sie nicht. Bei akuten Erkrankungen, ungeklärten Symptomen oder strukturellen Diagnosen ist immer zuerst die ärztliche Abklärung erforderlich.</p>
+    </div>
+    <div class="hwg-note reveal">
+      <strong>Zu den Ergebnissen</strong>
+      <p>Die Analyse liefert ein Bild deiner drei Körpersysteme und einen priorisierten Fahrplan. Welche Wirkung sich daraus für dich persönlich ergibt, ist individuell und hängt von vielen Faktoren ab, etwa Vorgeschichte, Mitarbeit und Alltagsumsetzung. Konkrete Behandlungsergebnisse oder Heilung können nicht versprochen werden. Wiedergegebene Erfahrungen einzelner Personen sind keine Garantie für einen vergleichbaren Verlauf.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-logo">Nicole <em>Lurz</em></div>
+      <nav class="footer-links" aria-label="Rechtliches">
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="https://tidycal.com/nicole-lurz/mbsc" target="_blank" rel="noopener">Klarheits-Call buchen</a>
+      </nav>
+    </div>
+    <div class="footer-copy">© <span id="year"></span> Nicole Lurz · Heilpraktikerin &amp; Diplom-Betriebswirtin · Naturheilkundliche Begleitung ersetzt keine ärztliche Diagnostik und Therapie.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Jahr
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  // Nav + Progress
+  var nav=document.getElementById('nav'),progress=document.getElementById('progress');
+  function onScroll(){
+    var y=window.scrollY||document.documentElement.scrollTop;
+    nav.classList.toggle('scrolled',y>40);
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    progress.style.width=(h>0?(y/h)*100:0)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // Reveal
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver'in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el,i){
+      var sibs=el.parentElement.querySelectorAll(':scope > .reveal');
+      if(sibs.length>1){el.style.transitionDelay=(Array.prototype.indexOf.call(sibs,el)*90)+'ms';}
+      io.observe(el);
+    });
+  }else{
+    els.forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+
+</body>
+</html>

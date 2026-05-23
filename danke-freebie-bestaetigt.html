@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1A14">
+<title>Willkommen · Nicole Lurz</title>
+<link rel="stylesheet" href="premium.css">
+<style>
+  /* ── Nach DOI: Willkommen & Freebie-Bestätigung ── */
+  .danke-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 1.5rem 5rem;
+    text-align: center;
+  }
+  /* Completed steps */
+  .doi-steps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 0 auto 3.5rem;
+    animation: danke-up 0.6s var(--ease) 0.2s both;
+  }
+  .doi-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .doi-step-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .doi-step-circle.done {
+    background: rgba(122, 168, 144, 0.18);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+  }
+  .doi-step-circle.done svg {
+    width: 18px; height: 18px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .doi-step-label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .doi-connector {
+    width: 48px;
+    height: 2px;
+    background: rgba(122, 168, 144, 0.4);
+    margin-bottom: 1.4rem;
+    flex-shrink: 0;
+  }
+  @media (max-width: 480px) {
+    .doi-connector { width: 28px; }
+    .doi-step-label { font-size: 0.65rem; }
+  }
+  /* Headline */
+  .danke-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    animation: danke-up 0.7s var(--ease) 0.35s both;
+  }
+  .danke-h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    color: var(--head);
+    line-height: 1.18;
+    margin-bottom: 1.2rem;
+    animation: danke-up 0.7s var(--ease) 0.45s both;
+  }
+  .danke-h1 em { font-style: italic; color: var(--accent); }
+  .danke-sub {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.2vw, 1.12rem);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto 3.5rem;
+    animation: danke-up 0.7s var(--ease) 0.55s both;
+  }
+  /* Bestätigungs-Karte */
+  .confirm-card {
+    max-width: 520px;
+    width: 100%;
+    background: var(--bg-card-2);
+    border: 1px solid rgba(122, 168, 144, 0.28);
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    margin: 0 auto 3rem;
+    text-align: left;
+    animation: danke-up 0.7s var(--ease) 0.65s both;
+    position: relative;
+    overflow: hidden;
+  }
+  .confirm-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), rgba(149,192,168,0.4));
+    border-radius: 16px 16px 0 0;
+  }
+  .confirm-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(122, 168, 144, 0.12);
+    border: 2px solid rgba(122, 168, 144, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    animation: danke-pop 0.6s var(--ease) 0.5s both;
+  }
+  .confirm-card-icon svg {
+    width: 22px; height: 22px;
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .confirm-card h2 {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--head);
+    margin-bottom: 0.6rem;
+  }
+  .confirm-card p {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin: 0;
+  }
+  /* Nicole-Intro Block */
+  .nicole-block {
+    max-width: 520px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1.8rem;
+    margin: 0 auto 3.5rem;
+    text-align: left;
+    animation: danke-up 0.7s var(--ease) 0.75s both;
+  }
+  .nicole-block img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 85% 20%;
+    flex-shrink: 0;
+    border: 2px solid rgba(122, 168, 144, 0.25);
+  }
+  .nicole-block-text p {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin-bottom: 0.5rem;
+  }
+  .nicole-block-text p:last-child { margin-bottom: 0; }
+  .nicole-block-name {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem !important;
+  }
+  /* CTA-Bereich */
+  .danke-ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    animation: danke-up 0.7s var(--ease) 0.85s both;
+  }
+  .danke-ctas .cta {
+    width: 100%;
+    justify-content: center;
+    max-width: 360px;
+  }
+  .danke-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 360px;
+  }
+  .danke-divider::before,
+  .danke-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .danke-divider span {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  .danke-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+  }
+  .danke-instagram:hover { color: var(--head); border-color: var(--accent); }
+  .danke-instagram svg {
+    width: 18px; height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  /* Nav */
+  .nav-danke .nav-links,
+  .nav-danke .nav-cta,
+  .nav-danke .nav-burger { display: none !important; }
+  .nav-danke .nav-inner { justify-content: center; }
+  /* Animations */
+  @keyframes danke-up {
+    from { transform: translateY(18px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+  @keyframes danke-pop {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- NAV MINIMAL -->
+<header class="nav nav-danke" id="nav">
+  <div class="nav-inner">
+    <a href="premium.html" class="nav-logo">
+      <span class="lf">Nicole</span><span class="ll">Lurz</span>
+    </a>
+  </div>
+</header>
+
+<main class="danke-wrap">
+
+  <!-- Alle Schritte abgeschlossen -->
+  <div class="doi-steps" role="list" aria-label="Fortschritt abgeschlossen">
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle done">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <span class="doi-step-label">Eingetragen</span>
+    </div>
+    <div class="doi-connector" aria-hidden="true"></div>
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle done">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <span class="doi-step-label">Bestätigt</span>
+    </div>
+    <div class="doi-connector" aria-hidden="true"></div>
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle done">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <span class="doi-step-label">Unterwegs</span>
+    </div>
+  </div>
+
+  <!-- Headline -->
+  <p class="danke-eyebrow">Herzlich willkommen</p>
+  <h1 class="danke-h1">Dein Freebie ist<br><em>auf dem Weg zu dir.</em></h1>
+  <p class="danke-sub">
+    Schau gleich in dein Postfach — in wenigen Minuten liegt alles bei dir. Ich freue mich, dass du hier bist.
+  </p>
+
+  <!-- Bestätigungs-Info -->
+  <div class="confirm-card">
+    <div class="confirm-card-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h2>Alles erledigt.</h2>
+    <p>
+      Deine E-Mail-Adresse ist bestätigt. Du bekommst das Freebie direkt in dein Postfach — und ab sofort halte ich dich mit Impulsen zu Gesundheit, Klarheit und deinem Business auf dem Laufenden.
+    </p>
+  </div>
+
+  <!-- Nicole-Intro -->
+  <div class="nicole-block">
+    <img src="images/nicole-hero.jpg" alt="Nicole Lurz" loading="lazy">
+    <div class="nicole-block-text">
+      <p class="nicole-block-name">Nicole Lurz · Gesundheitsstrategin</p>
+      <p>
+        Ich begleite selbstständige Frauen, die im Außen führen und innerlich leer laufen. Wer ich wirklich bin und was uns verbindet, lernst du mit der Zeit kennen.
+      </p>
+      <p>
+        Bis dahin: Lass das Freebie auf dich wirken — und komm zurück, wenn du spürst, dass da noch mehr ist.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTAs -->
+  <div class="danke-ctas">
+    <a href="blind-spot-check.html" class="cta cta-primary cta-magnetic" data-magnetic data-magnetic-strength="0.4">
+      <span class="cta-shimmer"></span>
+      <span class="label">Wo liegt dein blinder Fleck?</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <div class="danke-divider" aria-hidden="true"><span>oder</span></div>
+
+    <a href="https://www.instagram.com/nicole.lurz/" target="_blank" rel="noopener" class="danke-instagram">
+      <svg viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+      Tägliche Impulse auf Instagram
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" style="padding: 3.5rem 0 2.5rem;">
+  <div class="container footer-inner">
+    <div class="footer-logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></div>
+    <p class="footer-sub">Gesundheit &amp; Leadership · High Performance beginnt im Nervensystem</p>
+    <nav class="footer-links" aria-label="Footer-Navigation">
+      <a href="premium.html">Startseite</a>
+      <a href="blind-spot-check.html">Blind Spot Check</a>
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+    </nav>
+    <p class="footer-copy">© 2026 Nicole Lurz · Alle Rechte vorbehalten</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var dot = document.getElementById('cursorDot');
+    var ring = document.getElementById('cursorRing');
+    if (!dot || !ring) return;
+    document.addEventListener('mousemove', function(e){
+      dot.style.transform = 'translate(' + (e.clientX - 4) + 'px,' + (e.clientY - 4) + 'px)';
+      ring.style.transform = 'translate(' + (e.clientX - 20) + 'px,' + (e.clientY - 20) + 'px)';
+    });
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function(){
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
