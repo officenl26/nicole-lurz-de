@@ -1,435 +1,641 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" id="top">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Nicole Lurz. Heilpraktikerin mit BWL-Hirn. Ich helfe Frauen dabei, zu verstehen, was wirklich in ihrem Körper passiert und was sie selbst verändern können." />
-<meta name="theme-color" content="#0F1A14" />
-<title>Nicole Lurz · Heilpraktikerin &amp; Mentorin</title>
-<link rel="canonical" href="https://nicole-lurz.de/" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://nicole-lurz.de/" />
-<meta property="og:title" content="Nicole Lurz · Heilpraktikerin &amp; Mentorin" />
-<meta property="og:description" content="Heilpraktikerin mit BWL-Hirn. Ich helfe Frauen dabei, zu verstehen, was wirklich in ihrem Körper passiert." />
-<meta property="og:image" content="https://nicole-lurz.de/images/nicole-about.jpg" />
-<meta property="og:locale" content="de_DE" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Nicole Lurz hilft erfolgreichen Unternehmerinnen ab 50 zu verstehen, warum sich ihr Körper verändert. Klare Antworten statt Trial-and-Error. Starte mit dem kostenfreien Selbsttest.">
+<meta name="theme-color" content="#0B140F">
+<meta property="og:title" content="Nicole Lurz · Klare Antworten für Unternehmerinnen ab 50">
+<meta property="og:description" content="Du hast alles im Griff. Nur deinen Körper nicht mehr. Verstehe, was sich gerade verändert, und gewinne Klarheit und Kontrolle zurück.">
+<meta property="og:type" content="website">
+<title>Nicole Lurz · Online-Mentoring für Unternehmerinnen ab 50</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
 <style>
-/* ═══ FONTS ═══ */
-@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/inter-400.ttf') format('truetype')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/inter-500.ttf') format('truetype')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/inter-600.ttf') format('truetype')}
-@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/spectral-regular.ttf') format('truetype')}
-@font-face{font-family:'Spectral';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/spectral-500.ttf') format('truetype')}
-@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/spectral-italic.ttf') format('truetype')}
-@font-face{font-family:'Spectral';font-style:italic;font-weight:500;font-display:swap;src:url('fonts/spectral-500-italic.ttf') format('truetype')}
-
-/* ═══ TOKENS · Tannenmoos Twilight ═══ */
+/* ═══════════ TOKENS ═══════════ */
 :root{
-  --noir:#0F1A14;
-  --moos-dark:#1F2D24;
-  --moos:#3D5A2E;
-  --salbei:#7AA890;
-  --salbei-soft:#A8BAB0;
-  --papier:#E8F0E8;
-  --papier-mute:rgba(232,240,232,.62);
-  --papier-dim:rgba(232,240,232,.42);
-  --marine:#1B4C93;
-  --marine-hover:#143F7C;
-  --line:rgba(168,186,176,.18);
-  --line-strong:rgba(168,186,176,.32);
-  --wrap:1140px;
+  --night:#0B140F;        /* tiefste Nacht (Hero) */
+  --bg:#0F1A14;           /* Waldgrün */
+  --bg-2:#16241C;         /* Zwischenton */
+  --bg-3:#1F2D24;         /* Dunkelgrün */
+  --olive:#3D5A2E;
+  --pine:#244231;
+  --sage:#7AA890;
+  --sage-light:#A8BAB0;
+  --paper:#E8F0E8;
+  --morning:#F3F8F3;      /* hellster Ton (Schluss) */
+  --ink:#14231B;          /* Text auf hellem Grund */
+  --ink-soft:#46584D;
+  --line:rgba(122,168,144,.18);
+  --line-light:rgba(36,66,49,.16);
+  --radius:10px;
+  --font-sans:'Inter',system-ui,-apple-system,sans-serif;
+  --font-serif:'Spectral',Georgia,serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
 }
+@property --mx{syntax:'<percentage>';inherits:true;initial-value:50%}
+@property --my{syntax:'<percentage>';inherits:true;initial-value:50%}
 
-/* ═══ RESET ═══ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
 body{
-  font-family:'Inter',system-ui,sans-serif;
-  background:var(--noir);
-  color:var(--papier);
+  background:var(--night);
+  color:var(--paper);
+  font-family:var(--font-sans);
   font-size:17px;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
 }
+::selection{background:var(--sage);color:var(--night)}
 img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-em{font-style:italic}
-::selection{background:var(--moos);color:var(--papier)}
 
-/* ═══ TYPO ═══ */
-h1,h2,h3,h4{font-family:'Spectral',Georgia,serif;font-weight:500;line-height:1.18;letter-spacing:-.01em;color:var(--papier)}
-h1{font-size:clamp(2.4rem,5.2vw,3.9rem)}
-h2{font-size:clamp(1.9rem,3.8vw,2.8rem)}
-h3{font-size:clamp(1.25rem,2.2vw,1.55rem)}
-.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--salbei);margin-bottom:14px;display:inline-block}
-.lede{font-size:1.1rem;color:var(--papier-mute);line-height:1.72;max-width:54ch}
-
-/* ═══ LAYOUT ═══ */
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
-
-/* ═══ NAV ═══ */
-nav.site-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:16px 0;
-  background:rgba(15,26,20,.78);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{
-  display:flex;align-items:center;justify-content:space-between;
-  max-width:var(--wrap);margin:0 auto;padding:0 28px;
-}
-.nl-logo{display:flex;flex-direction:column;line-height:1.15}
-.nl-name{font-family:'Spectral',serif;font-size:1.22rem;font-weight:500;color:var(--papier)}
-.nl-name em{color:var(--salbei);font-style:italic}
-.nl-sub{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--salbei-soft);margin-top:4px}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-link{font-size:.92rem;color:var(--papier-mute);font-weight:500;transition:color .18s}
-.nav-link:hover{color:var(--papier)}
-.nav-cta{
+/* ═══════════ TYPO ═══════════ */
+h1,h2,h3{font-weight:600;line-height:1.16;letter-spacing:-.015em}
+h1{font-size:clamp(2.2rem,5.4vw,3.8rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+h3{font-size:clamp(1.2rem,2.2vw,1.5rem)}
+em{font-family:var(--font-serif);font-style:italic;font-weight:500;color:var(--sage)}
+p{color:var(--sage-light)}
+strong{color:var(--paper);font-weight:600}
+.eyebrow{
   display:inline-block;
-  padding:11px 22px;
-  background:var(--marine);
-  color:#fff;
-  border-radius:6px;
-  font-size:.9rem;font-weight:600;
-  transition:background .18s,transform .14s;
+  font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:18px;
 }
-.nav-cta:hover{background:var(--marine-hover);transform:translateY(-1px)}
+.eyebrow::after{content:"";display:inline-block;width:34px;height:1px;background:var(--sage);opacity:.5;vertical-align:middle;margin-left:12px}
+.center{text-align:center}
+.lead{font-size:1.13rem;line-height:1.7}
 
-/* ═══ BUTTONS ═══ */
-.btn{
-  display:inline-block;
-  padding:16px 36px;
-  border-radius:6px;
-  font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;
-  transition:background .18s,transform .14s,border-color .18s;
-  cursor:pointer;text-align:center;
-  border:1.5px solid transparent;
-}
-.btn:hover{transform:translateY(-1px)}
-.btn-primary{background:var(--marine);color:#fff}
-.btn-primary:hover{background:var(--marine-hover)}
-.btn-ghost{background:transparent;color:var(--papier);border-color:var(--salbei)}
-.btn-ghost:hover{background:rgba(122,168,144,.12);border-color:var(--papier)}
+/* helle Abschnitte */
+.light{color:var(--ink)}
+.light h2,.light h3,.light strong{color:var(--ink)}
+.light p{color:var(--ink-soft)}
+.light em{color:var(--pine)}
+.light .eyebrow{color:var(--pine)}
+.light .eyebrow::after{background:var(--pine)}
 
-/* ═══ HERO ═══ */
-.hero{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:100vh;
-  padding-top:72px;
-  position:relative;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;
-  top:-200px;right:30%;width:600px;height:600px;
-  background:radial-gradient(circle, rgba(61,90,46,.22) 0%, transparent 65%);
-  z-index:0;pointer-events:none;
-}
-.hero-text{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:80px 60px 80px 28px;
-  padding-left:max(28px, calc((100vw - var(--wrap)) / 2 + 28px));
-  position:relative;z-index:2;
-}
-.hero-text h1{margin-bottom:24px}
-.hero-text h1 em{color:var(--salbei);font-style:italic}
-.hero-lede{font-size:1.14rem;color:var(--papier-mute);line-height:1.72;max-width:48ch;margin-bottom:38px}
-.hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.hero-cta-note{font-size:.88rem;color:var(--papier-dim);line-height:1.55;max-width:42ch}
-.hero-cta-note strong{color:var(--salbei);font-weight:500}
-.hero-photo{position:relative;overflow:hidden;background:var(--moos-dark)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
-.hero-photo::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(95deg, var(--noir) 0%, transparent 24%);
-}
-.hero-photo::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg, transparent 60%, rgba(15,26,20,.5) 100%);
-  z-index:1;
-}
+/* ═══════════ LAYOUT ═══════════ */
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+.narrow{max-width:760px}
+section{padding:110px 0;position:relative}
+@media (max-width:720px){section{padding:76px 0}}
 
-/* ═══ INNER SHIFT BLOCK ═══ */
-.inner-shift{
-  padding:120px 0;
-  background:var(--moos-dark);
-  position:relative;
-}
-.inner-shift::before{
-  content:'';position:absolute;
-  bottom:0;left:10%;width:480px;height:480px;
-  background:radial-gradient(circle, rgba(122,168,144,.08) 0%, transparent 70%);
-  pointer-events:none;
-}
-.is-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:center;
-  position:relative;z-index:2;
-}
-.is-card{
-  background:rgba(15,26,20,.6);
-  border:1px solid var(--line-strong);
-  border-radius:14px;
-  padding:46px 44px;
-}
-.is-card h3{margin-bottom:14px}
-.is-card h3 em{color:var(--salbei)}
-.is-meta{
-  display:flex;gap:24px;margin-bottom:24px;flex-wrap:wrap;
-}
-.is-meta-item{display:flex;flex-direction:column}
-.is-meta-label{font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--salbei);margin-bottom:4px}
-.is-meta-value{font-family:'Spectral',serif;font-size:1.08rem;color:var(--papier)}
-.is-text p{color:var(--papier-mute);margin-bottom:16px;line-height:1.72}
-.is-text p:last-child{margin-bottom:0}
-.is-features{
-  list-style:none;display:flex;flex-direction:column;gap:11px;
-  margin:24px 0 32px;
-}
-.is-features li{
-  font-size:.96rem;color:var(--papier-mute);
-  padding-left:22px;position:relative;line-height:1.55;
-}
-.is-features li::before{
-  content:'';position:absolute;left:0;top:.65em;
-  width:10px;height:1px;background:var(--salbei);
-}
-
-/* ═══ KONTAKT ═══ */
-.kontakt{
-  padding:120px 0;
-  background:var(--noir);
-}
-.kontakt-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:start;margin-top:54px;
-}
-.kontakt-text h2{margin-bottom:18px}
-.kontakt-text h2 em{color:var(--salbei)}
-.kontakt-text p{color:var(--papier-mute);line-height:1.72;font-size:1.05rem}
-.kontakt-links{display:flex;flex-direction:column;gap:14px}
-.kontakt-link{
-  display:flex;align-items:center;gap:18px;
-  padding:20px 24px;
-  background:rgba(31,45,36,.4);
-  border:1px solid var(--line);
-  border-radius:10px;
-  color:var(--papier);
-  transition:border-color .2s,background .2s,transform .15s;
-}
-.kontakt-link:hover{
-  border-color:var(--salbei);
-  background:rgba(31,45,36,.7);
-  transform:translateY(-1px);
-}
-.kontakt-link svg{flex-shrink:0;color:var(--salbei)}
-.kl-label{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--salbei-soft)}
-.kl-value{font-size:1rem;font-weight:500;color:var(--papier);margin-top:3px}
-
-/* ═══ FOOTER ═══ */
-footer{
-  background:var(--moos-dark);
-  border-top:1px solid var(--line);
-  padding:38px 0 32px;
-  font-size:.86rem;
-  color:var(--papier-dim);
-}
-.footer-inner{
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:14px;
-}
-.footer-brand{font-family:'Spectral',serif;font-size:1rem;color:var(--papier-mute)}
-.footer-brand em{color:var(--salbei);font-style:italic}
-.footer-links{display:flex;gap:26px;flex-wrap:wrap}
-.footer-links a{color:var(--papier-dim);transition:color .18s;font-size:.88rem}
-.footer-links a:hover{color:var(--papier)}
-
-/* ═══ REVEAL ═══ */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+/* ═══════════ REVEAL ═══════════ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 
-/* ═══ RESPONSIVE ═══ */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-text{padding:110px 28px 60px}
-  .hero-photo{height:440px;order:-1}
-  .hero-photo::after{background:linear-gradient(180deg, transparent 50%, var(--noir) 100%)}
-  .is-grid,.kontakt-grid{grid-template-columns:1fr;gap:50px}
-  .is-card{padding:34px 28px}
-  .inner-shift,.kontakt{padding:80px 0}
-  .footer-inner{flex-direction:column;text-align:center}
-  .footer-links{justify-content:center}
+/* ═══════════ NAV ═══════════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;
+  transition:background .3s var(--ease),box-shadow .3s var(--ease),padding .3s var(--ease)}
+.nav.scrolled{background:rgba(11,20,15,.9);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:600;color:var(--paper);text-decoration:none;letter-spacing:.02em;font-size:1.02rem}
+.nav-logo em{font-size:inherit}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;
+  font-size:.86rem;font-weight:600;letter-spacing:.02em;
+  color:var(--night);background:var(--sage);
+  padding:11px 20px;border-radius:6px;text-decoration:none;
+  transition:filter .2s var(--ease)}
+.nav-cta:hover{filter:brightness(1.08)}
+.nav-menu{display:flex;align-items:center;gap:30px}
+.nav-link{font-size:.9rem;font-weight:500;color:var(--sage-light);text-decoration:none;transition:color .2s var(--ease)}
+.nav-link:hover{color:var(--paper)}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;padding:0 9px;
+  background:transparent;border:1px solid var(--line);border-radius:6px;cursor:pointer}
+.nav-burger span{display:block;height:2px;background:var(--paper);border-radius:2px;
+  transition:transform .25s var(--ease),opacity .25s var(--ease)}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:860px){
+  .nav-link{display:none}
+  .nav-burger{display:flex}
+  .nav-menu{gap:14px}
+  .nav-cta{padding:9px 14px;font-size:.8rem}
 }
-@media(max-width:600px){
-  .nav-links .nav-link{display:none}
+@media (max-width:430px){.nav-cta{display:none}}
+.mmenu{position:fixed;inset:0;z-index:49;background:rgba(11,20,15,.96);backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.mmenu.open{opacity:1;pointer-events:auto}
+.mmenu a{font-size:1.45rem;font-weight:600;color:var(--paper);text-decoration:none;padding:13px}
+.mmenu .mmenu-cta{margin-top:20px;font-size:1.02rem;background:var(--sage);color:var(--night);border-radius:8px;padding:16px 30px}
+
+/* ═══════════ BUTTONS ═══════════ */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-sans);font-weight:600;font-size:1rem;letter-spacing:.015em;
+  padding:17px 32px;border-radius:7px;text-decoration:none;cursor:pointer;
+  transition:filter .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);
+  min-height:48px}
+.cta-primary{background:var(--sage);color:var(--night);box-shadow:0 8px 26px rgba(122,168,144,.22)}
+.cta-primary:hover{filter:brightness(1.07);box-shadow:0 10px 30px rgba(122,168,144,.3)}
+.cta-primary .arrow{transition:transform .2s var(--ease)}
+.cta-primary:hover .arrow{transform:translateX(4px)}
+.cta-dark{background:var(--pine);color:var(--paper);box-shadow:0 8px 26px rgba(36,66,49,.28)}
+.cta-dark:hover{filter:brightness(1.12);box-shadow:0 10px 30px rgba(36,66,49,.36)}
+.cta-dark .arrow{transition:transform .2s var(--ease)}
+.cta-dark:hover .arrow{transform:translateX(4px)}
+.cta-note{font-size:.88rem;color:var(--sage-light);margin-top:16px}
+.light .cta-note{color:var(--ink-soft)}
+.cta-note a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+/* ═══════════ 1 · HERO ═══════════ */
+.hero{min-height:100svh;display:flex;align-items:center;background:var(--night);padding:140px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 45% at 78% 22%, rgba(122,168,144,.07), transparent 65%),
+    radial-gradient(ellipse 80% 60% at 20% 90%, rgba(31,45,36,.55), transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:center;position:relative}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:48px}}
+.hero h1{margin:0 0 22px}
+.hero h1 .soft{display:block}
+.hero-sub{font-size:1.14rem;line-height:1.7;max-width:34em;margin-bottom:34px}
+.hero-scroll{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+  color:var(--sage-light);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.hero-scroll::after{content:"";display:block;width:1px;height:34px;background:var(--sage);margin:10px auto 0;opacity:.5;
+  animation:drip 2.4s var(--ease) infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* Uhr */
+.clock-card{text-align:center;position:relative;padding:40px 20px}
+.clock-time{font-weight:300;font-size:clamp(4rem,9vw,6.4rem);letter-spacing:.04em;color:var(--paper);
+  font-variant-numeric:tabular-nums;line-height:1;
+  text-shadow:0 0 60px rgba(122,168,144,.25)}
+.clock-time .colon{animation:blink 2s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
+.clock-caption{margin-top:18px;font-family:var(--font-serif);font-style:italic;font-size:1.08rem;color:var(--sage)}
+.clock-card::before{content:"";position:absolute;inset:-10% -18%;border-radius:50%;
+  background:radial-gradient(circle, rgba(122,168,144,.08), transparent 62%);
+  animation:breathe 7s ease-in-out infinite;pointer-events:none}
+@keyframes breathe{0%,100%{opacity:.6;transform:scale(.96)}50%{opacity:1;transform:scale(1.04)}}
+
+/* ═══════════ 2 · CHAOS ═══════════ */
+.sec-chaos{background:var(--bg)}
+.chaos-stage{--p:0;position:relative;margin:56px auto 0;max-width:820px}
+.chaos-words{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;position:relative;padding:26px 0}
+.chaos-words::before{content:"";position:absolute;left:6%;right:6%;top:50%;height:1px;background:var(--sage);
+  opacity:calc((var(--p) - .75)*4);transform:scaleX(var(--p));transition:none}
+.chip{position:relative;display:inline-block;
+  font-size:.92rem;font-weight:500;letter-spacing:.02em;color:var(--paper);
+  border:1px solid var(--line);border-radius:999px;padding:9px 18px;
+  background:rgba(31,45,36,.6);
+  transform:translate(calc(var(--dx)*(1 - var(--p))), calc(var(--dy)*(1 - var(--p)))) rotate(calc(var(--rot)*(1 - var(--p))));
+  opacity:calc(.4 + .6*var(--p));
+  filter:blur(calc(3px*(1 - var(--p))));
+  will-change:transform}
+.chaos-after{text-align:center;margin-top:34px;opacity:calc((var(--p) - .65)*2.9);transform:translateY(calc(14px*(1 - var(--p))))}
+.chaos-after p{max-width:38em;margin:0 auto}
+.chaos-kicker{margin-top:56px;text-align:center}
+.chaos-kicker p{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.25rem,2.6vw,1.7rem);color:var(--paper);line-height:1.5}
+.chaos-kicker .hl{color:var(--sage)}
+@media (prefers-reduced-motion:reduce){.chaos-stage{--p:1!important}}
+
+/* ═══════════ 3 · BLINDER FLECK ═══════════ */
+.sec-lens{background:var(--bg-2)}
+.lens-wrap{position:relative;margin:48px auto 0;max-width:720px;
+  font-family:var(--font-serif);font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.75;
+  cursor:crosshair}
+.lens-layer{color:var(--paper)}
+.lens-layer .key{color:var(--sage);font-style:italic}
+.lens-blur{filter:blur(5px);opacity:.5;user-select:none}
+.lens-sharp{position:absolute;inset:0;
+  clip-path:circle(110px at var(--mx) var(--my));
+  transition:--mx .18s linear,--my .18s linear}
+.lens-hint{text-align:center;margin-top:26px;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-light);opacity:.7}
+.lens-wrap.lens-auto .lens-sharp{animation:lenspath 14s ease-in-out infinite}
+@keyframes lenspath{
+  0%{--mx:18%;--my:12%}
+  20%{--mx:78%;--my:24%}
+  40%{--mx:30%;--my:48%}
+  60%{--mx:82%;--my:62%}
+  80%{--mx:38%;--my:86%}
+  100%{--mx:18%;--my:12%}
 }
+@media (prefers-reduced-motion:reduce){
+  .lens-blur{filter:none;opacity:1}
+  .lens-sharp{display:none}
+  .lens-hint{display:none}
+}
+
+/* ═══════════ 4 · STRATEGIN ═══════════ */
+.sec-about{background:var(--bg-3)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px}}
+.about-photo{position:relative}
+.about-photo img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.about-photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--line);border-radius:var(--radius);z-index:-1}
+.about-body h2{margin-bottom:20px}
+.about-body p{margin-bottom:18px}
+.about-points{list-style:none;margin:26px 0 0;display:grid;gap:14px}
+.about-points li{position:relative;padding-left:30px;color:var(--sage-light)}
+.about-points li::before{content:"";position:absolute;left:0;top:.55em;width:16px;height:1px;background:var(--sage)}
+.about-points li strong{color:var(--paper)}
+
+/* ═══════════ DÄMMERUNG ═══════════ */
+.dawn{height:30vh;min-height:180px;background:linear-gradient(180deg,var(--bg-3) 0%,#5A7263 55%,var(--paper) 100%)}
+
+/* ═══════════ 5 · METHODE ═══════════ */
+.sec-method{background:var(--paper)}
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:20px}
+@media (max-width:860px){.method-grid{grid-template-columns:1fr;gap:44px}}
+.method-body p{margin-bottom:18px}
+.method-claim{margin-top:28px;font-family:var(--font-serif);font-style:italic;font-size:1.22rem;color:var(--pine)}
+.axes{width:100%;max-width:440px;margin:0 auto;display:block}
+.axes .ring{fill:none;stroke:var(--pine);stroke-opacity:.25}
+.axes .spoke{stroke:var(--pine);stroke-opacity:.3}
+.axes .dot{fill:var(--pine)}
+.axes .axis-label{font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:.06em;fill:var(--ink)}
+.axes .core{font-family:var(--font-serif);font-style:italic;font-size:21px;fill:var(--pine)}
+
+/* ═══════════ 6 · WEG ═══════════ */
+.sec-weg{background:var(--morning)}
+.steps{margin-top:56px;position:relative;display:grid;gap:26px}
+.steps::before{content:"";position:absolute;left:31px;top:40px;bottom:40px;width:1px;background:var(--line-light)}
+@media (max-width:640px){.steps::before{left:23px}}
+.step{position:relative;display:grid;grid-template-columns:64px 1fr;gap:26px;
+  background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);
+  padding:34px 36px;box-shadow:0 10px 34px rgba(20,35,27,.06);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.step:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(20,35,27,.1)}
+@media (max-width:640px){.step{grid-template-columns:48px 1fr;padding:26px 22px;gap:18px}}
+.step-num{width:44px;height:44px;border-radius:50%;border:1px solid var(--pine);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:.95rem;color:var(--pine);background:var(--morning);position:relative;z-index:1}
+.step-q{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.25rem,2.4vw,1.6rem);color:var(--pine);margin-bottom:6px}
+.step-name{font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
+.step-name .tag{font-weight:500;letter-spacing:.02em;text-transform:none;color:var(--ink-soft)}
+.step p{margin-bottom:16px}
+.step-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.94rem;color:var(--pine);text-decoration:none;
+  border-bottom:1px solid transparent;transition:border-color .2s var(--ease)}
+.step-link:hover{border-color:var(--pine)}
+.weg-note{text-align:center;margin-top:34px;font-size:.95rem}
+
+/* ═══════════ 7 · STIMMEN ═══════════ */
+.sec-stimmen{background:var(--paper)}
+.big-quote{text-align:center;max-width:800px;margin:0 auto 70px}
+.big-quote blockquote{font-family:var(--font-serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.3;color:var(--pine)}
+.big-quote figcaption{margin-top:20px;font-size:.95rem;color:var(--ink-soft)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:860px){.testi-grid{grid-template-columns:1fr}}
+.testi{background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);padding:30px 28px;
+  display:flex;flex-direction:column;box-shadow:0 10px 34px rgba(20,35,27,.05)}
+.testi-mark{font-family:var(--font-serif);font-size:2.6rem;line-height:1;color:var(--sage)}
+.testi-quote{font-size:.97rem;line-height:1.65;flex:1;margin:8px 0 18px}
+.testi-author{font-weight:600;font-size:.92rem;color:var(--ink)}
+.testi-author span{font-weight:400;color:var(--ink-soft)}
+
+/* ═══════════ 8 · MORGEN ═══════════ */
+.sec-final{background:linear-gradient(180deg,var(--paper) 0%,var(--morning) 45%,#FBFDFB 100%);padding-bottom:130px}
+.final-inner{text-align:center;max-width:680px;margin:0 auto}
+.final-inner h2{margin-bottom:20px}
+.final-inner .lead{margin-bottom:38px}
+
+/* ═══════════ FOOTER ═══════════ */
+.footer{background:var(--night);padding:54px 0;font-size:.9rem}
+.footer-inner{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.footer p{color:var(--sage-light)}
+.footer a{color:var(--sage-light);text-decoration:none;border-bottom:1px solid var(--line);transition:color .2s var(--ease)}
+.footer a:hover{color:var(--paper)}
+.footer-legal{display:flex;gap:22px}
 </style>
 </head>
 <body>
 
 <!-- ═══ NAV ═══ -->
-<nav class="site-nav" aria-label="Hauptnavigation">
-  <div class="nav-inner">
-    <a href="/" class="nl-logo" aria-label="Nicole Lurz Startseite">
-      <span class="nl-name">Nicole <em>Lurz</em></span>
-      <span class="nl-sub">Heilpraktikerin · Mentorin</span>
-    </a>
-    <div class="nav-links">
-      <a href="#inner-shift" class="nav-link">Inner Shift</a>
-      <a href="/juni/" class="nav-cta">Blind Spot Check</a>
-    </div>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#top">Nicole <em>Lurz</em></a>
+    <nav class="nav-menu" aria-label="Hauptmenü">
+      <a class="nav-link" href="#ueber-mich">Über mich</a>
+      <a class="nav-link" href="https://nicole-lurz.de/bsc">Blind Spot Check</a>
+      <a class="nav-link" href="inner-shift.html">Inner Shift</a>
+      <a class="nav-link" href="https://nicole-lurz.de/business" data-swap="BUSINESS-LINK">Business</a>
+      <a class="nav-cta" href="https://nicole-lurz.de/bsc">Zum Blind Spot Check</a>
+      <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="mmenu" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </nav>
   </div>
-</nav>
+</header>
 
-<!-- ═══ HERO ═══ -->
+<div class="mmenu" id="mmenu">
+  <a href="#ueber-mich">Über mich</a>
+  <a href="https://nicole-lurz.de/bsc">Blind Spot Check</a>
+  <a href="inner-shift.html">Inner Shift</a>
+  <a href="https://nicole-lurz.de/business" data-swap="BUSINESS-LINK">Business</a>
+  <a class="mmenu-cta" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Mach den Selbsttest →</a>
+</div>
+
+<!-- ═══ 1 · HERO: NACHTS UM DREI ═══ -->
 <section class="hero">
-  <div class="hero-text">
-    <div class="eyebrow reveal">Heilpraktikerin mit BWL-Hirn</div>
-    <h1 class="reveal">Ich helfe dir zu verstehen, was wirklich in deinem Körper <em>passiert.</em></h1>
-    <p class="hero-lede reveal">Chronische Erschöpfung, hormonelle Beschwerden, ein Gefühl, das du nicht benennen kannst. Ich schaue dorthin, wo andere aufgehört haben zu suchen. Ganzheitlich, messbar, mit einem klaren Plan.</p>
-    <div class="hero-actions reveal">
-      <a href="/juni/" class="btn btn-primary">Blind Spot Check buchen</a>
-      <p class="hero-cta-note">
-        <strong>Nur noch bis 30. Juni</strong> zum Preis von 330 €.<br>
-        Ab Juli als Mini-Programm mit 14-Tage-Begleitung und Check-in.
-      </p>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Online-Mentoring · Für Unternehmerinnen ab 50</span>
+      <h1>Du hast alles im Griff. <em class="soft">Nur deinen Körper nicht mehr.</em></h1>
+      <p class="hero-sub">Nachts um drei bist du wach und fragst dich, warum dein Körper nicht mehr mitspielt. Ich helfe dir zu verstehen, was sich gerade verändert. Und wie du Klarheit und Kontrolle über Energie, Gewicht und Leistungsfähigkeit zurückgewinnst.</p>
+      <a class="cta cta-primary" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Mach den Selbsttest <span class="arrow">→</span></a>
+      <p class="cta-note">Kostenfrei · 12 Fragen · Deine Standortbestimmung</p>
+    </div>
+    <div class="clock-card" aria-hidden="true">
+      <div class="clock-time"><span id="clock-h">03</span><span class="colon">:</span><span id="clock-m">12</span></div>
+      <p class="clock-caption">Du kennst diese Uhrzeit.</p>
     </div>
   </div>
-  <div class="hero-photo">
-    <img src="images/nicole-about.jpg" alt="Nicole Lurz, Heilpraktikerin mit BWL-Hirn" loading="eager" />
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ═══ 2 · DAS CHAOS ═══ -->
+<section class="sec-chaos" id="problem">
+  <div class="container">
+    <div class="center narrow" style="margin:0 auto">
+      <span class="eyebrow reveal">Das eigentliche Problem</span>
+      <h2 class="reveal">Es fehlt dir nicht an <em>Wissen</em>.</h2>
+      <p class="lead reveal" style="margin-top:20px">Blutwerte, Hormonstatus, Bücher, Podcasts. Du hast mehr recherchiert als so mancher Arzt. Und trotzdem wachst du nachts auf.</p>
+    </div>
+
+    <div class="chaos-stage" id="chaos">
+      <div class="chaos-words">
+        <span class="chip" style="--dx:-140px;--dy:-90px;--rot:-9deg">Blutwerte</span>
+        <span class="chip" style="--dx:110px;--dy:-130px;--rot:7deg">Hormone</span>
+        <span class="chip" style="--dx:-60px;--dy:120px;--rot:5deg">Supplements</span>
+        <span class="chip" style="--dx:190px;--dy:70px;--rot:-6deg">Darmaufbau</span>
+        <span class="chip" style="--dx:-210px;--dy:40px;--rot:8deg">Intervallfasten</span>
+        <span class="chip" style="--dx:70px;--dy:150px;--rot:-8deg">Ernährung</span>
+        <span class="chip" style="--dx:-100px;--dy:-150px;--rot:6deg">Sport</span>
+        <span class="chip" style="--dx:230px;--dy:-60px;--rot:-5deg">Meditation</span>
+        <span class="chip" style="--dx:-180px;--dy:-30px;--rot:-7deg">Schlafhygiene</span>
+        <span class="chip" style="--dx:150px;--dy:110px;--rot:9deg">Biohacking</span>
+      </div>
+      <div class="chaos-after">
+        <p>Das Problem ist nicht, dass diese Maßnahmen falsch wären. Sie setzen einzeln an, ohne die Grundlage zu kennen, auf der sie überhaupt wirken können.</p>
+      </div>
+    </div>
+
+    <div class="chaos-kicker reveal">
+      <p>Was dir fehlt, ist nicht mehr Information.<br><span class="hl">Was dir fehlt, ist der Zusammenhang.</span></p>
+    </div>
   </div>
 </section>
 
-<!-- ═══ INNER SHIFT ═══ -->
-<section class="inner-shift" id="inner-shift" aria-labelledby="is-heading">
-  <div class="wrap">
-    <div class="is-grid">
+<!-- ═══ 3 · DER BLINDE FLECK ═══ -->
+<section class="sec-lens" id="blinder-fleck">
+  <div class="container">
+    <div class="center narrow" style="margin:0 auto">
+      <span class="eyebrow reveal">Der blinde Fleck</span>
+      <h2 class="reveal">Manches sieht man erst, wenn jemand <em>scharf stellt</em>.</h2>
+    </div>
+
+    <div class="lens-wrap reveal" id="lens">
+      <p class="lens-layer lens-blur" aria-hidden="true">Du warst bei Ärzten. Die Blutwerte sind unauffällig. Du hast Empfehlungen gesammelt, Listen geschrieben, Neues ausprobiert. Jeder hat ein Puzzleteil gesehen. Niemand das ganze Bild. Zwischen all den Befunden liegt die Stelle, die keiner untersucht hat: die Verbindung. Ich sehe den blinden Fleck. Und ich bringe die Fäden wieder zusammen, wenn du den Wald vor lauter Bäumen nicht mehr siehst.</p>
+      <p class="lens-layer lens-sharp">Du warst bei Ärzten. Die Blutwerte sind unauffällig. Du hast Empfehlungen gesammelt, Listen geschrieben, Neues ausprobiert. Jeder hat ein Puzzleteil gesehen. Niemand das ganze Bild. Zwischen all den Befunden liegt die Stelle, die keiner untersucht hat: die Verbindung. <span class="key">Ich sehe den blinden Fleck.</span> Und ich bringe die Fäden wieder zusammen, wenn du den Wald vor lauter Bäumen nicht mehr siehst.</p>
+    </div>
+    <p class="lens-hint" id="lens-hint">Beweg die Maus über den Text</p>
+  </div>
+</section>
+
+<!-- ═══ 4 · STRATEGIN ═══ -->
+<section class="sec-about" id="ueber-mich">
+  <div class="container about-grid">
+    <div class="about-photo reveal">
+      <img src="images/nicole-about.jpg" alt="Nicole Lurz" loading="lazy">
+    </div>
+    <div class="about-body">
+      <span class="eyebrow reveal">Wer dich hier begleitet</span>
+      <h2 class="reveal">Du brauchst keine Motivation. <em>Du brauchst eine Strategin.</em></h2>
+      <p class="reveal">Ich bin Nicole Lurz, Heilpraktikerin mit eigener Praxis und Mentorin für Unternehmerinnen, deren Körper sich verändert, während das Business weiterläuft, als wäre nichts.</p>
+      <p class="reveal">Viele Frauen, die zu mir kommen, haben jahrelang gehört, es sei alles in Ordnung. Sie haben Befunde, Empfehlungen und gute Vorsätze gesammelt. Was ihnen niemand gegeben hat: eine Einordnung, die zu ihrem Fall passt. Genau da beginnt meine Arbeit.</p>
+      <ul class="about-points">
+        <li class="reveal"><strong>Du wirst ernst genommen.</strong> Auch wenn alle Werte unauffällig sind, ist das, was du spürst, real.</li>
+        <li class="reveal"><strong>Du bekommst keine 20 To-dos.</strong> Sondern den individuellen Ansatzpunkt, an dem sich bei dir wirklich etwas bewegt.</li>
+        <li class="reveal"><strong>Du hast jemanden an der Hand.</strong> Ich sage dir nicht, was du hören willst. Ich sage dir, was du wissen musst.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DÄMMERUNG ═══ -->
+<div class="dawn" aria-hidden="true"></div>
+
+<!-- ═══ 5 · METHODE ═══ -->
+<section class="sec-method light" id="methode">
+  <div class="container">
+    <div class="center narrow" style="margin:0 auto 26px">
+      <span class="eyebrow reveal">Meine Arbeitsweise</span>
+      <h2 class="reveal">Ich sehe nicht nur Symptome. <em>Ich sehe Systeme.</em></h2>
+    </div>
+    <div class="method-grid">
       <div class="reveal">
-        <div class="eyebrow">The Inner Shift · 1:1-Begleitung</div>
-        <h2 id="is-heading">Wenn du <em>tiefer</em> gehen willst.</h2>
-        <div class="is-text" style="margin-top:24px">
-          <p>Der Blind Spot Check zeigt dir, wo dein System aus dem Takt ist. The Inner Shift ist der Prozess danach. Zwölf Wochen, in denen wir genau das verändern.</p>
-          <p>Sechs 1:1-Sessions, Check-ins dazwischen, justiert auf Basis der Impulse die dein Körper gerade braucht. So lange, bis dein Nervensystem wieder mit dir arbeitet, nicht gegen dich.</p>
-        </div>
+        <svg class="axes" viewBox="0 0 440 440" role="img" aria-label="360-Grad-Blick: Nervensystem, Hormonbalance, Stoffwechsel und Immunsystem greifen ineinander">
+          <circle class="ring" cx="220" cy="220" r="150" stroke-width="1"/>
+          <circle class="ring" cx="220" cy="220" r="104" stroke-width="1" stroke-dasharray="3 6"/>
+          <line class="spoke" x1="220" y1="70" x2="220" y2="150" stroke-width="1"/>
+          <line class="spoke" x1="220" y1="290" x2="220" y2="370" stroke-width="1"/>
+          <line class="spoke" x1="70" y1="220" x2="150" y2="220" stroke-width="1"/>
+          <line class="spoke" x1="290" y1="220" x2="370" y2="220" stroke-width="1"/>
+          <circle class="dot" cx="220" cy="70" r="4"/>
+          <circle class="dot" cx="220" cy="370" r="4"/>
+          <circle class="dot" cx="70" cy="220" r="4"/>
+          <circle class="dot" cx="370" cy="220" r="4"/>
+          <text class="axis-label" x="220" y="48" text-anchor="middle">NERVENSYSTEM</text>
+          <text class="axis-label" x="220" y="400" text-anchor="middle">STOFFWECHSEL</text>
+          <text class="axis-label" x="58" y="200" text-anchor="middle">IMMUN-</text>
+          <text class="axis-label" x="58" y="218" text-anchor="middle">SYSTEM</text>
+          <text class="axis-label" x="382" y="200" text-anchor="middle">HORMON-</text>
+          <text class="axis-label" x="382" y="218" text-anchor="middle">BALANCE</text>
+          <text class="core" x="220" y="228" text-anchor="middle">360°</text>
+        </svg>
       </div>
-      <div class="is-card reveal">
-        <div class="is-meta">
-          <div class="is-meta-item">
-            <span class="is-meta-label">Format</span>
-            <span class="is-meta-value">VIP 1:1</span>
-          </div>
-          <div class="is-meta-item">
-            <span class="is-meta-label">Dauer</span>
-            <span class="is-meta-value">12 Wochen</span>
-          </div>
-          <div class="is-meta-item">
-            <span class="is-meta-label">Start</span>
-            <span class="is-meta-value">laufend</span>
-          </div>
-        </div>
-        <h3>Was im Programm enthalten ist.</h3>
-        <ul class="is-features">
-          <li>6 × 1:1-Sessions (je 60 Minuten, alle zwei Wochen)</li>
-          <li>5–6 Check-ins per WhatsApp dazwischen</li>
-          <li>Aufbauend auf deinem Blind Spot Check</li>
-          <li>Naturheilkundliche Impulse &amp; Nervensystemarbeit</li>
-        </ul>
-        <a href="/inner-shift.html" class="btn btn-ghost" style="width:100%;display:block">Mehr erfahren</a>
+      <div class="method-body">
+        <p class="reveal">Dein Körper ist keine Sammlung von Einzelbaustellen. Vier Systeme greifen ineinander: Nervensystem, Hormonbalance, Stoffwechsel, Immunsystem. Verändert sich eines, geraten die anderen in Bewegung.</p>
+        <p class="reveal">Deshalb greifen Einzelmaßnahmen so oft ins Leere. Und deshalb beginnt jede Zusammenarbeit mit mir mit dem Blick auf das Ganze: 360 Grad statt Symptom für Symptom. Erst wenn klar ist, wo dein System aus der Balance geraten ist, entscheidet sich, welcher Schritt bei dir der erste sein muss.</p>
+        <p class="method-claim reveal">High Performance beginnt im Nervensystem.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ KONTAKT ═══ -->
-<section class="kontakt" id="kontakt" aria-labelledby="kontakt-heading">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="eyebrow">Kontakt</div>
-      <h2 id="kontakt-heading">Du hast <em>Fragen?</em></h2>
+<!-- ═══ 6 · DEIN WEG ═══ -->
+<section class="sec-weg light" id="weg">
+  <div class="container narrow">
+    <div class="center">
+      <span class="eyebrow reveal">Dein Weg</span>
+      <h2 class="reveal">Drei Stufen. <em>Eine Logik.</em></h2>
+      <p class="lead reveal" style="margin-top:20px">Jede Stufe beantwortet genau eine Frage. Wo du einsteigst, hängt davon ab, wo du gerade stehst.</p>
     </div>
-    <div class="kontakt-grid">
-      <div class="kontakt-text reveal">
-        <p>Schreib mir. Ich antworte persönlich, werktags innerhalb von 24 Stunden. Wenn du noch nicht sicher bist, ob mein Ansatz zu dir passt, ist ein kurzer Austausch oft der einfachste erste Schritt.</p>
-      </div>
-      <div class="kontakt-links reveal">
-        <a href="#" class="kontakt-link" id="mail-link" data-u="info" data-d="nicole-lurz.de" rel="noopener">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <div>
-            <div class="kl-label">E-Mail</div>
-            <div class="kl-value" id="mail-value">Klick zum Anzeigen</div>
-          </div>
-        </a>
-        <a href="https://wa.me/4917993832388" class="kontakt-link" target="_blank" rel="noopener">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          <div>
-            <div class="kl-label">WhatsApp</div>
-            <div class="kl-value">Direkt schreiben</div>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/nicole.lurz/" class="kontakt-link" target="_blank" rel="noopener">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <div>
-            <div class="kl-label">Instagram</div>
-            <div class="kl-value">@nicole.lurz</div>
-          </div>
-        </a>
-      </div>
+
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <p class="step-q">„Wo stehe ich?“</p>
+          <p class="step-name">Der Selbsttest <span class="tag">· kostenfrei</span></p>
+          <p>12 Fragen, wenige Minuten. Der System-Kompass zeigt dir, wo dein Körper gerade steht und welches deiner Systeme am lautesten ruft.</p>
+          <a class="step-link" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Zum Selbsttest →</a>
+        </div>
+      </article>
+      <article class="step reveal">
+        <div class="step-num">02</div>
+        <div>
+          <p class="step-q">„Warum stehe ich hier?“</p>
+          <p class="step-name">Der Blind Spot Check</p>
+          <p>Deine Befunde, deine Geschichte, deine bisherigen Versuche: alle Puzzleteile kommen auf einen Tisch. Du bekommst den Zusammenhang, der dir bisher gefehlt hat, und eine klare Prioritäten-Roadmap statt einer weiteren Liste.</p>
+          <a class="step-link" href="https://nicole-lurz.de/bsc">Mehr erfahren →</a>
+        </div>
+      </article>
+      <article class="step reveal">
+        <div class="step-num">03</div>
+        <div>
+          <p class="step-q">„Wie komme ich an einen neuen Ort?“</p>
+          <p class="step-name">The Inner Shift <span class="tag">· 1:1-Begleitung</span></p>
+          <p>Die intensive Begleitung für den Weg selbst: Schritt für Schritt, mit mir an deiner Seite, bis Energie und Leistungsfähigkeit wieder dir gehören.</p>
+          <a class="step-link" href="inner-shift.html">Mehr erfahren →</a>
+        </div>
+      </article>
     </div>
+
+    <p class="weg-note reveal">Der Selbsttest ist der einfachste Einstieg. Wenn du deine Befunde längst gesammelt hast und jetzt den Zusammenhang willst, starte direkt mit dem Blind Spot Check.</p>
+  </div>
+</section>
+
+<!-- ═══ 7 · STIMMEN ═══ -->
+<section class="sec-stimmen light" id="stimmen">
+  <div class="container">
+    <figure class="big-quote reveal">
+      <blockquote>„Warum bin ich nicht selbst darauf gekommen?“</blockquote>
+      <figcaption>Der Satz, den ich in meiner Arbeit am häufigsten höre.</figcaption>
+    </figure>
+    <div class="testi-grid">
+      <article class="testi reveal">
+        <span class="testi-mark" aria-hidden="true">„</span>
+        <p class="testi-quote">Es war so viel dabei, was mir vorher nicht bewusst war. Nicole hat mir Zusammenhänge gezeigt, die kein Arzt gesehen hat, und konkrete Wege, die ich selbst gehen kann.</p>
+        <p class="testi-author">Verena <span>· Klientin</span></p>
+      </article>
+      <article class="testi reveal">
+        <span class="testi-mark" aria-hidden="true">„</span>
+        <p class="testi-quote">Die Zusammenarbeit mit Nicole hat mir eine völlig neue Perspektive auf meine Situation gegeben. Ihre einfühlsame und gleichzeitig klare Art hat mir geholfen, meinen Fokus zu stärken und Gewohnheiten zu verändern, die mich jahrelang ausgebremst haben.</p>
+        <p class="testi-author">Imke <span>· Solopreneurin</span></p>
+      </article>
+      <article class="testi reveal">
+        <span class="testi-mark" aria-hidden="true">„</span>
+        <p class="testi-quote">Nicoles ganzheitliche Herangehensweise hat mir geholfen, körperliche Beschwerden zu lindern und mentale Blockaden zu überwinden. Professionell, empathisch, auf Augenhöhe.</p>
+        <p class="testi-author">Anja T. <span>· Yogalehrerin &amp; Lifecoach</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8 · MORGEN ═══ -->
+<section class="sec-final light">
+  <div class="container final-inner">
+    <span class="eyebrow reveal">Der nächste Schritt</span>
+    <h2 class="reveal">Die Nacht um drei muss nicht <em>dein Dauerzustand</em> bleiben.</h2>
+    <p class="lead reveal">Der Selbsttest zeigt dir in wenigen Minuten, wo du stehst. Kostenfrei, ohne Vorbereitung, ohne Verpflichtung.</p>
+    <a class="cta cta-dark reveal" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Mach den Selbsttest <span class="arrow">→</span></a>
+    <p class="cta-note reveal">12 Fragen · Ergebnis sofort · Kein Newsletter-Zwang</p>
+    <p class="cta-note reveal">Deine Befunde sind schon beisammen? Dann starte direkt mit dem <a href="https://nicole-lurz.de/bsc">Blind Spot Check</a>.</p>
   </div>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        &copy; <span id="year"></span> Nicole <em>Lurz</em>
-      </div>
-      <nav class="footer-links" aria-label="Rechtliches">
-        <a href="/impressum/">Impressum</a>
-        <a href="/datenschutz/">Datenschutz</a>
-      </nav>
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© 2026 Nicole Lurz · Gesundheitsstrategin</p>
+    <div class="footer-legal">
+      <a href="#" data-swap="IMPRESSUM-LINK">Impressum</a>
+      <a href="#" data-swap="DATENSCHUTZ-LINK">Datenschutz</a>
     </div>
   </div>
 </footer>
 
 <script>
-// Reveal-Animationen
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-}, {threshold: 0.12});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Spam-Schutz: E-Mail erst beim Hover/Klick zusammensetzen
 (function(){
-  const link = document.getElementById('mail-link');
-  const val = document.getElementById('mail-value');
-  if(!link) return;
-  let revealed = false;
-  function reveal(){
-    if(revealed) return;
-    const u = link.dataset.u;
-    const d = link.dataset.d;
-    const addr = u + '@' + d;
-    link.href = 'mailto:' + addr;
-    val.textContent = addr;
-    revealed = true;
-  }
-  link.addEventListener('mouseenter', reveal);
-  link.addEventListener('focus', reveal);
-  link.addEventListener('touchstart', reveal, {passive:true});
-  link.addEventListener('click', function(e){
-    if(!revealed){ e.preventDefault(); reveal(); setTimeout(()=>{ window.location.href = link.href; }, 50); }
-  });
-})();
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Aktuelles Jahr
-document.getElementById('year').textContent = new Date().getFullYear();
+  /* Nav */
+  var nav = document.getElementById('nav');
+  var onScrollNav = function(){ nav.classList.toggle('scrolled', window.scrollY > 24); };
+  window.addEventListener('scroll', onScrollNav, {passive:true});
+  onScrollNav();
+
+  /* Mobile-Menü */
+  var burger = document.getElementById('burger');
+  var mmenu = document.getElementById('mmenu');
+  if(burger && mmenu){
+    var setMenu = function(open){
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      mmenu.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+    mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ setMenu(false); } });
+  }
+
+  /* Reveal */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* Uhr: tickt in Echtzeit ab 03:12 weiter */
+  var mEl = document.getElementById('clock-m');
+  var minutes = 12;
+  if(!reduced){
+    setInterval(function(){
+      minutes = (minutes + 1) % 60;
+      mEl.textContent = String(minutes).padStart(2,'0');
+    }, 60000);
+  }
+
+  /* Chaos → Ordnung */
+  var chaos = document.getElementById('chaos');
+  if(chaos && !reduced){
+    var ticking = false;
+    var updateChaos = function(){
+      ticking = false;
+      var r = chaos.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var p = (vh * .88 - r.top) / (vh * .62);
+      p = Math.max(0, Math.min(1, p));
+      chaos.style.setProperty('--p', p.toFixed(3));
+    };
+    window.addEventListener('scroll', function(){
+      if(!ticking){ ticking = true; requestAnimationFrame(updateChaos); }
+    }, {passive:true});
+    updateChaos();
+  } else if(chaos){
+    chaos.style.setProperty('--p', 1);
+  }
+
+  /* Blinder-Fleck-Linse */
+  var lens = document.getElementById('lens');
+  var hint = document.getElementById('lens-hint');
+  if(lens && !reduced){
+    var canHover = window.matchMedia('(hover: hover)').matches;
+    if(canHover){
+      lens.addEventListener('pointermove', function(ev){
+        var r = lens.getBoundingClientRect();
+        var x = ((ev.clientX - r.left) / r.width) * 100;
+        var y = ((ev.clientY - r.top) / r.height) * 100;
+        lens.style.setProperty('--mx', x.toFixed(1) + '%');
+        lens.style.setProperty('--my', y.toFixed(1) + '%');
+      });
+    } else {
+      /* Ohne Maus wandert die Linse von selbst */
+      lens.classList.add('lens-auto');
+      if(hint) hint.textContent = 'Die Linse wandert. Genau so arbeite ich.';
+    }
+  }
+})();
 </script>
 </body>
 </html>
