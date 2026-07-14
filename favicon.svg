@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <style type="text/css"><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,600&display=swap');
+      .nl-mono { font-family: 'Spectral', Georgia, 'Times New Roman', serif; font-size: 300px; font-weight: 600; font-style: italic; }
+    ]]></style>
+  </defs>
+  <rect width="512" height="512" fill="#0F1A14"/>
+  <text x="256" y="345" text-anchor="middle" class="nl-mono" fill="#7AA890">N</text>
+</svg>
