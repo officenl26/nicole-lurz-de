@@ -177,6 +177,13 @@ section{padding:110px 0;position:relative}
   background:radial-gradient(circle, rgba(122,168,144,.08), transparent 62%);
   animation:breathe 7s ease-in-out infinite;pointer-events:none}
 @keyframes breathe{0%,100%{opacity:.6;transform:scale(.96)}50%{opacity:1;transform:scale(1.04)}}
+.hero-photo{position:relative}
+.hero-photo>img{width:100%;height:auto;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.35);display:block}
+.hero-clock{position:absolute;left:16px;bottom:16px;background:rgba(11,20,15,.68);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:12px;padding:11px 15px;text-align:left}
+.hero-clock-time{font-weight:300;font-size:1.9rem;letter-spacing:.04em;color:var(--paper);font-variant-numeric:tabular-nums;line-height:1;text-shadow:0 0 40px rgba(122,168,144,.3)}
+.hero-clock-time .colon{animation:blink 2s steps(1) infinite}
+.hero-clock-caption{margin-top:4px;font-family:var(--font-serif);font-style:italic;font-size:.82rem;color:var(--sage)}
+@media (max-width:860px){.hero-photo{max-width:340px;margin:0 auto}}
 
 /* ═══════════ 2 · CHAOS ═══════════ */
 .sec-chaos{background:var(--bg)}
@@ -281,6 +288,11 @@ section{padding:110px 0;position:relative}
 
 /* ═══════════ 7 · STIMMEN ═══════════ */
 .sec-stimmen{background:var(--paper)}
+.sec-szenen{background:var(--morning)}
+.szenen{list-style:none;max-width:600px;margin:16px auto 0;text-align:left}
+.szenen li{position:relative;padding:14px 0 14px 32px;border-bottom:1px solid var(--line-light);font-size:1.05rem;line-height:1.55;color:var(--ink)}
+.szenen li:last-child{border-bottom:none}
+.szenen li::before{content:"";position:absolute;left:2px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--pine)}
 .big-quote{text-align:center;max-width:800px;margin:0 auto 70px}
 .big-quote blockquote{font-family:var(--font-serif);font-style:italic;font-weight:500;
   font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.3;color:var(--pine)}
@@ -344,9 +356,12 @@ section{padding:110px 0;position:relative}
       <a class="cta cta-primary" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Mach den Selbsttest <span class="arrow">→</span></a>
       <p class="cta-note">Kostenfrei · 12 Fragen · Deine Standortbestimmung</p>
     </div>
-    <div class="clock-card" aria-hidden="true">
-      <div class="clock-time"><span id="clock-h">03</span><span class="colon">:</span><span id="clock-m">12</span></div>
-      <p class="clock-caption">Du kennst diese Uhrzeit.</p>
+    <div class="hero-photo reveal">
+      <img src="images/nicole-hero.jpg" alt="Nicole Lurz, Heilpraktikerin und Diplom-Betriebswirtin" width="720" height="966">
+      <div class="hero-clock">
+        <div class="hero-clock-time"><span id="clock-h">03</span><span class="colon">:</span><span id="clock-m">12</span></div>
+        <p class="hero-clock-caption">Du kennst diese Uhrzeit.</p>
+      </div>
     </div>
   </div>
   <div class="hero-scroll">Scroll</div>
@@ -529,6 +544,22 @@ section{padding:110px 0;position:relative}
         <p class="testi-author">Anja T. <span>· Yogalehrerin &amp; Lifecoach</span></p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ═══ 7.5 · MORGEN-SZENEN ═══ -->
+<section class="sec-szenen light">
+  <div class="container narrow center">
+    <span class="eyebrow reveal">Worum es eigentlich geht</span>
+    <h2 class="reveal">Am Ende geht es nicht um noch einen Befund. Es geht um deinen <em>Dienstagmorgen</em>.</h2>
+    <p class="lead reveal" style="margin-top:20px">Um die Version deines Alltags, die sich gerade weit weg anfühlt:</p>
+    <ul class="szenen reveal">
+      <li>Du wachst ausgeschlafen auf, weil die Nacht endlich wieder eine Nacht war.</li>
+      <li>Du ziehst ein volles Meeting durch, ohne dass dich am Nachmittag das Loch erwischt.</li>
+      <li>Du entscheidest mit dem klaren Kopf, auf den du dich früher blind verlassen hast.</li>
+      <li>Du spürst wieder, dass dein Körper mit deinem Anspruch mithält, statt gegen ihn zu arbeiten.</li>
+    </ul>
+    <p class="reveal" style="margin-top:26px">Nichts davon kommt auf Knopfdruck. Aber alles beginnt an derselben Stelle: mit Klarheit darüber, an welcher Schraube du bei dir wirklich drehen musst.</p>
   </div>
 </section>
 
