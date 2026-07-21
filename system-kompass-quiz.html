@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Der System-Kompass · Nicole Lurz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f9f7f4;
+  --surface:#fff;
+  --ink:#1a1a18;
+  --ink2:#4a4a42;
+  --ink3:#8a8a7e;
+  --forest:#3D5A2E;
+  --sage:#7AA890;
+  --mist:#A8BAB0;
+  --dark:#1F2D24;
+  --gold:#b59a5a;
+  --gold-light:#e8dfc8;
+  --line:#e4e0d8;
+  --blue:#1B4C93;
+  --blue-dark:#153d78;
+  --pill-bg:#f0ece4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+main{flex:1}
+.wrap{max-width:700px;margin:0 auto;padding:0 28px}
+
+/* HEADER */
+.site-header{padding:20px 28px;display:flex;justify-content:center;border-bottom:1px solid var(--line);background:var(--bg);}
+.logo-text{font-family:'Spectral',serif;font-size:.95rem;font-weight:400;color:var(--ink3);letter-spacing:.06em;}
+
+/* PROGRESS */
+.pb-wrap{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:13px 28px 11px;}
+.pb-track{height:2px;background:var(--line);border-radius:1px;overflow:hidden}
+.pb-fill{height:100%;width:0;background:var(--gold);border-radius:1px;transition:width .35s ease}
+.pb-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-top:7px;font-weight:500}
+.hidden{display:none}
+
+/* ===== STORY INTRO (NEU) ===== */
+.story{max-width:700px;margin:0 auto;padding:0 28px}
+.story-step{padding:64px 0;text-align:center;border-bottom:1px solid var(--line)}
+.story-step:last-of-type{border-bottom:none}
+.story-eyebrow{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
+.story-step h2{font-family:'Spectral',serif;font-size:clamp(1.7rem,5vw,2.3rem);font-weight:600;color:var(--ink);line-height:1.28;max-width:560px;margin:0 auto 18px}
+.story-step h2 em{color:var(--gold);font-style:italic;font-weight:600}
+.story-step p{font-size:1rem;color:var(--ink2);max-width:480px;margin:0 auto;line-height:1.75}
+.story-arrow{display:flex;justify-content:center;margin-top:28px;color:var(--mist)}
+.story-arrow svg{width:20px;height:20px}
+
+/* Hero / step 1 */
+.hero-step{padding:76px 0 60px}
+.intro-badge{display:inline-block;border:1px solid var(--line);border-radius:40px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);padding:6px 18px;margin-bottom:36px;font-weight:500}
+.hero-step h1{font-family:'Spectral',serif;font-size:clamp(2.1rem,6vw,3.2rem);font-weight:700;line-height:1.16;color:var(--ink);max-width:600px;margin:0 auto 24px}
+.hero-step h1 em{color:var(--gold);font-style:italic;font-weight:600}
+.hero-step .lead{font-size:1.02rem;color:var(--ink2);max-width:480px;margin:0 auto;line-height:1.75}
+
+/* Blind spot story block */
+.blindspot-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:30px 28px;margin-top:8px;text-align:left}
+.blindspot-box p{font-size:.92rem;color:var(--ink2);margin-bottom:12px}
+.blindspot-box p:last-child{margin-bottom:0}
+.blindspot-box .lead-line{font-family:'Spectral',serif;font-style:italic;font-size:1.15rem;color:var(--ink);margin-bottom:14px}
+
+/* Three systems model showcase */
+.model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;text-align:left}
+@media(max-width:560px){.model-grid{grid-template-columns:1fr}}
+.model-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 20px}
+.model-card svg{width:32px;height:32px;margin-bottom:14px;color:var(--gold)}
+.model-card h3{font-family:'Spectral',serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:8px}
+.model-card p{font-size:.84rem;color:var(--ink3);line-height:1.6}
+
+/* CTA into quiz */
+.story-cta{padding:60px 0 80px;text-align:center}
+.story-cta h2{font-family:'Spectral',serif;font-size:1.9rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.story-cta p{font-size:.95rem;color:var(--ink2);max-width:440px;margin:0 auto 32px;line-height:1.7}
+.stats-pill{display:inline-flex;align-items:center;gap:0;background:var(--pill-bg);border-radius:50px;padding:14px 28px;margin-bottom:34px}
+.stat{text-align:center;padding:0 20px}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat-num{font-family:'Spectral',serif;font-size:1.4rem;font-weight:600;color:var(--ink);line-height:1}
+.stat-label{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);margin-top:5px;font-weight:500}
+.intro-privacy{font-size:.74rem;color:var(--ink3);margin-top:28px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+/* BUTTONS */
+.btn{display:inline-block;font-family:'Inter',sans-serif;font-weight:600;font-size:.93rem;letter-spacing:.02em;padding:16px 42px;border-radius:6px;border:none;cursor:pointer;transition:background .18s,transform .12s;text-decoration:none;}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#a08845;transform:translateY(-1px)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-forest{background:var(--forest);color:#fff}
+.btn-forest:hover{background:#2e4522;transform:translateY(-1px)}
+.btn-sm{padding:12px 26px;font-size:.86rem}
+
+/* QUESTIONS */
+.q-wrap{padding:52px 0 48px;animation:up .3s ease}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q-num{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+.q-title{font-family:'Spectral',serif;font-size:1.8rem;font-weight:600;color:var(--ink);line-height:1.2;margin-bottom:8px}
+.q-hint{font-size:.83rem;color:var(--ink3);margin-bottom:28px}
+.opt{display:block;width:100%;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:15px 20px;margin-bottom:10px;font-family:'Inter',sans-serif;font-size:.91rem;line-height:1.55;color:var(--ink2);cursor:pointer;transition:border-color .14s,background .14s;}
+.opt:hover{border-color:var(--gold);background:#fdfbf7}
+.opt.sel{border-color:var(--gold);background:#fdf8ed;color:var(--ink);box-shadow:0 0 0 1px var(--gold)}
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+.back-btn{background:none;border:none;font-family:'Inter',sans-serif;font-size:.83rem;color:var(--ink3);cursor:pointer;padding:8px 0}
+.back-btn:hover{color:var(--ink)}
+
+/* RESULT */
+.result-wrap{padding:48px 0 60px;animation:up .35s ease}
+.result-top{text-align:center;margin-bottom:44px}
+.result-badge{display:inline-block;border:1px solid var(--line);border-radius:40px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);padding:5px 16px;margin-bottom:18px;font-weight:500}
+.result-top h2{font-family:'Spectral',serif;font-size:2.6rem;font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:8px}
+.result-top h2 em{color:var(--gold);font-style:italic}
+.result-top .sub{font-size:.9rem;color:var(--ink3)}
+
+.sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+@media(max-width:540px){.sys-grid{grid-template-columns:1fr}}
+.sys-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px 14px;text-align:center}
+.sys-card.is-main{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.sys-card svg{width:36px;height:36px;margin:0 auto 12px;display:block}
+.sys-name{font-family:'Spectral',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:12px}
+.main-tag{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.pills{display:flex;flex-direction:column;gap:5px}
+.pill{font-size:.67rem;font-weight:600;padding:4px 10px;border-radius:4px;background:#f0ede8;color:#aaa;letter-spacing:.04em}
+.pill.on{color:#fff}
+.pill.on.g{background:var(--forest)}
+.pill.on.r{background:#b5543f}
+.pill.on.gr{background:var(--mist);color:var(--ink2)}
+
+.scope-note{font-size:.82rem;color:var(--ink3);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:32px;line-height:1.7}
+
+.block{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px 24px;margin-bottom:16px}
+.block h3{font-family:'Spectral',serif;font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:10px}
+.state-tag{display:inline-block;font-size:.67rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:4px;color:#fff;margin-bottom:12px}
+.state-tag.g{background:var(--forest)}
+.state-tag.r{background:#b5543f}
+.state-tag.gr{background:var(--mist);color:var(--ink2)}
+.block p{font-size:.9rem;color:var(--ink2);line-height:1.72;margin-bottom:10px}
+.block p:last-child{margin-bottom:0}
+
+.block-regen{border-left:4px solid var(--gold);background:#fdf8ef}
+.block-regen h3{color:#7a6030}
+.block-hormone{background:var(--dark);border:none}
+.block-hormone h3{color:var(--sage)}
+.block-hormone p{color:rgba(232,240,232,.78)}
+.block-trigger{background:var(--pill-bg);border-color:var(--line)}
+
+/* ===== HEBEL-BLOCK (NEU, konzeptionell) ===== */
+.block-hebel{background:var(--surface);border:1.5px solid var(--gold);border-radius:10px;padding:28px 24px;margin:24px 0}
+.block-hebel .hebel-eyebrow{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.block-hebel h3{font-family:'Spectral',serif;font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:14px}
+.hebel-main{background:var(--pill-bg);border-radius:8px;padding:16px 18px;margin-bottom:14px}
+.hebel-main .hebel-label{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--forest);margin-bottom:6px}
+.hebel-main p{font-size:.9rem;color:var(--ink2);margin:0}
+.hebel-list{list-style:none;padding:0;margin:0}
+.hebel-list li{font-size:.87rem;color:var(--ink3);padding:8px 0 8px 22px;position:relative;border-bottom:1px dashed var(--line)}
+.hebel-list li:last-child{border-bottom:none}
+.hebel-list li::before{content:"·";position:absolute;left:6px;color:var(--gold);font-weight:700}
+.hebel-todo{font-size:.74rem;color:var(--ink3);font-style:italic;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+
+.calc{background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:28px 24px;margin:32px 0 16px}
+.calc h3{font-family:'Spectral',serif;font-size:1.4rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+.calc-frame{font-size:.87rem;color:var(--ink3);margin-bottom:20px}
+.calc label{display:block;font-size:.73rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:18px 0 8px}
+.calc input[type=number]{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:7px;font-family:'Inter',sans-serif;font-size:.97rem;background:var(--bg);color:var(--ink)}
+.calc input[type=number]:focus{outline:none;border-color:var(--gold)}
+.calc input[type=range]{width:100%;accent-color:var(--gold);margin-top:4px}
+.sv{font-size:1.1rem;font-weight:700;color:var(--gold)}
+.calc-out{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}
+.calc-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.86rem;color:var(--ink2)}
+.calc-row strong{font-family:'Spectral',serif;font-size:1.2rem;color:var(--ink);white-space:nowrap}
+.calc-row.gain strong{color:var(--forest)}
+.calc-compare{margin-top:14px;font-size:.85rem;background:var(--pill-bg);border-radius:8px;padding:14px 16px;color:var(--ink2);line-height:1.6}
+
+.cta{background:var(--dark);border-radius:12px;padding:44px 32px;text-align:center;margin:36px 0 18px}
+.cta h3{font-family:'Spectral',serif;font-size:2rem;font-weight:700;color:#f0f5f0;margin-bottom:14px}
+.cta p{font-size:.9rem;color:rgba(232,240,232,.72);max-width:460px;margin:0 auto;line-height:1.7}
+.cta .price{margin-top:12px;font-size:.83rem;color:var(--sage);font-weight:600}
+
+.gate{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px 24px;margin-bottom:18px}
+.gate h3{font-family:'Spectral',serif;font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:8px}
+.gate p{font-size:.88rem;color:var(--ink3);margin-bottom:18px;line-height:1.65}
+.gate input[type=text],.gate input[type=email]{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:7px;margin-bottom:10px;font-family:'Inter',sans-serif;font-size:.92rem;background:var(--bg);color:var(--ink)}
+.gate input:focus{outline:none;border-color:var(--gold)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.73rem;color:var(--ink3);margin-bottom:16px;line-height:1.55}
+.consent input{margin-top:3px;accent-color:var(--gold)}
+.gate-ok{display:none;background:#edf5ef;border:1px solid #c0dac5;border-radius:8px;padding:14px 16px;font-size:.88rem;color:var(--forest)}
+
+.disclaimer{font-size:.73rem;color:var(--mist);text-align:center;margin-top:32px;border-top:1px solid var(--line);padding-top:18px;line-height:1.65}
+.restart{display:block;margin:20px auto 0;background:none;border:none;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--mist);cursor:pointer;text-decoration:underline}
+
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding:44px 28px 28px;margin-top:auto}
+.footer-inner{max-width:700px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:500px){.footer-inner{grid-template-columns:1fr}}
+.footer-brand{font-family:'Spectral',serif;font-size:1.05rem;font-weight:500;color:#e8f0e8;margin-bottom:8px;opacity:.9}
+.footer-title{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;font-weight:500}
+.footer-adr{font-size:.81rem;color:rgba(232,240,232,.42);line-height:1.8}
+.footer-adr a{color:var(--sage);text-decoration:none}
+.footer-adr a:hover{text-decoration:underline}
+.footer-links{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+@media(max-width:500px){.footer-links{align-items:flex-start}}
+.footer-links a{font-size:.8rem;color:rgba(232,240,232,.42);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:var(--sage)}
+.footer-bottom{max-width:700px;margin:28px auto 0;border-top:1px solid rgba(255,255,255,.06);padding-top:16px;font-size:.73rem;color:rgba(232,240,232,.22);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo-text">Nicole Lurz · Heilpraktikerin, Gesundheitsstrategin & Mentorin</div>
+</header>
+
+<main>
+  <div class="pb-wrap hidden" id="pbWrap">
+    <div class="pb-track"><div class="pb-fill" id="pbFill"></div></div>
+    <div class="pb-label" id="pbLabel"></div>
+  </div>
+  <div id="app"></div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-title">Kontakt</div>
+      <div class="footer-brand">Nicole Lurz</div>
+      <div class="footer-adr">
+        Heilpraktikerin · Gesundheitsstrategin · Mentorin<br><br>
+        Musterstraße 1<br>
+        69168 Wiesloch<br><br>
+        <a href="mailto:praxis@naturheilpraxis-lurz.de">praxis@naturheilpraxis-lurz.de</a><br>
+        <a href="https://naturheilpraxis-lurz.de" target="_blank">naturheilpraxis-lurz.de</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-title">Rechtliches</div>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutzerklärung</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nicole Lurz · Heilpraktikerin</span>
+    <span>Dieser Test ersetzt keine ärztliche Diagnose.</span>
+  </div>
+</footer>
+
+<script>
+var BOOKING_URL="#";
+var QS=[
+  {id:"f1",title:"Wie ist dein Schlaf gerade?",opts:[
+    {v:"a",t:"Ich schlafe schnell und gut ein und bin morgens fit, ohne Kaffee oder Tee."},
+    {v:"b",t:"Ich schlafe schlecht oder lange ein oder wache nachts häufig auf."},
+    {v:"c",t:"Ich schlafe sofort ein, weil ich kaputt bin, und bin nach wenigen Stunden hellwach, ohne wieder einzuschlafen."},
+    {v:"d",t:"Ich schlafe gut ein und durch und wache trotzdem wie gerädert auf und brauche erst mal einen Kaffee."}
+  ]},
+  {id:"f2",title:"Wie geht es dir am Ende eines fordernden Tages?",opts:[
+    {v:"a",t:"Müde, aber ich finde zurück in die Ruhe."},
+    {v:"b",t:"Aufgedreht, ich komme schwer runter."},
+    {v:"c",t:"Leer und ausgebrannt, ohne Antrieb und Freude."}
+  ]},
+  {id:"f3",title:"Wie ist deine Energie über den Tag?",opts:[
+    {v:"a",t:"Ziemlich gleichmäßig, ich brauche keinen Kaffee oder Tee, um in Gang zu kommen."},
+    {v:"b",t:"Auf und ab, mit Heißhunger auf Süßes oder Salziges, immer wieder Konzentrationslöcher und Brain Fog."},
+    {v:"c",t:"Durchgehend niedrig. Ich zwinge mich durch den Tag und funktioniere nach außen, aber zu Hause zieht es mir den Stecker."}
+  ]},
+  {id:"f4",title:"Wie ist deine Temperaturregulation?",opts:[
+    {v:"a",t:"Unauffällig."},
+    {v:"b",t:"Ich schwitze schnell, Hitzewallungen oder Nachtschweiß."},
+    {v:"c",t:"Ich friere schnell, kalte Hände und Füße."}
+  ]},
+  {id:"f5",title:"Wie verlaufen Infekte bei dir?",opts:[
+    {v:"a",t:"Selten krank, und wenn, dann kurz und kräftig durch."},
+    {v:"b",t:"Oft erkältet oder mit diffusen Entzündungszeichen, die nicht abklingen."},
+    {v:"c",t:"Ich werde kaum noch richtig krank, fühle mich aber auch nie richtig fit."}
+  ]},
+  {id:"f6",title:"Was trifft auf dich zu?",hint:"Mehrfachauswahl möglich.",multi:true,opts:[
+    {v:"unvertraeglichkeiten",t:"Nahrungsmittelunverträglichkeiten"},
+    {v:"allergien",t:"Allergien"},
+    {v:"migraene",t:"Migräne"},
+    {v:"wundheilung",t:"Schlechte Wundheilung"},
+    {v:"autoimmun",t:"Autoimmunerkrankung"},
+    {v:"nichts",t:"Nichts davon"}
+  ]},
+  {id:"f7",title:"Wann gehst du in der Regel spätestens ins Bett?",opts:[
+    {v:"a",t:"Vor 22 Uhr"},
+    {v:"b",t:"Zwischen 22 und 23 Uhr"},
+    {v:"c",t:"Zwischen 23 und 24 Uhr"},
+    {v:"d",t:"Nach Mitternacht"}
+  ]},
+  {id:"f8",title:"Wie sieht dein Frühstück aus?",opts:[
+    {v:"a",t:"Gibt es nicht, Kaffee muss reichen."},
+    {v:"b",t:"Müsli oder Porridge mit Früchten oder Ähnlichem."},
+    {v:"c",t:"Ich faste im Intervall, meine erste Mahlzeit ist mittags, morgens kein Kaffee."}
+  ]},
+  {id:"f9",title:"Wie ernährst du dich?",opts:[
+    {v:"a",t:"Mischkost"},
+    {v:"b",t:"Vegetarisch"},
+    {v:"c",t:"Vegan"}
+  ]},
+  {id:"f10",title:"Was war kurz bevor deine Beschwerden begannen?",opts:[
+    {v:"a",t:"Eine Erkrankung oder OP"},
+    {v:"b",t:"Trauer oder Schreck"},
+    {v:"c",t:"Eine intensive berufliche Phase"},
+    {v:"d",t:"Schwangerschaft oder Stillzeit"},
+    {v:"e",t:"Weiß ich nicht genau"}
+  ]},
+  {id:"f11",title:"Wie ist dein Zyklus gerade?",opts:[
+    {v:"a",t:"Regelmäßig"},
+    {v:"b",t:"Verändert oder unregelmäßig"},
+    {v:"c",t:"Seit über einem Jahr ausgeblieben"},
+    {v:"d",t:"Weiß ich nicht genau"}
+  ]}
+];
+
+var TX={
+  ns:{reguliert:"Dein Nervensystem kann zwischen Anspannung und Ruhe wechseln. Du fährst hoch, wenn es nötig ist, und kommst wieder runter. Das ist die Basis, auf der Regeneration überhaupt stattfinden kann.",aktiviert:"Dein Nervensystem steht unter Dauerspannung. Es hält dich im Modus, in dem du funktionierst, leistest und durchhältst. Der Preis ist, dass es nicht mehr richtig in die Ruhe kommt. Genau in der Ruhe würde dein Körper sich erholen. Solange dieser Schalter oben bleibt, verpufft vieles, was du sonst tust.",erschoepft:"Dein Nervensystem ist lange auf Hochtouren gelaufen und in den Schutzmodus gekippt. Was sich wie Antriebslosigkeit oder fehlende Freude anfühlt, ist oft kein Charakterzug und kein Versagen, sondern ein System, das auf Sparflamme schaltet, um dich zu schützen. Wenn diese Schwere länger anhält, gehört sie auch fachlich begleitet."},
+  sm:{flexibel:"Dein Stoffwechsel ist anpassungsfähig. Er schaltet zwischen Zucker und Fett um und liefert dir auch dann Energie, wenn eine Mahlzeit mal später kommt.",uebersaeuert:"Dein Stoffwechsel kommt schwer an deine Fettreserven und ist auf schnellen Zucker angewiesen. Daher die Heißhungerwellen und das Nachmittagstief. Dein Gehirn fordert Zucker an, um arbeiten zu können. Das erklärt den Griff zur Schokolade, und es hat nichts mit fehlendem Willen zu tun.",sparmodus:"Dein Stoffwechsel ist heruntergefahren. Dein Körper hält Energie zurück, statt sie freizugeben. Du funktionierst noch, nach außen oft erstaunlich gut, aber die Reserve, aus der du das ziehst, wird kleiner."},
+  im:{resilient:"Dein Immunsystem arbeitet beweglich. Es reagiert, wenn nötig, und beruhigt sich danach wieder.",entzuendet:"Dein Immunsystem ist in einer Daueralarmbereitschaft, die nicht mehr abklingt. Unverträglichkeiten, Allergien, Migräne oder eine schlechte Wundheilung sind häufig Zeichen dafür, dass es nicht zur Ruhe kommt. Diese stille Entzündung zieht Energie ab, die dir an anderer Stelle fehlt.",erschoepft:"Dein Immunsystem ist weder im Alarm noch richtig leistungsfähig. Das Gefühl, kaum noch richtig krank zu werden und trotzdem nie richtig fit zu sein, deutet darauf hin, dass die Reparaturkraft nachlässt."},
+  scope:"Wichtig zur Einordnung: Diese elf Fragen zeigen einen Ausschnitt, eine Momentaufnahme. In dein genaues Bild spielen deutlich mehr Faktoren hinein, von deinen Befunden über deine Geschichte bis zu deinem Alltag. Oft sind mehrere Systeme latent beteiligt, auch wenn hier nur eines auffällig wird. Genau dieses Gesamtbild erarbeiten wir im Blind Spot Check oder in der tieferen Begleitung im Inner Shift.",
+  regenBase:"Ein zweiter Punkt fällt auf. Dein Schlaf ist zwar da, aber er regeneriert dich nicht mehr tief genug, und deinem Körper fehlt oft schon morgens der Baustoff für Reparatur. Regenerationsfähigkeit ist die Voraussetzung dafür, dass alles andere überhaupt greifen kann. Sie lässt sich zurückgewinnen, aber nicht über das nächste Supplement, sondern über einen Veränderungsprozess.",
+  regenAlt:"Ein zweiter Punkt fällt auf. Deinem System fehlen gerade wichtige Voraussetzungen für tiefe Regeneration. Sie lässt sich zurückgewinnen, aber nicht über das nächste Supplement, sondern über einen Veränderungsprozess.",
+  regenBett:"Der tiefschlafreiche Teil der Nacht liegt in den frühen Stunden. Wer spät ins Bett geht, verliert genau das Fenster, in dem das System sich am stärksten erholt.",
+  regenKaffee:"Ohne Frühstück startet dein Körper den Tag über Stresshormone. Der Kaffee mobilisiert Energie aus deinen Reserven, liefert aber keinen Baustoff für Reparatur und Regeneration.",
+  regenMuesli:"Dein Frühstück liefert vor allem schnellen Zucker und wenig von dem Baustoff, den dein Körper für Reparatur und Regeneration braucht.",
+  regenVeg:"Bei deiner Ernährungsform lohnt der genaue Blick, ob genug Protein und Fett für Reparatur und Regeneration zusammenkommen.",
+  fastenSparmodus:"Intervallfasten ist nicht gut oder schlecht an sich, es kommt auf deinen Systemzustand an. Bei einem System, das ohnehin auf Sparflamme läuft, kann das Fasten dem Körper genau den Baustoff entziehen, den er für Reparatur braucht.",
+  hormonBase:"Dein Bauchgefühl, dass das etwas mit deinen Hormonen zu tun hat, trügt dich nicht. Nur sind die Hormone hier die Folge, nicht der Auslöser. Ein Nervensystem im Dauerbetrieb, ein Stoffwechsel auf Sparflamme und ein Immunsystem unter Spannung verändern deine Hormonregulation. Deshalb hat das, was du bisher probiert hast, womöglich nicht gegriffen. Es hat das Symptom adressiert, das System blieb außen vor.",
+  zyklus:{a:"Dass dein Zyklus noch regelmäßig ist, heißt nicht, dass es nichts mit deinen Hormonen zu tun hat. Die ersten Veränderungen beginnen lange vor der letzten Blutung, oft mit einem Abfall von Progesteron, und werden häufig als Stress abgetan.",b:"Dein veränderter Zyklus passt ins Bild. Diese Phase ist ein Übergang, in dem dein System besonders davon abhängt, wie gut es regenerieren kann.",c:"Auch nach der letzten Blutung bleibt entscheidend, in welchem Zustand deine drei Systeme sind. Sie bestimmen, wie viel Energie und Stabilität dir zur Verfügung stehen.",d:null},
+  trigger:{a:"eine Erkrankung oder OP",b:"Trauer oder Schreck",c:"eine intensive berufliche Phase",d:"Schwangerschaft oder Stillzeit"}
+};
+
+/* ===== HEBEL-TEXTE: konzeptioneller Platzhalter, fachlich noch auszuformulieren ===== */
+var HEBEL={
+  ns:{
+    label:"Dein wichtigster erster Hebel",
+    main:"[TODO – Nicole: 1 konkreter erster Ansatz für ein Nervensystem im Zustand „"+'"'+"“ – z. B. Richtung Vagus-Aktivierung, Sicherheit signalisieren, o.ä.]",
+    next:["[TODO – Hebel 2, kurz angerissen]","[TODO – Hebel 3, kurz angerissen]"]
+  },
+  sm:{
+    label:"Dein wichtigster erster Hebel",
+    main:"[TODO – Nicole: 1 konkreter erster Ansatz für den Energiestoffwechsel – z. B. Richtung Blutzuckerstabilität, Mahlzeitenstruktur, o.ä.]",
+    next:["[TODO – Hebel 2, kurz angerissen]","[TODO – Hebel 3, kurz angerissen]"]
+  },
+  im:{
+    label:"Dein wichtigster erster Hebel",
+    main:"[TODO – Nicole: 1 konkreter erster Ansatz für ein Immunsystem im aktuellen Zustand – z. B. Richtung Entzündungslast senken, Darmachse, o.ä.]",
+    next:["[TODO – Hebel 2, kurz angerissen]","[TODO – Hebel 3, kurz angerissen]"]
+  }
+};
+var SYS_LABEL_FULL={ns:"Nervensystem",sm:"Energiestoffwechsel",im:"Immunsystem"};
+
+var SL={ns:{reguliert:"reguliert",aktiviert:"aktiviert",erschoepft:"erschöpft"},sm:{flexibel:"flexibel",uebersaeuert:"übersäuert",sparmodus:"Sparmodus"},im:{resilient:"resilient",entzuendet:"chronisch entzündet",erschoepft:"erschöpft"}};
+var SC={ns:{reguliert:"g",aktiviert:"r",erschoepft:"gr"},sm:{flexibel:"g",uebersaeuert:"r",sparmodus:"gr"},im:{resilient:"g",entzuendet:"r",erschoepft:"gr"}};
+var ICONS={
+  brain:'<svg viewBox="0 0 24 24" fill="none" stroke="COL" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5a2.8 2.8 0 0 0-2.8 2.8 2.9 2.9 0 0 0-2.2 4.8 2.9 2.9 0 0 0 1.3 5.3 2.8 2.8 0 0 0 2.7 3.6H11V2.5H9.5z"/><path d="M14.5 2.5a2.8 2.8 0 0 1 2.8 2.8 2.9 2.9 0 0 1 2.2 4.8 2.9 2.9 0 0 1-1.3 5.3 2.8 2.8 0 0 1-2.7 3.6H13V2.5h1.5z"/></svg>',
+  flame:'<svg viewBox="0 0 24 24" fill="none" stroke="COL" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1.5 4.5 5 6 5 11a5 5 0 0 1-10 0c0-3 1.8-4.5 3-6.5.6 1.2 1.6 1.8 2 2 .3-2-.5-4.5 0-6.5z"/></svg>',
+  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="COL" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 19.5 5v6c0 5-3.3 8.7-7.5 10.5C7.8 19.7 4.5 16 4.5 11V5L12 2.5z"/><path d="M9 11.5l2 2 4-4"/></svg>'
+};
+var COL_HEX={g:"#3D5A2E",r:"#b5543f",gr:"#A8BAB0"};
+
+var answers={},step=-1;
+var app=document.getElementById("app");
+var pbWrap=document.getElementById("pbWrap");
+var pbFill=document.getElementById("pbFill");
+var pbLabel=document.getElementById("pbLabel");
+
+function render(){
+  if(step===-1) renderStoryIntro();
+  else if(step<QS.length) renderQ(QS[step]);
+  else renderResult();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ===== NEUE STORY-INTRO MIT SPANNUNGSKURVE ===== */
+function renderStoryIntro(){
+  pbWrap.classList.add("hidden");
+  var arrow='<div class="story-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>';
+
+  var h = '<div class="story">';
+
+  /* Schritt 0: Hero / Hook */
+  h += '<div class="story-step hero-step">'+
+    '<div class="intro-badge">Der System-Kompass · für Unternehmerinnen 40+</div>'+
+    '<h1>Du glaubst, deine <em>Hormone</em> sind das Problem?</h1>'+
+    '<p class="lead">Bei Unternehmerinnen liegt der eigentliche Engpass oft ganz woanders. Du fühlst dich nicht mehr wie früher, alle Werte sind unauffällig, und trotzdem stimmt etwas nicht.</p>'+
+    '</div>'+ arrow;
+
+  /* Schritt 1: Blind Spot Story */
+  h += '<div class="story-step">'+
+    '<div class="story-eyebrow">Eine kurze Einordnung vorab</div>'+
+    '<h2>Jeder Mensch hat einen gesundheitlichen <em>Blind Spot</em>.</h2>'+
+    '<div class="blindspot-box">'+
+      '<p class="lead-line">Manche investieren in Ernährung. Andere in Hormone. Andere in Supplements oder Biohacking.</p>'+
+      '<p>Alles davon kann richtig sein. Aber wenn der eigentliche Engpass woanders liegt, bringt selbst die beste Einzelmaßnahme nur wenig. Sie adressiert das Symptom, nicht das System, das dahinter steht.</p>'+
+      '<p>Genau deshalb arbeite ich mit einem anderen Modell.</p>'+
+    '</div></div>'+ arrow;
+
+  /* Schritt 2: Modell-Vorstellung */
+  h += '<div class="story-step">'+
+    '<div class="story-eyebrow">Das Modell</div>'+
+    '<h2>Die 3 <em>Regenerationssysteme</em></h2>'+
+    '<p>Drei Systeme entscheiden darüber, wie viel Energie dir tatsächlich zur Verfügung steht. Hormone sind dabei meist die Folge, nicht die Ursache.</p>'+
+    '<div class="model-grid">'+
+      '<div class="model-card">'+ICONS.brain.replace("COL","#b59a5a")+'<h3>Nervensystem</h3><p>Reguliert Sicherheit. Entscheidet, ob dein Körper überhaupt in den Erholungsmodus kommt.</p></div>'+
+      '<div class="model-card">'+ICONS.flame.replace("COL","#b59a5a")+'<h3>Energiestoffwechsel</h3><p>Entscheidet, wie stabil deine Energie über den Tag ist und wie gut du Reserven nutzen kannst.</p></div>'+
+      '<div class="model-card">'+ICONS.shield.replace("COL","#b59a5a")+'<h3>Immunsystem</h3><p>Zieht im Hintergrund Energie ab, wenn es nicht zur Ruhe kommt, oft unbemerkt.</p></div>'+
+    '</div></div>'+ arrow;
+
+  /* Schritt 3: CTA in den Test */
+  h += '<div class="story-step story-cta">'+
+    '<h2>Welches dieser drei Systeme bremst gerade <em>dich</em> aus?</h2>'+
+    '<p>11 kurze Fragen reichen, um eine erste Einordnung zu bekommen. Du erfährst, welches System bei dir aktuell den größten Engpass bildet, und warum deine Hormone dabei eher die Quittung sind.</p>'+
+    '<div class="stats-pill">'+
+      '<div class="stat"><div class="stat-num">11</div><div class="stat-label">Fragen</div></div>'+
+      '<div class="stat"><div class="stat-num">3</div><div class="stat-label">Min</div></div>'+
+      '<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Kostenlos</div></div>'+
+    '</div><br>'+
+    '<button class="btn btn-gold" onclick="startTest()">Jetzt meinen Engpass finden</button>'+
+    '<p class="intro-privacy">Datenschutz: Deine Antworten werden ausschließlich in deinem Browser ausgewertet. Weder gespeichert noch übertragen.</p>'+
+    '</div>';
+
+  h += '</div>';
+  app.innerHTML = h;
+}
+
+function startTest(){step=0;answers={};render();}
+
+function renderQ(q){
+  pbWrap.classList.remove("hidden");
+  pbFill.style.width=Math.round((step/QS.length)*100)+"%";
+  pbLabel.textContent="Frage "+(step+1)+" von "+QS.length;
+  var h='<div class="wrap"><div class="q-wrap">'+
+    '<div class="q-num">Frage '+(step+1)+' / '+QS.length+'</div>'+
+    '<div class="q-title">'+q.title+'</div>'+
+    '<div class="q-hint">'+(q.hint||(q.multi?"Mehrfachauswahl möglich.":"Wähle die Antwort, die am ehesten zutrifft."))+'</div>';
+  q.opts.forEach(function(o){
+    var s=q.multi?(answers[q.id]||[]).indexOf(o.v)>-1:answers[q.id]===o.v;
+    h+='<button class="opt'+(s?' sel':'')+'" onclick="pick(\''+q.id+'\',\''+o.v+'\','+(q.multi?'true':'false')+')">'+o.t+'</button>';
+  });
+  h+='<div class="nav-row">'+(step>0?'<button class="back-btn" onclick="goBack()">← Zurück</button>':'<span></span>');
+  if(q.multi) h+='<button class="btn btn-forest btn-sm" onclick="next()">Weiter</button>';
+  h+='</div></div></div>';
+  app.innerHTML=h;
+}
+
+function pick(id,v,multi){
+  if(multi){
+    var a=answers[id]||[];
+    if(v==="nichts"){a=a.indexOf("nichts")>-1?[]:["nichts"];}
+    else{a=a.filter(function(x){return x!=="nichts";});var i=a.indexOf(v);if(i>-1)a.splice(i,1);else a.push(v);}
+    answers[id]=a;renderQ(QS[step]);
+  }else{answers[id]=v;renderQ(QS[step]);setTimeout(next,220);}
+}
+function next(){var q=QS[step];if(q.multi&&(!answers[q.id]||answers[q.id].length===0))answers[q.id]=["nichts"];step++;render();}
+function goBack(){if(step===0){step=-1;}else{step--;}render();}
+
+function evaluate(){
+  var sev=function(v,o){var b=null;v.forEach(function(x){if(!x)return;if(b===null||o.indexOf(x)>o.indexOf(b))b=x;});return b;};
+  var ns;
+  var nm1={a:"reguliert",b:"aktiviert",c:"aktiviert",d:"aktiviert"};
+  var nm2={a:"reguliert",b:"aktiviert",c:"erschoepft"};
+  if(answers.f1==="c"&&answers.f2==="c"){ns="erschoepft";}
+  else{var nv=[nm1[answers.f1],nm2[answers.f2]];if(answers.f8==="a")nv.push("aktiviert");ns=sev(nv,["reguliert","aktiviert","erschoepft"])||"reguliert";}
+  var smM={a:"flexibel",b:"uebersaeuert",c:"sparmodus"};
+  var veg=answers.f9==="b"||answers.f9==="c";
+  var brkBad=answers.f8==="a"||answers.f8==="b";
+  var sv=[smM[answers.f3],smM[answers.f4]];
+  if(veg&&brkBad)sv.push("uebersaeuert");
+  var sm=sev(sv,["flexibel","uebersaeuert","sparmodus"]);
+  var imM={a:"resilient",b:"entzuendet",c:"erschoepft"};
+  var im=imM[answers.f5];
+  var f6=answers.f6||[];
+  if(["unvertraeglichkeiten","allergien","migraene","autoimmun","wundheilung"].some(function(k){return f6.indexOf(k)>-1;})&&im==="resilient")im="entzuendet";
+  var f1d=answers.f1==="d",late=answers.f7==="c"||answers.f7==="d";
+  var fac=0;if(f1d)fac++;if(late)fac++;if(brkBad)fac++;if(veg)fac++;
+  var rt=f1d||answers.f8==="a"||(late&&fac>=2);
+  return{ns,sm,im,rt,f1d,late,veg,brkBad,fac,fsp:answers.f8==="c"&&sm==="sparmodus"};
+}
+
+/* Bestimmt das "Hauptengpass-System" für den Hebel-Block:
+   Rang erschöpft/Sparmodus/erschöpft > aktiviert/übersäuert/entzündet > reguliert/flexibel/resilient.
+   Bei Gleichstand zählt die Reihenfolge Nervensystem > Stoffwechsel > Immunsystem (häufigster Haupttreiber laut Praxiserfahrung). */
+function mainBottleneck(r){
+  var rank={ns:{erschoepft:2,aktiviert:1,reguliert:0},sm:{sparmodus:2,uebersaeuert:1,flexibel:0},im:{erschoepft:2,entzuendet:1,resilient:0}};
+  var scores=[["ns",rank.ns[r.ns]],["sm",rank.sm[r.sm]],["im",rank.im[r.im]]];
+  scores.sort(function(a,b){return b[1]-a[1];});
+  return scores[0][1] > 0 ? scores[0][0] : null;
+}
+
+function card(ic,name,sys,st,isMain){
+  var c=SC[sys][st];
+  var ps=Object.keys(SL[sys]).map(function(s){return'<span class="pill'+(s===st?' on '+SC[sys][s]:'')+'">'+ SL[sys][s]+'</span>';}).join("");
+  return'<div class="sys-card'+(isMain?' is-main':'')+'">'+(isMain?'<span class="main-tag">Hauptengpass</span>':'')+ICONS[ic].replace("COL",COL_HEX[c])+'<div class="sys-name">'+name+'</div><div class="pills">'+ps+'</div></div>';
+}
+function blk(name,sys,st,ex){
+  var h='<div class="block"><h3>'+name+'</h3><span class="state-tag '+SC[sys][st]+'">'+SL[sys][st]+'</span><p>'+TX[sys][st]+'</p>';
+  (ex||[]).forEach(function(t){h+='<p>'+t+'</p>';});return h+'</div>';
+}
+
+function renderResult(){
+  pbWrap.classList.add("hidden");
+  var r=evaluate();
+  var main=mainBottleneck(r);
+  var h='<div class="wrap"><div class="result-wrap">';
+  h+='<div class="result-top"><div class="result-badge">Dein Ergebnis</div><h2>Dein System-<em>Kompass</em></h2><p class="sub">So laufen deine drei Systeme gerade.</p></div>';
+  h+='<div class="sys-grid">'+
+    card("brain","Nervensystem","ns",r.ns,main==="ns")+
+    card("flame","Energiestoffwechsel","sm",r.sm,main==="sm")+
+    card("shield","Immunsystem","im",r.im,main==="im")+
+    '</div>';
+  h+='<div class="scope-note">'+TX.scope+'</div>';
+  var smX=[];
+  if(!r.rt&&r.fsp)smX.push(TX.fastenSparmodus);
+  if(!r.rt&&r.veg)smX.push(TX.regenVeg);
+  h+=blk("Nervensystem","ns",r.ns);
+  h+=blk("Energiestoffwechsel","sm",r.sm,smX);
+  h+=blk("Immunsystem","im",r.im);
+
+  if(r.rt){
+    h+='<div class="block block-regen'+(r.fac>=2?' deutlich':'')+'"><h3>Regenerations-Hinweis</h3><p>'+(r.f1d?TX.regenBase:TX.regenAlt)+'</p>';
+    if(r.late)h+='<p>'+TX.regenBett+'</p>';
+    if(answers.f8==="a")h+='<p>'+TX.regenKaffee+'</p>';
+    if(answers.f8==="b")h+='<p>'+TX.regenMuesli+'</p>';
+    if(r.fsp)h+='<p>'+TX.fastenSparmodus+'</p>';
+    if(r.veg)h+='<p>'+TX.regenVeg+'</p>';
+    h+='</div>';
+  }
+
+  /* ===== NEU: Hebel-Block (konzeptionell, Texte als TODO markiert) ===== */
+  if(main){
+    var hb=HEBEL[main];
+    h+='<div class="block-hebel">'+
+      '<div class="hebel-eyebrow">Dein Ausblick</div>'+
+      '<h3>'+SYS_LABEL_FULL[main]+' ist aktuell dein größter Engpass</h3>'+
+      '<div class="hebel-main"><div class="hebel-label">'+hb.label+'</div><p>'+hb.main+'</p></div>'+
+      '<ul class="hebel-list"><li>'+hb.next[0]+'</li><li>'+hb.next[1]+'</li></ul>'+
+      '<div class="hebel-todo">Konzept-Hinweis: Dieser Block ist als Struktur angelegt. Die konkreten Hebel-Texte pro System und Zustand formulierst du fachlich noch aus, dann ersetzen wir die TODO-Platzhalter.</div>'+
+      '</div>';
+  }
+
+  h+='<div class="block block-hormone"><h3>Und deine Hormone?</h3><p>'+TX.hormonBase+'</p>';
+  var z=TX.zyklus[answers.f11];if(z)h+='<p>'+z+'</p>';
+  h+='</div>';
+  if(answers.f10&&answers.f10!=="e")h+='<div class="block block-trigger"><p>Du hast als Auslöser <strong>'+TX.trigger[answers.f10]+'</strong> angegeben. Das passt ins Bild. Häufig kippt ein System nicht langsam, sondern an einem Punkt, nach einem Ereignis, das viel Energie gezogen hat. Dass danach etwas anders war, ist kein Zufall.</p></div>';
+
+  h+='<div class="calc"><h3>Was kostet dich der Ist-Zustand?</h3><p class="calc-frame">Du denkst in Zahlen. Schauen wir auf deine Situation, wie du auf eine Business-Entscheidung schauen würdest.</p>'+
+    '<label>Dein durchschnittlicher Monatsumsatz (€)</label><input type="number" id="umsatz" min="0" step="500" placeholder="z. B. 8.000" oninput="doCalc()">'+
+    '<label>Wie viel deiner früheren Leistungsfähigkeit fehlt dir gerade? <span class="sv" id="kv">20 %</span></label>'+
+    '<input type="range" id="kap" min="0" max="50" value="20" step="5" oninput="doCalc()">'+
+    '<div class="calc-out" id="co" style="display:none"></div></div>';
+
+  h+='<div class="cta"><h3>Dein nächster Schritt</h3><p>Du kennst jetzt deinen größten Engpass. Was du noch nicht kennst, ist die Blockade, die dich dort festhält. Genau die schauen wir uns im Blind Spot Check an. Online, 90 Minuten, mit Auswertung deiner Befunde und deinen ersten drei Schritten zurück in die Regeneration.</p><div class="price">Aktuell 330 € &nbsp;·&nbsp; ab Juli 530 €</div><a class="btn btn-gold" href="'+BOOKING_URL+'" style="margin-top:22px;display:inline-block">Blind Spot Check buchen</a></div>';
+
+  h+='<div class="gate"><h3>Die Blutbild-Referenzkarte</h3><p>Welche Werte dein großes Blutbild nicht zeigt, und warum sie erst im Systemkontext etwas aussagen. Trag dich ein und du bekommst das PDF per E-Mail.</p>'+
+    '<form id="gf" onsubmit="return gSub(event)">'+
+    '<input type="text" placeholder="Dein Vorname"><input type="email" placeholder="Deine E-Mail-Adresse" required>'+
+    '<div class="consent"><input type="checkbox" required><label>Ich möchte die Referenzkarte und weitere Impulse per E-Mail erhalten. Abmeldung jederzeit möglich. Details in der Datenschutzerklärung. Deine Testantworten werden nicht mit deiner E-Mail verknüpft.</label></div>'+
+    '<button class="btn btn-forest btn-sm" type="submit">Referenzkarte anfordern</button></form>'+
+    '<div class="gate-ok" id="go">Danke. Die Blutbild-Referenzkarte ist auf dem Weg in dein Postfach.</div></div>';
+
+  h+='<div class="disclaimer">Dieser Test beschreibt Funktionszustände und Zusammenhänge. Er stellt keine Diagnose und ersetzt keine ärztliche oder heilkundliche Untersuchung. Bei anhaltenden oder belastenden Beschwerden lass dich bitte fachlich begleiten.</div>';
+  h+='<button class="restart" onclick="startTest()">Test erneut starten</button>';
+  h+='</div></div>';
+  app.innerHTML=h;
+}
+
+function fmt(n){return new Intl.NumberFormat("de-DE",{maximumFractionDigits:0}).format(Math.round(n));}
+function doCalc(){
+  var u=parseFloat(document.getElementById("umsatz").value);
+  var k=parseInt(document.getElementById("kap").value,10);
+  document.getElementById("kv").textContent=k+" %";
+  var co=document.getElementById("co");
+  if(!u||u<=0||k<=0){co.style.display="none";return;}
+  var mL=u*(k/100),yL=mL*12,y3=yL*3,gain=(yL/2)*3;
+  co.style.display="block";
+  co.innerHTML='<div class="calc-row"><span>Monatlicher Kapazitätsverlust</span><strong>'+fmt(mL)+' €</strong></div>'+
+    '<div class="calc-row"><span>Im Jahr</span><strong>'+fmt(yL)+' €</strong></div>'+
+    '<div class="calc-row"><span>Über drei Jahre</span><strong>'+fmt(y3)+' €</strong></div>'+
+    '<div class="calc-row gain"><span>Hälfte der Kapazität zurückgewinnen = über 3 Jahre</span><strong>+'+fmt(gain)+' €</strong></div>'+
+    '<div class="calc-compare">Der Blind Spot Check kostet aktuell 330 € (ab Juli 530 €). Dein geschätzter Kapazitätsverlust liegt pro Monat oft um ein Vielfaches darüber.</div>';
+}
+function gSub(e){e.preventDefault();document.getElementById("gf").style.display="none";document.getElementById("go").style.display="block";return false;}
+render();
+</script>
+</body>
+</html>
