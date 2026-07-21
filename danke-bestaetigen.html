@@ -6,6 +6,9 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0F1A14">
 <title>Fast geschafft · Nicole Lurz</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
 <link rel="stylesheet" href="premium.css">
 <style>
   /* ── Danke 1, ein einziger Job. Die E-Mail bestätigen ──
@@ -50,6 +53,9 @@
   .danke-back:hover svg { transform: translateX(-3px); }
   .nav-danke .nav-links, .nav-danke .nav-cta, .nav-danke .nav-burger { display: none !important; }
   .nav-danke .nav-inner { justify-content: center; }
+  /* premium.js laeuft hier nicht, das sonst .is-ready setzt. Ohne diese
+     Zeile bleibt die Navigation samt Wortmarke ueber dem Viewport haengen. */
+  .nav.nav-danke { transform: translateY(0); }
   @keyframes danke-up { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   @keyframes doi-pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(122,168,144,0.18); } 50% { box-shadow: 0 0 0 8px rgba(122,168,144,0.08); } }
 </style>
@@ -225,7 +231,7 @@
       dot.style.transform='translate('+(e.clientX-4)+'px,'+(e.clientY-4)+'px)';
       ring.style.transform='translate('+(e.clientX-20)+'px,'+(e.clientY-20)+'px)';});}
     var nav=document.getElementById('nav');
-    window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+    window.addEventListener('scroll',function(){nav.classList.toggle('is-scrolled',window.scrollY>24);},{passive:true});
   })();
 </script>
 </body>
