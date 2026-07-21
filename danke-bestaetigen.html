@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1A14">
+<title>Fast geschafft · Nicole Lurz</title>
+<link rel="stylesheet" href="premium.css">
+<style>
+  /* ── Danke 1, ein einziger Job. Die E-Mail bestätigen ──
+     Universelle Seite für alle Anmeldungen (Newsletter, Freebies, Mini-Kurse).
+     Der jeweilige Leadmagnet kommt per URL-Parameter rein, also ?lm=system-kompass
+     Ohne Parameter bleibt die Seite neutral und voll funktionsfähig. */
+  .danke-wrap { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 7rem 1.5rem 5rem; text-align: center; }
+  .doi-steps { display: flex; align-items: center; gap: 0; margin: 0 auto 3.5rem; animation: danke-up 0.6s var(--ease) 0.2s both; }
+  .doi-step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .doi-step-circle { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; }
+  .doi-step-circle.done { background: rgba(122,168,144,0.18); border: 2px solid var(--accent); color: var(--accent); }
+  .doi-step-circle.done svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .doi-step-circle.active { background: var(--accent); border: 2px solid var(--accent); color: var(--bg); font-weight: 700; box-shadow: 0 0 0 4px rgba(122,168,144,0.18); animation: doi-pulse 2s ease-in-out infinite; }
+  .doi-step-circle.pending { background: transparent; border: 2px solid var(--line); color: var(--text-muted); }
+  .doi-step-label { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500; color: var(--text-muted); white-space: nowrap; }
+  .doi-step-label.active-label { color: var(--head); font-weight: 600; }
+  .doi-step-label.done-label { color: var(--accent); }
+  .doi-connector { width: 48px; height: 2px; background: var(--line); margin-bottom: 1.4rem; flex-shrink: 0; }
+  .doi-connector.done { background: rgba(122,168,144,0.4); }
+  @media (max-width: 480px) { .doi-connector { width: 28px; } .doi-step-label { font-size: 0.65rem; } }
+  .danke-eyebrow { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; animation: danke-up 0.7s var(--ease) 0.35s both; }
+  .danke-h1 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; color: var(--head); line-height: 1.18; margin-bottom: 1.2rem; animation: danke-up 0.7s var(--ease) 0.45s both; }
+  .danke-h1 em { font-style: italic; color: var(--accent); }
+  .danke-sub { font-family: var(--font-sans); font-size: clamp(1rem, 2.2vw, 1.12rem); color: var(--text-muted); line-height: 1.7; max-width: 540px; margin: 0 auto 3rem; animation: danke-up 0.7s var(--ease) 0.55s both; }
+  .doi-card { max-width: 520px; width: 100%; background: var(--bg-card-2); border: 1px solid rgba(122,168,144,0.28); border-radius: 16px; padding: 2.2rem; margin: 0 auto 2.4rem; text-align: left; animation: danke-up 0.7s var(--ease) 0.65s both; position: relative; overflow: hidden; }
+  .doi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), rgba(149,192,168,0.4)); border-radius: 16px 16px 0 0; }
+  .doi-card-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(122,168,144,0.1); border: 1px solid rgba(122,168,144,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+  .doi-card-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .doi-card h2 { font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600; color: var(--head); margin-bottom: 0.6rem; }
+  .doi-card p { font-family: var(--font-sans); font-size: 0.92rem; color: var(--text); line-height: 1.65; margin-bottom: 1.2rem; }
+  .doi-steps-inner { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .doi-steps-inner li { display: flex; align-items: flex-start; gap: 0.75rem; font-family: var(--font-sans); font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .doi-steps-inner li span.num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(122,168,144,0.12); border: 1px solid rgba(122,168,144,0.25); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: var(--accent); margin-top: 1px; }
+  .spam-tip { max-width: 520px; width: 100%; margin: 0 auto 3.5rem; display: flex; align-items: flex-start; gap: 0.85rem; background: rgba(122,168,144,0.06); border: 1px solid rgba(122,168,144,0.15); border-radius: 10px; padding: 1rem 1.2rem; text-align: left; animation: danke-up 0.7s var(--ease) 0.75s both; }
+  .spam-tip svg { flex-shrink: 0; width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; margin-top: 1px; }
+  .spam-tip p { font-family: var(--font-sans); font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+  .spam-tip p strong { color: var(--text); font-weight: 500; }
+  .danke-back-wrap { animation: danke-up 0.7s var(--ease) 0.85s both; }
+  .danke-back { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-sans); font-size: 0.88rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .danke-back:hover { color: var(--accent); }
+  .danke-back svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+  .danke-back:hover svg { transform: translateX(-3px); }
+  .nav-danke .nav-links, .nav-danke .nav-cta, .nav-danke .nav-burger { display: none !important; }
+  .nav-danke .nav-inner { justify-content: center; }
+  @keyframes danke-up { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  @keyframes doi-pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(122,168,144,0.18); } 50% { box-shadow: 0 0 0 8px rgba(122,168,144,0.08); } }
+</style>
+</head>
+<body>
+
+<div class="cursor cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav nav-danke" id="nav">
+  <div class="nav-inner">
+    <a href="premium.html" class="nav-logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></a>
+  </div>
+</header>
+
+<main class="danke-wrap">
+
+  <div class="doi-steps" role="list" aria-label="Fortschritt">
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+      <span class="doi-step-label done-label">Eingetragen</span>
+    </div>
+    <div class="doi-connector done" aria-hidden="true"></div>
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle active">2</div>
+      <span class="doi-step-label active-label">Bestätigen</span>
+    </div>
+    <div class="doi-connector" aria-hidden="true"></div>
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle pending">3</div>
+      <span class="doi-step-label" data-lm="stepLabel">Freigeschaltet</span>
+    </div>
+  </div>
+
+  <p class="danke-eyebrow">Einen Schritt noch</p>
+  <h1 class="danke-h1">Schau jetzt in<br><em>dein E-Mail-Postfach.</em></h1>
+  <p class="danke-sub">
+    Deine Anmeldung ist da. Bevor ich dir <span data-lm="subText">deinen Zugang</span> freischalten darf, brauche ich noch dein Okay per Klick.
+  </p>
+
+  <div class="doi-card">
+    <div class="doi-card-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+    <h2>So geht’s</h2>
+    <p>Eine E-Mail von mir ist gerade unterwegs zu dir.</p>
+    <ol class="doi-steps-inner">
+      <li><span class="num">1</span><span>Öffne dein Postfach.</span></li>
+      <li><span class="num">2</span><span>Such die E-Mail, die mit <strong>„Anmeldung bei Nicole Lurz“</strong> beginnt.</span></li>
+      <li><span class="num">3</span><span data-lm="stepThree">Klick auf den Bestätigungslink darin. Fertig.</span></li>
+    </ol>
+  </div>
+
+  <div class="spam-tip" role="note">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+    <p><strong>Nichts da?</strong> Schau kurz im Spam- oder Werbeordner nach. Markiere die E-Mail als „kein Spam“, dann kommen auch meine nächsten Nachrichten sicher bei dir an.</p>
+  </div>
+
+  <div class="danke-back-wrap">
+    <a href="premium.html" class="danke-back">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Zurück zur Startseite
+    </a>
+  </div>
+
+</main>
+
+<footer class="footer" style="padding: 2.5rem 0;">
+  <div class="container footer-inner">
+    <p class="footer-copy">© 2026 Nicole Lurz · <a href="/impressum" style="color: inherit; opacity: 0.6;">Impressum</a> · <a href="/datenschutz" style="color: inherit; opacity: 0.6;">Datenschutz</a></p>
+  </div>
+</footer>
+
+<!-- ═══════════════ LEADMAGNET-PERSONALISIERUNG ═══════════════
+     Aufruf mit danke-bestaetigen.html?lm=system-kompass
+     Neuen Leadmagneten anlegen = einen Eintrag in LM ergänzen. Sonst nichts.
+     Unbekannter oder fehlender Parameter fällt auf die neutralen Texte
+     zurück, die bereits im HTML stehen. -->
+<script>
+  var LM = {
+    "system-kompass": {
+      stepLabel: "System-Kompass",
+      subText:   "den System-Kompass",
+      stepThree: "Klick auf den Bestätigungslink darin. Danach öffnet sich dein System-Kompass.",
+      title:     "Fast geschafft · System-Kompass · Nicole Lurz",
+      track:     "System-Kompass"
+    },
+    "nervensystem": {
+      stepLabel: "Mini-Kurs",
+      subText:   "den Mini-Kurs Nervensystem",
+      stepThree: "Klick auf den Bestätigungslink darin. Danach startet dein Mini-Kurs.",
+      title:     "Fast geschafft · Mini-Kurs Nervensystem · Nicole Lurz",
+      track:     "Mini-Kurs Nervensystem"
+    },
+    "immunsystem": {
+      stepLabel: "Mini-Kurs",
+      subText:   "den Mini-Kurs Immunsystem",
+      stepThree: "Klick auf den Bestätigungslink darin. Danach startet dein Mini-Kurs.",
+      title:     "Fast geschafft · Mini-Kurs Immunsystem · Nicole Lurz",
+      track:     "Mini-Kurs Immunsystem"
+    },
+    "stoffwechsel": {
+      stepLabel: "Mini-Kurs",
+      subText:   "den Mini-Kurs Stoffwechsel",
+      stepThree: "Klick auf den Bestätigungslink darin. Danach startet dein Mini-Kurs.",
+      title:     "Fast geschafft · Mini-Kurs Stoffwechsel · Nicole Lurz",
+      track:     "Mini-Kurs Stoffwechsel"
+    },
+    "newsletter": {
+      stepLabel: "Willkommen",
+      subText:   "meinen Newsletter",
+      stepThree: "Klick auf den Bestätigungslink darin. Fertig.",
+      title:     "Fast geschafft · Newsletter · Nicole Lurz",
+      track:     "Newsletter"
+    }
+  };
+
+  window.NL_LEAD_NAME = "Anmeldung";   // Fallback fürs Tracking
+
+  (function(){
+    var key = new URLSearchParams(window.location.search).get("lm");
+    var cfg = key && Object.prototype.hasOwnProperty.call(LM, key) ? LM[key] : null;
+    if (!cfg) return;   // unbekannter Parameter: neutrale Texte bleiben stehen
+
+    ["stepLabel","subText","stepThree"].forEach(function(field){
+      var el = document.querySelector('[data-lm="' + field + '"]');
+      if (el && cfg[field]) el.textContent = cfg[field];
+    });
+    if (cfg.title) document.title = cfg.title;
+    if (cfg.track) window.NL_LEAD_NAME = cfg.track;
+  })();
+</script>
+
+<!-- ═══════════════ TRACKING, LEAD-EVENT ═══════════════
+     Dies ist die richtige Seite, um „Lead" zu feuern: Der Besucher hat das
+     Formular wirklich abgesendet. Pixel/GA4 laden nur, wenn auf der Landingpage
+     zugestimmt wurde (Consent liegt in localStorage).
+     content_name kommt aus dem lm-Parameter, damit du in Meta und GA4 weiterhin
+     siehst, welcher Leadmagnet den Lead gebracht hat. -->
+<script>
+  window.NL_META_PIXEL_ID = "META_PIXEL_ID";   // TODO: gleiche ID wie auf der Landingpage
+  window.NL_GA4_ID        = "G-XXXXXXXXXX";    // TODO: gleiche ID wie auf der Landingpage
+
+  (function(){
+    if (localStorage.getItem("nl_consent") !== "accepted") return; // ohne Zustimmung kein Tracking
+
+    var leadName = window.NL_LEAD_NAME || "Anmeldung";
+
+    if (window.NL_META_PIXEL_ID && window.NL_META_PIXEL_ID !== "META_PIXEL_ID") {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', window.NL_META_PIXEL_ID);
+      fbq('track', 'PageView');
+      fbq('track', 'Lead', { content_name: leadName });   // <-- Meta-Conversion
+    }
+    if (window.NL_GA4_ID && window.NL_GA4_ID !== "G-XXXXXXXXXX") {
+      var s=document.createElement('script'); s.async=true;
+      s.src='https://www.googletagmanager.com/gtag/js?id='+window.NL_GA4_ID;
+      document.head.appendChild(s);
+      window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)};
+      gtag('js', new Date()); gtag('config', window.NL_GA4_ID);
+      gtag('event', 'generate_lead', { lead_source: leadName }); // <-- GA4-Conversion
+    }
+  })();
+
+  (function(){
+    var dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing');
+    if(dot&&ring){document.addEventListener('mousemove',function(e){
+      dot.style.transform='translate('+(e.clientX-4)+'px,'+(e.clientY-4)+'px)';
+      ring.style.transform='translate('+(e.clientX-20)+'px,'+(e.clientY-20)+'px)';});}
+    var nav=document.getElementById('nav');
+    window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+  })();
+</script>
+</body>
+</html>
