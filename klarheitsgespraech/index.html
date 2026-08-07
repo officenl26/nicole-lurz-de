@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F4F8F4">
+<meta name="description" content="Klarheitsgespräch zum Blind Spot Check: 30 Minuten, kostenfrei. Wir schauen gemeinsam auf die Zusammenhänge hinter deinen Symptomen und klären, was dein nächster sinnvoller Schritt ist.">
+<title>Klarheitsgespräch · Blind Spot Check · Nicole Lurz</title>
+<link rel="canonical" href="https://nicole-lurz.de/klarheitsgespraech/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nicole-lurz.de/klarheitsgespraech/">
+<meta property="og:title" content="Klarheitsgespräch · Nicole Lurz">
+<meta property="og:description" content="30 Minuten, kostenfrei, online über Zoom. Wir schauen gemeinsam auf die Zusammenhänge hinter deinen Symptomen und klären, was dein nächster sinnvoller Schritt ist.">
+<meta property="og:image" content="https://nicole-lurz.de/images/nicole-about.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nicole-lurz.de/images/nicole-about.jpg">
+
+<style>
+/* ════════════════════════════════════════════════════════════
+   KLARHEITSGESPRÄCH · Landingpage hell
+   Palette: Tannenmoos Twilight auf hellem Grund
+   Schriften: Inter (Sachliches) + Spectral Italic (Akzente)
+   ════════════════════════════════════════════════════════════ */
+
+@font-face { font-family:'Spectral'; font-weight:400; font-style:normal;  font-display:swap; src:url('/fonts/spectral-regular.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:400; font-style:italic;  font-display:swap; src:url('/fonts/spectral-italic.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:normal;  font-display:swap; src:url('/fonts/spectral-500.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:italic;  font-display:swap; src:url('/fonts/spectral-500-italic.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:400; font-style:normal;  font-display:swap; src:url('/fonts/inter-400.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:500; font-style:normal;  font-display:swap; src:url('/fonts/inter-500.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:600; font-style:normal;  font-display:swap; src:url('/fonts/inter-600.ttf') format('truetype'); }
+
+:root {
+  /* Helle Layer, alle Töne aus Tannenmoos Twilight abgeleitet */
+  --paper:      #F4F8F4;   /* Grundfläche, hell mit Grünstich */
+  --paper-band: #E8F0E8;   /* Fast-Weiß als Sektionsband */
+  --card:       #FFFFFF;
+  --forest:     #0F1A14;   /* Waldgrün, Headlines + dunkle Flächen */
+  --forest-2:   #1F2D24;   /* Dunkelgrün */
+  --olive:      #3D5A2E;   /* Olivgrün, Akzentschrift auf hell */
+  --sage:       #7AA890;   /* Salbei, Akzentfarbe: Linien, Icons, Flächen */
+  --sage-light: #A8BAB0;   /* Helles Salbei */
+  --near-white: #E8F0E8;
+  --navy:       #1B4C93;   /* Marineblau, CTA */
+
+  --text:       #2C3B32;
+  --text-muted: #55655B;
+  --line:       rgba(122,168,144,0.34);
+  --line-soft:  rgba(122,168,144,0.20);
+  --sage-fill:  rgba(122,168,144,0.11);
+
+  --serif: 'Spectral', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --ease:  cubic-bezier(0.16, 1, 0.3, 1);
+  --wrap:  1120px;
+  --narrow: 760px;
+}
+
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body {
+  font-family:var(--sans);
+  font-size:17px; line-height:1.75;
+  color:var(--text); background:var(--paper);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img { max-width:100%; height:auto; display:block; }
+a { color:inherit; text-decoration:none; }
+ul { list-style:none; }
+h1,h2,h3 { font-family:var(--serif); font-weight:500; line-height:1.16; letter-spacing:-0.015em; color:var(--forest); }
+em { font-style:italic; font-weight:400; color:var(--olive); }
+
+.wrap   { max-width:var(--wrap); margin:0 auto; padding:0 32px; }
+.narrow { max-width:var(--narrow); margin:0 auto; }
+.section { padding:104px 0; }
+@media (max-width:720px){ .section { padding:72px 0; } .wrap { padding:0 22px; } }
+
+/* ── Eyebrow ────────────────────────────────────────── */
+.eyebrow {
+  display:inline-flex; align-items:center; gap:13px;
+  font-family:var(--sans); font-size:12px; font-weight:600;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--olive); margin-bottom:22px;
+}
+.eyebrow::before { content:""; width:28px; height:1px; background:var(--sage); }
+.eyebrow.center { justify-content:center; }
+
+/* ── Nav ────────────────────────────────────────────── */
+.nav {
+  position:fixed; top:0; left:0; right:0; z-index:60;
+  background:rgba(244,248,244,0.88);
+  backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s var(--ease), background .3s var(--ease);
+}
+.nav.scrolled { border-bottom-color:var(--line-soft); }
+.nav-inner { max-width:var(--wrap); margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.nav-logo {
+  font-family:var(--sans); font-size:13px; font-weight:600;
+  letter-spacing:0.24em; text-transform:uppercase; color:var(--forest);
+}
+.nav-cta {
+  font-family:var(--sans); font-size:13.5px; font-weight:600;
+  color:#FFFFFF; background:var(--navy);
+  padding:11px 22px; border-radius:10px;
+  transition:background .25s var(--ease), transform .25s var(--ease);
+}
+.nav-cta:hover { background:#2A5DAA; transform:translateY(-1px); }
+@media (max-width:560px){ .nav-inner { padding:13px 22px; } .nav-logo { font-size:11.5px; letter-spacing:0.18em; } .nav-cta { font-size:12.5px; padding:10px 16px; } }
+
+/* ── Buttons ────────────────────────────────────────── */
+.btn {
+  display:inline-flex; align-items:center; gap:11px;
+  font-family:var(--sans); font-size:15.5px; font-weight:600;
+  color:#FFFFFF; background:var(--navy);
+  border-radius:12px; padding:17px 34px;
+  box-shadow:0 14px 32px -16px rgba(27,76,147,0.6);
+  transition:background .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.btn:hover { background:#2A5DAA; transform:translateY(-2px); box-shadow:0 20px 40px -16px rgba(27,76,147,0.65); }
+.btn .arrow { transition:transform .25s var(--ease); }
+.btn:hover .arrow { transform:translateX(4px); }
+.btn-light { color:var(--forest); background:var(--sage); box-shadow:0 14px 32px -16px rgba(122,168,144,0.7); }
+.btn-light:hover { background:#95C0A8; box-shadow:0 20px 40px -16px rgba(122,168,144,0.75); }
+
+/* ── Hero ───────────────────────────────────────────── */
+.hero { padding:168px 0 96px; position:relative; overflow:hidden; }
+.hero::after {
+  content:""; position:absolute; right:-180px; top:-140px;
+  width:560px; height:560px; border-radius:50%;
+  background:radial-gradient(circle, rgba(122,168,144,0.18) 0%, rgba(122,168,144,0) 68%);
+  pointer-events:none;
+}
+.hero-grid { display:grid; grid-template-columns:1.15fr 0.85fr; gap:64px; align-items:center; position:relative; z-index:1; }
+@media (max-width:920px){ .hero { padding:132px 0 68px; } .hero-grid { grid-template-columns:1fr; gap:40px; } }
+
+.hero h1 { font-size:clamp(34px, 5.2vw, 58px); margin-bottom:26px; }
+.hero-lead { font-size:19px; color:var(--text-muted); max-width:54ch; margin-bottom:32px; }
+.hero-lead strong { color:var(--forest); font-weight:500; }
+
+.hero-facts { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:34px; }
+.fact {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:13.5px; font-weight:500; color:var(--forest);
+  background:var(--sage-fill); border:1px solid var(--line-soft);
+  border-radius:999px; padding:8px 16px;
+}
+.fact svg { width:15px; height:15px; stroke:var(--olive); fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+.hero-note { font-size:13.5px; color:var(--text-muted); margin-top:14px; }
+
+.hero-portrait { position:relative; }
+.hero-portrait img { border-radius:20px; box-shadow:0 40px 80px -44px rgba(15,26,20,0.55); }
+.hero-portrait figcaption {
+  position:absolute; left:22px; right:22px; bottom:-26px;
+  background:var(--card); border:1px solid var(--line-soft); border-radius:14px;
+  padding:16px 20px; box-shadow:0 20px 44px -28px rgba(15,26,20,0.4);
+  font-family:var(--serif); font-style:italic; font-size:16px; line-height:1.5; color:var(--forest);
+}
+@media (max-width:920px){ .hero-portrait { max-width:420px; margin:0 auto 40px; } }
+
+/* ── Zitat-Spiegel ──────────────────────────────────── */
+.band { background:var(--paper-band); }
+.mirror { text-align:center; }
+.mirror-quote {
+  font-family:var(--serif); font-style:italic; font-weight:400;
+  font-size:clamp(22px, 3.6vw, 33px); line-height:1.42; color:var(--forest);
+  max-width:22ch; margin:0 auto 26px; position:relative;
+}
+.mirror-quote::before {
+  content:""; display:block; width:34px; height:2px; background:var(--sage);
+  margin:0 auto 30px;
+}
+.mirror p { font-size:18px; color:var(--text-muted); max-width:56ch; margin:0 auto; }
+.mirror .pivot { margin-top:22px; font-family:var(--serif); font-size:21px; color:var(--forest); font-style:normal; }
+
+/* ── Sektions-Kopf ──────────────────────────────────── */
+.head { max-width:640px; margin-bottom:52px; }
+.head.center { margin-left:auto; margin-right:auto; text-align:center; }
+.head h2 { font-size:clamp(27px, 4vw, 42px); margin-bottom:18px; }
+.head p { font-size:17.5px; color:var(--text-muted); }
+
+/* ── Schubladen ─────────────────────────────────────── */
+.drawers { display:grid; grid-template-columns:repeat(5, 1fr); gap:12px; margin-bottom:44px; }
+@media (max-width:860px){ .drawers { grid-template-columns:repeat(2, 1fr); } }
+.drawer {
+  background:var(--card); border:1px solid var(--line-soft); border-radius:14px;
+  padding:26px 14px; text-align:center;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;
+  font-family:var(--serif); font-style:italic; font-size:17px; line-height:1.35; color:var(--forest);
+}
+.drawer::before { content:""; width:22px; height:2px; background:var(--sage); border-radius:2px; }
+.statement {
+  border-left:2px solid var(--sage); padding-left:26px; max-width:60ch;
+  font-family:var(--serif); font-size:clamp(19px, 2.6vw, 25px); line-height:1.5; color:var(--forest);
+}
+.statement + .statement { margin-top:18px; }
+
+/* ── Check-Listen ───────────────────────────────────── */
+.two-col { display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; align-items:start; }
+@media (max-width:900px){ .two-col { grid-template-columns:1fr; gap:32px; } }
+
+.checks { display:flex; flex-direction:column; gap:16px; }
+.checks li { display:flex; gap:14px; align-items:flex-start; font-size:16.5px; line-height:1.6; color:var(--text); }
+.checks svg { flex:0 0 22px; width:22px; height:22px; margin-top:3px; stroke:var(--olive); fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+.checks strong { color:var(--forest); font-weight:600; }
+
+.notbox { background:var(--forest); border-radius:18px; padding:38px 34px; }
+.notbox h3 { color:var(--near-white); font-size:23px; margin-bottom:24px; }
+.notbox h3 em { color:var(--sage); }
+.notbox li { display:flex; gap:14px; align-items:flex-start; font-size:16px; line-height:1.6; color:var(--sage-light); }
+.notbox li + li { margin-top:15px; }
+.notbox svg { flex:0 0 20px; width:20px; height:20px; margin-top:4px; stroke:var(--sage); fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+.notbox .close {
+  margin-top:26px; padding-top:22px; border-top:1px solid rgba(122,168,144,0.24);
+  font-family:var(--serif); font-size:18.5px; line-height:1.5; color:var(--near-white);
+}
+.notbox .close em { color:var(--sage); }
+
+/* ── Die eine Frage ─────────────────────────────────── */
+.question { background:var(--paper); padding:96px 0; text-align:center; position:relative; overflow:hidden; border-bottom:1px solid var(--line-soft); }
+.question::before {
+  content:""; position:absolute; left:50%; top:-260px; transform:translateX(-50%);
+  width:720px; height:720px; border-radius:50%;
+  background:radial-gradient(circle, rgba(122,168,144,0.22) 0%, rgba(122,168,144,0) 66%);
+  pointer-events:none;
+}
+.question .wrap { position:relative; z-index:1; }
+.question-line {
+  font-family:var(--serif); font-weight:500;
+  font-size:clamp(30px, 5.4vw, 60px); line-height:1.14; letter-spacing:-0.02em;
+  color:var(--forest); margin:0 auto 26px; max-width:16ch;
+}
+.question-sub { font-size:17.5px; line-height:1.72; color:var(--text-muted); max-width:58ch; margin:0 auto; }
+@media (max-width:720px){ .question { padding:68px 0; } }
+
+/* ── Nutzen ─────────────────────────────────────────── */
+.gains { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+@media (max-width:860px){ .gains { grid-template-columns:1fr; } }
+.gain {
+  background:var(--card); border:1px solid var(--line-soft); border-radius:18px;
+  padding:32px 28px; position:relative; overflow:hidden;
+}
+.gain::before { content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg, var(--navy), var(--sage)); }
+.gain-icon { width:42px; height:42px; border-radius:11px; background:var(--sage-fill); display:grid; place-items:center; margin-bottom:20px; }
+.gain-icon svg { width:21px; height:21px; stroke:var(--olive); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.gain h3 { font-size:20px; margin-bottom:11px; }
+.gain p { font-size:15.5px; color:var(--text-muted); line-height:1.68; }
+
+/* ── Über Nicole ────────────────────────────────────── */
+.about { display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:center; }
+@media (max-width:900px){ .about { grid-template-columns:1fr; gap:34px; } .about-img { max-width:340px; } }
+.about-img img { border-radius:18px; box-shadow:0 36px 72px -44px rgba(15,26,20,0.5); }
+.creds { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+.creds li {
+  font-size:13.5px; font-weight:500; color:var(--forest);
+  background:var(--sage-fill); border:1px solid var(--line-soft);
+  border-radius:999px; padding:7px 15px;
+}
+.about p { font-size:17px; color:var(--text-muted); margin-bottom:18px; }
+.about p strong { color:var(--forest); font-weight:500; }
+.kpis { display:flex; flex-wrap:wrap; gap:34px; margin-top:30px; padding-top:26px; border-top:1px solid var(--line-soft); }
+.kpi b { display:block; font-family:var(--serif); font-size:30px; font-weight:500; color:var(--olive); line-height:1.1; }
+.kpi span { font-size:13px; color:var(--text-muted); letter-spacing:0.02em; }
+
+/* ── Kalender ───────────────────────────────────────── */
+.cal-head { text-align:center; max-width:640px; margin:0 auto 44px; }
+.cal-head h2 { font-size:clamp(28px, 4.2vw, 44px); margin-bottom:18px; }
+.cal-head p { font-size:17.5px; color:var(--text-muted); }
+.cal-card {
+  background:var(--card); border:1px solid var(--line);
+  border-radius:22px; padding:34px;
+  box-shadow:0 40px 90px -54px rgba(15,26,20,0.45);
+  max-width:940px; margin:0 auto;
+}
+@media (max-width:640px){ .cal-card { padding:18px; border-radius:16px; } }
+.tidycal-embed { min-height:640px; }
+.cal-fallback { text-align:center; font-size:14px; color:var(--text-muted); margin-top:22px; }
+.cal-fallback a { color:var(--olive); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+
+/* ── Closing ────────────────────────────────────────── */
+.closing { background:var(--forest); text-align:center; padding:104px 0; }
+.closing h2 { color:var(--near-white); font-size:clamp(27px, 4.2vw, 44px); max-width:19ch; margin:0 auto 22px; }
+.closing h2 em { color:var(--sage); }
+.closing p { font-size:18px; color:var(--sage-light); max-width:52ch; margin:0 auto 36px; }
+
+/* ── Footer ─────────────────────────────────────────── */
+.footer { background:var(--forest); padding:0 0 44px; text-align:center; }
+.footer-inner { border-top:1px solid rgba(122,168,144,0.18); padding-top:30px; }
+.footer p, .footer a { font-size:13.5px; color:var(--sage-light); }
+.footer a { text-decoration:underline; text-underline-offset:3px; }
+.footer nav { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; margin-top:12px; }
+
+/* ── Reveal ─────────────────────────────────────────── */
+[data-reveal] { opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+[data-reveal].in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity:1; transform:none; transition:none; }
+  html { scroll-behavior:auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Nicole Lurz</a>
+    <a href="#termin" class="nav-cta">Termin wählen</a>
+  </div>
+</header>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div data-reveal>
+      <span class="eyebrow">Klarheitsgespräch</span>
+      <h1>Du hast schon viel ausprobiert. Vielleicht fehlt nicht der nächste Tipp, sondern der Blick auf das <em>ganze Bild</em>.</h1>
+      <p class="hero-lead">Schlaf, der nicht mehr erholt. Energie, die nicht zurückkommt. Hormonelle Veränderungen, Verdauung, ein Körper, der nicht mehr so funktioniert wie früher. <strong>In 30 Minuten schauen wir gemeinsam darauf, was bei dir gerade wirklich passiert.</strong> Nicht auf ein einzelnes Symptom. Auf die Zusammenhänge.</p>
+
+      <ul class="hero-facts">
+        <li class="fact"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 Minuten</li>
+        <li class="fact"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Kostenfrei</li>
+        <li class="fact"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>Online über Zoom</li>
+      </ul>
+
+      <a href="#termin" class="btn">Klarheitsgespräch vereinbaren <span class="arrow">&rarr;</span></a>
+      <p class="hero-note">Nur begrenzte Termine pro Monat. Der Kalender zeigt dir, was aktuell frei ist.</p>
+    </div>
+
+    <figure class="hero-portrait" data-reveal>
+      <img src="/images/nicole-hero.jpg" alt="Nicole Lurz">
+      <figcaption>„Ich sehe nicht nur Symptome. Ich sehe Systeme."</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ── SPIEGEL ──────────────────────────────────────── -->
+<section class="section band">
+  <div class="wrap">
+    <div class="mirror narrow" data-reveal>
+      <p class="mirror-quote">„Ich mache doch schon so viel. Warum wird es trotzdem nicht besser?"</p>
+      <p>Diesen Satz höre ich fast in jedem ersten Gespräch. Er kommt nicht von Frauen, die zu wenig tun. Er kommt von Frauen, die viel tun, und trotzdem nicht weiterkommen.</p>
+      <p class="pivot">Genau hier setzen wir an.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WARUM ES BISHER NICHT WEITERGING ─────────────── -->
+<section class="section">
+  <div class="wrap">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Der blinde Fleck</span>
+      <h2>Warum du bisher vielleicht nicht <em>weitergekommen</em> bist</h2>
+      <p>Die Suche geht fast immer in dieselbe Richtung: nach der einen Ursache.</p>
+    </div>
+
+    <ul class="drawers" data-reveal>
+      <li class="drawer">Sind es die Hormone?</li>
+      <li class="drawer">Ist es die Schilddrüse?</li>
+      <li class="drawer">Ist es Stress?</li>
+      <li class="drawer">Ist es der Darm?</li>
+      <li class="drawer">Ist es der Schlaf?</li>
+    </ul>
+
+    <div class="narrow" data-reveal>
+      <p class="statement">Dein Körper funktioniert nicht in einzelnen Schubladen.</p>
+      <p class="statement">Manchmal liegt der entscheidende Hinweis nicht in einem einzelnen Wert, sondern darin, wie die Systeme miteinander zusammenhängen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WAS WIR TUN / WAS ES NICHT IST ───────────────── -->
+<section class="section band">
+  <div class="wrap two-col">
+    <div data-reveal>
+      <span class="eyebrow">Im Gespräch</span>
+      <h2 style="font-size:clamp(26px,3.6vw,38px); margin-bottom:28px;">Worauf wir gemeinsam schauen</h2>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Was dich aktuell am meisten ausbremst.</strong> Welche Signale so laut sind, dass sie deinen Alltag bestimmen.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Was du bereits ausprobiert hast</strong> und warum es vielleicht nicht den Durchbruch gebracht hat.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Welche Muster sichtbar werden,</strong> wenn man die einzelnen Puzzleteile nebeneinanderlegt.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Ob der Blind Spot Check für deine Situation sinnvoll ist.</strong> Und falls nicht, was stattdessen dein nächster Schritt wäre.</span></li>
+      </ul>
+    </div>
+
+    <div class="notbox" data-reveal>
+      <h3>Was dieses Gespräch <em>nicht</em> ist</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Kein Verkaufsgespräch. Ich entscheide genauso aktiv mit, ob wir zusammenpassen.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Kein Versprechen, dass in 30 Minuten alles gelöst ist.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Kein weiterer Test mit einer schnellen Antwort.</span></li>
+      </ul>
+      <p class="close">Wir klären ehrlich, wo du stehst. Mehr will dieses Gespräch nicht, und weniger auch nicht.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIE EINE FRAGE ───────────────────────────────── -->
+<section class="question">
+  <div class="wrap">
+    <div class="narrow" data-reveal>
+      <span class="eyebrow center">Darum geht es</span>
+      <p class="question-line">Was ist dein nächster <em>sinnvoller</em> Schritt?</p>
+      <p class="question-sub">Ratlosigkeit kostet dich mehr als jede Entscheidung, die sich später korrigieren lässt. Am Ende dieser 30 Minuten hast du eine Antwort auf diese eine Frage. Auch dann, wenn die Antwort lautet, dass ich nicht die Richtige für dich bin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── NUTZEN ───────────────────────────────────────── -->
+<section class="section">
+  <div class="wrap">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Was du mitnimmst</span>
+      <h2>Klarheit ist die <em>Abkürzung</em></h2>
+    </div>
+    <div class="gains" data-reveal>
+      <article class="gain">
+        <div class="gain-icon"><svg viewBox="0 0 24 24"><path d="M4 17 9 12l3 3 8-8"/><path d="M20 11V7h-4"/></svg></div>
+        <h3>Schluss mit Trial and Error</h3>
+        <p>Kein weiteres Präparat auf Verdacht, kein nächster Versuch ins Blaue. Du weißt nach dem Gespräch, in welche Richtung es überhaupt zu schauen lohnt.</p>
+      </article>
+      <article class="gain">
+        <div class="gain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Zeit, die du zurückbekommst</h3>
+        <p>Die Jahre, in denen du dich von einer Meinung zur nächsten arbeitest, sind der teuerste Teil. Eine geordnete Einschätzung spart dir genau diese Runden.</p>
+      </article>
+      <article class="gain">
+        <div class="gain-icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 4.5 3.4 7.6 8 8.7 4.6-1.1 8-4.2 8-8.7V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Handlungsfähig statt ratlos</h3>
+        <p>Du gehst nicht mit einer weiteren Liste raus, sondern mit einer Einordnung. Und mit einer klaren Antwort darauf, was als Nächstes dran ist.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── FÜR WEN ──────────────────────────────────────── -->
+<section class="section band">
+  <div class="wrap narrow">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Passung</span>
+      <h2>Für <em>dich</em>, wenn du es leid bist</h2>
+    </div>
+    <ul class="checks" data-reveal>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Wenn du es leid bist, gegen deinen Körper anzukämpfen, obwohl du sonst alles im Griff hast.</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Wenn du es leid bist, selbst nach der besten Lösung für dich zu suchen, und am Ende bringt es doch wieder nichts.</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Wenn dir gesagt wird, deine Werte seien in Ordnung, du aber genau weißt, dass etwas nicht stimmt.</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Wenn du wissen willst, was hinter den einzelnen Symptomen steckt, statt weiter an ihnen herumzudoktern.</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Wenn du die Führung über dein eigenes System übernehmen willst.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── ÜBER NICOLE ──────────────────────────────────── -->
+<section class="section">
+  <div class="wrap about">
+    <div class="about-img" data-reveal><img src="/images/nicole-about.jpg" alt="Nicole Lurz"></div>
+    <div data-reveal>
+      <span class="eyebrow">Wer mit dir spricht</span>
+      <h2 style="font-size:clamp(26px,3.8vw,40px); margin-bottom:20px;">Ich bin <em>Nicole</em>.</h2>
+      <ul class="creds">
+        <li>Heilpraktikerin mit BWL-Hirn</li>
+        <li>Mentorin für Regenerationsmedizin</li>
+        <li>Expertin für Frauengesundheit und Hormone</li>
+      </ul>
+      <p>In meiner Arbeit verbinde ich medizinisches Wissen mit einem ganzheitlichen Blick auf die Zusammenhänge im Körper. <strong>Ich sehe nicht nur Symptome. Ich sehe Systeme.</strong></p>
+      <p>Mein Ziel ist nicht, dir noch eine weitere Liste mit Dingen zu geben, die du ausprobieren kannst. Mein Ziel ist, gemeinsam sichtbar zu machen, was bisher übersehen wurde.</p>
+      <div class="kpis">
+        <div class="kpi"><b>20+</b><span>Jahre Erfahrung</span></div>
+        <div class="kpi"><b>1.500+</b><span>Klientinnen begleitet</span></div>
+        <div class="kpi"><b>14</b><span>Jahre eigene Heilpraxis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KALENDER ─────────────────────────────────────── -->
+<section class="section band" id="termin">
+  <div class="wrap">
+    <div class="cal-head" data-reveal>
+      <span class="eyebrow center">Dein nächster Schritt</span>
+      <h2>Wähle deinen Termin für das <em>Klarheitsgespräch</em></h2>
+      <p>30 Minuten, online über Zoom, kostenfrei. Es gibt nur begrenzte Termine pro Monat. Such dir aus, was dir passt. Wir schauen gemeinsam, wo du stehst und ob ich dich sinnvoll unterstützen kann.</p>
+    </div>
+
+    <div class="cal-card" data-reveal>
+      <div class="tidycal-embed" data-path="nicole-lurz/mbsc"></div>
+      <p class="cal-fallback">Der Kalender lädt nicht? Dann geht es <a href="https://tidycal.com/nicole-lurz/mbsc" target="_blank" rel="noopener">hier direkt zur Terminauswahl</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOSING ──────────────────────────────────────── -->
+<section class="closing">
+  <div class="wrap">
+    <h2 data-reveal>Du musst nicht noch <em>mehr</em> ausprobieren.</h2>
+    <p data-reveal>Vielleicht brauchst du zuerst jemanden, der die einzelnen Puzzleteile mit dir zusammensetzt.</p>
+    <a href="#termin" class="btn btn-light" data-reveal>Klarheitsgespräch vereinbaren <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────── -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>&copy; <span id="year">2026</span> Nicole Lurz</p>
+    <nav>
+      <a href="https://nicole-lurz.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+      <a href="https://nicole-lurz.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- TidyCal Embed -->
+<script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12, rootMargin:'0px 0px -8%' });
+  document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 70 + 'ms';
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
