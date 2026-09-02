@@ -119,7 +119,10 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
   letter-spacing:0.16em; text-transform:uppercase;
   color:var(--olive); margin-bottom:8px;
 }
-.form-card h2 { font-size:23px; margin-bottom:18px; }
+.form-card h2 { font-size:23px; margin-bottom:14px; }
+.form-card .consent-note {
+  font-size:13.5px; color:var(--text-muted); line-height:1.6; margin-bottom:18px;
+}
 
 .embed { width:100%; }
 .embed iframe { width:100%; min-height:300px; border:none; display:block; overflow:hidden; }
@@ -191,6 +194,11 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
   <section class="form-card" id="anmelden">
     <p class="form-eyebrow">Gratis · per E-Mail</p>
     <h2>Trag dich ein, <em>ich schick ihn dir.</em></h2>
+    <p class="consent-note">
+      Mit der Anmeldung bekommst du den System-Kompass und danach meinen Newsletter,
+      Impulse zu Gesundheit und Leadership, meist sonntags. Du kannst ihn jederzeit
+      mit einem Klick abbestellen.
+    </p>
 
     <!--
       ════════════════════════════════════════════════════════════════
@@ -213,7 +221,7 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
 
     <p class="privacy">
       <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-      Kein Spam. Double-Opt-in. Jederzeit abbestellbar. DSGVO-konform.
+      Kein Spam. Double-Opt-in. DSGVO-konform.
     </p>
   </section>
 
