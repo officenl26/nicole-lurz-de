@@ -11,10 +11,10 @@
 <link rel="apple-touch-icon" href="/favicon-180.png">
 <link rel="stylesheet" href="premium.css">
 <style>
-  /* ── Danke 1, ein einziger Job. Die E-Mail bestätigen ──
+  /* ── Danke 1, ein einziger Job. Die Zustimmung per E-Mail bestätigen ──
      Universelle Seite für alle Anmeldungen (Newsletter, Freebies, Mini-Kurse).
-     Der jeweilige Leadmagnet kommt per URL-Parameter rein, also ?lm=system-kompass
-     Ohne Parameter bleibt die Seite neutral und voll funktionsfähig. */
+     Der Text ist bewusst für jede Quelle gleich. Ein optionaler ?lm=...-Parameter
+     wird nur fürs Tracking gelesen, nicht für sichtbaren Text. */
   .danke-wrap { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 7rem 1.5rem 5rem; text-align: center; }
   .doi-steps { display: flex; align-items: center; gap: 0; margin: 0 auto 3.5rem; animation: danke-up 0.6s var(--ease) 0.2s both; }
   .doi-step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
@@ -87,14 +87,14 @@
     <div class="doi-connector" aria-hidden="true"></div>
     <div class="doi-step" role="listitem">
       <div class="doi-step-circle pending">3</div>
-      <span class="doi-step-label" data-lm="stepLabel">Freigeschaltet</span>
+      <span class="doi-step-label">Fertig</span>
     </div>
   </div>
 
   <p class="danke-eyebrow">Einen Schritt noch</p>
   <h1 class="danke-h1">Schau jetzt in<br><em>dein E-Mail-Postfach.</em></h1>
   <p class="danke-sub">
-    Deine Anmeldung ist da. Bevor ich dir <span data-lm="subText">deinen Zugang</span> freischalten darf, brauche ich noch dein Okay per Klick.
+    Deine Anmeldung ist da. Bevor ich mit dir in Kontakt treten darf, brauche ich einmal deine Zustimmung. Ein Klick in der E-Mail genügt.
   </p>
 
   <div class="doi-card">
@@ -106,7 +106,7 @@
     <ol class="doi-steps-inner">
       <li><span class="num">1</span><span>Öffne dein Postfach.</span></li>
       <li><span class="num">2</span><span>Such die E-Mail, die mit <strong>„Anmeldung bei Nicole Lurz“</strong> beginnt.</span></li>
-      <li><span class="num">3</span><span data-lm="stepThree">Klick auf den Bestätigungslink darin. Fertig.</span></li>
+      <li><span class="num">3</span><span>Klick auf den Bestätigungslink darin. Das ist deine Zustimmung, mehr braucht es nicht.</span></li>
     </ol>
   </div>
 
@@ -130,63 +130,15 @@
   </div>
 </footer>
 
-<!-- ═══════════════ LEADMAGNET-PERSONALISIERUNG ═══════════════
-     Aufruf mit danke-bestaetigen.html?lm=system-kompass
-     Neuen Leadmagneten anlegen = einen Eintrag in LM ergänzen. Sonst nichts.
-     Unbekannter oder fehlender Parameter fällt auf die neutralen Texte
-     zurück, die bereits im HTML stehen. -->
+<!-- ═══════════════ QUELLE FÜRS TRACKING ═══════════════
+     Diese Seite ist bewusst allgemein: eine einzige Bestätigungsseite für alle
+     Anmeldungen (Newsletter, Freebies, Mini-Kurse). Kein sichtbarer Text ändert
+     sich je nach Quelle. Der optionale Parameter ?lm=... wird nur genutzt, um
+     in Meta und GA4 zu sehen, welche Anmeldung den Lead gebracht hat. -->
 <script>
-  var LM = {
-    "system-kompass": {
-      stepLabel: "System-Kompass",
-      subText:   "den System-Kompass",
-      stepThree: "Klick auf den Bestätigungslink darin. Danach öffnet sich dein System-Kompass.",
-      title:     "Fast geschafft · System-Kompass · Nicole Lurz",
-      track:     "System-Kompass"
-    },
-    "nervensystem": {
-      stepLabel: "Mini-Kurs",
-      subText:   "den Mini-Kurs Nervensystem",
-      stepThree: "Klick auf den Bestätigungslink darin. Danach startet dein Mini-Kurs.",
-      title:     "Fast geschafft · Mini-Kurs Nervensystem · Nicole Lurz",
-      track:     "Mini-Kurs Nervensystem"
-    },
-    "immunsystem": {
-      stepLabel: "Mini-Kurs",
-      subText:   "den Mini-Kurs Immunsystem",
-      stepThree: "Klick auf den Bestätigungslink darin. Danach startet dein Mini-Kurs.",
-      title:     "Fast geschafft · Mini-Kurs Immunsystem · Nicole Lurz",
-      track:     "Mini-Kurs Immunsystem"
-    },
-    "stoffwechsel": {
-      stepLabel: "Mini-Kurs",
-      subText:   "den Mini-Kurs Stoffwechsel",
-      stepThree: "Klick auf den Bestätigungslink darin. Danach startet dein Mini-Kurs.",
-      title:     "Fast geschafft · Mini-Kurs Stoffwechsel · Nicole Lurz",
-      track:     "Mini-Kurs Stoffwechsel"
-    },
-    "newsletter": {
-      stepLabel: "Willkommen",
-      subText:   "meinen Newsletter",
-      stepThree: "Klick auf den Bestätigungslink darin. Fertig.",
-      title:     "Fast geschafft · Newsletter · Nicole Lurz",
-      track:     "Newsletter"
-    }
-  };
-
-  window.NL_LEAD_NAME = "Anmeldung";   // Fallback fürs Tracking
-
   (function(){
     var key = new URLSearchParams(window.location.search).get("lm");
-    var cfg = key && Object.prototype.hasOwnProperty.call(LM, key) ? LM[key] : null;
-    if (!cfg) return;   // unbekannter Parameter: neutrale Texte bleiben stehen
-
-    ["stepLabel","subText","stepThree"].forEach(function(field){
-      var el = document.querySelector('[data-lm="' + field + '"]');
-      if (el && cfg[field]) el.textContent = cfg[field];
-    });
-    if (cfg.title) document.title = cfg.title;
-    if (cfg.track) window.NL_LEAD_NAME = cfg.track;
+    window.NL_LEAD_NAME = key ? key : "Anmeldung";
   })();
 </script>
 
