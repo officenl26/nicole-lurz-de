@@ -8,27 +8,36 @@
 <base target="_top">
 
 <style>
+@font-face { font-family:'Spectral'; font-weight:400; font-style:normal; font-display:swap; src:url('/fonts/spectral-regular.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:400; font-style:italic;  font-display:swap; src:url('/fonts/spectral-italic.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:normal; font-display:swap; src:url('/fonts/spectral-500.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:italic;  font-display:swap; src:url('/fonts/spectral-500-italic.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:400; font-style:normal; font-display:swap; src:url('/fonts/inter-400.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:500; font-style:normal; font-display:swap; src:url('/fonts/inter-500.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:600; font-style:normal; font-display:swap; src:url('/fonts/inter-600.ttf') format('truetype'); }
+
   html, body {
     margin: 0;
     padding: 0;
     font-family: Inter, system-ui, sans-serif;
   }
 
+/* Tannenmoos Twilight auf hellem Grund, wie klarheitsgespraech + selbsttest */
 :root{
-  --bg:#f9f7f4;
+  --bg:#F4F8F4;
   --surface:#fff;
   --ink:#0F1A14;
-  --ink2:#3a4a3e;
-  --ink3:#7a8a7e;
+  --ink2:#2C3B32;
+  --ink3:#55655B;
   --forest:#1F2D24;
   --forest-mid:#3D5A2E;
   --sage:#7AA890;
   --sage-light:#d4e8e0;
   --mist:#A8BAB0;
   --dark:#0F1A14;
-  --line:#e2ded8;
+  --line:#dde8e0;
   --blue:#1B4C93;
-  --pill-bg:#eef3ef;
+  --pill-bg:#E8F0E8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
@@ -36,7 +45,9 @@ main{flex:1}
 .wrap{max-width:700px;margin:0 auto;padding:0 28px}
 
 .site-header{padding:18px 28px;display:flex;justify-content:center;border-bottom:1px solid var(--line);background:var(--bg);}
-.logo-text{font-family:'Spectral',serif;font-size:.92rem;font-weight:400;color:var(--ink3);letter-spacing:.05em;}
+.logo-text{font-family:'Spectral',serif;font-size:1.35rem;font-weight:500;color:var(--ink);letter-spacing:-.01em;text-decoration:none;white-space:nowrap;}
+.logo-text .lf{color:var(--ink);}
+.logo-text .ll{color:var(--sage);font-style:italic;margin-left:.22em;}
 
 .pb-wrap{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:13px 28px 11px;}
 .pb-track{height:2px;background:var(--line);border-radius:1px;overflow:hidden}
@@ -128,7 +139,7 @@ main{flex:1}
 .pill{font-size:.67rem;font-weight:600;padding:4px 10px;border-radius:4px;background:#edf0ed;color:#aaa;letter-spacing:.04em}
 .pill.on{color:#fff}
 .pill.on.g{background:var(--forest-mid)}
-.pill.on.r{background:#b5543f}
+.pill.on.r{background:#1B4C93}
 .pill.on.gr{background:var(--mist);color:var(--ink2)}
 
 .scope-note{font-size:.82rem;color:var(--ink3);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--sage);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:32px;line-height:1.7}
@@ -137,7 +148,7 @@ main{flex:1}
 .block h3{font-family:'Spectral',serif;font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:10px}
 .state-tag{display:inline-block;font-size:.67rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:4px;color:#fff;margin-bottom:12px}
 .state-tag.g{background:var(--forest-mid)}
-.state-tag.r{background:#b5543f}
+.state-tag.r{background:#1B4C93}
 .state-tag.gr{background:var(--mist);color:var(--ink2)}
 .block p{font-size:.9rem;color:var(--ink2);line-height:1.72;margin-bottom:10px}
 .block p:last-child{margin-bottom:0}
@@ -204,7 +215,8 @@ main{flex:1}
 footer{background:var(--forest);border-top:1px solid rgba(255,255,255,.06);padding:44px 28px 28px;margin-top:auto}
 .footer-inner{max-width:700px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start}
 @media(max-width:500px){.footer-inner{grid-template-columns:1fr}}
-.footer-brand{font-family:'Spectral',serif;font-size:1.1rem;font-weight:600;color:#e8f0e8;margin-bottom:4px}
+.footer-brand{font-family:'Spectral',serif;font-size:1.15rem;font-weight:500;color:#E8F0E8;margin-bottom:4px}
+.footer-brand .ll{color:var(--sage);font-style:italic;margin-left:.22em}
 .footer-tagline{font-size:.78rem;color:var(--sage);letter-spacing:.04em;margin-bottom:14px}
 .footer-desc{font-size:.81rem;color:rgba(232,240,232,.45);line-height:1.75;max-width:340px}
 .footer-desc a{color:var(--sage);text-decoration:none}
@@ -218,10 +230,8 @@ footer{background:var(--forest);border-top:1px solid rgba(255,255,255,.06);paddi
 </style>
 </head>
 <body>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <header class="site-header">
-  <div class="logo-text">Nicole Lurz · Heilpraktikerin, Gesundheitsstrategin &amp; Mentorin</div>
+  <a href="https://nicole-lurz.de" class="logo-text"><span class="lf">Nicole</span><span class="ll">Lurz</span></a>
 </header>
 
 <main>
@@ -235,7 +245,7 @@ footer{background:var(--forest);border-top:1px solid rgba(255,255,255,.06);paddi
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">Nicole Lurz</div>
+      <div class="footer-brand"><span class="lf">Nicole</span><span class="ll">Lurz</span></div>
       <div class="footer-tagline">Heilpraktikerin · Gesundheitsstrategin · Mentorin</div>
       <div class="footer-desc">
         Ich begleite Unternehmerinnen ab 50, die verstehen wollen, warum ihr Körper nicht mehr so funktioniert wie früher, und die aufgehört haben, das nächste Mittel auszuprobieren.<br><br>
@@ -398,7 +408,7 @@ var ICONS={
   flame:'<svg viewBox="0 0 24 24" fill="none" stroke="COL" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1.5 4.5 5 6 5 11a5 5 0 0 1-10 0c0-3 1.8-4.5 3-6.5.6 1.2 1.6 1.8 2 2 .3-2-.5-4.5 0-6.5z"/></svg>',
   shield:'<svg viewBox="0 0 24 24" fill="none" stroke="COL" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 19.5 5v6c0 5-3.3 8.7-7.5 10.5C7.8 19.7 4.5 16 4.5 11V5L12 2.5z"/><path d="M9 11.5l2 2 4-4"/></svg>'
 };
-var COL_HEX={g:"#3D5A2E",r:"#b5543f",gr:"#A8BAB0"};
+var COL_HEX={g:"#3D5A2E",r:"#1B4C93",gr:"#A8BAB0"};
 
 var answers={},step=-1,gateDone=false;
 var app=document.getElementById("app"),pbWrap=document.getElementById("pbWrap"),pbFill=document.getElementById("pbFill"),pbLabel=document.getElementById("pbLabel");
