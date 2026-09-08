@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Nicole Lurz//Live-Workshop//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-workshop-20260920@nicole-lurz.de
+DTSTAMP:20260908T120000Z
+DTSTART:20260920T090000Z
+DTEND:20260920T103000Z
+SUMMARY:Live-Workshop mit Nicole Lurz
+DESCRIPTION:Die drei blinden Flecken\, die dabei uebersehen werden.\n\nZugangsdaten kommen per E-Mail.\n\nhttps://nicole-lurz.de/workshop/
+LOCATION:Online auf Zoom
+URL:https://nicole-lurz.de/workshop/
+BEGIN:VALARM
+TRIGGER:-PT60M
+ACTION:DISPLAY
+DESCRIPTION:Live-Workshop mit Nicole Lurz startet in einer Stunde
+END:VALARM
+END:VEVENT
+END:VCALENDAR

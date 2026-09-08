@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0F1A14">
+<meta name="robots" content="noindex, nofollow">
+<title>Dein Platz ist sicher · Live-Workshop am 20. September · Nicole Lurz</title>
+
+<style>
+/* ════════════════════════════════════════════════════════════
+   WORKSHOP · DEINE SEITE
+   Eine Seite für zwei Momente: direkt nach der Anmeldung und am
+   Workshop-Tag selbst. Derselbe Link in Bestätigungs- und
+   Erinnerungsmail. Der Countdown schaltet zum Start automatisch um.
+
+   Reihenfolge nach Wichtigkeit: Termin sichern, Zugang, Technik,
+   Vorbereitung. Das Angebot steht bewusst ganz unten, damit es
+   das eigentliche Ziel nicht stört: dass sie erscheint.
+   ════════════════════════════════════════════════════════════ */
+
+@font-face { font-family:'Spectral'; font-weight:400; font-style:normal; font-display:swap; src:url('/fonts/spectral-regular.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:400; font-style:italic; font-display:swap; src:url('/fonts/spectral-italic.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:normal; font-display:swap; src:url('/fonts/spectral-500.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:italic; font-display:swap; src:url('/fonts/spectral-500-italic.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:400; font-style:normal; font-display:swap; src:url('/fonts/inter-400.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:500; font-style:normal; font-display:swap; src:url('/fonts/inter-500.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:600; font-style:normal; font-display:swap; src:url('/fonts/inter-600.ttf') format('truetype'); }
+
+:root{
+  --forest:#0F1A14; --forest-2:#1F2D24; --olive:#3D5A2E; --sage:#7AA890; --sage-hi:#95C0A8;
+  --sage-light:#A8BAB0; --near-white:#E8F0E8; --paper:#F4F8F4; --band:#E8F0E8;
+  --card:#FFFFFF; --text:#2C3B32; --text-muted:#55655B;
+  --line:rgba(122,168,144,.32); --line-soft:rgba(122,168,144,.18);
+  --serif:'Spectral',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--text);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+ul,ol{list-style:none}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:-.02em;color:var(--forest)}
+em{font-style:italic;font-weight:400;color:var(--olive)}
+:focus-visible{outline:3px solid var(--sage);outline-offset:3px;border-radius:4px}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px}
+.sec{padding:60px 0}
+.sec.band{background:var(--band)}
+@media(max-width:640px){.sec{padding:48px 0}.wrap{padding:0 20px}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;
+  font-family:var(--sans);font-size:16.5px;font-weight:600;color:var(--forest);background:var(--sage);
+  border:0;border-radius:12px;padding:15px 30px;cursor:pointer;text-align:center;
+  box-shadow:0 14px 30px -14px rgba(122,168,144,.7);transition:background .22s var(--ease),transform .22s var(--ease)}
+.btn:hover{background:var(--sage-hi);transform:translateY(-2px)}
+.btn[hidden],[hidden]{display:none!important}
+.eyebrow{display:block;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-bottom:13px}
+.sec h2{font-size:clamp(24px,3.4vw,32px);margin-bottom:10px}
+.sec .lead{font-size:16.5px;color:var(--text-muted);margin-bottom:26px}
+
+/* ── Kopf ── */
+.top{background:var(--forest);padding:20px 0}
+.logo{font-family:var(--serif);font-size:21px}
+.logo .lf{font-weight:500;color:var(--near-white)}
+.logo .ll{font-style:italic;color:var(--sage);margin-left:4px}
+
+/* ── Bestätigung + Countdown ── */
+.hero{background:var(--forest);padding:14px 0 64px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:50%;top:-280px;transform:translateX(-50%);width:740px;height:740px;
+  border-radius:50%;background:radial-gradient(circle,rgba(122,168,144,.18) 0%,rgba(122,168,144,0) 66%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--forest);background:var(--sage);border-radius:999px;padding:8px 18px;margin-bottom:22px}
+.badge svg{width:14px;height:14px;stroke:var(--forest);fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.hero h1{color:#FFFFFF;font-size:clamp(30px,4.6vw,46px);margin-bottom:14px}
+.hero h1 em{color:var(--sage)}
+.hero > .wrap > p{font-size:18px;color:var(--sage-light);max-width:48ch;margin:0 auto}
+
+.cd{margin:36px auto 0;max-width:460px}
+.cd-lbl{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cd-box{background:rgba(122,168,144,.12);border:1px solid rgba(122,168,144,.28);border-radius:12px;padding:14px 6px}
+.cd-box b{display:block;font-family:var(--serif);font-size:clamp(26px,6vw,34px);font-weight:500;color:#FFFFFF;line-height:1}
+.cd-box span{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-light);margin-top:6px}
+.cd-live{display:none;font-family:var(--serif);font-size:clamp(22px,4vw,30px);color:var(--sage);margin-bottom:18px}
+.cd.is-live .cd-grid,.cd.is-live .cd-lbl{display:none}
+.cd.is-live .cd-live{display:block}
+.cd .btn{margin-top:20px;width:100%;max-width:320px}
+
+/* ── Termin ── */
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 28px;
+  box-shadow:0 30px 70px -50px rgba(15,26,20,.4)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin-bottom:26px}
+.card dt{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding-top:4px}
+.card dd{font-family:var(--serif);font-size:19px;color:var(--forest)}
+@media(max-width:520px){.card{padding:24px 20px}.card dl{grid-template-columns:1fr;gap:2px 0}.card dd{margin-bottom:12px}}
+
+.cals{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:560px){.cals{grid-template-columns:1fr}}
+.cal{display:flex;align-items:center;justify-content:center;gap:9px;min-height:48px;
+  font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--forest);
+  background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;
+  transition:border-color .2s var(--ease),transform .2s var(--ease),background .2s var(--ease)}
+.cal:hover{border-color:var(--sage);background:#FFFFFF;transform:translateY(-2px)}
+.cal svg{flex:0 0 17px;width:17px;height:17px;stroke:var(--olive);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cal-note{font-size:13.5px;color:var(--text-muted);margin-top:16px;text-align:center}
+
+/* ── Zoom-Zugang ── */
+.zoom{background:var(--forest);border-radius:18px;padding:32px 30px;text-align:center}
+.zoom .eyebrow{color:var(--sage)}
+.zoom h2{color:var(--near-white);margin-bottom:8px}
+.zoom p{font-size:16px;color:var(--sage-light);margin-bottom:22px}
+.zoom .url{display:block;font-family:var(--sans);font-size:15px;color:var(--near-white);
+  background:rgba(122,168,144,.12);border:1px solid rgba(122,168,144,.26);border-radius:10px;
+  padding:14px 16px;margin-bottom:8px;word-break:break-all}
+.zoom .meta{font-size:13.5px;color:var(--sage-light);margin:0 0 22px}
+.zoom .btn{width:100%;max-width:320px}
+.zoom .hint{font-size:13px;color:var(--sage-light);margin:16px 0 0}
+
+/* ── Technik ── */
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:0}
+.stp{counter-increment:s;display:grid;grid-template-columns:46px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line-soft)}
+.stp:first-child{border-top:0;padding-top:0}
+.stp::before{content:counter(s);font-family:var(--serif);font-size:26px;font-weight:500;color:var(--sage);line-height:1.1}
+.stp h3{font-size:18.5px;margin-bottom:7px}
+.stp p{font-size:15.5px;color:var(--text-muted);line-height:1.64}
+.stp p + p{margin-top:8px}
+.stp a{color:var(--olive);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:520px){.stp{grid-template-columns:34px 1fr;gap:14px}}
+
+/* ── Vorbereitung ── */
+.prep{display:flex;flex-direction:column;gap:14px}
+.prep li{display:flex;gap:13px;align-items:flex-start;font-size:16.5px;line-height:1.6;color:var(--text)}
+.prep svg{flex:0 0 21px;width:21px;height:21px;margin-top:3px;stroke:var(--olive);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.prep strong{color:var(--forest);font-weight:600}
+
+/* ── Angebot ── */
+.offer{background:var(--forest);border-radius:20px;padding:38px 34px;position:relative;overflow:hidden}
+.offer::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(122,168,144,.16) 0%,rgba(122,168,144,0) 68%);pointer-events:none}
+.offer > *{position:relative;z-index:1}
+.offer .eyebrow{color:var(--sage)}
+.offer h2{color:var(--near-white);margin-bottom:12px}
+.offer h2 em{color:var(--sage)}
+.offer > p{font-size:16.5px;color:var(--sage-light);margin-bottom:26px}
+.offer-list{display:flex;flex-direction:column;gap:18px;margin-bottom:28px}
+.offer-list li{display:flex;gap:14px;align-items:flex-start}
+.offer-list svg{flex:0 0 21px;width:21px;height:21px;margin-top:4px;stroke:var(--sage);fill:none;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.offer-list b{display:block;font-family:var(--serif);font-size:18.5px;font-weight:500;color:var(--near-white);margin-bottom:4px}
+.offer-list span{font-size:15.5px;color:var(--sage-light);line-height:1.6}
+.offer-cta{border-top:1px solid rgba(122,168,144,.24);padding-top:24px}
+.offer-price{font-family:var(--serif);font-size:25px;color:var(--near-white);margin-bottom:16px}
+.offer-price small{display:block;font-family:var(--sans);font-size:13.5px;color:var(--sage-light);margin-top:5px}
+.offer .btn{width:100%;max-width:340px}
+.offer-fine{font-size:13px;color:var(--sage-light);margin-top:14px}
+@media(max-width:520px){.offer{padding:30px 22px}}
+
+/* ── Abschluss ── */
+.outro{text-align:center}
+.outro h2{margin-bottom:16px}
+.outro p{font-size:17px;color:var(--text-muted);max-width:52ch;margin:0 auto 14px}
+.outro .sign{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--forest);margin-top:22px}
+
+/* ── Footer ── */
+.footer{background:var(--forest);padding:28px 0;text-align:center}
+.footer p,.footer a{font-size:13px;color:var(--sage-light)}
+.footer a{text-decoration:underline;text-underline-offset:3px;margin:0 8px}
+
+[data-r]{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-r]{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap"><span class="logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></span></div>
+</header>
+
+<!-- ── BESTÄTIGUNG + COUNTDOWN ── -->
+<section class="hero">
+  <div class="wrap">
+    <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Angemeldet</span>
+    <h1>Dein Platz ist <em>sicher</em>.</h1>
+    <p>Sonntag, 20. September, 11:00 Uhr. Trag dir den Termin jetzt ein, dann kann nichts mehr dazwischenkommen.</p>
+
+    <div class="cd" id="cd">
+      <p class="cd-lbl">Es sind noch</p>
+      <div class="cd-grid" aria-hidden="true">
+        <div class="cd-box"><b id="cd-d">0</b><span>Tage</span></div>
+        <div class="cd-box"><b id="cd-h">0</b><span>Std</span></div>
+        <div class="cd-box"><b id="cd-m">0</b><span>Min</span></div>
+        <div class="cd-box"><b id="cd-s">0</b><span>Sek</span></div>
+      </div>
+      <p class="cd-live">Der Workshop läuft. Komm rein.</p>
+      <a class="btn" href="#zugang" id="cd-btn" hidden>In den Zoom-Raum</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── TERMIN + KALENDER ── -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow" data-r>Dein Termin</span>
+    <h2 data-r>Trag ihn dir jetzt ein, nicht später.</h2>
+    <p class="lead" data-r>Der Eintrag erinnert dich eine Stunde vorher automatisch.</p>
+
+    <div class="card" data-r>
+      <dl>
+        <dt>Datum</dt><dd>Sonntag, 20. September 2026</dd>
+        <dt>Uhrzeit</dt><dd>11:00 bis 12:30 Uhr</dd>
+        <dt>Ort</dt><dd>Online auf Zoom</dd>
+        <dt>Dauer</dt><dd>90 Minuten, live</dd>
+      </dl>
+
+      <div class="cals">
+        <a class="cal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Live-Workshop%20mit%20Nicole%20Lurz&amp;dates=20260920T090000Z%2F20260920T103000Z&amp;details=Die%20drei%20blinden%20Flecken%2C%20die%20dabei%20%C3%BCbersehen%20werden.%0A%0AZugang%20und%20Vorbereitung%3A%20https%3A%2F%2Fnicole-lurz.de%2Fworkshop%2Fdanke%2F&amp;location=Online%20auf%20Zoom" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>Google
+        </a>
+        <a class="cal" href="workshop-20-09-2026.ics" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M4 20h16"/></svg>Apple
+        </a>
+        <a class="cal" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Live-Workshop%20mit%20Nicole%20Lurz&amp;startdt=2026-09-20T09%3A00%3A00Z&amp;enddt=2026-09-20T10%3A30%3A00Z&amp;location=Online%20auf%20Zoom&amp;body=Zugang%20und%20Vorbereitung%3A%20https%3A%2F%2Fnicole-lurz.de%2Fworkshop%2Fdanke%2F" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>Outlook
+        </a>
+      </div>
+      <p class="cal-note">Apple lädt eine Datei herunter, ein Doppelklick legt den Termin an. Outlook und Google öffnen sich direkt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ZOOM-ZUGANG · Raum steht.
+     Der Kenncode steckt im Link, deshalb reicht ein Klick.
+     Wer die Meeting-ID manuell eingibt, braucht den numerischen
+     Kenncode aus Zoom, der ist hier bewusst nicht hinterlegt. -->
+<section class="sec band" id="zugang">
+  <div class="wrap">
+    <div class="zoom" data-r>
+      <span class="eyebrow">Dein Zugang</span>
+      <h2>Derselbe Link, immer hier</h2>
+      <p>Speicher dir diese Seite. Du findest den Zugang auch im Kalendereintrag und in deiner Bestätigungsmail.</p>
+      <span class="url">us06web.zoom.us/j/81672829527</span>
+      <p class="meta">Meeting-ID 816 7282 9527</p>
+      <a class="btn" href="https://us06web.zoom.us/j/81672829527?pwd=g667IJe8ieuzhtwdAqWvqCpWzJoFy8.1" target="_blank" rel="noopener">Zoom-Raum öffnen</a>
+      <p class="hint">Der Raum öffnet um 10:50 Uhr. Vorher landest du im Warteraum, das ist richtig so.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECHNIK ── -->
+<section class="sec">
+  <div class="wrap">
+    <span class="eyebrow" data-r>Ohne Technik-Stress</span>
+    <h2 data-r>So kommst du sicher rein</h2>
+    <p class="lead" data-r>Einmal kurz vorbereiten, dann läuft der Sonntag ohne Hektik.</p>
+
+    <div class="steps" data-r>
+      <article class="stp">
+        <div>
+          <h3>Zoom vorher einmal öffnen</h3>
+          <p>Hast du Zoom schon auf dem Rechner, startet am Sonntag alles von selbst. Wenn nicht, lade die App jetzt herunter, dann musst du das nicht kurz vor elf machen.</p>
+          <p><a href="https://zoom.us/download" target="_blank" rel="noopener">Zoom herunterladen</a></p>
+        </div>
+      </article>
+
+      <article class="stp">
+        <div>
+          <h3>Es geht auch ohne Installation</h3>
+          <p>Wenn du nichts installieren willst oder die App nicht startet: Klick auf den Link, warte kurz, und wähle unten auf der Zoom-Seite „Über Ihren Browser teilnehmen". Vornamen eintragen, beitreten, fertig.</p>
+        </div>
+      </article>
+
+      <article class="stp">
+        <div>
+          <h3>Lieber am großen Bildschirm</h3>
+          <p>Laptop oder Tablet statt Handy. Du siehst mehr, und du bist eher wirklich dabei, statt nebenher zu scrollen.</p>
+        </div>
+      </article>
+
+      <article class="stp">
+        <div>
+          <h3>Komm ein paar Minuten früher</h3>
+          <p>Ab 10:50 Uhr ist der Raum offen. Wer um 11:00 Uhr noch mit dem Ton kämpft, verpasst den Anfang, und der Anfang trägt den Rest.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── VORBEREITUNG ── -->
+<section class="sec band">
+  <div class="wrap">
+    <span class="eyebrow" data-r>Damit die 90 Minuten sitzen</span>
+    <h2 data-r>Drei Dinge, mehr brauchst du nicht.</h2>
+    <ul class="prep" data-r style="margin-top:24px">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Stift und Papier.</strong> Du wirst mitschreiben. An einigen Stellen prüfst du deine eigene Lage.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Eine Ecke, in der dich 90 Minuten niemand braucht.</strong> Tür zu, Handy lautlos, etwas zu trinken daneben.</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Keine Mails nebenbei.</strong> Am Ende beantworte ich deine Fragen. Dafür lohnt es sich, wirklich da zu sein.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ ANGEBOT · AKTUELL AUS ══════════════
+     Zum Aktivieren: diese Kommentarzeile und die Zeile mit
+     "ENDE ANGEBOT" entfernen. Sonst nichts anfassen.
+
+     Vorher in Thrivecart erledigen:
+     1. Testmodus ausschalten, sonst wird nichts abgebucht
+     2. Produkttexte einsetzen, dort steht noch Lorem Ipsum
+     3. Preis 29 EUR pruefen
+     ═══════════════════════════════════════════════════
+
+<section class="sec">
+  <div class="wrap">
+    <div class="offer" data-r>
+      <span class="eyebrow">Der zweite Blick &middot; nur hier</span>
+      <h2>Wenn du mehr willst als die <em>90 Minuten</em></h2>
+      <p>Der Workshop gibt dir den ersten Blick. „Der zweite Blick" ist das, was danach kommt: nochmal in Ruhe draufschauen, und einmal gemeinsam mit mir.</p>
+
+      <ul class="offer-list">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span><b>Die Aufzeichnung</b>Zum Nachhören, in deinem Tempo. Für alles, was du im Moment nur halb mitgeschrieben hast.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span><b>Die Nachbesprechung, live mit mir</b>Montag, 21. September, 19:00 Uhr, 30 Minuten. Offene Fragerunde zu genau der Frage, mit der du aus dem Workshop gehst: Und was heißt das jetzt bei mir?</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span><b>Eine Körperübung für deinen Vagusnerv</b>Kurz angeleitet, direkt umsetzbar. Etwas, das du mitnimmst, statt es nur zu verstehen.</span>
+        </li>
+      </ul>
+
+      <div class="offer-cta">
+        <p class="offer-price">„Der zweite Blick" für 29 €<small>Einmalig, nur auf dieser Seite.</small></p>
+        <a class="btn" href="https://nicole-lurz.thrivecart.com/der-zweite-blick/">Ja, das nehme ich dazu</a>
+        <p class="offer-fine">Wenn nicht, ist auch gut. Dein Platz im Workshop ist unabhängig davon sicher.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ENDE ANGEBOT -->
+
+<!-- ── ABSCHLUSS ── -->
+<section class="sec band">
+  <div class="wrap outro">
+    <h2 data-r>Bis Sonntag.</h2>
+    <p data-r>Bring mit, was dich seit Monaten beschäftigt und wofür du bisher keine Erklärung hast. Den Rest machen wir gemeinsam.</p>
+    <p class="sign" data-r>Deine Nicole</p>
+    <p data-r style="font-size:14px;margin-top:24px">Fragen? Antworte einfach auf meine Bestätigungsmail.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>&copy; <span id="y">2026</span> Nicole Lurz
+      <a href="https://nicole-lurz.de/impressum/">Impressum</a>
+      <a href="https://nicole-lurz.de/datenschutz/">Datenschutz</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  /* Reveal */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12,rootMargin:'0px 0px -6%'});
+  document.querySelectorAll('[data-r]').forEach(function(el,i){ el.style.transitionDelay=(i%3)*70+'ms'; io.observe(el); });
+
+  /* Countdown auf 20.09.2026, 11:00 Uhr deutscher Zeit = 09:00 UTC.
+     Feste UTC-Zeit, damit die Anzeige in jeder Zeitzone stimmt.
+     Ab Start schaltet der Block auf den Zoom-Hinweis um. */
+  var ziel = Date.UTC(2026, 8, 20, 9, 0, 0);
+  var cd = document.getElementById('cd'), btn = document.getElementById('cd-btn');
+  var d = document.getElementById('cd-d'), h = document.getElementById('cd-h'),
+      m = document.getElementById('cd-m'), s = document.getElementById('cd-s');
+  function tick(){
+    var rest = ziel - Date.now();
+    if (rest <= 0) { cd.classList.add('is-live'); btn.hidden = false; return true; }
+    var sec = Math.floor(rest/1000);
+    d.textContent = Math.floor(sec/86400);
+    h.textContent = Math.floor(sec%86400/3600);
+    m.textContent = Math.floor(sec%3600/60);
+    s.textContent = sec%60;
+    return false;
+  }
+  if (!tick()) { var t = setInterval(function(){ if (tick()) clearInterval(t); }, 1000); }
+})();
+</script>
+
+</body>
+</html>
