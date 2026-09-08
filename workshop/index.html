@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0F1A14">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Live-Workshop am Sonntag, 20. September 2026, 11:00 bis 12:30 Uhr. Für Unternehmerinnen und Solopreneurinnen in der Lebensmitte. Die drei blinden Flecken, die dabei übersehen werden. Danach verstehst du, warum du bisher keine Lösung gefunden hast. 30 Plätze.">
+<title>Live-Workshop am 20. September · Nicole Lurz</title>
+
+<style>
+/* ════════════════════════════════════════════════════════════
+   WORKSHOP · KURZVERSION
+   Für Newsletter-Traffic und organische Anmeldung (warmes Publikum).
+   Palette: Tannenmoos Twilight. CTA durchgehend Salbei.
+   ════════════════════════════════════════════════════════════ */
+
+@font-face { font-family:'Spectral'; font-weight:400; font-style:normal; font-display:swap; src:url('/fonts/spectral-regular.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:400; font-style:italic; font-display:swap; src:url('/fonts/spectral-italic.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:normal; font-display:swap; src:url('/fonts/spectral-500.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:italic; font-display:swap; src:url('/fonts/spectral-500-italic.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:400; font-style:normal; font-display:swap; src:url('/fonts/inter-400.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:500; font-style:normal; font-display:swap; src:url('/fonts/inter-500.ttf') format('truetype'); }
+@font-face { font-family:'Inter'; font-weight:600; font-style:normal; font-display:swap; src:url('/fonts/inter-600.ttf') format('truetype'); }
+
+:root{
+  --forest:#0F1A14; --forest-2:#1F2D24; --olive:#3D5A2E;
+  --sage:#7AA890; --sage-hi:#95C0A8; --sage-light:#A8BAB0;
+  --near-white:#E8F0E8; --paper:#F4F8F4; --band:#E8F0E8; --card:#FFFFFF;
+  --text:#2C3B32; --text-muted:#55655B;
+  --line:rgba(122,168,144,0.32); --line-soft:rgba(122,168,144,0.18);
+  --line-dark:rgba(122,168,144,0.26); --sage-fill:rgba(122,168,144,0.11);
+  --serif:'Spectral',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --wrap:1080px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--text);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:-0.02em;color:var(--forest)}
+em{font-style:italic;font-weight:400;color:var(--olive)}
+:focus-visible{outline:3px solid var(--sage);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.section{padding:80px 0}
+@media(max-width:720px){.section{padding:56px 0}.wrap{padding:0 20px}}
+
+.eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--olive);margin-bottom:16px;line-height:1.5}
+.eyebrow.on-dark{color:var(--sage)}
+.eyebrow.center{display:block;text-align:center}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;font-family:var(--sans);font-size:16px;font-weight:600;
+  color:var(--forest);background:var(--sage);border:0;border-radius:12px;
+  padding:16px 34px;cursor:pointer;
+  box-shadow:0 14px 30px -14px rgba(122,168,144,0.7);
+  transition:background .22s var(--ease),transform .22s var(--ease);
+}
+.btn:hover{background:var(--sage-hi);transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+
+.nav{padding:20px 0;background:var(--forest)}
+.nav-inner{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.logo{font-family:var(--serif);font-size:21px}
+.logo .lf{font-weight:500;color:var(--near-white)}
+.logo .ll{font-style:italic;color:var(--sage);margin-left:4px}
+
+/* ── Hero ────────────────────────────────────── */
+.hero{background:var(--forest);padding:52px 0 84px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-180px;top:-180px;width:620px;height:620px;border-radius:50%;
+  background:radial-gradient(circle,rgba(122,168,144,0.17) 0%,rgba(122,168,144,0) 68%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:52px;align-items:start}
+@media(max-width:900px){.hero{padding:40px 0 60px}.hero-grid{grid-template-columns:1fr;gap:36px}}
+.hero h1{color:#FFFFFF;font-size:clamp(33px,4.8vw,52px);margin-bottom:20px}
+.hero h1 em{color:var(--sage)}
+.hero-promise{font-size:18.5px;line-height:1.65;color:var(--sage-light);max-width:52ch;margin-bottom:26px}
+.hero-promise strong{color:var(--near-white);font-weight:500}
+.hero-facts{display:flex;flex-direction:column;gap:11px}
+.hero-facts li{display:flex;align-items:center;gap:11px;font-size:15px;color:var(--near-white)}
+.hero-facts svg{flex:0 0 18px;width:18px;height:18px;stroke:var(--sage);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.box{background:var(--card);border-radius:18px;padding:30px 28px;box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
+.box h2{font-size:21px;margin-bottom:6px}
+.box .sub{font-size:14.5px;color:var(--text-muted);margin-bottom:20px}
+/* Alfima-Embed randlos in die Karte einpassen */
+.embed{margin:0 -4px}
+.embed iframe{display:block;width:100%;border:0;min-height:460px}
+.box .fine{font-size:12px;color:var(--text-muted);line-height:1.5;margin-top:14px}
+.box .fine a{color:var(--olive);text-decoration:underline;text-underline-offset:2px}
+
+/* ── Drei blinde Flecken ─────────────────────── */
+.head{text-align:center;max-width:660px;margin:0 auto 46px}
+.head h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:14px}
+.head p{font-size:16.5px;color:var(--text-muted)}
+.steps{max-width:860px;margin:0 auto}
+.step{display:grid;grid-template-columns:82px 1fr;gap:26px;align-items:start;padding:30px 0;border-top:1px solid var(--line-soft)}
+.step:first-child{border-top:0;padding-top:0}
+@media(max-width:640px){.step{grid-template-columns:52px 1fr;gap:16px;padding:24px 0}}
+.step-no{font-family:var(--serif);font-size:clamp(38px,6vw,52px);font-weight:500;color:var(--sage);line-height:1}
+.step .said{font-family:var(--serif);font-style:italic;color:var(--text-muted);display:block;font-size:16.5px;margin-bottom:7px}
+.step h3{font-size:22px;margin-bottom:10px;line-height:1.3}
+.step p{font-size:16px;color:var(--text-muted);line-height:1.64}
+
+/* ── Stimmen ─────────────────────────────────── */
+.voices{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px;margin:0 auto}
+@media(max-width:760px){.voices{grid-template-columns:1fr}}
+.voice{background:var(--card);border:1px solid var(--line-soft);border-left:3px solid var(--sage);border-radius:14px;padding:26px 26px 22px}
+.voice p{font-family:var(--serif);font-size:17.5px;line-height:1.48;color:var(--forest);margin-bottom:12px}
+.voice cite{font-style:normal;font-size:13px;font-weight:600;color:var(--text-muted)}
+
+/* ── Hostin ──────────────────────────────────── */
+.host{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:center;max-width:940px;margin:0 auto}
+@media(max-width:820px){.host{grid-template-columns:1fr;gap:28px}.host-img{max-width:260px;margin:0 auto}}
+.host-img img{border-radius:16px;box-shadow:0 30px 60px -38px rgba(15,26,20,.5)}
+.host h2{font-size:clamp(25px,3.4vw,34px);margin-bottom:16px}
+.host p{font-size:16.5px;color:var(--text-muted);margin-bottom:14px}
+.host p strong{color:var(--forest);font-weight:600}
+.host-creds{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.host-creds li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:var(--text)}
+.host-creds svg{flex:0 0 19px;width:19px;height:19px;stroke:var(--olive);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
+
+/* ── Zahlen-Band ─────────────────────────────── */
+.stats{background:var(--forest);padding:60px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:center;max-width:820px;margin:0 auto}
+@media(max-width:680px){.stats-grid{grid-template-columns:1fr;gap:24px}}
+.stat b{display:block;font-family:var(--serif);font-size:clamp(34px,5vw,46px);font-weight:500;color:var(--sage);line-height:1.05}
+.stat span{font-size:14px;color:var(--sage-light)}
+
+/* ── FAQ ─────────────────────────────────────── */
+.faq{max-width:720px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line-soft)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;font-family:var(--serif);font-size:18.5px;color:var(--forest);min-height:48px;transition:color .2s var(--ease)}
+.faq summary:hover{color:var(--olive)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:17px;font-family:var(--sans);font-size:22px;color:var(--sage);transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;font-size:15.5px;color:var(--text-muted);line-height:1.68}
+
+.mark{background:rgba(122,168,144,.30);border-bottom:2px solid var(--sage);padding:0 .16em;border-radius:3px;font-style:normal;color:var(--forest)}
+
+/* ── Abschluss ───────────────────────────────── */
+.close{background:var(--band);text-align:center}
+.close h2{font-size:clamp(26px,3.8vw,40px);max-width:20ch;margin:0 auto 16px}
+.close p{font-size:17px;color:var(--text-muted);max-width:50ch;margin:0 auto 28px}
+.close .meta{font-size:14px;color:var(--text-muted);margin-top:18px}
+
+.footer{background:var(--forest);padding:30px 0;text-align:center}
+.footer p,.footer a{font-size:13px;color:var(--sage-light)}
+.footer a{text-decoration:underline;text-underline-offset:3px;margin:0 8px}
+
+[data-r]{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-r]{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <span class="logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></span>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow on-dark">Live-Workshop &middot; für Unternehmerinnen und Solopreneurinnen in der Lebensmitte</span>
+      <h1>Endlich verstehen, warum dein Körper <em>nicht mehr mitzieht</em>.</h1>
+      <p class="hero-promise">Du hast schon viel gelesen, Podcasts gehört, viel ausprobiert und umgestellt. Und trotzdem nicht den Effekt erzielt, den du wolltest. In 90 Minuten zeige ich dir die <strong>drei blinden Flecken</strong>, die dabei übersehen werden. <strong>Danach verstehst du, warum du bisher keine Lösung gefunden hast.</strong></p>
+      <ul class="hero-facts">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>Sonntag, 20. September 2026 &middot; 11:00 bis 12:30 Uhr</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>Live auf Zoom, am Ende beantworte ich deine Fragen</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>30 Plätze</li>
+      </ul>
+    </div>
+
+    <div class="box" id="anmelden">
+      <!-- ANMELDEFORMULAR · Alfima-Embed „WS_org"
+           Das Script muss DIREKT hinter dem iframe stehen, es findet das
+           iframe über previousElementSibling. Nichts dazwischenschieben.
+           Weiterleitung wird in Alfima gesetzt: danke-bestaetigen.html?lm=workshop -->
+      <div class="embed">
+        <iframe src="https://alfima.com/nicolelurz/leads/WS_org/embed" style="width:100%;border:none;min-height:460px;" title="Anmeldung zum Live-Workshop"></iframe>
+        <script>(function(){var u=new URL("https://alfima.com/nicolelurz/leads/WS_org/embed");var allowedOrigin=u.origin;var iframe=document.currentScript&&document.currentScript.previousElementSibling;window.addEventListener("message",function(e){if(e.origin!==allowedOrigin)return;if(!e.data||typeof e.data.type!=="string")return;if(e.data.type==="alfima-embed-resize"){if(iframe&&iframe.tagName==="IFRAME")iframe.style.height=e.data.height+"px";}else if(e.data.type==="alfima-embed-redirect"){var url=e.data.url;if(typeof url==="string"&&/^https?:\/\//.test(url)){window.top.location.href=url;}}});})();</script>
+      </div>
+      <p class="fine">Du bekommst die Zugangsdaten und eine Erinnerung. Danach meinen Newsletter, Abmeldung jederzeit mit einem Klick.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIE DREI STELLEN ── -->
+<section class="section">
+  <div class="wrap">
+    <div class="head" data-r>
+      <h2>Die drei <em>blinden Flecken</em></h2>
+      <p>Ein blinder Fleck ist nichts, was du falsch machst. Es ist etwas, das du nicht sehen kannst, solange dir niemand zeigt, wo du hinschauen musst.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step" data-r>
+        <div class="step-no">01</div>
+        <div>
+          <span class="said">„Ich habe fünf verschiedene Baustellen."</span>
+          <h3>Du hast nicht fünf Probleme. Du hast ein System, das an fünf Stellen antwortet.</h3>
+          <p>Der Fersensporn. Die Migräne. Der Reizdarm. Das Gewicht. Der Schlaf. Jedes wird einzeln betrachtet und einzeln behandelt. Deshalb löst du eines, und das nächste meldet sich. Wir schauen darauf, was darunter zusammenhängt.</p>
+        </div>
+      </article>
+
+      <article class="step" data-r>
+        <div class="step-no">02</div>
+        <div>
+          <span class="said">„Es sind eben die Wechseljahre."</span>
+          <h3>Die Wechseljahre sind nicht schuld. Sie holen hoch, was über Jahrzehnte entstanden ist.</h3>
+          <p>Du hast viel verändert und ausprobiert, und es hat sich trotzdem nichts oder nur marginal geändert. Die Wechseljahre sind ein tiefer Einschnitt, das stimmt. Aber sie erfinden nichts Neues. Sie legen offen, was dein System über Jahrzehnte eingespeichert hat.</p>
+          <p>Deshalb ist die Frage nicht, wie du deine Hormone ausgleichst. Die Frage ist, was es überhaupt für eine gute Hormonregulation braucht.</p>
+        </div>
+      </article>
+
+      <article class="step" data-r>
+        <div class="step-no">03</div>
+        <div>
+          <span class="said">„Das ist alles viel zu kompliziert."</span>
+          <h3>Es gibt einen gemeinsamen Nenner. Und der ist einfacher, als du denkst.</h3>
+          <p>Wo entsteht Energie, und wie wird sie verteilt. Denn alles braucht Energie. Über eine neue Strategie nachdenken. Eine Vertragsverhandlung. Mit dem Hund Gassi gehen. Der Streit mit deiner Tochter. Körperliche Nähe mit deinem Partner. Ausgelassen beim ABBA-Konzert mitsingen. Wandern in den Bergen.</p>
+          <p>Wenn du wieder in Verbindung mit deinem Körper kommst, wird es einfach statt kompliziert. Das nimmt Stress und Druck raus, und genau das kommt deiner Gesundheit zugute.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── STIMMEN ──
+     ACHTUNG vor dem Livegang: Freigaben prüfen.
+     Lydia G. ist laut Second Brain freigegeben (14.08.2026).
+     Verena, Birgit R. und L. M. sind HWG-konform und stehen bereits
+     öffentlich (Startseite bzw. ProvenExpert), die schriftliche Freigabe
+     ist in testimonials-and-case-studies.md aber noch als offen markiert. -->
+<section class="section" style="background:var(--band)">
+  <div class="wrap">
+    <div class="head" data-r>
+      <h2>Von Frauen, die mit mir <em>gearbeitet</em> haben</h2>
+    </div>
+    <div class="voices" data-r>
+      <blockquote class="voice">
+        <p>Schade, dass das kein Arzt sieht, der mich jahrelang behandelt.</p>
+        <cite>Lydia G.</cite>
+      </blockquote>
+      <blockquote class="voice">
+        <p>Nicole hat mir Zusammenhänge gezeigt, die kein Arzt gesehen hat, und konkrete Wege, die ich selbst gehen kann.</p>
+        <cite>Verena, Unternehmerin</cite>
+      </blockquote>
+      <blockquote class="voice">
+        <p>Am Anfang war ich müde, erschöpft, unruhig. Ich wollte etwas verändern, wusste aber nicht wie.</p>
+        <cite>L. M., 38</cite>
+      </blockquote>
+      <blockquote class="voice">
+        <p>Mir hat sehr die natürliche kompetente Art gefallen. Das Seminar deckt ein weites Spektrum ab und hilft einem, seine Lebensart zu überdenken.</p>
+        <cite>Birgit R., Seminarteilnehmerin</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOSTIN ── -->
+<section class="section">
+  <div class="wrap host">
+    <div class="host-img" data-r><img src="/images/nicole-about.jpg" alt="Porträt von Nicole Lurz"></div>
+    <div data-r>
+      <span class="eyebrow">Wer dich durch den Workshop führt</span>
+      <h2>Ich bin <em>Nicole</em></h2>
+      <p>Ich bin 55, Heilpraktikerin mit einem BWL-Hirn, und ich denke strategisch, in Prozessen. Schon als Kind habe ich nach der Lösung gesucht und gedacht: Es muss noch einen anderen Weg geben. Ich stehe für Klarheit, Strategie und Empathie.</p>
+      <p>Seit 20 Jahren bin ich selbstständig. Als Heilpraktikerin dachte ich, ich komme gut durch, weil ich weiß, was ich kann. Dann kam mein Cut, die postmenopausale Phase. Kurz bevor die Regelblutung aufhörte, merkte ich: Irgendwas stimmt nicht.</p>
+      <p><strong>Und zwar nicht nur gesundheitlich. Das hatte ich gut im Griff.</strong> Aber auf der Identitätsebene, der mentalen und der persönlichen Ebene fand ein großer Einschnitt statt.</p>
+      <ul class="host-creds">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Diplom-Kauffrau und Heilpraktikerin</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Mentorin für Regenerationsmedizin, Fachmentorin am Mojo-Institut</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Am Ende beantworte ich deine Fragen, live</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── ZAHLEN ── -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid" data-r>
+      <div class="stat"><b>14</b><span>Jahre eigene Praxis</span></div>
+      <div class="stat"><b>1.500+</b><span>Frauen begleitet</span></div>
+      <div class="stat"><b>20+</b><span>Jahre Erfahrung</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section">
+  <div class="wrap">
+    <div class="head" data-r>
+      <h2>Kurze Fragen, klar <em>beantwortet</em></h2>
+    </div>
+    <div class="faq" data-r>
+      <details>
+        <summary>Für wen ist dieser Workshop?</summary>
+        <p>Für Unternehmerinnen und Solopreneurinnen in der Lebensmitte, die merken, dass dieselben Tage sie heute mehr kosten. Nicht für dich, wenn du eine Liste zum Abarbeiten willst oder „ist halt das Alter" für dich eine ausreichende Antwort ist.</p>
+      </details>
+      <details>
+        <summary>Ich habe schon so viel zu Wechseljahren gelesen.</summary>
+        <p>Dann kennst du das Problem: viel Information, kein Zusammenhang. Noch ein Artikel bringt dich nicht weiter. Der rote Faden schon.</p>
+      </details>
+      <details>
+        <summary>Was kostet die Teilnahme?</summary>
+        <p>Nichts. Ich öffne 30 Plätze, mehr nicht, weil ich am Ende deine Fragen beantworten will und nicht nur senden.</p>
+      </details>
+      <details>
+        <summary>Was brauche ich?</summary>
+        <p>Zoom auf Rechner oder Tablet, einen ruhigen Ort, Stift und Papier. Und 90 Minuten, in denen du nicht nebenbei Mails beantwortest.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABSCHLUSS ── -->
+<section class="section close">
+  <div class="wrap">
+    <h2 data-r>Du musst nicht <span class="mark">mehr</span> tun. Du musst zuerst <em>verstehen</em>.</h2>
+    <p data-r>Solange du nur das nächste Symptom loswerden willst, bleibt die eine Frage offen: Warum reagiert dein Körper überhaupt so?</p>
+    <p data-r style="font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,24px);color:var(--forest);max-width:26ch;margin:0 auto 28px;">„Endlich ergibt alles Sinn, und ich weiß, was ich tun muss."</p>
+    <p data-r style="font-size:17px;color:var(--forest);max-width:50ch;margin:0 auto 22px;">Wenn du aufhören willst zu raten und endlich sehen willst, was bei dir zusammenhängt, dann ist das dein Vormittag.</p>
+    <a href="#anmelden" class="btn" data-r style="width:100%;max-width:340px;">Ich sichere mir meinen Platz</a>
+    <p class="meta" data-r>Sonntag, 20. September &middot; 11:00 bis 12:30 Uhr &middot; 30 Plätze</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>&copy; <span id="y">2026</span> Nicole Lurz
+      <a href="https://nicole-lurz.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+      <a href="https://nicole-lurz.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('y').textContent = new Date().getFullYear();
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12,rootMargin:'0px 0px -6%'});
+  document.querySelectorAll('[data-r]').forEach(function(el,i){
+    el.style.transitionDelay = (i%3)*70 + 'ms';
+    io.observe(el);
+  });
+})();
+</script>
+
+</body>
+</html>
