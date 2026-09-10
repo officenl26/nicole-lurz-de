@@ -2,9 +2,13 @@
    nl-consent.js · Consent-Banner + Meta-Pixel für nicole-lurz.de
 
    - Vor Einwilligung wird nichts geladen, kein Cookie gesetzt.
-   - "Akzeptieren" und "Ablehnen" sind gleichwertig (DSGVO, § 25 TDDDG).
-   - Die Wahl liegt in localStorage ("nl_consent" = "accepted" | "declined").
+   - "Akzeptieren" und "Ablehnen" sind gleichwertig (DSGVO, § 25 TDDDG):
+     gleiche Optik, gleiche Größe, ein Klick.
+   - Die Wahl liegt in localStorage ("nl_consent" als JSON mit Zeitstempel),
+     sie verfällt nach 12 Monaten und der Banner fragt erneut.
    - Widerruf: Link mit data-nl-consent-open oder window.nlConsent.open().
+   - Conversion-Events feuern nur einmal pro Browser-Sitzung und Seite
+     (sessionStorage), damit Reloads Purchase/Lead nicht doppelt zählen.
 
    Seiten-Conversion setzen (im <head>, VOR diesem Skript):
      <script>window.NL_META_EVENT = { name: "Lead", params: { content_name: "Blind Spot Check" } };</script>
@@ -17,12 +21,26 @@
   var STORAGE_KEY = "nl_consent";
   var PIXEL_ID = "3469495449989802"; // Nicole-Lurz.de Pixel 2023
   var PRIVACY_URL = "https://nicole-lurz.de/datenschutz/";
+  var MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000; // 12 Monate
 
+  /* ---------- Einwilligung lesen / schreiben ---------- */
   function readConsent() {
-    try { return window.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+    var raw;
+    try { raw = window.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+    if (!raw) return null;
+    // Altformat (reiner String) weiterhin akzeptieren
+    if (raw === "accepted" || raw === "declined") return raw;
+    try {
+      var obj = JSON.parse(raw);
+      if (!obj || (obj.v !== "accepted" && obj.v !== "declined")) return null;
+      if (typeof obj.t === "number" && Date.now() - obj.t > MAX_AGE_MS) return null;
+      return obj.v;
+    } catch (e) { return null; }
   }
   function writeConsent(value) {
-    try { window.localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: value, t: Date.now() }));
+    } catch (e) {}
   }
 
   /* ---------- Meta-Pixel ---------- */
@@ -46,12 +64,28 @@
     firePageEvent();
   }
 
+  // Conversion-Event nur einmal je Sitzung und Seite feuern
+  function alreadyFired(name) {
+    var key = "nl_ev_" + name + "_" + location.pathname;
+    try {
+      if (window.sessionStorage.getItem(key)) return true;
+      window.sessionStorage.setItem(key, "1");
+      return false;
+    } catch (e) { return false; }
+  }
+
   function firePageEvent() {
     var ev = window.NL_META_EVENT;
     if (!ev) return;
     try {
-      if (typeof ev === "function") { ev(window.fbq); return; }
-      if (ev.name) { window.fbq("track", ev.name, ev.params || {}); }
+      if (typeof ev === "function") {
+        if (alreadyFired("custom")) return;
+        ev(window.fbq);
+        return;
+      }
+      if (ev.name && !alreadyFired(ev.name)) {
+        window.fbq("track", ev.name, ev.params || {});
+      }
     } catch (e) {}
   }
 
@@ -66,11 +100,10 @@
     ".nlc-text{flex:1 1 320px;font-size:14px;line-height:1.6;color:#C9D8CF;margin:0}",
     ".nlc-text a{color:#7AA890;text-decoration:underline}",
     ".nlc-actions{display:flex;gap:12px;flex-wrap:wrap}",
-    ".nlc-btn{font:inherit;font-size:14px;font-weight:600;padding:11px 22px;border-radius:8px;",
-    "cursor:pointer;border:1px solid transparent;line-height:1;transition:opacity .15s}",
+    ".nlc-btn{font:inherit;font-size:14px;font-weight:600;padding:11px 24px;border-radius:8px;",
+    "cursor:pointer;line-height:1;transition:opacity .15s;",
+    "background:#22362B;color:#EAF2EC;border:1px solid rgba(122,168,144,.55)}",
     ".nlc-btn:hover{opacity:.85}",
-    ".nlc-accept{background:#7AA890;color:#0B140F}",
-    ".nlc-decline{background:transparent;color:#E8F0E8;border-color:rgba(232,240,232,.4)}",
     "@media(max-width:560px){.nlc-actions{width:100%}.nlc-btn{flex:1 1 auto;text-align:center}}"
   ].join("");
 
@@ -104,8 +137,8 @@
         'Das passiert nur mit deiner Einwilligung. Mehr dazu in der ' +
         '<a href="' + PRIVACY_URL + '">Datenschutzerklärung</a>.</p>' +
         '<div class="nlc-actions">' +
-          '<button type="button" class="nlc-btn nlc-decline" id="nlc-decline">Ablehnen</button>' +
-          '<button type="button" class="nlc-btn nlc-accept" id="nlc-accept">Akzeptieren</button>' +
+          '<button type="button" class="nlc-btn" id="nlc-decline">Ablehnen</button>' +
+          '<button type="button" class="nlc-btn" id="nlc-accept">Akzeptieren</button>' +
         '</div>' +
       '</div>';
 
