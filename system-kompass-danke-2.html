@@ -64,6 +64,10 @@
   .nav.nav-danke { transform: translateY(0); }
   @keyframes danke-up { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 </style>
+
+<!-- Consent-Banner + Meta-Pixel -->
+<script>window.NL_META_EVENT = { name: "CompleteRegistration", params: { content_name: "System-Kompass" } };</script>
+<script defer src="/js/nl-consent.js"></script>
 </head>
 <body>
 
@@ -159,35 +163,7 @@
   </div>
 </footer>
 
-<!-- ═══════════════ TRACKING ═══════════════
-     Optional: bestätigte Anmeldung als „CompleteRegistration" tracken.
-     Lädt nur nach Consent (von der Landingpage in localStorage gesetzt). -->
 <script>
-  window.NL_META_PIXEL_ID = "META_PIXEL_ID";   // TODO: gleiche ID wie sonst
-  window.NL_GA4_ID        = "G-XXXXXXXXXX";    // TODO: gleiche ID wie sonst
-
-  (function(){
-    if (localStorage.getItem("nl_consent") !== "accepted") return;
-    if (window.NL_META_PIXEL_ID && window.NL_META_PIXEL_ID !== "META_PIXEL_ID") {
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', window.NL_META_PIXEL_ID);
-      fbq('track', 'PageView');
-      fbq('track', 'CompleteRegistration', { content_name: 'System-Kompass' });
-    }
-    if (window.NL_GA4_ID && window.NL_GA4_ID !== "G-XXXXXXXXXX") {
-      var s=document.createElement('script'); s.async=true;
-      s.src='https://www.googletagmanager.com/gtag/js?id='+window.NL_GA4_ID;
-      document.head.appendChild(s);
-      window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)};
-      gtag('js', new Date()); gtag('config', window.NL_GA4_ID);
-      gtag('event', 'sign_up', { method: 'system-kompass' });
-    }
-  })();
-
   (function(){
     var nav=document.getElementById('nav');
     window.addEventListener('scroll',function(){nav.classList.toggle('is-scrolled',window.scrollY>24);},{passive:true});

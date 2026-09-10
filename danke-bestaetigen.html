@@ -59,6 +59,15 @@
   @keyframes danke-up { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   @keyframes doi-pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(122,168,144,0.18); } 50% { box-shadow: 0 0 0 8px rgba(122,168,144,0.08); } }
 </style>
+
+<!-- Consent-Banner + Meta-Pixel. Lead-Event mit Quelle aus ?lm=... -->
+<script>
+  (function () {
+    var key = new URLSearchParams(window.location.search).get("lm");
+    window.NL_META_EVENT = { name: "Lead", params: { content_name: key || "Anmeldung" } };
+  })();
+</script>
+<script defer src="/js/nl-consent.js"></script>
 </head>
 <body>
 
@@ -130,53 +139,7 @@
   </div>
 </footer>
 
-<!-- ═══════════════ QUELLE FÜRS TRACKING ═══════════════
-     Diese Seite ist bewusst allgemein: eine einzige Bestätigungsseite für alle
-     Anmeldungen (Newsletter, Freebies, Mini-Kurse). Kein sichtbarer Text ändert
-     sich je nach Quelle. Der optionale Parameter ?lm=... wird nur genutzt, um
-     in Meta und GA4 zu sehen, welche Anmeldung den Lead gebracht hat. -->
 <script>
-  (function(){
-    var key = new URLSearchParams(window.location.search).get("lm");
-    window.NL_LEAD_NAME = key ? key : "Anmeldung";
-  })();
-</script>
-
-<!-- ═══════════════ TRACKING, LEAD-EVENT ═══════════════
-     Dies ist die richtige Seite, um „Lead" zu feuern: Der Besucher hat das
-     Formular wirklich abgesendet. Pixel/GA4 laden nur, wenn auf der Landingpage
-     zugestimmt wurde (Consent liegt in localStorage).
-     content_name kommt aus dem lm-Parameter, damit du in Meta und GA4 weiterhin
-     siehst, welcher Leadmagnet den Lead gebracht hat. -->
-<script>
-  window.NL_META_PIXEL_ID = "META_PIXEL_ID";   // TODO: gleiche ID wie auf der Landingpage
-  window.NL_GA4_ID        = "G-XXXXXXXXXX";    // TODO: gleiche ID wie auf der Landingpage
-
-  (function(){
-    if (localStorage.getItem("nl_consent") !== "accepted") return; // ohne Zustimmung kein Tracking
-
-    var leadName = window.NL_LEAD_NAME || "Anmeldung";
-
-    if (window.NL_META_PIXEL_ID && window.NL_META_PIXEL_ID !== "META_PIXEL_ID") {
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', window.NL_META_PIXEL_ID);
-      fbq('track', 'PageView');
-      fbq('track', 'Lead', { content_name: leadName });   // <-- Meta-Conversion
-    }
-    if (window.NL_GA4_ID && window.NL_GA4_ID !== "G-XXXXXXXXXX") {
-      var s=document.createElement('script'); s.async=true;
-      s.src='https://www.googletagmanager.com/gtag/js?id='+window.NL_GA4_ID;
-      document.head.appendChild(s);
-      window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)};
-      gtag('js', new Date()); gtag('config', window.NL_GA4_ID);
-      gtag('event', 'generate_lead', { lead_source: leadName }); // <-- GA4-Conversion
-    }
-  })();
-
   (function(){
     var dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing');
     if(dot&&ring){document.addEventListener('mousemove',function(e){

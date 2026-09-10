@@ -32,7 +32,11 @@ ul{margin:0 0 14px 20px;color:var(--tinte-soft)}
 li{margin-bottom:6px}
 footer{margin-top:80px;padding:30px 0;border-top:1px solid var(--line);font-size:.84rem;color:var(--tinte-soft);text-align:center}
 footer a{color:var(--tinte-soft)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:rgba(122,168,144,.14);padding:1px 5px;border-radius:4px}
 </style>
+
+<!-- Consent-Banner + Meta-Pixel -->
+<script defer src="/js/nl-consent.js"></script>
 </head>
 <body>
 <nav>
@@ -47,7 +51,7 @@ footer a{color:var(--tinte-soft)}
 
 <div class="wrap">
   <h1><em>Datenschutz.</em></h1>
-  <p style="font-size:.84rem;color:var(--tinte-soft);margin-bottom:40px">Datenschutzerklärung gemäß Art.&nbsp;13 DSGVO und §&nbsp;25 TDDDG. Stand: Mai 2026.</p>
+  <p style="font-size:.84rem;color:var(--tinte-soft);margin-bottom:40px">Datenschutzerklärung gemäß Art.&nbsp;13 DSGVO und §&nbsp;25 TDDDG. Stand: September 2026.</p>
 
   <h2>1. Verantwortliche</h2>
   <p>
@@ -74,9 +78,15 @@ footer a{color:var(--tinte-soft)}
     Diese Website verwendet die Schriftarten Inter und Spectral. Beide werden <strong>lokal</strong> von unserem Server ausgeliefert — es wird keine Verbindung zu Google Fonts oder anderen externen Schriftdiensten hergestellt.
   </p>
 
-  <h2>4. Cookies &amp; Tracking</h2>
+  <h2>4. Cookies &amp; Meta-Pixel</h2>
   <p>
-    Diese Website setzt <strong>keine Cookies</strong> und verwendet <strong>kein Tracking</strong> (kein Google Analytics, kein Meta-Pixel, kein sonstiges Analyse-Tool). Ein Cookie-Banner ist daher nicht erforderlich.
+    Beim ersten Besuch dieser Website erscheint ein Hinweisbanner. Der Meta-Pixel wird erst geladen, wenn Sie dort auf <strong>„Akzeptieren"</strong> klicken. Wenn Sie ablehnen oder nicht reagieren, findet keine Verarbeitung durch Meta statt, und es werden keine dafür nötigen Cookies gesetzt. Ihre Entscheidung wird lokal in Ihrem Browser gespeichert (localStorage, Schlüssel <code>nl_consent</code>), damit der Banner nicht bei jedem Aufruf erneut erscheint. Dieser Eintrag ist kein Cookie und wird nicht an uns oder Dritte übertragen.
+  </p>
+  <p>
+    <strong>Meta-Pixel.</strong> Nach Ihrer Einwilligung nutzt diese Website den Meta-Pixel, ein Angebot der Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin&nbsp;2, Irland. Der Pixel setzt Cookies (u.&nbsp;a. <code>_fbp</code>) und erfasst, welche Seiten Sie aufrufen und ob Sie eine Aktion abschließen (etwa eine Anmeldung oder eine Buchung). Damit messen wir die Wirkung unserer Anzeigen auf Facebook und Instagram und spielen Anzeigen gezielter aus. Dabei werden Daten an Meta übermittelt, auch in die USA. Ein dem europäischen Niveau entsprechendes Datenschutzniveau ist dort nicht in jedem Fall gewährleistet; Meta ist nach dem EU-US Data Privacy Framework zertifiziert. Meta verarbeitet einen Teil der Daten als eigenständig Verantwortlicher. Einzelheiten: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a>
+  </p>
+  <p>
+    Rechtsgrundlage ist Ihre Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO, §&nbsp;25 Abs.&nbsp;1 TDDDG). Sie können die Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen: über den Link <a href="#" data-nl-consent-open>Cookie-Einstellungen</a> im Seitenfuß oder indem Sie die Website-Daten in Ihrem Browser löschen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt unberührt.
   </p>
 
   <h2>5. Kontaktaufnahme per E-Mail oder WhatsApp</h2>
@@ -119,7 +129,8 @@ footer a{color:var(--tinte-soft)}
 <footer>
   <a href="/">nicole-lurz.de</a> &nbsp;·&nbsp;
   <a href="/impressum/">Impressum</a> &nbsp;·&nbsp;
-  <a href="/datenschutz/">Datenschutz</a>
+  <a href="/datenschutz/">Datenschutz</a> &nbsp;·&nbsp;
+  <a href="#" data-nl-consent-open>Cookie-Einstellungen</a>
 </footer>
 </body>
 </html>
