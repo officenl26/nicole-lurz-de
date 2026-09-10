@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F4F8F4">
+<meta name="description" content="Live-Workshop am Sonntag, 20. September 2026, 11:00 bis 12:30 Uhr. Für Unternehmerinnen und Solopreneurinnen in der Lebensmitte. Die drei blinden Flecken, an denen Frauen hängen bleiben, auch die, die sich gut ernähren und ihre Blutwerte kennen. 30 Plätze, live.">
+<title>Workshop · Du führst dein Business. Gerade führt dein Körper dich. · Nicole Lurz</title>
+
+<style>
+/* ════════════════════════════════════════════════════════════
+   WORKSHOP-LANDINGPAGE
+   Palette: Tannenmoos Twilight (verbindlich, design.md)
+   Schriften: Inter + Spectral / Spectral Italic
+
+   FARBSTRATEGIE
+   · Marineblau  = ausschließlich Handlung. Nur CTAs, sonst nirgends.
+                   Damit lernt das Auge: blau heißt klicken.
+   · Salbei      = Erkenntnis. Akzente, Hervorhebungen, Diagramme.
+   · Waldgrün    = die drei emotionalen Wendepunkte der Seite:
+                   Nicoles Geschichte, die Konsequenz, der Abschluss.
+   · Hell/Band   = Rhythmus dazwischen.
+   ════════════════════════════════════════════════════════════ */
+
+@font-face { font-family:'Spectral'; font-weight:400; font-style:normal;  font-display:swap; src:url('/fonts/spectral-regular.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:400; font-style:italic;  font-display:swap; src:url('/fonts/spectral-italic.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:normal;  font-display:swap; src:url('/fonts/spectral-500.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:italic;  font-display:swap; src:url('/fonts/spectral-500-italic.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:400; font-style:normal;  font-display:swap; src:url('/fonts/inter-400.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:500; font-style:normal;  font-display:swap; src:url('/fonts/inter-500.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:600; font-style:normal;  font-display:swap; src:url('/fonts/inter-600.ttf') format('truetype'); }
+
+:root {
+  --paper:      #F4F8F4;
+  --paper-band: #E8F0E8;
+  --card:       #FFFFFF;
+  --forest:     #0F1A14;
+  --forest-2:   #1F2D24;
+  --forest-3:   #131F18;
+  --olive:      #3D5A2E;
+  --sage:       #7AA890;
+  --sage-light: #A8BAB0;
+  --near-white: #E8F0E8;
+  --navy:       #1B4C93;
+  --navy-hover: #2A5DAA;
+
+  --text:       #2C3B32;
+  --text-muted: #55655B;
+  --line:       rgba(122,168,144,0.34);
+  --line-soft:  rgba(122,168,144,0.20);
+  --sage-fill:  rgba(122,168,144,0.11);
+
+  --serif: 'Spectral', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --ease:  cubic-bezier(0.16, 1, 0.3, 1);
+  --wrap:  1140px;
+  --narrow: 780px;
+
+  --z-progress: 70;
+  --z-nav: 60;
+  --z-sticky: 55;
+}
+
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body {
+  font-family:var(--sans); font-size:17px; line-height:1.72;
+  color:var(--text); background:var(--paper);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img { max-width:100%; height:auto; display:block; }
+a { color:inherit; text-decoration:none; }
+ul, ol { list-style:none; }
+h1,h2,h3 { font-family:var(--serif); font-weight:500; line-height:1.14; letter-spacing:-0.02em; color:var(--forest); }
+em { font-style:italic; font-weight:400; color:var(--olive); }
+:focus-visible { outline:3px solid var(--navy); outline-offset:3px; border-radius:4px; }
+
+.wrap   { max-width:var(--wrap); margin:0 auto; padding:0 32px; }
+.narrow { max-width:var(--narrow); margin:0 auto; }
+.section { padding:100px 0; }
+@media (max-width:720px){ .section { padding:64px 0; } .wrap { padding:0 20px; } }
+
+/* ── Dunkle Abschnitte: die drei Wendepunkte ───────── */
+.dark { background:var(--forest); color:var(--sage-light); position:relative; overflow:hidden; }
+.dark h2, .dark h3 { color:var(--near-white); }
+.dark em { color:var(--sage); }
+.dark .eyebrow { color:var(--sage); }
+.dark .eyebrow::before { background:var(--sage); }
+.dark p { color:var(--sage-light); }
+.dark strong { color:var(--near-white); font-weight:600; }
+.dark::after {
+  content:""; position:absolute; left:50%; top:-240px; transform:translateX(-50%);
+  width:760px; height:760px; border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(122,168,144,0.13) 0%, rgba(122,168,144,0) 66%);
+}
+.dark > .wrap { position:relative; z-index:1; }
+
+/* ── Scroll-Fortschritt ────────────────────────────── */
+.progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--sage); z-index:var(--z-progress); transition:width .1s linear; }
+
+/* ── Eyebrow ───────────────────────────────────────── */
+.eyebrow {
+  display:inline-flex; align-items:center; gap:13px;
+  font-family:var(--sans); font-size:12px; font-weight:600;
+  letter-spacing:0.2em; text-transform:uppercase; color:var(--olive);
+  margin-bottom:20px;
+}
+.eyebrow::before { content:""; width:28px; height:1px; background:var(--sage); flex:0 0 28px; }
+.eyebrow.center { justify-content:center; }
+
+/* ── Nav ───────────────────────────────────────────── */
+.nav {
+  position:fixed; top:0; left:0; right:0; z-index:var(--z-nav);
+  background:rgba(244,248,244,0.88); backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid transparent; transition:border-color .3s var(--ease);
+}
+.nav.scrolled { border-bottom-color:var(--line-soft); }
+.nav-inner { max-width:var(--wrap); margin:0 auto; padding:14px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.nav-logo { font-family:var(--serif); font-size:22px; line-height:1; }
+.nav-logo .lf { font-weight:500; color:var(--forest); }
+.nav-logo .ll { font-style:italic; color:var(--sage); margin-left:4px; }
+@media (max-width:560px){ .nav-inner { padding:12px 20px; } .nav-logo { font-size:19px; } }
+
+/* ── Buttons: Marineblau ist Handlung ──────────────── */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:11px;
+  min-height:48px; font-family:var(--sans); font-size:15.5px; font-weight:600;
+  color:#FFFFFF; background:var(--navy); border:0; border-radius:12px;
+  padding:15px 32px; cursor:pointer; text-align:center;
+  box-shadow:0 14px 32px -16px rgba(27,76,147,0.6);
+  transition:background .22s var(--ease), transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.btn:hover { background:var(--navy-hover); transform:translateY(-2px); box-shadow:0 20px 40px -16px rgba(27,76,147,0.65); }
+.btn:active { transform:translateY(0); }
+.btn .arrow { transition:transform .22s var(--ease); }
+.btn:hover .arrow { transform:translateX(4px); }
+.btn-sm { min-height:44px; padding:12px 20px; font-size:13.5px; }
+.btn[disabled] { opacity:0.55; cursor:not-allowed; transform:none; }
+
+/* ── Hero ──────────────────────────────────────────── */
+.hero { padding:148px 0 88px; position:relative; overflow:hidden; }
+.hero-bg { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.hero-bg .glow { position:absolute; border-radius:50%; }
+.hero-bg .g1 { right:-160px; top:-130px; width:540px; height:540px; background:radial-gradient(circle, rgba(122,168,144,0.22) 0%, rgba(122,168,144,0) 68%); }
+.hero-bg .g2 { left:-190px; bottom:-170px; width:470px; height:470px; background:radial-gradient(circle, rgba(27,76,147,0.09) 0%, rgba(27,76,147,0) 70%); }
+.hero-bg svg { position:absolute; left:0; top:6%; width:100%; max-width:100%; height:auto; overflow:hidden; opacity:0.55; will-change:transform; }
+.hero-grid { display:grid; grid-template-columns:1.06fr 0.94fr; gap:56px; align-items:center; position:relative; z-index:1; }
+@media (max-width:960px){ .hero { padding:116px 0 56px; } .hero-grid { grid-template-columns:1fr; gap:40px; } }
+
+.hero h1 { font-size:clamp(36px, 5.6vw, 64px); margin-bottom:20px; }
+.hero h1 .l2 { display:block; color:var(--olive); font-style:italic; }
+.hero-lead { font-size:19px; color:var(--text-muted); max-width:50ch; margin-bottom:18px; }
+.hero-lead strong { color:var(--forest); font-weight:500; }
+.hero-result {
+  font-size:17px; color:var(--forest); max-width:50ch; margin-bottom:26px;
+  border-left:2px solid var(--sage); padding-left:18px;
+}
+.hero-proof { display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--text-muted); }
+.hero-proof i { font-style:normal; }
+.hero-proof b { font-family:var(--serif); font-size:19px; font-weight:500; color:var(--olive); }
+.hero-proof .sep { width:1px; height:22px; background:var(--line); }
+
+/* ── Ticket ────────────────────────────────────────── */
+.ticket { background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:0 44px 96px -54px rgba(15,26,20,0.5); }
+.ticket-top { padding:24px 30px 20px; background:var(--forest); }
+.ticket-live { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--sage-light); margin-bottom:12px; }
+.ticket-live .dot { width:8px; height:8px; border-radius:50%; background:var(--sage); animation:pulse 2.6s var(--ease) infinite; }
+@keyframes pulse { 0%{ box-shadow:0 0 0 0 rgba(122,168,144,0.55);} 70%{ box-shadow:0 0 0 10px rgba(122,168,144,0);} 100%{ box-shadow:0 0 0 0 rgba(122,168,144,0);} }
+.ticket-date { font-family:var(--serif); font-size:26px; line-height:1.15; color:#FFFFFF; }
+.ticket-date span { display:block; font-size:15.5px; font-style:italic; color:var(--sage-light); margin-top:5px; }
+.ticket-perf { position:relative; height:0; border-top:2px dashed var(--line); }
+.ticket-perf::before, .ticket-perf::after { content:""; position:absolute; top:-11px; width:20px; height:20px; border-radius:50%; background:var(--paper); }
+.ticket-perf::before { left:-11px; } .ticket-perf::after { right:-11px; }
+.ticket-body { padding:24px 30px 28px; }
+.ticket-body h2 { font-size:19px; margin-bottom:16px; }
+.field { margin-bottom:13px; }
+.field label { display:block; font-size:12.5px; font-weight:600; color:var(--forest); margin-bottom:6px; }
+.field input {
+  width:100%; font-family:var(--sans); font-size:16px; color:var(--text);
+  background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:13px 15px;
+  transition:border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.field input:hover { border-color:var(--sage); }
+.field input:focus { outline:none; border-color:var(--navy); box-shadow:0 0 0 3px rgba(27,76,147,0.16); }
+/* Alfima-Embed: iframe randlos in die Karte einpassen */
+.embed { margin:0 -4px; }
+.embed iframe { display:block; width:100%; border:0; min-height:460px; }
+.ticket-fine { display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:16px; font-size:12px; color:var(--text-muted); }
+.ticket-fine span { display:inline-flex; align-items:center; gap:6px; }
+.ticket-fine svg { width:13px; height:13px; stroke:var(--sage); fill:none; stroke-width:2.6; }
+@media (max-width:960px){ .ticket { max-width:450px; margin:0 auto; } }
+
+/* ── Bänder ────────────────────────────────────────── */
+.band { background:var(--paper-band); }
+.head { max-width:720px; margin-bottom:48px; }
+.head.center { margin-left:auto; margin-right:auto; text-align:center; }
+.head h2 { font-size:clamp(28px, 4.4vw, 46px); margin-bottom:18px; }
+.head p { font-size:17.5px; color:var(--text-muted); }
+.lead-p { font-size:18px; color:var(--text-muted); margin-bottom:20px; }
+.lead-p:last-child { margin-bottom:0; }
+.lead-p strong { color:var(--forest); font-weight:600; }
+
+.pull {
+  border-left:3px solid var(--sage); padding-left:28px; max-width:62ch; margin:38px auto;
+  font-family:var(--serif); font-size:clamp(21px, 3vw, 29px); line-height:1.42; color:var(--forest);
+}
+.dark .pull { border-color:var(--sage); color:var(--near-white); }
+
+/* ── Symptom-Chips ─────────────────────────────────── */
+.chips { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:34px auto 0; max-width:760px; }
+.chip {
+  font-family:var(--serif); font-style:italic; font-size:16px; color:var(--forest);
+  background:var(--card); border:1px solid var(--line-soft); border-radius:999px; padding:10px 20px;
+  transition:transform .25s var(--ease), border-color .25s var(--ease);
+}
+.chip:hover { transform:translateY(-2px); border-color:var(--sage); }
+
+/* ── Selbstcheck ───────────────────────────────────── */
+.check-card {
+  background:var(--card); border:1px solid var(--line); border-radius:20px; padding:36px 34px;
+  max-width:720px; margin:0 auto; box-shadow:0 30px 70px -50px rgba(15,26,20,0.4);
+}
+@media (max-width:600px){ .check-card { padding:26px 22px; } }
+.check-card h2 { font-size:23px; margin-bottom:8px; }
+.check-card > p { font-size:15.5px; color:var(--text-muted); margin-bottom:22px; }
+.check-list { display:grid; gap:10px; }
+.check-item {
+  display:flex; align-items:flex-start; gap:13px; cursor:pointer;
+  padding:13px 16px; border:1px solid var(--line-soft); border-radius:12px;
+  font-size:16px; line-height:1.5; color:var(--text); background:var(--paper);
+  transition:border-color .2s var(--ease), background .2s var(--ease);
+  min-height:48px;
+}
+.check-item:hover { border-color:var(--sage); background:#FFFFFF; }
+.check-item input { position:absolute; opacity:0; width:0; height:0; }
+.check-box {
+  flex:0 0 22px; width:22px; height:22px; border-radius:6px; margin-top:2px;
+  border:2px solid var(--line); background:#FFFFFF; display:grid; place-items:center;
+  transition:background .2s var(--ease), border-color .2s var(--ease);
+}
+.check-box svg { width:13px; height:13px; stroke:#FFFFFF; fill:none; stroke-width:3.4; stroke-linecap:round; stroke-linejoin:round; opacity:0; transition:opacity .18s var(--ease); }
+.check-item input:checked ~ .check-box { background:var(--olive); border-color:var(--olive); }
+.check-item input:checked ~ .check-box svg { opacity:1; }
+.check-item input:focus-visible ~ .check-box { outline:3px solid var(--navy); outline-offset:2px; }
+.check-item:has(input:checked) { border-color:var(--sage); background:var(--sage-fill); }
+.check-out {
+  margin-top:22px; padding-top:20px; border-top:1px solid var(--line-soft);
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.check-score { font-family:var(--serif); font-size:34px; font-weight:500; color:var(--olive); line-height:1; }
+.check-say { font-family:var(--serif); font-style:italic; font-size:18px; color:var(--forest); flex:1 1 240px; }
+
+/* ── Gegenüberstellung alte/neue Frage ─────────────── */
+.swap { display:grid; grid-template-columns:1fr auto 1fr; gap:22px; align-items:center; max-width:900px; margin:0 auto; }
+@media (max-width:760px){ .swap { grid-template-columns:1fr; gap:14px; } .swap-arrow { transform:rotate(90deg); margin:0 auto; } }
+.swap-card { border-radius:16px; padding:28px 26px; }
+.swap-old { background:var(--paper-band); border:1px dashed var(--line); }
+.swap-old .k { font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; }
+.swap-old p { font-family:var(--serif); font-size:20px; color:var(--text-muted); text-decoration:line-through; text-decoration-color:var(--sage); text-decoration-thickness:1.5px; }
+.swap-new { background:var(--forest); border:1px solid var(--forest); }
+.swap-new .k { font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); margin-bottom:10px; }
+.swap-new p { font-family:var(--serif); font-size:21px; color:var(--near-white); line-height:1.4; }
+.swap-arrow { width:34px; height:34px; stroke:var(--sage); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+/* ── Tabs: die drei blinden Flecken ────────────────── */
+.tabs { max-width:1000px; margin:0 auto; }
+.tablist { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:24px; }
+@media (max-width:820px){ .tablist { grid-template-columns:1fr; } }
+.tab {
+  display:flex; flex-direction:column; gap:9px; text-align:left; cursor:pointer;
+  background:var(--card); border:1px solid var(--line-soft); border-radius:16px;
+  padding:20px 20px; font-family:var(--sans); min-height:48px;
+  transition:border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+}
+.tab:hover { transform:translateY(-2px); border-color:var(--sage); box-shadow:0 18px 36px -24px rgba(15,26,20,0.3); }
+.tab .tab-no { font-family:var(--serif); font-size:15px; font-style:italic; color:var(--olive); }
+.tab .tab-lbl { font-family:var(--serif); font-size:17.5px; line-height:1.35; color:var(--forest); }
+.tab[aria-selected="true"] { background:var(--forest); border-color:var(--forest); }
+.tab[aria-selected="true"] .tab-no { color:var(--sage); }
+.tab[aria-selected="true"] .tab-lbl { color:var(--near-white); }
+.panel {
+  background:var(--card); border:1px solid var(--line); border-radius:20px; padding:40px 38px;
+  display:grid; grid-template-columns:1fr 300px; gap:40px; align-items:center;
+  animation:panelIn .45s var(--ease);
+}
+@media (max-width:820px){ .panel { grid-template-columns:1fr; gap:26px; padding:28px 24px; } }
+@keyframes panelIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+.panel[hidden] { display:none; }
+.panel h3 { font-size:24px; margin-bottom:14px; }
+.panel p { font-size:16.5px; color:var(--text-muted); margin-bottom:14px; }
+.panel .ex { margin-top:16px; padding:14px 18px; border-radius:12px; background:var(--sage-fill); border:1px solid var(--line-soft); font-family:var(--serif); font-style:italic; font-size:16px; line-height:1.55; color:var(--forest); }
+.panel .take {
+  margin-top:20px; padding:16px 18px; border-radius:12px;
+  background:var(--sage-fill); border:1px solid var(--line-soft);
+  font-size:15.5px; color:var(--forest);
+}
+.panel .take b { font-weight:600; }
+.panel figure svg { width:100%; height:auto; }
+
+/* ── Ergebnis-Karten ───────────────────────────────── */
+.gains { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+@media (max-width:860px){ .gains { grid-template-columns:1fr; } }
+.gain { background:var(--card); border:1px solid var(--line-soft); border-radius:18px; padding:30px 26px; position:relative; overflow:hidden; transition:transform .28s var(--ease), box-shadow .28s var(--ease); }
+.gain:hover { transform:translateY(-3px); box-shadow:0 26px 52px -30px rgba(15,26,20,0.3); }
+.gain::before { content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--sage); }
+.gain-icon { width:42px; height:42px; border-radius:11px; background:var(--sage-fill); display:grid; place-items:center; margin-bottom:18px; }
+.gain-icon svg { width:21px; height:21px; stroke:var(--olive); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.gain h3 { font-size:19px; margin-bottom:10px; line-height:1.3; }
+.gain p { font-size:15.5px; color:var(--text-muted); line-height:1.64; }
+
+/* ── Für dich / nicht für dich ─────────────────────── */
+.fit { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+@media (max-width:860px){ .fit { grid-template-columns:1fr; } }
+.fit-card { border-radius:20px; padding:34px 32px; }
+.fit-yes { background:var(--card); border:1px solid var(--line); }
+.fit-no  { background:var(--forest); }
+.fit-card h3 { font-size:21px; margin-bottom:22px; }
+.fit-no h3 { color:var(--near-white); }
+.fit-no h3 em { color:var(--sage); }
+.fit-card li { display:flex; gap:13px; align-items:flex-start; font-size:16px; line-height:1.58; }
+.fit-card li + li { margin-top:14px; }
+.fit-card svg { flex:0 0 21px; width:21px; height:21px; margin-top:3px; fill:none; stroke-width:2.3; stroke-linecap:round; stroke-linejoin:round; }
+.fit-yes svg { stroke:var(--olive); }
+.fit-no  svg { stroke:var(--sage); }
+.fit-no li { color:var(--sage-light); }
+
+/* ── Über Nicole + Stimme ──────────────────────────── */
+.about { display:grid; grid-template-columns:0.8fr 1.2fr; gap:54px; align-items:center; }
+@media (max-width:900px){ .about { grid-template-columns:1fr; gap:32px; } .about-img { max-width:340px; } }
+.about-img img { border-radius:18px; box-shadow:0 36px 72px -44px rgba(15,26,20,0.5); }
+.creds { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; }
+.creds li { font-size:13.5px; font-weight:500; color:var(--forest); background:var(--sage-fill); border:1px solid var(--line-soft); border-radius:999px; padding:7px 15px; }
+.about p { font-size:17px; color:var(--text-muted); margin-bottom:16px; }
+.about p strong { color:var(--forest); font-weight:600; }
+.kpis { display:flex; flex-wrap:wrap; gap:32px; margin:26px 0; padding-top:24px; border-top:1px solid var(--line-soft); }
+.kpi b { display:block; font-family:var(--serif); font-size:32px; font-weight:500; color:var(--olive); line-height:1.1; }
+.kpi span { font-size:13px; color:var(--text-muted); }
+.quote { background:var(--card); border:1px solid var(--line-soft); border-left:3px solid var(--sage); border-radius:14px; padding:24px 26px; }
+.voices { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:940px; margin:0 auto; }
+@media (max-width:760px){ .voices { grid-template-columns:1fr; } }
+.quote p { font-family:var(--serif); font-size:19px; line-height:1.45; color:var(--forest); margin-bottom:10px; }
+.quote cite { font-style:normal; font-size:13.5px; font-weight:600; color:var(--text-muted); }
+
+/* ── Anmeldeblock ──────────────────────────────────── */
+.signup-grid { display:grid; grid-template-columns:0.85fr 1.15fr; gap:44px; align-items:start; }
+@media (max-width:900px){ .signup-grid { grid-template-columns:1fr; gap:30px; } }
+.facts { display:grid; gap:10px; }
+.fact {
+  display:flex; align-items:center; gap:14px;
+  background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.fact:hover { transform:translateY(-2px); box-shadow:0 16px 32px -22px rgba(15,26,20,0.3); }
+.fact svg { flex:0 0 19px; width:19px; height:19px; stroke:var(--olive); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.fact .k { font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted); display:block; }
+.fact .v { font-family:var(--serif); font-size:17px; color:var(--forest); }
+.form-card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:34px; box-shadow:0 40px 90px -54px rgba(15,26,20,0.45); }
+@media (max-width:640px){ .form-card { padding:24px; border-radius:16px; } }
+.form-card h2 { font-size:22px; margin-bottom:8px; }
+.form-card > p { font-size:15px; color:var(--text-muted); margin-bottom:22px; }
+.form-fine { font-size:12.5px; color:var(--text-muted); line-height:1.55; margin-top:16px; }
+.form-fine a { color:var(--olive); text-decoration:underline; text-underline-offset:2px; }
+
+/* ── Closing ───────────────────────────────────────── */
+.mark { background:rgba(122,168,144,.30); border-bottom:2px solid var(--sage); padding:0 .16em; border-radius:3px; font-style:normal; }
+.closing { text-align:center; padding:104px 0; }
+.closing h2 { font-size:clamp(28px,4.6vw,48px); max-width:19ch; margin:0 auto 20px; }
+.closing p { font-size:18px; max-width:54ch; margin:0 auto 20px; }
+.closing .q { font-family:var(--serif); font-style:italic; font-size:clamp(21px,3vw,28px); color:var(--sage); margin:0 auto 32px; max-width:24ch; }
+.closing .meta { font-size:14px; color:var(--sage-light); margin-top:20px; }
+
+/* ── Footer ────────────────────────────────────────── */
+.footer { background:var(--forest); padding:0 0 44px; text-align:center; }
+.footer-inner { border-top:1px solid rgba(122,168,144,0.18); padding-top:28px; }
+.footer p, .footer a { font-size:13.5px; color:var(--sage-light); }
+.footer a { text-decoration:underline; text-underline-offset:3px; }
+.footer nav { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; margin-top:10px; }
+
+/* ── Sticky CTA ────────────────────────────────────── */
+.sticky {
+  position:fixed; left:12px; right:12px; bottom:12px; z-index:var(--z-sticky);
+  display:none; align-items:center; justify-content:space-between; gap:14px;
+  background:var(--forest); border-radius:14px; padding:11px 12px 11px 18px;
+  box-shadow:0 20px 44px -18px rgba(15,26,20,0.6);
+  transform:translateY(140%); transition:transform .4s var(--ease);
+}
+.sticky.show { transform:translateY(0); }
+.sticky .lbl { font-family:var(--serif); font-size:14px; line-height:1.25; color:var(--near-white); }
+.sticky .lbl b { color:var(--sage); font-weight:500; font-style:italic; }
+@media (max-width:820px){ .sticky { display:flex; } body.has-sticky { padding-bottom:86px; } }
+
+/* ── Reveal ────────────────────────────────────────── */
+[data-reveal] { opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+[data-reveal].in { opacity:1; transform:none; }
+[data-reveal="left"]  { transform:translateX(-24px); }
+[data-reveal="right"] { transform:translateX(24px); }
+.stagger > * { opacity:0; transform:translateY(14px); transition:opacity .55s var(--ease), transform .55s var(--ease); }
+.stagger.in > * { opacity:1; transform:none; }
+.stagger.in > *:nth-child(1){ transition-delay:.04s } .stagger.in > *:nth-child(2){ transition-delay:.09s }
+.stagger.in > *:nth-child(3){ transition-delay:.14s } .stagger.in > *:nth-child(4){ transition-delay:.19s }
+.stagger.in > *:nth-child(5){ transition-delay:.24s } .stagger.in > *:nth-child(6){ transition-delay:.29s }
+.stagger.in > *:nth-child(7){ transition-delay:.34s } .stagger.in > *:nth-child(8){ transition-delay:.39s }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal], .stagger > * { opacity:1 !important; transform:none !important; transition:none !important; }
+  .panel { animation:none; }
+  .ticket-live .dot { animation:none; }
+  html { scroll-behavior:auto; }
+  .progress { transition:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <span class="nav-logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></span>
+    <a href="#anmelden" class="btn btn-sm">Platz sichern</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="glow g1"></div><div class="glow g2"></div>
+    <svg id="contour" viewBox="0 0 1440 380" preserveAspectRatio="none" fill="none" stroke="#7AA890" stroke-width="1.1">
+      <path d="M-40 70 C 240 30, 420 120, 720 90 S 1200 30, 1480 96" opacity="0.5"/>
+      <path d="M-40 142 C 260 100, 460 192, 760 162 S 1220 100, 1480 170" opacity="0.4"/>
+      <path d="M-40 218 C 260 178, 470 266, 780 236 S 1240 178, 1480 244" opacity="0.3"/>
+      <path d="M-40 298 C 280 254, 500 336, 820 306 S 1260 254, 1480 318" opacity="0.22"/>
+    </svg>
+  </div>
+
+  <div class="wrap hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">Live-Workshop &middot; für Unternehmerinnen und Solopreneurinnen in der Lebensmitte</span>
+      <h1>Du führst dein Business.<span class="l2">Gerade führt dein Körper dich.</span></h1>
+      <p class="hero-lead">Die drei blinden Flecken, an denen Frauen in der Lebensmitte hängen bleiben. <strong>Auch die, die sich gut ernähren, Sport machen und ihre Blutwerte kennen.</strong></p>
+      <p class="hero-result">In 90 Minuten verstehst du, warum deine Symptome zusammengehören. Und du hörst auf, bei jedem neuen wieder von vorne anzufangen.</p>
+      <div class="hero-proof">
+        <i><b>14</b> Jahre eigene Praxis</i>
+        <span class="sep" aria-hidden="true"></span>
+        <i><b>1.500+</b> Frauen begleitet</i>
+        <span class="sep" aria-hidden="true"></span>
+        <i>Diplom-Kauffrau <b>&amp;</b> Heilpraktikerin</i>
+      </div>
+    </div>
+
+    <div data-reveal="right">
+      <div class="ticket">
+        <div class="ticket-top">
+          <span class="ticket-live"><span class="dot" aria-hidden="true"></span>Live-Termin</span>
+          <p class="ticket-date">Sonntag, 20. September 2026<span>11:00 bis 12:30 Uhr &middot; Zoom</span></p>
+        </div>
+        <div class="ticket-perf" aria-hidden="true"></div>
+        <div class="ticket-body">
+          <h2>Sichere dir einen der 30 Plätze</h2>
+          <!-- Das Anmeldeformular (Alfima-Embed) liegt einmal auf der Seite,
+               im Abschnitt #anmelden. Hier führt ein Button dorthin, damit
+               nicht zwei identische iframes geladen werden. -->
+          <a href="#anmelden" class="btn" style="width:100%;">Platz sichern <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <p class="ticket-fine">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>30 Plätze</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fragen live beantwortet</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIE SZENE ────────────────────────────────────── -->
+<section class="section band">
+  <div class="wrap narrow">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Sonntagabend, 21 Uhr</span>
+      <h2>Es war kein besonderer Tag. Und trotzdem ist danach nichts mehr <em>übrig</em>.</h2>
+    </div>
+    <p class="lead-p" data-reveal>Du führst dein Business. Kundentermine, Entscheidungen, Probleme lösen. Zu Hause geht es weiter: Familie, Termine, mitdenken, sich kümmern. Das ist nicht neu. Das machst du seit Jahren.</p>
+    <p class="lead-p" data-reveal>Neu ist, dass du abends auf dem Sofa sitzt und denkst: <strong>Warum bin ich eigentlich so fertig?</strong></p>
+    <p class="lead-p" data-reveal>Keine Krise. Keine Katastrophe. Du hast einfach gearbeitet. Du wolltest noch zum Sport. Du hast dich auf den Abend gefreut. Jetzt willst du nur deine Ruhe. Und als dich jemand etwas völlig Normales fragt, merkst du, dass es dich mehr reizt, als es sollte.</p>
+    <p class="pull" data-reveal>Im Business geht noch viel. Privat bleibt immer weniger von dir übrig.</p>
+    <p class="lead-p" data-reveal>Das sehe ich bei fast jeder Unternehmerin, die zehn Jahre lang durchgezogen hat. Nach außen funktioniert alles. Der Preis wird zu Hause bezahlt.</p>
+  </div>
+</section>
+
+<!-- ── SYMPTOME + SELBSTCHECK ───────────────────────── -->
+<section class="section">
+  <div class="wrap">
+    <div class="head center narrow" data-reveal>
+      <span class="eyebrow center">Das eigentlich Anstrengende</span>
+      <h2>Es ist nicht die Müdigkeit. Es ist, dass ständig etwas <em>anderes</em> im Vordergrund steht.</h2>
+      <p>Mal ist dein Kopf klar. Mal suchst du im Gespräch nach einem Wort, das dir früher sofort eingefallen wäre. Du gehst weiter zum Sport, dein Körper reagiert anders. Du achtest auf deine Ernährung, dein Gewicht verändert sich trotzdem. Du schläfst und wachst nicht erholt auf.</p>
+    </div>
+
+    <ul class="chips stagger" data-reveal aria-label="Häufige Veränderungen">
+      <li class="chip">Schlaf, der nicht erholt</li>
+      <li class="chip">Wortfindung</li>
+      <li class="chip">Gewicht</li>
+      <li class="chip">Gelenke</li>
+      <li class="chip">Verdauung</li>
+      <li class="chip">Schwindel</li>
+      <li class="chip">Kopfschmerzen</li>
+      <li class="chip">kürzere Zündschnur</li>
+    </ul>
+
+    <p class="pull" data-reveal style="text-align:left;">Das Anstrengende ist nicht die einzelne Beschwerde. Es ist, nie das Gefühl zu haben, endlich zu verstehen, was los ist.</p>
+
+    <div class="check-card" data-reveal>
+      <h2>Was davon kommt dir bekannt vor?</h2>
+      <p>Klick an, was auf dich zutrifft. Nur für dich, nichts wird gespeichert oder gesendet.</p>
+      <div class="check-list" id="checkList">
+        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Ich wache auf und bin nicht wirklich erholt.</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Nach einem normalen Arbeitstag ist abends nichts mehr übrig.</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Ich brauche länger, um mich zu erholen, als noch vor ein paar Jahren.</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Ich mache eigentlich alles richtig und komme trotzdem nicht weiter.</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Meine Werte sind in Ordnung, mein Gefühl nicht.</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Im Business geht noch viel. Privat immer weniger.</span></label>
+      </div>
+      <div class="check-out">
+        <span class="check-score" id="checkScore" aria-hidden="true">0/6</span>
+        <p class="check-say" id="checkSay" role="status" aria-live="polite">Klick an, was du kennst.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIE ZWEI ANTWORTEN ───────────────────────────── -->
+<section class="section band">
+  <div class="wrap narrow">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Was du bisher gehört hast</span>
+      <h2>Du hast längst gesucht. Und zwei Antworten bekommen, die nichts <em>erklären</em>.</h2>
+      <p>Du bist keine Frau, die abwartet. Du liest, du hörst Podcasts, du fragst nach, du probierst aus. Ernährung umgestellt. Nahrungsergänzung getestet. Blutwerte checken lassen. Über die Wechseljahre gelesen.</p>
+    </div>
+
+    <div class="chips stagger" data-reveal style="margin-bottom:38px;">
+      <span class="chip" style="font-size:19px; padding:14px 26px;">„Das sind die Hormone."</span>
+      <span class="chip" style="font-size:19px; padding:14px 26px;">„Das ist eben das Alter."</span>
+    </div>
+
+    <p class="lead-p" data-reveal style="text-align:center;">Beides erklärt nichts. Denn wäre es so einfach, wüsstest du längst, was zu tun ist.</p>
+    <p class="pull" data-reveal style="margin-top:34px;">Deine Hormone sind nicht das Problem. Jedenfalls nicht allein. Deshalb bringt dich das Ausgleichen auch nicht weiter.</p>
+  </div>
+</section>
+
+<!-- ── WENDEPUNKT 1 · NICOLES GESCHICHTE ────────────── -->
+<section class="section dark">
+  <div class="wrap narrow">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Warum ich das so genau weiß</span>
+      <h2>Ich weiß das nicht aus der Praxis. Ich weiß es <em>von mir</em>.</h2>
+    </div>
+    <p class="lead-p" data-reveal>Ich bin 55, ich führe mein eigenes Unternehmen, und ich bin Heilpraktikerin.</p>
+    <p class="lead-p" data-reveal>Als es bei mir anfing, hatte ich also einen Vorteil: Ich wusste, was man tut. Hormone anschauen. Pflanzliche Unterstützung. Werte im Blick behalten. Ich kannte die Präparate und die Dosierungen, ich musste niemanden fragen.</p>
+    <p class="lead-p" data-reveal><strong>Ich habe es gemacht. Und es hat bedingt geholfen.</strong> Nicht nichts. Aber nicht das, was ich erwartet hatte.</p>
+    <p class="lead-p" data-reveal>Dazu kam: Ich war nie eine klassische Wechseljahres-Geschichte. Das Bild, das überall beschrieben wird, war nicht meins. Also passte auch die Erklärung nicht, die alle parat hatten.</p>
+    <p class="lead-p" data-reveal>Mir hat nicht das Wissen gefehlt. Mir hat gefehlt, dass mein Ansatzpunkt an einer völlig anderen Stelle lag.</p>
+    <p class="lead-p" data-reveal>Gefunden habe ich ihn über zwei Wege. Über die Ausbildung in Regenerationsmedizin, die mir ein anderes Erklärungsmodell gegeben hat. Und über die Arbeit an mir selbst, die mir gezeigt hat, welche Muster ich seit Jahrzehnten mit mir herumtrage. Erst beides zusammen ergab ein Bild. Und erst aus diesem Bild wurden meine Hebel.</p>
+    <p class="pull" data-reveal>Wenn ich mit allem Fachwissen an dieser Stelle falsch abgebogen bin, dann liegt es nicht an dir, dass du bisher nicht weitergekommen bist.</p>
+  </div>
+</section>
+
+<!-- ── DIE DREI BLINDEN FLECKEN (TABS) ──────────────── -->
+<section class="section">
+  <div class="wrap">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Im Workshop</span>
+      <h2>Die <em>3</em> blinden Flecken</h2>
+      <p>Ein blinder Fleck ist nichts, was du falsch machst. Es ist etwas, das du nicht sehen kannst, solange niemand dir zeigt, wo du hinschauen musst.</p>
+    </div>
+
+    <div class="tabs" data-reveal>
+      <div class="tablist" role="tablist" aria-label="Die drei blinden Flecken">
+        <button class="tab" role="tab" id="tab1" aria-controls="pan1" aria-selected="true" type="button">
+          <span class="tab-no">01</span><span class="tab-lbl">„Ich habe fünf verschiedene Baustellen."</span>
+        </button>
+        <button class="tab" role="tab" id="tab2" aria-controls="pan2" aria-selected="false" tabindex="-1" type="button">
+          <span class="tab-no">02</span><span class="tab-lbl">„Es sind eben die Wechseljahre."</span>
+        </button>
+        <button class="tab" role="tab" id="tab3" aria-controls="pan3" aria-selected="false" tabindex="-1" type="button">
+          <span class="tab-no">03</span><span class="tab-lbl">„Das ist alles viel zu kompliziert."</span>
+        </button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pan1" aria-labelledby="tab1" tabindex="0">
+        <div>
+          <h3>Du hast nicht fünf Probleme. Du hast ein System, das an fünf Stellen antwortet.</h3>
+          <p>Der Fersensporn. Die Migräne. Der Reizdarm. Das Gewicht. Der Schlaf. Jedes wird einzeln betrachtet und einzeln behandelt. Deshalb löst du eines, und das nächste meldet sich.</p>
+          <p>Wir schauen darauf, was darunter zusammenhängt.</p>
+          <p class="ex">Zum Beispiel, warum du dieselbe Ursache hinter zwei Beschwerden findest, die in zwei verschiedenen Praxen behandelt werden.</p>
+        </div>
+        <figure>
+          <svg viewBox="0 0 260 190" role="img" aria-label="Ein Körper, der permanent im Hintergrund Signale verarbeitet.">
+            <circle cx="130" cy="95" r="46" fill="rgba(122,168,144,0.13)" stroke="#7AA890" stroke-width="2"/>
+            <text x="130" y="92" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1A14">dein</text>
+            <text x="130" y="108" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1A14">System</text>
+            <g stroke="#7AA890" stroke-width="1.6" fill="none" opacity="0.75">
+              <path d="M20 40 h58"/><path d="M182 40 h58"/>
+              <path d="M12 95 h56"/><path d="M192 95 h56"/>
+              <path d="M20 150 h58"/><path d="M182 150 h58"/>
+            </g>
+            <g font-family="Inter, sans-serif" font-size="9.5" fill="#55655B">
+              <text x="20" y="32">Haltung</text><text x="182" y="32">Temperatur</text>
+              <text x="12" y="87">Verdauung</text><text x="192" y="87">Durchblutung</text>
+              <text x="20" y="142">Gefahr</text><text x="182" y="142">Geräusch</text>
+            </g>
+          </svg>
+        </figure>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pan2" aria-labelledby="tab2" tabindex="0" hidden>
+        <div>
+          <h3>Die Wechseljahre sind nicht schuld. Sie holen hoch, was über Jahrzehnte entstanden ist.</h3>
+          <p>Du hast viel verändert und ausprobiert, und es hat sich trotzdem nichts oder nur marginal geändert. Die Wechseljahre sind ein tiefer Einschnitt, das stimmt. Aber sie erfinden nichts Neues. Sie legen offen, was dein System über Jahrzehnte eingespeichert hat.</p>
+          <p>Deshalb ist die Frage nicht, wie du deine Hormone ausgleichst. Die Frage ist, was es überhaupt für eine gute Hormonregulation braucht.</p>
+          <p class="ex">Zum Beispiel, warum Meditation, Retreat und Darmkur bei dir nicht greifen, obwohl sie bei anderen funktionieren.</p>
+        </div>
+        <figure>
+          <svg viewBox="0 0 260 190" role="img" aria-label="Nervensystem und Immunsystem beziehen Energie zuerst, der Rest bekommt, was übrig bleibt.">
+            <text x="8" y="22" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#55655B">VERFÜGBARE ENERGIE</text>
+            <rect x="8" y="32" width="244" height="16" rx="8" fill="rgba(122,168,144,0.18)"/>
+            <g font-family="Inter, sans-serif" font-size="10.5" fill="#0F1A14">
+              <text x="8" y="76">Nervensystem</text>
+              <rect x="8" y="84" width="150" height="14" rx="7" fill="#3D5A2E"/>
+              <text x="8" y="122">Immunsystem</text>
+              <rect x="8" y="130" width="112" height="14" rx="7" fill="#3D5A2E"/>
+              <text x="8" y="168">alles andere</text>
+              <rect x="8" y="176" width="34" height="10" rx="5" fill="#7AA890"/>
+            </g>
+          </svg>
+        </figure>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pan3" aria-labelledby="tab3" tabindex="0" hidden>
+        <div>
+          <h3>Es gibt einen gemeinsamen Nenner. Und der ist einfacher, als du denkst.</h3>
+          <p>Wo entsteht Energie, und wie wird sie verteilt. Denn alles braucht Energie. Über eine neue Strategie nachdenken. Eine Vertragsverhandlung. Mit dem Hund Gassi gehen. Der Streit mit deiner Tochter. Körperliche Nähe mit deinem Partner. Ausgelassen beim ABBA-Konzert mitsingen. Wandern in den Bergen.</p>
+          <p>Wenn du wieder in Verbindung mit deinem Körper kommst, wird es einfach statt kompliziert. Das nimmt Stress und Druck raus, und genau das kommt deiner Gesundheit zugute.</p>
+          <p class="ex">Zum Beispiel, warum du im Urlaub nach zwölf Stunden Schlaf trotzdem leer aufwachst.</p>
+        </div>
+        <figure>
+          <svg viewBox="0 0 260 190" role="img" aria-label="Nach Belastung erholte sich das System früher schnell, heute deutlich langsamer.">
+            <line x1="26" y1="160" x2="248" y2="160" stroke="#7AA890" stroke-width="1.4"/>
+            <line x1="26" y1="26" x2="26" y2="160" stroke="#7AA890" stroke-width="1.4"/>
+            <path d="M26 60 L84 60 L96 132" fill="none" stroke="#55655B" stroke-width="1.6" stroke-dasharray="4 3"/>
+            <path d="M96 132 C 118 132, 122 62, 168 60" fill="none" stroke="#3D5A2E" stroke-width="2.6"/>
+            <path d="M96 132 C 150 134, 190 118, 244 108" fill="none" stroke="#7AA890" stroke-width="2.6"/>
+            <g font-family="Inter, sans-serif" font-size="9.5" fill="#55655B">
+              <text x="100" y="150">Belastung</text>
+              <text x="150" y="52" fill="#3D5A2E" font-weight="600">früher</text>
+              <text x="196" y="126" fill="#3D5A2E" font-weight="600">heute</text>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ERGEBNIS ─────────────────────────────────────── -->
+<section class="section band">
+  <div class="wrap">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Nach 90 Minuten</span>
+      <h2>Keine zehn neuen Regeln. Ein <em>Ausgangspunkt</em>.</h2>
+    </div>
+
+    <div class="gains stagger" data-reveal>
+      <article class="gain">
+        <div class="gain-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v6c0 4.5 3.4 7.6 8 8.7 4.6-1.1 8-4.2 8-8.7V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Du weißt, welcher blinde Fleck bei dir greift</h3>
+        <p>Von den drei Mustern kennst du deins. Kein Gefühl mehr, sondern ein Verdacht, mit dem du arbeiten kannst.</p>
+      </article>
+      <article class="gain">
+        <div class="gain-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17 9 12l3 3 8-8"/><path d="M20 11V7h-4"/></svg></div>
+        <h3>Du hast einen Ausgangspunkt statt einer Symptomliste</h3>
+        <p>Nicht mehr fünf Baustellen nebeneinander, sondern eine Stelle, an der es sich zuerst lohnt hinzuschauen.</p>
+      </article>
+      <article class="gain">
+        <div class="gain-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></div>
+        <h3>Du stellst die Frage anders</h3>
+        <p>Und genau diese neue Frage bringt dich weiter als jede Antwort auf die alte.</p>
+      </article>
+    </div>
+
+    <div class="swap" data-reveal style="margin-top:48px;">
+      <div class="swap-card swap-old">
+        <p class="k">Bisher</p>
+        <p>Was mache ich gegen dieses Symptom?</p>
+      </div>
+      <svg class="swap-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      <div class="swap-card swap-new">
+        <p class="k">Ab dem 20. September</p>
+        <p>Was hängt hier zusammen, und wo fange ich an?</p>
+      </div>
+    </div>
+
+    <p class="pull" data-reveal style="margin-top:44px;">Ich arbeite grundsätzlich nicht mit einzelnen Symptomen. Ich schaue mir an, wie dein Körper Energie herstellt und verteilt. Sonst fange ich gar nicht erst an.</p>
+  </div>
+</section>
+
+<!-- ── WENDEPUNKT 2 · KONSEQUENZ ────────────────────── -->
+<section class="section dark">
+  <div class="wrap narrow">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Warum jetzt</span>
+      <h2>Gesundheit ist dein wichtigstes <em>Business-Asset</em>.</h2>
+    </div>
+    <p class="lead-p" data-reveal>Wir haben keine Zeit. Und ehrlich gesagt auch keine Lust, uns da noch selbst durchzuarbeiten. Das kostet nur wieder Energie.</p>
+    <p class="lead-p" data-reveal>Du kannst Aufgaben delegieren, Prozesse verändern, dir Unterstützung holen. Dein Business braucht trotzdem dich.</p>
+    <p class="lead-p" data-reveal>Wenn du im wichtigen Gespräch sitzt und dein Kopf nicht so klar ist wie sonst. Wenn du Entscheidungen aufschiebst, weil du zu müde bist. Wenn du Termine absagst, weil dein Körper an diesem Tag nicht mitmacht. <strong>Dann betrifft das nicht nur deine Gesundheit. Dann betrifft es das Business, das du dir aufgebaut hast.</strong></p>
+    <p class="pull" data-reveal>Und wenn es so bleibt, ist es in einem Jahr nicht mehr die Müdigkeit, die dich stört.</p>
+    <p class="lead-p" data-reveal>Es geht nicht darum, dass du dich jetzt optimieren musst. Es geht darum, dass du noch etwas vorhast. Mit deinem Business. Mit deinem Leben. Und dass du dich darauf verlassen können willst, dass du nächste Woche die Energie dafür hast.</p>
+  </div>
+</section>
+
+<!-- ── PASSUNG ──────────────────────────────────────── -->
+<section class="section">
+  <div class="wrap">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Passung</span>
+      <h2>Damit du dir den Sonntag <em>richtig</em> einteilst</h2>
+    </div>
+    <div class="fit" data-reveal>
+      <div class="fit-card fit-yes">
+        <h3>Für dich, wenn ...</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du selbstständig bist oder ein eigenes Unternehmen führst</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du merkst, dass dein Körper sich verändert, und keine Antwort bekommst, die passt</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du weiterhin viel kannst, dieselben Tage dich aber heute mehr kosten</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du dich gesund ernährst, dich bewegst und trotzdem immer wieder bei null anfängst</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du keine weiteren Tipps sammeln willst, sondern verstehen, warum dein Körper heute anders reagiert</span></li>
+        </ul>
+      </div>
+      <div class="fit-card fit-no">
+        <h3>Nicht für dich, <em>wenn</em> ...</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>du eine Liste willst, die du abarbeitest</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>du willst, dass jemand es für dich richtet</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>„ist halt das Alter" für dich eine ausreichende Antwort ist</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ANMELDUNG ────────────────────────────────────── -->
+<section class="section band" id="anmelden">
+  <div class="wrap">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Dein Platz</span>
+      <h2>Sonntag. 90 Minuten. Einmal einen Schritt zurück und das <em>Ganze</em> anschauen.</h2>
+      <p>Ich öffne 30 Plätze. Mehr nicht, weil ich am Ende deine Fragen beantworten will und nicht nur senden. Melde dich an, wenn du dir die 90 Minuten wirklich nimmst.</p>
+    </div>
+
+    <div class="signup-grid" data-reveal>
+      <ul class="facts stagger">
+        <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg><span><span class="k">Datum</span><span class="v">Sonntag, 20.09.2026</span></span></li>
+        <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><span class="k">Uhrzeit</span><span class="v">11:00 bis 12:30 Uhr</span></span></li>
+        <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><span><span class="k">Ort</span><span class="v">Live auf Zoom</span></span></li>
+        <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg><span><span class="k">Plätze</span><span class="v">30</span></span></li>
+        <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg><span><span class="k">Am Ende</span><span class="v">deine Fragen, live</span></span></li>
+      </ul>
+
+      <div class="form-card">
+        <!-- ANMELDEFORMULAR · Alfima-Embed „WS_ADS"
+             Das Script muss DIREKT hinter dem iframe stehen, es findet das
+             iframe über previousElementSibling. Nichts dazwischenschieben.
+             Die Weiterleitung nach dem Absenden wird in Alfima gesetzt,
+             Ziel: danke-bestaetigen.html?lm=workshop -->
+        <div class="embed">
+          <iframe src="https://alfima.com/nicolelurz/leads/WS_ADS/embed" style="width:100%;border:none;min-height:460px;" title="Anmeldung zum Live-Workshop"></iframe>
+          <script>(function(){var u=new URL("https://alfima.com/nicolelurz/leads/WS_ADS/embed");var allowedOrigin=u.origin;var iframe=document.currentScript&&document.currentScript.previousElementSibling;window.addEventListener("message",function(e){if(e.origin!==allowedOrigin)return;if(!e.data||typeof e.data.type!=="string")return;if(e.data.type==="alfima-embed-resize"){if(iframe&&iframe.tagName==="IFRAME")iframe.style.height=e.data.height+"px";}else if(e.data.type==="alfima-embed-redirect"){var url=e.data.url;if(typeof url==="string"&&/^https?:\/\//.test(url)){window.top.location.href=url;}}});})();</script>
+        </div>
+        <p class="form-fine">Du bekommst die Zugangsdaten und eine Erinnerung. Danach meinen Newsletter, Abmeldung jederzeit mit einem Klick.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ÜBER NICOLE ──────────────────────────────────── -->
+<section class="section">
+  <div class="wrap about">
+    <div class="about-img" data-reveal="left"><img src="/images/nicole-about.jpg" alt="Porträt von Nicole Lurz"></div>
+    <div data-reveal="right">
+      <span class="eyebrow">Wer dich durch den Workshop führt</span>
+      <h2 style="font-size:clamp(26px,3.8vw,40px); margin-bottom:20px;">Ich bin <em>Nicole</em></h2>
+      <p>Seit 14 Jahren arbeite ich mit Frauen, die schon vieles versucht haben und trotzdem keine Antwort bekommen. Frauen, die ahnen, dass in ihrem Körper mehr steckt, und die wissen wollen, woher es wirklich kommt.</p>
+      <p>Sie kommen mit einer dicken Mappe voller Befunde, sie haben ihre Ernährung umgestellt und einiges ausprobiert, und trotzdem sagt ihnen niemand, was los ist. Am Ende bleibt meist die eine Erklärung übrig. Wahrscheinlich sind es die Hormone. Dabei sieht es bei den wenigsten so aus, wie man die Wechseljahre aus den Medien kennt. Und fast alle sagen irgendwann denselben Satz. Ich weiß, dass ich funktioniere, aber irgendjemand muss es ja machen.</p>
+      <p>Diesen Funktionsmodus kenne ich von mir selbst. Als Mutter und Unternehmerin habe ich jahrelang funktioniert und es weggeschoben, mitten im Spagat zwischen Business und Familie. Als es dann bei mir losging, habe ich gemacht, was ich auch meinen Klientinnen rate. Meine Werte kontrolliert und gegengesteuert. Gebracht hat es wenig.</p>
+      <p>Erst als mein Körper mir ein paar rote Karten gezeigt hat, habe ich in den letzten sechs Jahren angefangen, anders hinzuschauen. Nicht mehr zuerst auf den nächsten Blutwert, der die Antwort bringen soll, sondern darauf, was eigentlich die Faktoren für chronische Gesundheit sind.</p>
+      <p>Genau um diesen Perspektivwechsel geht es am Sonntag im Live-Workshop.</p>
+      <ul class="creds">
+        <li>Diplom-Kauffrau und Heilpraktikerin</li>
+        <li>Mentorin für Regenerationsmedizin</li>
+        <li>Fachmentorin am Mojo-Institut</li>
+      </ul>
+      <div class="kpis">
+        <div class="kpi"><b data-count="14">0</b><span>Jahre eigene Praxis</span></div>
+        <div class="kpi"><b data-count="1500" data-suffix="+" data-sep="1">0</b><span>Frauen begleitet</span></div>
+        <div class="kpi"><b data-count="20" data-suffix="+">0</b><span>Jahre Erfahrung</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STIMMEN ──────────────────────────────────────
+     Vor dem Livegang Freigaben pruefen. Lydia G. ist laut Second Brain
+     freigegeben (14.08.2026). Verena, L. M. und Birgit R. sind HWG-konform
+     und stehen bereits oeffentlich (Startseite bzw. ProvenExpert), die
+     schriftliche Freigabe ist in testimonials-and-case-studies.md aber
+     noch als offen markiert. -->
+<section class="section band">
+  <div class="wrap">
+    <div class="head center" data-reveal>
+      <span class="eyebrow center">Von Frauen, die mit mir gearbeitet haben</span>
+      <h2>Der Satz, der <em>immer</em> fällt</h2>
+    </div>
+    <div class="voices" data-reveal>
+      <blockquote class="quote">
+        <p>Schade, dass das kein Arzt sieht, der mich jahrelang behandelt.</p>
+        <cite>Lydia G.</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>Nicole hat mir Zusammenhänge gezeigt, die kein Arzt gesehen hat, und konkrete Wege, die ich selbst gehen kann.</p>
+        <cite>Verena, Unternehmerin</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>Am Anfang war ich müde, erschöpft, unruhig. Ich wollte etwas verändern, wusste aber nicht wie.</p>
+        <cite>L. M., 38</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>Mir hat sehr die natürliche kompetente Art gefallen. Das Seminar deckt ein weites Spektrum ab und hilft einem, seine Lebensart zu überdenken.</p>
+        <cite>Birgit R., Seminarteilnehmerin</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ── WENDEPUNKT 3 · CLOSING ───────────────────────── -->
+<section class="dark closing">
+  <div class="wrap">
+    <h2 data-reveal>Du musst nicht <span class="mark">mehr</span> tun.</h2>
+    <p data-reveal>Du musst zuerst verstehen, warum das, was du bisher getan hast, nicht mehr ausreicht. Denn solange du nur das nächste Symptom loswerden willst, bleibt die eine Frage offen:</p>
+    <p class="q" data-reveal>Warum reagiert dein Körper überhaupt so?</p>
+    <p data-reveal style="font-size:17px;color:var(--sage-light);max-width:54ch;margin:0 auto 20px;">Mein Ziel ist, dass du danach etwas in der Hand hast, das du dein Leben lang anwenden kannst. Egal, was dein Körper als Nächstes meldet.</p>
+    <p data-reveal style="font-size:17px;color:var(--near-white);max-width:52ch;margin:0 auto 24px;">Wenn du aufhören willst zu raten und endlich sehen willst, was bei dir zusammenhängt, dann ist das dein Vormittag.</p>
+    <a href="#anmelden" class="btn" data-reveal>Ich sichere mir meinen Platz <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    <p class="meta" data-reveal>Sonntag, 20. September &middot; 11:00 bis 12:30 Uhr &middot; 30 Plätze</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ───────────────────────────────────────── -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>&copy; <span id="year">2026</span> Nicole Lurz</p>
+    <nav aria-label="Rechtliches">
+      <a href="https://nicole-lurz.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+      <a href="https://nicole-lurz.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <span class="lbl">20.09. &middot; 11 Uhr &middot; <b>30 Plätze</b></span>
+  <a href="#anmelden" class="btn btn-sm">Platz sichern</a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ── Scroll: Nav, Fortschritt, Sticky, Parallax ── */
+  var nav = document.getElementById('nav');
+  var bar = document.getElementById('progress');
+  var sticky = document.getElementById('sticky');
+  var contour = document.getElementById('contour');
+  var hero = document.querySelector('.hero');
+  var ticking = false;
+
+  function onScroll(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      nav.classList.toggle('scrolled', y > 12);
+      bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+      var past = y > (hero ? hero.offsetHeight * 0.62 : 520);
+      sticky.classList.toggle('show', past);
+      document.body.classList.toggle('has-sticky', past);
+      if (contour && !reduce) contour.style.transform = 'translateY(' + (y * 0.07) + 'px)';
+      ticking = false;
+    });
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', onScroll, { passive:true });
+
+  /* ── Reveal ── */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.1, rootMargin:'0px 0px -6%' });
+  document.querySelectorAll('[data-reveal], .stagger').forEach(function(el){ io.observe(el); });
+
+  /* ── Tabs: die drei blinden Flecken ── */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function selectTab(tab, focus){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ selectTab(tab); });
+    tab.addEventListener('keydown', function(e){
+      var next = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = tabs[(i + 1) % tabs.length];
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === 'Home') next = tabs[0];
+      else if (e.key === 'End') next = tabs[tabs.length - 1];
+      if (next) { e.preventDefault(); selectTab(next, true); }
+    });
+  });
+
+  /* ── Selbstcheck ── */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#checkList input'));
+  var score = document.getElementById('checkScore');
+  var say = document.getElementById('checkSay');
+  var lines = [
+    'Klick an, was du kennst.',
+    'Ein Punkt ist noch kein Muster. Aber ein Anfang.',
+    'Zwei Punkte reichen, damit sich ein Muster abzeichnet.',
+    'Das ist kein Zufall mehr. Das ist ein Muster.',
+    'Das ist kein Zufall mehr. Das ist ein Muster.',
+    'Dein System sagt dir ziemlich deutlich etwas.',
+    'Dein System sagt dir ziemlich deutlich etwas.'
+  ];
+  function updateCheck(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    score.textContent = n + '/6';
+    say.textContent = lines[n];
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', updateCheck); });
+  updateCheck();
+
+  /* ── KPI-Counter ── */
+  function count(el){
+    var target = parseInt(el.dataset.count, 10);
+    var suffix = el.dataset.suffix || '';
+    var sep = el.dataset.sep === '1';
+    var fmt = function(v){ return (sep ? v.toLocaleString('de-DE') : v) + suffix; };
+    if (reduce) { el.textContent = fmt(target); return; }
+    var start = null, dur = 1100;
+    requestAnimationFrame(function step(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      el.textContent = fmt(Math.floor((1 - Math.pow(1 - p, 3)) * target));
+      if (p < 1) requestAnimationFrame(step);
+    });
+  }
+  var kio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ count(e.target); kio.unobserve(e.target); } });
+  }, { threshold:0.6 });
+  document.querySelectorAll('[data-count]').forEach(function(el){ kio.observe(el); });
+
+})();
+</script>
+
+</body>
+</html>
