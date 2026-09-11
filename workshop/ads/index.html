@@ -169,7 +169,7 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
 .hero-when { font-size:15px; font-weight:500; color:var(--forest); margin-bottom:32px; }
 /* Perspektiv-Grafik: ein Koerper, zwei Blickwinkel, zwei Befunde.
    Eigene Umsetzung des Zylinder-Denkmodells in der Markenpalette. */
-.persp { margin:0 0 44px; }
+.persp { margin:0 auto 40px; max-width:560px; }
 .persp svg { display:block; width:100%; height:auto; border-radius:14px; }
 .persp figcaption { margin-top:12px; font-size:14px; color:var(--text-muted); text-align:center; }
 
@@ -678,8 +678,97 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
   <div class="wrap">
     <div class="head center" data-reveal>
       <span class="eyebrow center">Nach 90 Minuten</span>
-      <h2>Du gehst mit einem <em>Ausgangspunkt</em> raus.</h2>
+      <h2>Du gehst mit einem neuen Blick darauf raus, <em>wie Gesundheit entsteht</em>.</h2>
     </div>
+
+    <figure class="persp" data-reveal>
+      <svg viewBox="0 0 900 760" role="img" aria-label="Zwei Personen leuchten mit Taschenlampen von links und rechts auf denselben liegenden Zylinder. An der linken Wand erscheint ein Viereck, an der rechten ein Kreis. Beide sehen etwas Wahres und keine von beiden den ganzen Koerper.">
+        <defs>
+          <radialGradient id="pg">
+            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.70"/>
+            <stop offset="42%" stop-color="#E8F0E8" stop-opacity="0.34"/>
+            <stop offset="72%" stop-color="#E8F0E8" stop-opacity="0.08"/>
+            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="bl" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.50"/>
+            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0.07"/>
+          </linearGradient>
+          <linearGradient id="br" x1="1" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.50"/>
+            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0.07"/>
+          </linearGradient>
+          <linearGradient id="cyl" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C4D6CC"/>
+            <stop offset="45%" stop-color="#7AA890"/>
+            <stop offset="100%" stop-color="#2E4526"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="900" height="760" fill="#0F1A14"/>
+
+        <g stroke="#7AA890" stroke-opacity="0.30" stroke-width="1.6" fill="none">
+          <path d="M450 0 L450 452"/>
+          <path d="M0 610 L450 452 L900 610"/>
+        </g>
+
+        <circle cx="232" cy="326" r="152" fill="url(#pg)"/>
+        <circle cx="672" cy="330" r="146" fill="url(#pg)"/>
+
+        <polygon points="196,600 330,372 330,506" fill="url(#bl)"/>
+        <polygon points="704,600 570,372 570,506" fill="url(#br)"/>
+
+        <polygon points="140,252 318,224 318,398 140,424" fill="#7AA890"/>
+        <ellipse cx="672" cy="330" rx="82" ry="94" fill="#31492A"/>
+
+        <path d="M330 384 L570 372 L570 506 L330 494 Z" fill="url(#cyl)"/>
+        <ellipse cx="570" cy="439" rx="24" ry="67" fill="#C4D6CC"/>
+        <ellipse cx="330" cy="439" rx="28" ry="58" fill="#8FB9A2"/>
+        <ellipse cx="330" cy="439" rx="17" ry="36" fill="#182B1C"/>
+
+        <g stroke="#E8F0E8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="104" cy="548" r="26"/>
+          <path d="M80 542 q-9 -19 8 -25 q3 -17 22 -15 q17 -11 31 2 q17 0 15 19 q9 10 -3 19"/>
+          <path d="M104 571 L104 588"/>
+          <path d="M78 600 q26 -14 52 0 L134 660 L74 660 Z"/>
+          <path d="M130 612 L188 596"/>
+          <path d="M78 612 L58 664"/>
+          <path d="M86 660 L78 726"/>
+          <path d="M124 660 L132 726"/>
+          <path d="M66 728 q14 8 28 0"/>
+          <path d="M120 728 q14 8 28 0"/>
+          <rect x="188" y="586" width="24" height="15" rx="3" fill="#E8F0E8"/>
+        </g>
+        <g stroke="#E8F0E8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(900,0) scale(-1,1)">
+          <circle cx="104" cy="548" r="26"/>
+          <path d="M80 542 q-9 -19 8 -25 q3 -17 22 -15 q17 -11 31 2 q17 0 15 19 q9 10 -3 19"/>
+          <path d="M104 571 L104 588"/>
+          <path d="M78 600 q26 -14 52 0 L134 660 L74 660 Z"/>
+          <path d="M130 612 L188 596"/>
+          <path d="M78 612 L58 664"/>
+          <path d="M86 660 L78 726"/>
+          <path d="M124 660 L132 726"/>
+          <path d="M66 728 q14 8 28 0"/>
+          <path d="M120 728 q14 8 28 0"/>
+          <rect x="188" y="586" width="24" height="15" rx="3" fill="#E8F0E8"/>
+        </g>
+
+        <g fill="#E8F0E8" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="38" text-anchor="middle" letter-spacing="0.5">
+          <text x="232" y="62">DAS VIERECK</text>
+          <text x="232" y="104">IST WAHR</text>
+          <text x="672" y="62">DER KREIS</text>
+          <text x="672" y="104">IST WAHR</text>
+          <text x="450" y="700">DER ZYLINDER</text>
+          <text x="450" y="742">IST WAHRHEIT</text>
+        </g>
+        <g stroke="#E8F0E8" stroke-width="3" fill="none" stroke-linecap="round">
+          <path d="M232 126 L232 188"/><path d="M220 175 l12 15 12 -15"/>
+          <path d="M672 126 L672 188"/><path d="M660 175 l12 15 12 -15"/>
+          <path d="M450 650 L450 586"/><path d="M438 599 l12 -15 12 15"/>
+        </g>
+      </svg>
+      <figcaption>Angelehnt an eine Grafik von mojo-institut.de. Zwei Blickwinkel auf denselben Körper. Beide Befunde stimmen, und keiner zeigt das Ganze.</figcaption>
+    </figure>
 
     <div class="gains stagger" data-reveal>
       <article class="gain">
@@ -765,94 +854,9 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
     <div class="head center" data-reveal>
       <span class="eyebrow center">Dein Platz</span>
       <h2>Sonntag. 90 Minuten. Einmal einen Schritt zurück und das Ganze aus einer <em>anderen</em> Perspektive anschauen.</h2>
-      <p>Ich öffne 30 Plätze. Mehr nicht, weil wir miteinander arbeiten und ich nicht nur senden will. Melde dich an, wenn du dir die 90 Minuten wirklich nimmst.</p>
+      <p>Ich öffne 30 Plätze. Mehr nicht, weil wir miteinander arbeiten und ich sehen will, wer vor mir sitzt. Melde dich an, wenn du dir die 90 Minuten wirklich nimmst.</p>
     </div>
 
-    <figure class="persp" data-reveal>
-      <svg viewBox="0 0 900 760" role="img" aria-label="Zwei Personen leuchten mit Taschenlampen von links und rechts auf denselben liegenden Zylinder. An der linken Wand erscheint ein Viereck, an der rechten ein Kreis. Beide sehen etwas Wahres und keine von beiden den ganzen Koerper.">
-        <defs>
-          <radialGradient id="pg">
-            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.70"/>
-            <stop offset="42%" stop-color="#E8F0E8" stop-opacity="0.34"/>
-            <stop offset="72%" stop-color="#E8F0E8" stop-opacity="0.08"/>
-            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="bl" x1="0" y1="1" x2="1" y2="0">
-            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.50"/>
-            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0.07"/>
-          </linearGradient>
-          <linearGradient id="br" x1="1" y1="1" x2="0" y2="0">
-            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.50"/>
-            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0.07"/>
-          </linearGradient>
-          <linearGradient id="cyl" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#C4D6CC"/>
-            <stop offset="45%" stop-color="#7AA890"/>
-            <stop offset="100%" stop-color="#2E4526"/>
-          </linearGradient>
-        </defs>
-
-        <rect width="900" height="760" fill="#0F1A14"/>
-
-        <g stroke="#7AA890" stroke-opacity="0.30" stroke-width="1.6" fill="none">
-          <path d="M450 0 L450 452"/>
-          <path d="M0 610 L450 452 L900 610"/>
-        </g>
-
-        <circle cx="232" cy="326" r="152" fill="url(#pg)"/>
-        <circle cx="672" cy="330" r="146" fill="url(#pg)"/>
-
-        <polygon points="196,600 330,372 330,506" fill="url(#bl)"/>
-        <polygon points="704,600 570,372 570,506" fill="url(#br)"/>
-
-        <polygon points="140,252 318,224 318,398 140,424" fill="#7AA890"/>
-        <ellipse cx="672" cy="330" rx="82" ry="94" fill="#31492A"/>
-
-        <path d="M330 384 L570 372 L570 506 L330 494 Z" fill="url(#cyl)"/>
-        <ellipse cx="570" cy="439" rx="24" ry="67" fill="#C4D6CC"/>
-        <ellipse cx="330" cy="439" rx="28" ry="58" fill="#8FB9A2"/>
-        <ellipse cx="330" cy="439" rx="17" ry="36" fill="#182B1C"/>
-
-        <g stroke="#E8F0E8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="104" cy="548" r="26"/>
-          <path d="M80 542 q-9 -19 8 -25 q3 -17 22 -15 q17 -11 31 2 q17 0 15 19 q9 10 -3 19"/>
-          <path d="M104 571 L104 588"/>
-          <path d="M78 600 q26 -14 52 0 L134 660 L74 660 Z"/>
-          <path d="M130 612 L188 596"/>
-          <path d="M78 612 L58 664"/>
-          <path d="M86 660 L78 726"/>
-          <path d="M124 660 L132 726"/>
-          <path d="M66 728 q14 8 28 0"/>
-          <path d="M120 728 q14 8 28 0"/>
-          <rect x="188" y="586" width="24" height="15" rx="3" fill="#E8F0E8"/>
-        </g>
-        <g stroke="#E8F0E8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(900,0) scale(-1,1)">
-          <circle cx="104" cy="548" r="26"/>
-          <path d="M80 542 q-9 -19 8 -25 q3 -17 22 -15 q17 -11 31 2 q17 0 15 19 q9 10 -3 19"/>
-          <path d="M104 571 L104 588"/>
-          <path d="M78 600 q26 -14 52 0 L134 660 L74 660 Z"/>
-          <path d="M130 612 L188 596"/>
-          <path d="M78 612 L58 664"/>
-          <path d="M86 660 L78 726"/>
-          <path d="M124 660 L132 726"/>
-          <path d="M66 728 q14 8 28 0"/>
-          <path d="M120 728 q14 8 28 0"/>
-          <rect x="188" y="586" width="24" height="15" rx="3" fill="#E8F0E8"/>
-        </g>
-
-        <g fill="#E8F0E8" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="30" text-anchor="middle" letter-spacing="0.5">
-          <text x="232" y="86">DAS VIERECK IST WAHR</text>
-          <text x="672" y="86">DER KREIS IST WAHR</text>
-          <text x="450" y="726">DER ZYLINDER IST WAHRHEIT</text>
-        </g>
-        <g stroke="#E8F0E8" stroke-width="2.6" fill="none" stroke-linecap="round">
-          <path d="M232 108 L232 186"/><path d="M221 174 l11 14 11 -14"/>
-          <path d="M672 108 L672 186"/><path d="M661 174 l11 14 11 -14"/>
-          <path d="M450 690 L450 612"/><path d="M439 624 l11 -14 11 14"/>
-        </g>
-      </svg>
-      <figcaption>Angelehnt an eine Grafik von mojo-institut.de. Zwei Blickwinkel auf denselben Körper. Beide Befunde stimmen, und keiner zeigt das Ganze.</figcaption>
-    </figure>
 
     <div class="signup-grid" data-reveal>
       <ul class="facts stagger">
