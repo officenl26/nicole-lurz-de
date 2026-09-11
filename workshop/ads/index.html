@@ -2,11 +2,10 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#F4F8F4">
-<meta name="description" content="Live-Workshop am Sonntag, 20. September 2026, 11:00 bis 12:30 Uhr. Für Unternehmerinnen und Solopreneurinnen in der Lebensmitte. Die drei blinden Flecken, an denen Frauen hängen bleiben, auch die, die sich gut ernähren und ihre Blutwerte kennen. 30 Plätze, live.">
-<title>Workshop · Du führst dein Business. Gerade führt dein Körper dich. · Nicole Lurz</title>
+<meta name="description" content="Deine alten Strategien funktionieren plötzlich nicht mehr? Im kostenlosen Live-Workshop zeige ich dir in 90 Minuten die 3 blinden Flecken, die erklären warum, und was du brauchst, um dich wieder ans Lenkrad deiner Gesundheit zu setzen. Sonntag, 20. September 2026, live auf Zoom, 30 Plätze.">
+<title>Live-Workshop: Warum deine alten Strategien nicht mehr wirken · Nicole Lurz</title>
 
 <style>
 /* ════════════════════════════════════════════════════════════
@@ -23,13 +22,13 @@
    · Hell/Band   = Rhythmus dazwischen.
    ════════════════════════════════════════════════════════════ */
 
-@font-face { font-family:'Spectral'; font-weight:400; font-style:normal;  font-display:swap; src:url('/fonts/spectral-regular.ttf') format('truetype'); }
-@font-face { font-family:'Spectral'; font-weight:400; font-style:italic;  font-display:swap; src:url('/fonts/spectral-italic.ttf') format('truetype'); }
-@font-face { font-family:'Spectral'; font-weight:500; font-style:normal;  font-display:swap; src:url('/fonts/spectral-500.ttf') format('truetype'); }
-@font-face { font-family:'Spectral'; font-weight:500; font-style:italic;  font-display:swap; src:url('/fonts/spectral-500-italic.ttf') format('truetype'); }
-@font-face { font-family:'Inter';    font-weight:400; font-style:normal;  font-display:swap; src:url('/fonts/inter-400.ttf') format('truetype'); }
-@font-face { font-family:'Inter';    font-weight:500; font-style:normal;  font-display:swap; src:url('/fonts/inter-500.ttf') format('truetype'); }
-@font-face { font-family:'Inter';    font-weight:600; font-style:normal;  font-display:swap; src:url('/fonts/inter-600.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:400; font-style:normal;  font-display:swap; src:url('fonts/spectral-regular.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:400; font-style:italic;  font-display:swap; src:url('fonts/spectral-italic.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:normal;  font-display:swap; src:url('fonts/spectral-500.ttf') format('truetype'); }
+@font-face { font-family:'Spectral'; font-weight:500; font-style:italic;  font-display:swap; src:url('fonts/spectral-500-italic.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:400; font-style:normal;  font-display:swap; src:url('fonts/inter-400.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:500; font-style:normal;  font-display:swap; src:url('fonts/inter-500.ttf') format('truetype'); }
+@font-face { font-family:'Inter';    font-weight:600; font-style:normal;  font-display:swap; src:url('fonts/inter-600.ttf') format('truetype'); }
 
 :root {
   --paper:      #F4F8F4;
@@ -161,6 +160,18 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
 .hero-proof i { font-style:normal; }
 .hero-proof b { font-family:var(--serif); font-size:19px; font-weight:500; color:var(--olive); }
 .hero-proof .sep { width:1px; height:22px; background:var(--line); }
+/* Einspaltiger Hero: CTA und Termin stehen im Textfluss statt in einer
+   Ticket-Karte daneben. Das Anmeldeformular liegt weiterhin nur einmal
+   auf der Seite, unter #anmelden. */
+.hero-single { position:relative; z-index:1; }
+.hero-single .hero-lead { margin-bottom:14px; }
+.hero-cta { margin:32px 0 16px; }
+.hero-when { font-size:15px; font-weight:500; color:var(--forest); margin-bottom:32px; }
+/* Perspektiv-Grafik: ein Koerper, zwei Blickwinkel, zwei Befunde.
+   Eigene Umsetzung des Zylinder-Denkmodells in der Markenpalette. */
+.persp { margin:0 0 44px; }
+.persp svg { display:block; width:100%; height:auto; border-radius:14px; }
+.persp figcaption { margin-top:12px; font-size:14px; color:var(--text-muted); text-align:center; }
 
 /* ── Ticket ────────────────────────────────────────── */
 .ticket { background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:0 44px 96px -54px rgba(15,26,20,0.5); }
@@ -334,6 +345,11 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
 .creds li { font-size:13.5px; font-weight:500; color:var(--forest); background:var(--sage-fill); border:1px solid var(--line-soft); border-radius:999px; padding:7px 15px; }
 .about p { font-size:17px; color:var(--text-muted); margin-bottom:16px; }
 .about p strong { color:var(--forest); font-weight:600; }
+/* Hervorhebungen in dunklen Abschnitten. Muss NACH .lead-p strong und
+   .about p strong stehen: die haben dieselbe Spezifitaet wie .dark strong,
+   also gewinnt sonst die spaetere Regel und faerbt den Text in der
+   Hintergrundfarbe, womit er unsichtbar wird. */
+.dark .lead-p strong, .dark .hero-lead strong, .dark .about p strong { color:var(--near-white); }
 .kpis { display:flex; flex-wrap:wrap; gap:32px; margin:26px 0; padding-top:24px; border-top:1px solid var(--line-soft); }
 .kpi b { display:block; font-family:var(--serif); font-size:32px; font-weight:500; color:var(--olive); line-height:1.1; }
 .kpi span { font-size:13px; color:var(--text-muted); }
@@ -441,39 +457,27 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
     </svg>
   </div>
 
-  <div class="wrap hero-grid">
+  <div class="wrap narrow hero-single">
     <div data-reveal="left">
       <span class="eyebrow">Live-Workshop &middot; für Unternehmerinnen und Solopreneurinnen in der Lebensmitte</span>
-      <h1>Du führst dein Business.<span class="l2">Gerade führt dein Körper dich.</span></h1>
-      <p class="hero-lead">Die drei blinden Flecken, an denen Frauen in der Lebensmitte hängen bleiben. <strong>Auch die, die sich gut ernähren, Sport machen und ihre Blutwerte kennen.</strong></p>
-      <p class="hero-result">In 90 Minuten verstehst du, warum deine Symptome zusammengehören. Und du hörst auf, bei jedem neuen wieder von vorne anzufangen.</p>
+      <h1>Was, wenn dein Körper gerade entscheidet,<span class="l2">wie du dein Business in Zukunft führen kannst?</span></h1>
+      <p class="hero-lead">Du bist es gewohnt, Probleme zu lösen. Doch deine alten Strategien funktionieren plötzlich nicht mehr.</p>
+      <p class="hero-lead">Abends liegst du erschöpft auf dem Sofa und hast das Gefühl, die Kontrolle über deinen Körper zu verlieren.</p>
+      <p class="hero-lead">Du willst dich nicht damit abfinden, dass das jetzt einfach zum Älterwerden dazugehört.</p>
+      <p class="hero-result">In 90 Minuten zeige ich dir die <strong>3 blinden Flecken</strong>, die erklären, warum deine alten Strategien nicht mehr funktionieren, und was du brauchst, um dich wieder ans Lenkrad deiner Gesundheit zu setzen.</p>
+
+      <!-- Das Anmeldeformular (Alfima-Embed) liegt einmal auf der Seite,
+           im Abschnitt #anmelden. Der Button führt dorthin, damit nicht
+           zwei identische iframes geladen werden. -->
+      <a href="#anmelden" class="btn hero-cta">Ja, ich will wieder die Kontrolle übernehmen <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      <p class="hero-when">Sonntag, 20. September &middot; 11:00 bis 12:30 Uhr &middot; live und kostenlos auf Zoom</p>
+
       <div class="hero-proof">
         <i><b>14</b> Jahre eigene Praxis</i>
         <span class="sep" aria-hidden="true"></span>
         <i><b>1.500+</b> Frauen begleitet</i>
         <span class="sep" aria-hidden="true"></span>
         <i>Diplom-Kauffrau <b>&amp;</b> Heilpraktikerin</i>
-      </div>
-    </div>
-
-    <div data-reveal="right">
-      <div class="ticket">
-        <div class="ticket-top">
-          <span class="ticket-live"><span class="dot" aria-hidden="true"></span>Live-Termin</span>
-          <p class="ticket-date">Sonntag, 20. September 2026<span>11:00 bis 12:30 Uhr &middot; Zoom</span></p>
-        </div>
-        <div class="ticket-perf" aria-hidden="true"></div>
-        <div class="ticket-body">
-          <h2>Sichere dir einen der 30 Plätze</h2>
-          <!-- Das Anmeldeformular (Alfima-Embed) liegt einmal auf der Seite,
-               im Abschnitt #anmelden. Hier führt ein Button dorthin, damit
-               nicht zwei identische iframes geladen werden. -->
-          <a href="#anmelden" class="btn" style="width:100%;">Platz sichern <span class="arrow" aria-hidden="true">&rarr;</span></a>
-          <p class="ticket-fine">
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>30 Plätze</span>
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fragen live beantwortet</span>
-          </p>
-        </div>
       </div>
     </div>
   </div>
@@ -484,12 +488,12 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
   <div class="wrap narrow">
     <div class="head center" data-reveal>
       <span class="eyebrow center">Sonntagabend, 21 Uhr</span>
-      <h2>Es war kein besonderer Tag. Und trotzdem ist danach nichts mehr <em>übrig</em>.</h2>
+      <h2>Es war kein besonderer Tag. Und trotzdem ist der Abend <em>gelaufen</em>.</h2>
     </div>
-    <p class="lead-p" data-reveal>Du führst dein Business. Kundentermine, Entscheidungen, Probleme lösen. Zu Hause geht es weiter: Familie, Termine, mitdenken, sich kümmern. Das ist nicht neu. Das machst du seit Jahren.</p>
-    <p class="lead-p" data-reveal>Neu ist, dass du abends auf dem Sofa sitzt und denkst: <strong>Warum bin ich eigentlich so fertig?</strong></p>
+    <p class="lead-p" data-reveal>Du führst dein Business. Kundentermine, Entscheidungen, Probleme lösen. Zu Hause geht es weiter. Familie, Termine, mitdenken, sich kümmern. Das ist nicht neu. Das machst du seit Jahren.</p>
+    <p class="lead-p" data-reveal>Neu ist der Gedanke abends auf dem Sofa. <strong>Warum bin ich eigentlich so fertig?</strong></p>
     <p class="lead-p" data-reveal>Keine Krise. Keine Katastrophe. Du hast einfach gearbeitet. Du wolltest noch zum Sport. Du hast dich auf den Abend gefreut. Jetzt willst du nur deine Ruhe. Und als dich jemand etwas völlig Normales fragt, merkst du, dass es dich mehr reizt, als es sollte.</p>
-    <p class="pull" data-reveal>Im Business geht noch viel. Privat bleibt immer weniger von dir übrig.</p>
+    <p class="pull" data-reveal>Im Business geht noch viel. Privat wird es jeden Monat weniger.</p>
     <p class="lead-p" data-reveal>Das sehe ich bei fast jeder Unternehmerin, die zehn Jahre lang durchgezogen hat. Nach außen funktioniert alles. Der Preis wird zu Hause bezahlt.</p>
   </div>
 </section>
@@ -499,7 +503,7 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
   <div class="wrap">
     <div class="head center narrow" data-reveal>
       <span class="eyebrow center">Das eigentlich Anstrengende</span>
-      <h2>Es ist nicht die Müdigkeit. Es ist, dass ständig etwas <em>anderes</em> im Vordergrund steht.</h2>
+      <h2>Jeden Tag meldet sich etwas <em>anderes</em>.</h2>
       <p>Mal ist dein Kopf klar. Mal suchst du im Gespräch nach einem Wort, das dir früher sofort eingefallen wäre. Du gehst weiter zum Sport, dein Körper reagiert anders. Du achtest auf deine Ernährung, dein Gewicht verändert sich trotzdem. Du schläfst und wachst nicht erholt auf.</p>
     </div>
 
@@ -521,14 +525,15 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
       <p>Klick an, was auf dich zutrifft. Nur für dich, nichts wird gespeichert oder gesendet.</p>
       <div class="check-list" id="checkList">
         <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Ich wache auf und bin nicht wirklich erholt.</span></label>
-        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Nach einem normalen Arbeitstag ist abends nichts mehr übrig.</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Nach einem normalen Arbeitstag reicht es abends nur noch fürs Sofa.</span></label>
         <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Ich brauche länger, um mich zu erholen, als noch vor ein paar Jahren.</span></label>
         <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Ich mache eigentlich alles richtig und komme trotzdem nicht weiter.</span></label>
         <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Meine Werte sind in Ordnung, mein Gefühl nicht.</span></label>
         <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Im Business geht noch viel. Privat immer weniger.</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Ich habe das Gefühl, die Kontrolle über meinen Körper und mein Leben zu verlieren.</span></label>
       </div>
       <div class="check-out">
-        <span class="check-score" id="checkScore" aria-hidden="true">0/6</span>
+        <span class="check-score" id="checkScore" aria-hidden="true">0/7</span>
         <p class="check-say" id="checkSay" role="status" aria-live="polite">Klick an, was du kennst.</p>
       </div>
     </div>
@@ -562,11 +567,11 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
       <h2>Ich weiß das nicht aus der Praxis. Ich weiß es <em>von mir</em>.</h2>
     </div>
     <p class="lead-p" data-reveal>Ich bin 55, ich führe mein eigenes Unternehmen, und ich bin Heilpraktikerin.</p>
-    <p class="lead-p" data-reveal>Als es bei mir anfing, hatte ich also einen Vorteil: Ich wusste, was man tut. Hormone anschauen. Pflanzliche Unterstützung. Werte im Blick behalten. Ich kannte die Präparate und die Dosierungen, ich musste niemanden fragen.</p>
+    <p class="lead-p" data-reveal>Als es bei mir anfing, hatte ich also einen Vorteil. Ich wusste, was man tut. Hormone anschauen. Pflanzliche Unterstützung. Werte im Blick behalten. Ich kannte die Präparate und die Dosierungen, ich musste niemanden fragen.</p>
     <p class="lead-p" data-reveal><strong>Ich habe es gemacht. Und es hat bedingt geholfen.</strong> Nicht nichts. Aber nicht das, was ich erwartet hatte.</p>
-    <p class="lead-p" data-reveal>Dazu kam: Ich war nie eine klassische Wechseljahres-Geschichte. Das Bild, das überall beschrieben wird, war nicht meins. Also passte auch die Erklärung nicht, die alle parat hatten.</p>
-    <p class="lead-p" data-reveal>Mir hat nicht das Wissen gefehlt. Mir hat gefehlt, dass mein Ansatzpunkt an einer völlig anderen Stelle lag.</p>
-    <p class="lead-p" data-reveal>Gefunden habe ich ihn über zwei Wege. Über die Ausbildung in Regenerationsmedizin, die mir ein anderes Erklärungsmodell gegeben hat. Und über die Arbeit an mir selbst, die mir gezeigt hat, welche Muster ich seit Jahrzehnten mit mir herumtrage. Erst beides zusammen ergab ein Bild. Und erst aus diesem Bild wurden meine Hebel.</p>
+    <p class="lead-p" data-reveal>Dazu kam noch etwas. Ich war nie eine klassische Wechseljahres-Geschichte. Das Bild, das überall beschrieben wird, war nicht meins. Also passte auch die Erklärung nicht, die alle parat hatten.</p>
+    <p class="lead-p" data-reveal>Am Wissen lag es nicht. Mein Ansatzpunkt lag an einer völlig anderen Stelle, und das habe ich lange nicht gesehen.</p>
+    <p class="lead-p" data-reveal>Gefunden habe ich ihn über zwei Wege. Über die Ausbildung in Regenerationsmedizin, die mir ein anderes Erklärungsmodell gegeben hat. Und über die Arbeit an mir selbst, die mir gezeigt hat, welche Muster ich seit Jahrzehnten mit mir herumtrage. Erst beides zusammen ergab ein Bild. Und erst da wusste ich, wo ich anfangen muss.</p>
     <p class="pull" data-reveal>Wenn ich mit allem Fachwissen an dieser Stelle falsch abgebogen bin, dann liegt es nicht an dir, dass du bisher nicht weitergekommen bist.</p>
   </div>
 </section>
@@ -597,7 +602,7 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
         <div>
           <h3>Du hast nicht fünf Probleme. Du hast ein System, das an fünf Stellen antwortet.</h3>
           <p>Der Fersensporn. Die Migräne. Der Reizdarm. Das Gewicht. Der Schlaf. Jedes wird einzeln betrachtet und einzeln behandelt. Deshalb löst du eines, und das nächste meldet sich.</p>
-          <p>Wir schauen darauf, was darunter zusammenhängt.</p>
+          <p>Wir schauen, welcher Faden sich durch alle fünf zieht.</p>
           <p class="ex">Zum Beispiel, warum du dieselbe Ursache hinter zwei Beschwerden findest, die in zwei verschiedenen Praxen behandelt werden.</p>
         </div>
         <figure>
@@ -646,7 +651,7 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
         <div>
           <h3>Es gibt einen gemeinsamen Nenner. Und der ist einfacher, als du denkst.</h3>
           <p>Wo entsteht Energie, und wie wird sie verteilt. Denn alles braucht Energie. Über eine neue Strategie nachdenken. Eine Vertragsverhandlung. Mit dem Hund Gassi gehen. Der Streit mit deiner Tochter. Körperliche Nähe mit deinem Partner. Ausgelassen beim ABBA-Konzert mitsingen. Wandern in den Bergen.</p>
-          <p>Wenn du wieder in Verbindung mit deinem Körper kommst, wird es einfach statt kompliziert. Das nimmt Stress und Druck raus, und genau das kommt deiner Gesundheit zugute.</p>
+          <p>Wenn du weißt, wohin deine Energie geht, musst du nicht mehr bei jedem neuen Symptom von vorne anfangen. Du weißt, wo du zuerst hinschaust.</p>
           <p class="ex">Zum Beispiel, warum du im Urlaub nach zwölf Stunden Schlaf trotzdem leer aufwachst.</p>
         </div>
         <figure>
@@ -673,24 +678,24 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
   <div class="wrap">
     <div class="head center" data-reveal>
       <span class="eyebrow center">Nach 90 Minuten</span>
-      <h2>Keine zehn neuen Regeln. Ein <em>Ausgangspunkt</em>.</h2>
+      <h2>Du gehst mit einem <em>Ausgangspunkt</em> raus.</h2>
     </div>
 
     <div class="gains stagger" data-reveal>
       <article class="gain">
         <div class="gain-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v6c0 4.5 3.4 7.6 8 8.7 4.6-1.1 8-4.2 8-8.7V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Du weißt, welcher blinde Fleck bei dir greift</h3>
-        <p>Von den drei Mustern kennst du deins. Kein Gefühl mehr, sondern ein Verdacht, mit dem du arbeiten kannst.</p>
+        <p>Von den drei Mustern kennst du deins. Damit hast du eine Spur, der du nachgehen kannst.</p>
       </article>
       <article class="gain">
         <div class="gain-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17 9 12l3 3 8-8"/><path d="M20 11V7h-4"/></svg></div>
-        <h3>Du hast einen Ausgangspunkt statt einer Symptomliste</h3>
-        <p>Nicht mehr fünf Baustellen nebeneinander, sondern eine Stelle, an der es sich zuerst lohnt hinzuschauen.</p>
+        <h3>Du weißt, wo du zuerst hinschaust</h3>
+        <p>Statt fünf Themen nebeneinander hast du eine Stelle, an der du anfängst.</p>
       </article>
       <article class="gain">
         <div class="gain-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></div>
         <h3>Du stellst die Frage anders</h3>
-        <p>Und genau diese neue Frage bringt dich weiter als jede Antwort auf die alte.</p>
+        <p>Die alte Frage führt zur nächsten Maßnahme. Die neue führt zur Ursache.</p>
       </article>
     </div>
 
@@ -717,11 +722,10 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
       <span class="eyebrow center">Warum jetzt</span>
       <h2>Gesundheit ist dein wichtigstes <em>Business-Asset</em>.</h2>
     </div>
-    <p class="lead-p" data-reveal>Wir haben keine Zeit. Und ehrlich gesagt auch keine Lust, uns da noch selbst durchzuarbeiten. Das kostet nur wieder Energie.</p>
+    <p class="lead-p" data-reveal>Für Trial and Error hast du keine Zeit. Und jeder Versuch, der nichts bringt, kostet genau die Energie, die ohnehin knapp ist.</p>
     <p class="lead-p" data-reveal>Du kannst Aufgaben delegieren, Prozesse verändern, dir Unterstützung holen. Dein Business braucht trotzdem dich.</p>
     <p class="lead-p" data-reveal>Wenn du im wichtigen Gespräch sitzt und dein Kopf nicht so klar ist wie sonst. Wenn du Entscheidungen aufschiebst, weil du zu müde bist. Wenn du Termine absagst, weil dein Körper an diesem Tag nicht mitmacht. <strong>Dann betrifft das nicht nur deine Gesundheit. Dann betrifft es das Business, das du dir aufgebaut hast.</strong></p>
-    <p class="pull" data-reveal>Und wenn es so bleibt, ist es in einem Jahr nicht mehr die Müdigkeit, die dich stört.</p>
-    <p class="lead-p" data-reveal>Es geht nicht darum, dass du dich jetzt optimieren musst. Es geht darum, dass du noch etwas vorhast. Mit deinem Business. Mit deinem Leben. Und dass du dich darauf verlassen können willst, dass du nächste Woche die Energie dafür hast.</p>
+    <p class="lead-p" data-reveal>Du hast noch etwas vor. Mit deinem Business. Mit deinem Leben. Und dafür willst du dich darauf verlassen können, dass nächste Woche die Energie da ist.</p>
   </div>
 </section>
 
@@ -736,18 +740,18 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
       <div class="fit-card fit-yes">
         <h3>Für dich, wenn ...</h3>
         <ul>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du selbstständig bist oder ein eigenes Unternehmen führst</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du merkst, dass dein Körper sich verändert, und keine Antwort bekommst, die passt</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du weiterhin viel kannst, dieselben Tage dich aber heute mehr kosten</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du dich gesund ernährst, dich bewegst und trotzdem immer wieder bei null anfängst</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du keine weiteren Tipps sammeln willst, sondern verstehen, warum dein Körper heute anders reagiert</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>andere dich für eine Macherin halten und fragen, wie du das alles unter einen Hut bekommst</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>gefühlt jeden Tag ein neues Zipperlein dazukommt und du nicht weißt, warum ausgerechnet jetzt</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du die Kontrolle über deinen Körper zurückwillst, statt weiter Pflaster draufzukleben</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>du dir den Sonntagvormittag wirklich freihältst und mit Kamera dabei bist</span></li>
         </ul>
       </div>
       <div class="fit-card fit-no">
         <h3>Nicht für dich, <em>wenn</em> ...</h3>
         <ul>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>du eine Liste willst, die du abarbeitest</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>du willst, dass jemand es für dich richtet</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>du eine fertige Liste willst, die du abarbeitest</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>du erwartest, dass jemand anderes das für dich löst</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>du nebenher Mails beantworten oder nur zuhören willst</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>„ist halt das Alter" für dich eine ausreichende Antwort ist</span></li>
         </ul>
       </div>
@@ -760,9 +764,95 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
   <div class="wrap">
     <div class="head center" data-reveal>
       <span class="eyebrow center">Dein Platz</span>
-      <h2>Sonntag. 90 Minuten. Einmal einen Schritt zurück und das <em>Ganze</em> anschauen.</h2>
-      <p>Ich öffne 30 Plätze. Mehr nicht, weil ich am Ende deine Fragen beantworten will und nicht nur senden. Melde dich an, wenn du dir die 90 Minuten wirklich nimmst.</p>
+      <h2>Sonntag. 90 Minuten. Einmal einen Schritt zurück und das Ganze aus einer <em>anderen</em> Perspektive anschauen.</h2>
+      <p>Ich öffne 30 Plätze. Mehr nicht, weil wir miteinander arbeiten und ich nicht nur senden will. Melde dich an, wenn du dir die 90 Minuten wirklich nimmst.</p>
     </div>
+
+    <figure class="persp" data-reveal>
+      <svg viewBox="0 0 900 760" role="img" aria-label="Zwei Personen leuchten mit Taschenlampen von links und rechts auf denselben liegenden Zylinder. An der linken Wand erscheint ein Viereck, an der rechten ein Kreis. Beide sehen etwas Wahres und keine von beiden den ganzen Koerper.">
+        <defs>
+          <radialGradient id="pg">
+            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.70"/>
+            <stop offset="42%" stop-color="#E8F0E8" stop-opacity="0.34"/>
+            <stop offset="72%" stop-color="#E8F0E8" stop-opacity="0.08"/>
+            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="bl" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.50"/>
+            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0.07"/>
+          </linearGradient>
+          <linearGradient id="br" x1="1" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#E8F0E8" stop-opacity="0.50"/>
+            <stop offset="100%" stop-color="#E8F0E8" stop-opacity="0.07"/>
+          </linearGradient>
+          <linearGradient id="cyl" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C4D6CC"/>
+            <stop offset="45%" stop-color="#7AA890"/>
+            <stop offset="100%" stop-color="#2E4526"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="900" height="760" fill="#0F1A14"/>
+
+        <g stroke="#7AA890" stroke-opacity="0.30" stroke-width="1.6" fill="none">
+          <path d="M450 0 L450 452"/>
+          <path d="M0 610 L450 452 L900 610"/>
+        </g>
+
+        <circle cx="232" cy="326" r="152" fill="url(#pg)"/>
+        <circle cx="672" cy="330" r="146" fill="url(#pg)"/>
+
+        <polygon points="196,600 330,372 330,506" fill="url(#bl)"/>
+        <polygon points="704,600 570,372 570,506" fill="url(#br)"/>
+
+        <polygon points="140,252 318,224 318,398 140,424" fill="#7AA890"/>
+        <ellipse cx="672" cy="330" rx="82" ry="94" fill="#31492A"/>
+
+        <path d="M330 384 L570 372 L570 506 L330 494 Z" fill="url(#cyl)"/>
+        <ellipse cx="570" cy="439" rx="24" ry="67" fill="#C4D6CC"/>
+        <ellipse cx="330" cy="439" rx="28" ry="58" fill="#8FB9A2"/>
+        <ellipse cx="330" cy="439" rx="17" ry="36" fill="#182B1C"/>
+
+        <g stroke="#E8F0E8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="104" cy="548" r="26"/>
+          <path d="M80 542 q-9 -19 8 -25 q3 -17 22 -15 q17 -11 31 2 q17 0 15 19 q9 10 -3 19"/>
+          <path d="M104 571 L104 588"/>
+          <path d="M78 600 q26 -14 52 0 L134 660 L74 660 Z"/>
+          <path d="M130 612 L188 596"/>
+          <path d="M78 612 L58 664"/>
+          <path d="M86 660 L78 726"/>
+          <path d="M124 660 L132 726"/>
+          <path d="M66 728 q14 8 28 0"/>
+          <path d="M120 728 q14 8 28 0"/>
+          <rect x="188" y="586" width="24" height="15" rx="3" fill="#E8F0E8"/>
+        </g>
+        <g stroke="#E8F0E8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(900,0) scale(-1,1)">
+          <circle cx="104" cy="548" r="26"/>
+          <path d="M80 542 q-9 -19 8 -25 q3 -17 22 -15 q17 -11 31 2 q17 0 15 19 q9 10 -3 19"/>
+          <path d="M104 571 L104 588"/>
+          <path d="M78 600 q26 -14 52 0 L134 660 L74 660 Z"/>
+          <path d="M130 612 L188 596"/>
+          <path d="M78 612 L58 664"/>
+          <path d="M86 660 L78 726"/>
+          <path d="M124 660 L132 726"/>
+          <path d="M66 728 q14 8 28 0"/>
+          <path d="M120 728 q14 8 28 0"/>
+          <rect x="188" y="586" width="24" height="15" rx="3" fill="#E8F0E8"/>
+        </g>
+
+        <g fill="#E8F0E8" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="30" text-anchor="middle" letter-spacing="0.5">
+          <text x="232" y="86">DAS VIERECK IST WAHR</text>
+          <text x="672" y="86">DER KREIS IST WAHR</text>
+          <text x="450" y="726">DER ZYLINDER IST WAHRHEIT</text>
+        </g>
+        <g stroke="#E8F0E8" stroke-width="2.6" fill="none" stroke-linecap="round">
+          <path d="M232 108 L232 186"/><path d="M221 174 l11 14 11 -14"/>
+          <path d="M672 108 L672 186"/><path d="M661 174 l11 14 11 -14"/>
+          <path d="M450 690 L450 612"/><path d="M439 624 l11 -14 11 14"/>
+        </g>
+      </svg>
+      <figcaption>Angelehnt an eine Grafik von mojo-institut.de. Zwei Blickwinkel auf denselben Körper. Beide Befunde stimmen, und keiner zeigt das Ganze.</figcaption>
+    </figure>
 
     <div class="signup-grid" data-reveal>
       <ul class="facts stagger">
@@ -770,7 +860,6 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
         <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><span class="k">Uhrzeit</span><span class="v">11:00 bis 12:30 Uhr</span></span></li>
         <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><span><span class="k">Ort</span><span class="v">Live auf Zoom</span></span></li>
         <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg><span><span class="k">Plätze</span><span class="v">30</span></span></li>
-        <li class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg><span><span class="k">Am Ende</span><span class="v">deine Fragen, live</span></span></li>
       </ul>
 
       <div class="form-card">
@@ -799,17 +888,17 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
       <p>Seit 14 Jahren arbeite ich mit Frauen, die schon vieles versucht haben und trotzdem keine Antwort bekommen. Frauen, die ahnen, dass in ihrem Körper mehr steckt, und die wissen wollen, woher es wirklich kommt.</p>
       <p>Sie kommen mit einer dicken Mappe voller Befunde, sie haben ihre Ernährung umgestellt und einiges ausprobiert, und trotzdem sagt ihnen niemand, was los ist. Am Ende bleibt meist die eine Erklärung übrig. Wahrscheinlich sind es die Hormone. Dabei sieht es bei den wenigsten so aus, wie man die Wechseljahre aus den Medien kennt. Und fast alle sagen irgendwann denselben Satz. Ich weiß, dass ich funktioniere, aber irgendjemand muss es ja machen.</p>
       <p>Diesen Funktionsmodus kenne ich von mir selbst. Als Mutter und Unternehmerin habe ich jahrelang funktioniert und es weggeschoben, mitten im Spagat zwischen Business und Familie. Als es dann bei mir losging, habe ich gemacht, was ich auch meinen Klientinnen rate. Meine Werte kontrolliert und gegengesteuert. Gebracht hat es wenig.</p>
-      <p>Erst als mein Körper mir ein paar rote Karten gezeigt hat, habe ich in den letzten sechs Jahren angefangen, anders hinzuschauen. Nicht mehr zuerst auf den nächsten Blutwert, der die Antwort bringen soll, sondern darauf, was eigentlich die Faktoren für chronische Gesundheit sind.</p>
-      <p>Genau um diesen Perspektivwechsel geht es am Sonntag im Live-Workshop.</p>
+      <p>Erst als mein Körper mir ein paar rote Karten gezeigt hat, habe ich in den letzten sechs Jahren angefangen, anders hinzuschauen. Weg vom nächsten Blutwert, der die Antwort bringen soll. Hin zu der Frage, was einen Körper über Jahrzehnte tragfähig hält.</p>
+      <p>Genau diesen anderen Blick zeige ich dir am Sonntag im Live-Workshop.</p>
       <ul class="creds">
         <li>Diplom-Kauffrau und Heilpraktikerin</li>
         <li>Mentorin für Regenerationsmedizin</li>
         <li>Fachmentorin am Mojo-Institut</li>
       </ul>
       <div class="kpis">
-        <div class="kpi"><b data-count="14">0</b><span>Jahre eigene Praxis</span></div>
-        <div class="kpi"><b data-count="1500" data-suffix="+" data-sep="1">0</b><span>Frauen begleitet</span></div>
-        <div class="kpi"><b data-count="20" data-suffix="+">0</b><span>Jahre Erfahrung</span></div>
+        <div class="kpi"><b data-count="14">14</b><span>Jahre eigene Praxis</span></div>
+        <div class="kpi"><b data-count="1500" data-suffix="+" data-sep="1">1.500+</b><span>Frauen begleitet</span></div>
+        <div class="kpi"><b data-count="20" data-suffix="+">20+</b><span>Jahre Erfahrung</span></div>
       </div>
     </div>
   </div>
@@ -852,10 +941,9 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
 <section class="dark closing">
   <div class="wrap">
     <h2 data-reveal>Du musst nicht <span class="mark">mehr</span> tun.</h2>
-    <p data-reveal>Du musst zuerst verstehen, warum das, was du bisher getan hast, nicht mehr ausreicht. Denn solange du nur das nächste Symptom loswerden willst, bleibt die eine Frage offen:</p>
+    <p data-reveal>Du musst zuerst verstehen, warum das, was du bisher getan hast, nicht mehr ausreicht. Denn solange du nur das nächste Symptom loswerden willst, bleibt eine Frage offen.</p>
     <p class="q" data-reveal>Warum reagiert dein Körper überhaupt so?</p>
-    <p data-reveal style="font-size:17px;color:var(--sage-light);max-width:54ch;margin:0 auto 20px;">Mein Ziel ist, dass du danach etwas in der Hand hast, das du dein Leben lang anwenden kannst. Egal, was dein Körper als Nächstes meldet.</p>
-    <p data-reveal style="font-size:17px;color:var(--near-white);max-width:52ch;margin:0 auto 24px;">Wenn du aufhören willst zu raten und endlich sehen willst, was bei dir zusammenhängt, dann ist das dein Vormittag.</p>
+    <p data-reveal style="font-size:17px;color:var(--near-white);max-width:52ch;margin:0 auto 24px;">Wenn du aufhören willst zu raten, dann ist das dein Vormittag.</p>
     <a href="#anmelden" class="btn" data-reveal>Ich sichere mir meinen Platz <span class="arrow" aria-hidden="true">&rarr;</span></a>
     <p class="meta" data-reveal>Sonntag, 20. September &middot; 11:00 bis 12:30 Uhr &middot; 30 Plätze</p>
   </div>
@@ -953,11 +1041,12 @@ em { font-style:italic; font-weight:400; color:var(--olive); }
     'Das ist kein Zufall mehr. Das ist ein Muster.',
     'Das ist kein Zufall mehr. Das ist ein Muster.',
     'Dein System sagt dir ziemlich deutlich etwas.',
+    'Dein System sagt dir ziemlich deutlich etwas.',
     'Dein System sagt dir ziemlich deutlich etwas.'
   ];
   function updateCheck(){
     var n = boxes.filter(function(b){ return b.checked; }).length;
-    score.textContent = n + '/6';
+    score.textContent = n + '/' + boxes.length;
     say.textContent = lines[n];
   }
   boxes.forEach(function(b){ b.addEventListener('change', updateCheck); });
