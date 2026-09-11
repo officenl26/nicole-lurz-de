@@ -38,6 +38,7 @@
   --line:rgba(122,168,144,.18);
   --line-light:rgba(36,66,49,.16);
   --radius:10px;
+  --ws-bar-h:40px;      /* Ankuendigungsleiste Workshop, nach dem 20.09.2026 entfernen */
   --font-sans:'Inter',system-ui,-apple-system,sans-serif;
   --font-serif:'Spectral',Georgia,serif;
   --ease:cubic-bezier(.22,.61,.36,1);
@@ -46,7 +47,7 @@
 @property --my{syntax:'<percentage>';inherits:true;initial-value:50%}
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}  /* body allein reicht nicht, der Chaos-Wort-Block schob die Seite auf Handys seitlich auf */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -100,9 +101,29 @@ section{padding:110px 0;position:relative}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 
 /* ═══════════ NAV ═══════════ */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;
+.nav{position:fixed;top:var(--ws-bar-h);left:0;right:0;z-index:50;padding:18px 0;
   transition:background .3s var(--ease),box-shadow .3s var(--ease),padding .3s var(--ease)}
 .nav.scrolled{background:rgba(11,20,15,.9);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:12px 0}
+/* ── Ankuendigungsleiste Workshop ─────────────────────
+   Temporaer. Nach dem 20.09.2026 dieses CSS, das Markup direkt
+   nach <body> und die Variable --ws-bar-h wieder entfernen. */
+.ws-bar{position:fixed;top:0;left:0;right:0;z-index:51;height:var(--ws-bar-h);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:0 16px;background:var(--olive);color:var(--paper);
+  font-size:.83rem;text-decoration:none;line-height:1.2;
+  transition:background .25s var(--ease)}
+.ws-bar:hover{background:#486936}
+.ws-bar b{font-weight:600}
+.ws-bar .ws-when{color:var(--sage-light)}
+.ws-bar .ws-go{font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+@media (max-width:620px){
+  .ws-bar{font-size:.76rem;gap:8px}
+  .ws-bar .ws-when{display:none}
+  .ws-bar .ws-day{display:none}
+}
+@media (max-width:400px){
+  .ws-bar{font-size:.72rem;gap:6px;padding:0 12px}
+}
 .nav-inner{display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-weight:600;color:var(--paper);text-decoration:none;letter-spacing:.02em;font-size:1.02rem}
 .nav-logo em{font-size:inherit}
@@ -155,7 +176,7 @@ section{padding:110px 0;position:relative}
 .cta-note a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 
 /* ═══════════ 1 · HERO ═══════════ */
-.hero{min-height:100svh;display:flex;align-items:center;background:var(--night);padding:140px 0 90px;overflow:hidden}
+.hero{min-height:100svh;display:flex;align-items:center;background:var(--night);padding:calc(140px + var(--ws-bar-h)) 0 90px;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:
     radial-gradient(ellipse 60% 45% at 78% 22%, rgba(122,168,144,.07), transparent 65%),
@@ -332,6 +353,13 @@ section{padding:110px 0;position:relative}
 <script defer src="/js/nl-consent.js"></script>
 </head>
 <body>
+
+<!-- ═══ ANKUENDIGUNG WORKSHOP · nach dem 20.09.2026 entfernen ═══ -->
+<a class="ws-bar" href="/workshop/">
+  <b>Live-Workshop am <span class="ws-day">Sonntag, </span>20. September</b>
+  <span class="ws-when">11:00 bis 12:30 Uhr, kostenlos auf Zoom</span>
+  <span class="ws-go">Platz sichern &rarr;</span>
+</a>
 
 <!-- ═══ NAV ═══ -->
 <header class="nav" id="nav">
