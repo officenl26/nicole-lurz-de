@@ -92,22 +92,11 @@
     linear-gradient(180deg, #0F1A14 0%, transparent 10%);
   pointer-events: none;
 }
-@media (max-width: 900px) {
-  .is-hero { min-height: auto; padding: 7rem 0 3rem; }
-  .is-hero-photo-bleed { position: relative; width: 100%; height: 44vh; min-height: 300px; margin-top: 2.4rem; }
-  .is-hero-photo-bleed img {
-    -webkit-mask-image: linear-gradient(0deg, black 60%, transparent 100%);
-    mask-image: linear-gradient(0deg, black 60%, transparent 100%);
-  }
-}
 .is-hero-content {
   position: relative; z-index: 2;
   max-width: 580px; margin: 0;
   padding-left: clamp(1.5rem, 7vw, 5.5rem);
   padding-right: 1.5rem;
-}
-@media (max-width: 900px) {
-  .is-hero-content { text-align: center; margin: 0 auto; padding: 0 1.5rem; max-width: 620px; }
 }
 .is-hero .eyebrow {
   font-family: var(--font-sans);
@@ -140,16 +129,12 @@
 }
 .hero-ohne p span {
   font-family: var(--font-sans);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.78em;
-  letter-spacing: 0.08em;
+  font-style: normal; font-weight: 700;
+  font-size: 0.78em; letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-right: 0.35rem;
+  color: var(--accent); margin-right: 0.35rem;
 }
 .hero-authority { display: flex; flex-wrap: wrap; gap: 0.5rem 0.7rem; margin-top: 1.8rem; margin-bottom: 0; }
-@media (max-width: 900px) { .hero-authority { justify-content: center; } }
 .hero-authority span {
   font-family: var(--font-sans);
   font-size: 0.74rem; font-weight: 600; letter-spacing: 0.03em;
@@ -160,9 +145,6 @@
   background: rgba(122,168,144,0.07);
 }
 .hero-outcomes { margin-bottom: 2rem; padding-left: 1.2rem; border-left: 2px solid var(--accent); }
-@media (max-width: 900px) {
-  .hero-outcomes { border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 1.2rem; text-align: left; display: inline-block; }
-}
 .hero-outcomes .oc-label {
   font-family: var(--font-sans);
   font-size: 0.72rem; font-weight: 700;
@@ -171,9 +153,79 @@
 }
 .hero-outcomes ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.42rem; }
 .hero-outcomes li { font-family: var(--font-sans); font-size: 0.97rem; color: var(--head); line-height: 1.5; }
-.is-hero .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-@media (max-width: 900px) { .is-hero .cta-row { justify-content: center; } }
-.hero-note { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; }
+.is-hero .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.hero-note { font-family: var(--font-sans); font-size: 0.82rem; color: var(--text-muted); margin-top: 0.9rem; }
+
+/* ── Hero Desktop ──
+   Das Foto steht im Quelltext innerhalb des Textblocks, damit es auf dem Handy
+   direkt unter der Headline läuft. Auf dem Desktop soll es sich aber am ganzen
+   Hero ausrichten, nicht am schmalen Textblock. Deshalb ist der Textblock hier
+   nicht positioniert, und die Textzeilen holen sich ihre Ebene einzeln. */
+@media (min-width: 901px) {
+  .is-hero-content { position: static; }
+  .is-hero-content > *:not(.is-hero-photo-bleed) { position: relative; z-index: 2; }
+  .is-hero-photo-bleed { width: 56%; }
+  .is-hero-photo-bleed img { object-position: 60% 14%; }
+}
+
+/* ── Hero mobil: Foto direkt unter der Headline, volle Breite ── */
+@media (max-width: 900px) {
+  .is-hero {
+    min-height: auto;
+    padding: 5.25rem 0 3.5rem;
+    display: block;
+  }
+  .is-hero-content {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    text-align: left;
+    /* Reihenfolge auf dem Handy: Foto gleich unter die Headline, danach sofort
+       der Buchungsbutton. Die Aufzählungen rutschen darunter, damit der Button
+       nicht erst nach zwei Bildschirmen auftaucht. */
+    display: flex;
+    flex-direction: column;
+  }
+  .is-hero .eyebrow { order: 1; }
+  .is-hero h1 { order: 2; }
+  .is-hero-photo-bleed { order: 3; }
+  .hero-sub { order: 4; }
+  .is-hero .cta-row { order: 5; }
+  .hero-note { order: 6; margin-bottom: 1.8rem; }
+  .hero-ohne { order: 7; }
+  .hero-outcomes { order: 8; }
+  .hero-authority { order: 9; }
+  .is-hero h1 { font-size: clamp(2rem, 8.4vw, 2.6rem); margin-bottom: 1.5rem; }
+  .is-hero .eyebrow { font-size: 0.8rem; letter-spacing: 0.1em; }
+  .is-hero-photo-bleed {
+    position: relative;
+    width: calc(100% + 2.5rem);
+    margin: 0 -1.25rem 1.8rem;
+    height: auto;
+    border-radius: 0;
+  }
+  .is-hero-photo-bleed img {
+    width: 100%; height: auto;
+    aspect-ratio: 3 / 2;
+    object-position: 58% 10%;
+    -webkit-mask-image: linear-gradient(0deg, transparent 0%, black 22%, black 88%, transparent 100%);
+    mask-image: linear-gradient(0deg, transparent 0%, black 22%, black 88%, transparent 100%);
+  }
+  .is-hero-photo-bleed::after {
+    background:
+      linear-gradient(0deg, #0F1A14 0%, transparent 22%),
+      linear-gradient(180deg, #0F1A14 0%, transparent 14%);
+  }
+  .hero-sub { font-size: 1rem; }
+  .hero-ohne p { font-size: 1.05rem; }
+  .hero-outcomes li { font-size: 1rem; }
+  .is-hero .cta-row { flex-direction: column; align-items: stretch; gap: 0.7rem; }
+  .is-hero .cta-row .cta { width: 100%; justify-content: center; min-height: 52px; }
+  .hero-note { text-align: center; }
+  .hero-authority { gap: 0.45rem; }
+  .hero-authority span { font-size: 0.72rem; }
+}
 
 /* ── Szenen ── */
 .is-szenen { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.4rem; margin: 3rem 0 2.4rem; }
@@ -229,6 +281,114 @@
   color: var(--head);
   margin: 0;
   line-height: 1.5;
+}
+/* Kleine Zeile über dem Button: benennt, was die Leserin gerade gewonnen hat */
+p.band-gain {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: -0.3rem;
+}
+/* Die zweite Tür: wer noch nicht so weit ist, wird weitergeführt statt verloren */
+p.band-fork {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 34rem;
+  margin-top: 0.2rem;
+}
+p.band-fork a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+p.band-fork a:hover { border-bottom-color: var(--accent); }
+p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+/* Gleiche Bausteine im Über-mich-Block, dort linksbündig */
+.is-nicole-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+.is-nicole-cta p.band-gain { margin-bottom: -0.2rem; }
+.is-nicole-cta p.band-fork { margin-top: 0; }
+
+/* ── Einwand-Block: was hält dich ab ── */
+.is-einwand-intro {
+  max-width: 40rem;
+  margin: 0 auto 2.6rem;
+  text-align: center;
+}
+.is-einwaende {
+  display: grid;
+  gap: 1rem;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+.einwand-item {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.einwand-item > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.15rem 3rem 1.15rem 1.5rem;
+  position: relative;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 2.1vw, 1.16rem);
+  line-height: 1.45;
+  color: var(--head);
+}
+.einwand-item > summary::-webkit-details-marker { display: none; }
+.einwand-item > summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--accent);
+  transition: transform 0.25s ease;
+}
+.einwand-item[open] > summary::after { content: "−"; }
+.einwand-item > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.einwand-antwort { padding: 0 1.5rem 1.4rem; }
+.einwand-antwort p {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.72;
+  color: var(--text);
+  margin: 0 0 0.85rem;
+}
+.einwand-antwort p:last-child { margin-bottom: 0; }
+.einwand-antwort strong { color: var(--head); font-weight: 600; }
+.is-einwand-schluss {
+  max-width: 40rem;
+  margin: 2.6rem auto 0;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.08rem, 2.3vw, 1.34rem);
+  line-height: 1.55;
+  color: var(--head);
+}
+@media (max-width: 720px) {
+  .einwand-item > summary { padding: 1.05rem 2.6rem 1.05rem 1.15rem; }
+  .einwand-antwort { padding: 0 1.15rem 1.25rem; }
+  /* Fließtext-Links bequem treffbar machen, ohne den Satz zu zerreißen */
+  p.band-fork { line-height: 1.85; }
+  p.band-fork a { padding: 0.35rem 0; }
 }
 @media (max-width: 560px) { .is-persp { padding: 1rem 0.6rem; } .is-persp svg text { font-size: 22px; } }
 
@@ -462,6 +622,51 @@
   background: var(--bg-card); border-radius: 6px; display: inline-block;
 }
 
+/* ── Vier Phasen, aufklappbar ── */
+.is-phasen-neu { display: flex; flex-direction: column; gap: 0.6rem; margin: 1.4rem 0 0; }
+.phase-teil {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.phase-teil:hover { border-color: var(--accent); }
+.phase-teil summary {
+  list-style: none; cursor: pointer;
+  padding: 1.1rem 3rem 1.1rem 1.3rem;
+  display: flex; gap: 1rem; align-items: flex-start;
+  position: relative;
+}
+.phase-teil summary::-webkit-details-marker { display: none; }
+.phase-teil summary::after {
+  content: '+'; position: absolute; right: 1.2rem; top: 1.1rem;
+  font-family: var(--font-sans); font-size: 1.15rem; line-height: 1;
+  color: var(--accent);
+}
+.phase-teil[open] summary::after { content: '–'; }
+.phase-teil summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.phase-teil .pt-num {
+  flex-shrink: 0;
+  font-family: var(--font-serif); font-size: 1.7rem;
+  color: var(--accent); line-height: 1; padding-top: 0.15rem;
+}
+.phase-teil .pt-body { display: flex; flex-direction: column; gap: 0.25rem; }
+.phase-teil .pt-titel { font-family: var(--font-serif); font-size: 1.3rem; color: var(--head); line-height: 1.2; }
+.phase-teil .pt-key { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
+.phase-teil .pt-inhalt { padding: 0 1.3rem 1.3rem 1.3rem; }
+.phase-teil .pt-inhalt p { font-family: var(--font-sans); font-size: 0.93rem; color: var(--text); line-height: 1.7; margin: 0 0 0.9rem; }
+.phase-teil .pt-inhalt ul {
+  list-style: none; padding: 0; margin: 0 0 0.9rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.3rem 1.2rem;
+}
+.phase-teil .pt-inhalt ul li {
+  font-family: var(--font-sans); font-size: 0.88rem; color: var(--text-muted);
+  padding-left: 1.2rem; position: relative; line-height: 1.5;
+}
+.phase-teil .pt-inhalt ul li::before { content: '·'; position: absolute; left: 0.35rem; color: var(--accent); font-size: 1.1rem; top: -2px; }
+
 /* ── Doktoren ── */
 .is-doktoren-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; margin: 1.4rem 0 0; }
 .is-doktor { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.3rem; position: relative; overflow: hidden; }
@@ -611,6 +816,32 @@
 .is-nicole-stat strong { display: block; font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; color: var(--accent); line-height: 1; }
 .is-nicole-stat span { font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); }
 
+/* ── Einzelne Stimme im Textfluss ── */
+.is-stimme {
+  max-width: 620px;
+  margin: 2.4rem auto 0;
+  padding: 1.6rem 1.8rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 14px;
+  text-align: left;
+}
+.is-stimme blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.08rem, 2.2vw, 1.28rem);
+  color: var(--head);
+  line-height: 1.55;
+  margin: 0 0 0.8rem;
+}
+.is-stimme figcaption {
+  font-family: var(--font-sans);
+  font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--accent);
+}
+
 /* ── Testimonials ── */
 .is-testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; margin: 2.6rem 0 0; }
 .is-testimonial { background: var(--bg-card); border: 1px solid var(--line); border-radius: 16px; padding: 1.9rem 2rem; }
@@ -656,6 +887,131 @@
 
 /* ── Nav ── */
 .is-page .nav-links { display: none !important; }
+
+/* ════════════════════════════════════════════════════
+   MOBIL-OPTIMIERUNG
+   Lesetext mindestens 16px, Tippflächen mindestens 44px
+   ════════════════════════════════════════════════════ */
+@media (max-width: 720px) {
+
+  /* Abstände zwischen den Sektionen etwas kompakter */
+  .section { padding: 72px 0; }
+  .container, .container.narrow { padding: 0 1.25rem; }
+
+  /* Lesetext */
+  .is-lead,
+  .is-prose p,
+  .is-szene p,
+  .is-nicole-text p,
+  .haus-teil > p,
+  .is-weg-list li,
+  .is-weg-sub,
+  .is-fuerwen-col ul li,
+  .is-fuerwen-note,
+  .is-deliverable-text span,
+  .is-nicht p,
+  .is-ebene p,
+  .saeule .sa-text,
+  .is-doktor-impuls,
+  .is-timeline .tl-note,
+  .is-faq .faq-item p,
+  .is-bf-hint,
+  .is-cal-alt p,
+  .is-weg-price .note {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .is-step-card p, .is-testimonial p.quote { font-size: 1.05rem; line-height: 1.6; }
+  .is-weg-price .extra, .is-persp-credit { font-size: 0.86rem; }
+
+  /* Labels und Auszeichnungen: kleiner erlaubt, aber nicht winzig */
+  .is-section-tag,
+  .is-szene-when,
+  .haus-teil .ht-label,
+  .is-ebene .eb-label,
+  .saeule .sa-num,
+  .is-timeline .tl-when,
+  .hero-outcomes .oc-label,
+  .is-testimonial p.attribution,
+  .is-weg-badge,
+  .is-nicole-name,
+  .is-verdict-box p,
+  .is-shift-box .sh-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+  .hero-authority span, .is-tag-grid span, .he-tags span { font-size: 0.85rem; }
+  .is-nicole-creds, .hero-note, .is-haus-hint, .is-cal-fallback { font-size: 0.95rem; }
+  .haus-saeulen .haus-teil > p { font-size: 1rem; }
+  .haus-teil .ht-key { font-size: 0.88rem; }
+  .haus-teil .ht-titel { font-size: 1.15rem; }
+  .haus-saeulen .haus-teil .ht-titel { font-size: 1.08rem; }
+
+  /* Tippflächen */
+  .footer-links a,
+  .is-cal-fallback a,
+  .is-bf-consent a,
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.4rem; justify-content: center; }
+  .haus-teil summary { min-height: 56px; }
+  .is-timeline-toggle summary { min-height: 44px; }
+  .is-faq .faq-item summary { min-height: 48px; display: flex; align-items: center; }
+  .cta { min-height: 50px; }
+  .is-bf-toggle-btn { min-height: 44px; }
+
+  /* Karten und Raster */
+  .is-szenen, .is-deliverables, .is-nicht-so, .is-testimonial-grid, .is-steps-overview { gap: 1rem; }
+  .is-weg { padding: 1.8rem 1.4rem; }
+  .is-szene, .is-testimonial, .is-nicht { padding: 1.4rem 1.3rem; }
+  .is-phase { gap: 0.9rem; padding: 1.8rem 0; }
+  .is-phase-body ul { grid-template-columns: 1fr; }
+
+  /* Zitate und große Zeilen nicht zu groß werden lassen */
+  .is-pull-break { padding: 3.4rem 1.25rem; }
+  .is-pull-break p { font-size: 1.35rem; }
+  .is-hp-quote { padding: 3.2rem 1.25rem; }
+}
+
+/* ── Mitlaufender Buchungs-Button (nur mobil) ── */
+.is-sticky-cta {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  display: none;
+  padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(15, 26, 20, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(122, 168, 144, 0.22);
+  transform: translateY(110%);
+  transition: transform 0.28s ease;
+}
+.is-sticky-cta.sichtbar { transform: translateY(0); }
+.is-sticky-cta a {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  width: 100%; min-height: 52px;
+  font-family: var(--font-sans); font-size: 1rem; font-weight: 700;
+  color: #0F1A14; background: #7AA890;
+  border-radius: 100px; text-decoration: none;
+}
+.is-sticky-cta a:active { background: #95C0A8; }
+.is-sticky-cta .sc-note {
+  display: block; text-align: center;
+  font-family: var(--font-sans); font-size: 0.78rem;
+  color: #A8BAB0; margin-top: 0.4rem;
+}
+@media (max-width: 720px) {
+  .is-sticky-cta { display: block; }
+  body { padding-bottom: 92px; }
+}
+
+/* Weniger Bewegung, wenn im System gewünscht */
+@media (prefers-reduced-motion: reduce) {
+  .haus-teil, .is-bf-toggle-btn, .cta, .is-sticky-cta { transition: none !important; }
+}
 </style>
 </head>
 <!-- Consent-Banner + Meta-Pixel -->
@@ -684,12 +1040,12 @@
 <!-- ══ HERO (dunkel) ══ -->
 <section class="is-hero">
   <canvas id="isHeroAurora" aria-hidden="true"></canvas>
-  <div class="is-hero-photo-bleed reveal" data-delay="0.05">
-    <img src="images/Nicole_sw_hero.png" alt="Nicole Lurz, Heilpraktikerin und Mentorin" loading="eager">
-  </div>
   <div class="is-hero-content">
     <p class="eyebrow reveal">The Inner Shift · für Unternehmerinnen und Solopreneurinnen</p>
     <h1 class="reveal" data-delay="0.05">Gewohnt abzuliefern. <em>Und plötzlich macht dein Körper eigene Regeln.</em></h1>
+    <div class="is-hero-photo-bleed reveal" data-delay="0.08">
+      <img src="images/Nicole_sw_hero.png" alt="Nicole Lurz, Heilpraktikerin und Mentorin" loading="eager">
+    </div>
     <p class="hero-sub reveal" data-delay="0.1">
       Für Unternehmerinnen und Solopreneurinnen, die nach außen liefern und innen auf Reserve laufen. Zurück zu einer Energie, die zu deinem heutigen Körper, deinem Leben und deinem Business passt.
     </p>
@@ -718,7 +1074,7 @@
     </div>
     <p class="hero-note reveal" data-delay="0.26">Der Klarheits-Call dauert 30 Minuten und ist kostenfrei.</p>
     <div class="hero-authority reveal" data-delay="0.3">
-      <span>14+ Jahre eigene Praxis</span>
+      <span>14+ Jahre eigene Heilpraxis</span>
       <span>1.500+ Klientinnen</span>
       <span>Mentorin für Regenerationsmedizin</span>
       <span>Expertin für Frauengesundheit und Hormone</span>
@@ -764,12 +1120,14 @@
     </div>
 
     <div class="is-cta-band reveal">
-      <p>Kommt dir das bekannt vor? Dann lass uns 30 Minuten sprechen.</p>
+      <p class="band-gain">Punkt 1 für deine Entscheidung</p>
+      <p>Du hast dich gerade in mindestens einer Szene wiedererkannt. Das ist kein Zufall. Und es ist auch nicht einfach das Alter.</p>
       <a href="#klarheits-call" class="cta cta-primary">
         <span class="cta-shimmer"></span>
         <span class="label">Klarheits-Call buchen</span>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
+      <p class="band-fork">Dafür ist es dir noch zu früh? Völlig in Ordnung. Dann lies zuerst, <a href="#ueber">wer da eigentlich mit dir arbeiten würde</a>.</p>
     </div>
   </div>
 </section>
@@ -787,6 +1145,7 @@
         <p class="is-nicole-name">Nicole Lurz · Heilpraktikerin · Mentorin</p>
         <p>Ich wollte immer Medizin studieren. Und ich wollte es anders machen, besser. Schon damals habe ich gesehen, wo Potenzial liegen bleibt und dass es auch anders gehen muss. Es wurde ein Umweg daraus, über eine Ausbildung und ein BWL-Studium. Heute arbeite ich seit über 14 Jahren in eigener Praxis, mit Schwerpunkt Frauengesundheit, Hormone und Regenerationsmedizin.</p>
         <p>Ich bin selbst 55, postmenopausal und Unternehmerin. Ich weiß, wie es ist, wenn der Körper anfängt, eigene Regeln zu machen, und das, was jahrelang funktioniert hat, plötzlich nicht mehr ausreicht. Mit einem „Das ist halt so" wollte ich mich weder als Frau noch als Therapeutin zufriedengeben.</p>
+        <p>Das ist mein Unterschied zu reiner Beratung: Ich bin Therapeutin und Mentorin in einer Person. Aus 14 Jahren Heilpraxis weiß ich, was körperlich tatsächlich geht, bei Schilddrüse, Hormonen, Darm, Entlastung der Leber und Mikronährstoffen. Aus dem BWL-Studium kommt der zweite Teil: Ich denke in Strukturen, Prozessen und Zusammenhängen und frage bei jedem Befund zuerst, warum ausgerechnet das und warum jetzt.</p>
         <p>Ich kenne beide Seiten: den Körper und die Zahlen, die trotzdem stimmen müssen.</p>
         <blockquote class="is-nicole-quote">
           Was ich immer wieder höre: wie schnell ich eine Situation erfasse und den roten Faden für jede Einzelne finde. Im Gesundheitsmentoring genauso wie im Business.
@@ -798,11 +1157,13 @@
         </div>
         <p class="is-nicole-creds">Mentorin für Regenerationsmedizin · Immunsignatur-Coach · Expertin für Frauengesundheit und Hormone · Diplom-Kauffrau</p>
         <div class="is-nicole-cta">
+          <p class="band-gain">Punkt 2 für deine Entscheidung</p>
           <a href="#klarheits-call" class="cta cta-primary">
             <span class="cta-shimmer"></span>
             <span class="label">Klarheits-Call buchen</span>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
+          <p class="band-fork">Du willst erst verstehen, warum bei dir bisher nichts richtig gegriffen hat? <a href="#schon-getan">Das kommt als Nächstes</a>.</p>
         </div>
       </div>
     </div>
@@ -827,8 +1188,13 @@
     </div>
     <div class="is-prose reveal" data-delay="0.12">
       <p class="lead-strong">Vielleicht hat manches davon geholfen. Aber auch nicht so richtig.</p>
-      <p>Du hast Informationen, vielleicht sogar sehr viele. Was dir fehlt, ist eine Strategie. Denn einzelne Maßnahmen können sinnvoll sein und trotzdem kein Gesamtbild ergeben.</p>
+      <p>Das liegt nicht an dir und nicht an deiner Disziplin. Einzelne Maßnahmen können jede für sich richtig sein und zusammen trotzdem kein Bild ergeben.</p>
     </div>
+
+    <figure class="is-stimme reveal">
+      <blockquote>„Es war so viel dabei, was mir vorher nicht bewusst war. Nicole hat mir Zusammenhänge gezeigt, die kein Arzt gesehen hat, und konkrete Wege, die ich selbst gehen kann."</blockquote>
+      <figcaption>Verena, Unternehmerin und Schneiderin</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -869,13 +1235,20 @@
       <strong>Nicht gegen Krankheit. Für Gesundheit.</strong>
     </div>
 
+    <figure class="is-stimme reveal">
+      <blockquote>„Danke für die Zusammenfassung. Schade, dass das kein Arzt sieht, der mich jahrelang behandelt."</blockquote>
+      <figcaption>Lydia G., nach ihrem Blind Spot Check</figcaption>
+    </figure>
+
     <div class="is-cta-band reveal">
-      <p>Wenn du wissen willst, wie dein Gesamtbild aussieht:</p>
+      <p class="band-gain">Punkt 3 für deine Entscheidung</p>
+      <p>Du weißt jetzt, warum bisher jeder nur seinen Ausschnitt gesehen hat. Im Klarheits-Call schauen wir gemeinsam auf deine Situation, mit allen Facetten.</p>
       <a href="#klarheits-call" class="cta cta-primary">
         <span class="cta-shimmer"></span>
         <span class="label">Klarheits-Call buchen</span>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
+      <p class="band-fork">Dir fehlt noch, wie ich das konkret mache? Dann geht es hier zu <a href="#ansatz">meiner Methode</a>.</p>
     </div>
   </div>
 </section>
@@ -918,6 +1291,7 @@
           <summary>
             <span class="ht-label">Säule 1</span>
             <span class="ht-titel">Struktur und Wissen</span>
+            <span class="ht-key">Du verstehst endlich, was dein Körper gerade macht</span>
           </summary>
           <p>Regenerationsmedizin und das Zusammenspiel von Nerven-, Immun- und Stoffwechselsystem.</p>
         </details>
@@ -925,6 +1299,7 @@
           <summary>
             <span class="ht-label">Säule 2</span>
             <span class="ht-titel">Begleitung und Umsetzung</span>
+            <span class="ht-key">Es passt in eine Woche, die schon voll ist</span>
           </summary>
           <p>Gewohnheiten und Alltagstauglichkeit. Der Hebel, der Wissen in eine volle Unternehmerinnen-Woche bringt.</p>
         </details>
@@ -932,6 +1307,7 @@
           <summary>
             <span class="ht-label">Säule 3</span>
             <span class="ht-titel">Verankerung und Integration</span>
+            <span class="ht-key">Es hält, auch wenn ich nicht mehr danebenstehe</span>
           </summary>
           <p>Das System der sechs Doktoren, dein Körpergedächtnis und das, was nach der Begleitung bleibt.</p>
         </details>
@@ -953,6 +1329,7 @@
           <span class="ht-key">Bevor du anfängst zu bauen</span>
         </summary>
         <p>Wir finden dein Haupt-Energieleck, bevor du loslegst. Sitzt es im Fundament, also im Körper? Oder im Obergeschoss, in Abgrenzung und Identität? Ohne diesen Kompass läufst du im Kreis.</p>
+        <p>Dazu kommt deine Blutanalyse und, wo es sinnvoll ist, eine therapeutische Einschätzung aus 14 Jahren Heilpraxis. Du bekommst also nicht nur das Bild, sondern auch die Antwort, was konkret zu tun ist.</p>
       </details>
 
     </div>
@@ -979,18 +1356,15 @@
       </div>
     </div>
 
-    <div class="is-verdict-box reveal" style="margin-top: 2.2rem;">
-      <p>Deshalb</p>
-      <strong>Du musst nicht alles verändern. Du musst das Richtige verändern.</strong>
-    </div>
-
     <div class="is-cta-band reveal">
-      <p>Du willst wissen, wo bei dir das Energieleck sitzt?</p>
+      <p class="band-gain">Punkt 4 für deine Entscheidung</p>
+      <p>Du musst nicht alles verändern. Du musst das Richtige verändern. Wo bei dir das größte Leck sitzt, ist die erste Frage im Klarheits-Call.</p>
       <a href="#klarheits-call" class="cta cta-primary">
         <span class="cta-shimmer"></span>
         <span class="label">Klarheits-Call buchen</span>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
+      <p class="band-fork">Du willst vorher wissen, was das kostet und wie lange es dauert? <a href="#wege">Beides steht weiter unten, offen ausgeschrieben</a>.</p>
     </div>
   </div>
 </section>
@@ -1002,36 +1376,19 @@
     <h2 class="is-h2 reveal">Vier Phasen.<br><em>Auf der Grundlage deines Blind Spot Checks.</em></h2>
     <p class="is-lead reveal" data-delay="0.06">Wissen allein verändert nichts. Deshalb hört die Begleitung nicht beim Verstehen auf, sondern erst, wenn es in deinem Alltag angekommen ist.</p>
 
-    <div class="is-steps-overview">
-      <div class="is-step-card reveal" data-delay="0.04">
-        <p class="sc-num">01</p>
-        <h4>Wissen</h4>
-        <p>Was in deinem System tatsächlich passiert. Dein Befund, nicht die Halbwahrheit aus dem nächsten Podcast.</p>
-      </div>
-      <div class="is-step-card reveal" data-delay="0.08">
-        <p class="sc-num">02</p>
-        <h4>Verstehen</h4>
-        <p>Warum es ausgerechnet bei dir so ist. Der Unterschied zwischen Information und Einordnung.</p>
-      </div>
-      <div class="is-step-card reveal" data-delay="0.12">
-        <p class="sc-num">03</p>
-        <h4>Erleben</h4>
-        <p>Du spürst die Veränderung im Alltag, nicht nur auf dem Papier. Das ist der Punkt, an dem es kippt.</p>
-      </div>
-      <div class="is-step-card reveal" data-delay="0.16">
-        <p class="sc-num">04</p>
-        <h4>Integrieren</h4>
-        <p>Es bleibt. Auch dann noch, wenn die Begleitung vorbei ist.</p>
-      </div>
-    </div>
+    <p class="is-haus-hint reveal" data-delay="0.08">Tipp: Jede Phase lässt sich aufklappen.</p>
+    <div class="is-phasen-neu">
 
-    <div class="is-phasen">
-      <div class="is-phase reveal">
-        <div class="is-phase-dot"><span class="is-phase-n">01</span></div>
-        <div class="is-phase-body">
-          <h3>Dein blinder Fleck</h3>
-          <p class="phase-sub">Wir fangen nicht bei null an.</p>
-          <p>Du bringst deine Geschichte mit: Beschwerden, Diagnosen, Vorerkrankungen, Laborwerte, Behandlungen, eigene Versuche und die Erfahrung, was funktioniert hat und was nicht. All das gehört auf den Tisch, weil genau dort das Muster liegt.</p>
+      <details class="phase-teil reveal" data-delay="0.04">
+        <summary>
+          <span class="pt-num">01</span>
+          <span class="pt-body">
+            <span class="pt-titel">Wissen</span>
+            <span class="pt-key">Was in deinem System tatsächlich passiert. Dein Befund, nicht die Halbwahrheit aus dem nächsten Podcast.</span>
+          </span>
+        </summary>
+        <div class="pt-inhalt">
+          <p>Alles kommt auf den Tisch: Beschwerden, Diagnosen, Vorerkrankungen, Laborwerte, bisherige Behandlungen, eigene Versuche und die Erfahrung, was funktioniert hat und was nicht. Dazu deine Blutanalyse, ein individuelles Laborprofil, abgestimmt auf das, was schon vorliegt, und ausgewertet im Kontext der Regenerationsmedizin.</p>
           <ul>
             <li>Bisherige Diagnosen und Vorerkrankungen</li>
             <li>Aktuelle Beschwerden und Symptome</li>
@@ -1040,17 +1397,20 @@
             <li>Energie, Schlaf und Regeneration</li>
             <li>Deine Arbeits- und Lebenssituation</li>
           </ul>
-          <p><strong style="color:var(--head);">Dazu kommt deine Blutanalyse.</strong> Abgestimmt auf das, was bereits vorliegt, stelle ich dir ein individuelles Laborprofil zusammen, also genau die Werte, die bei dir wirklich etwas aussagen. Ausgewertet wird das im Kontext der Regenerationsmedizin, und zwar nicht isoliert: Die Laborwerte sind eine Information von mehreren, die zusammen erst das Bild ergeben.</p>
           <p class="is-phase-result">Am Ende siehst du, wo es sich für dich wirklich lohnt, genauer hinzuschauen.</p>
         </div>
-      </div>
+      </details>
 
-      <div class="is-phase reveal">
-        <div class="is-phase-dot"><span class="is-phase-n">02</span></div>
-        <div class="is-phase-body">
-          <h3>Dein System verstehen</h3>
-          <p class="phase-sub">Gesundheit funktioniert nicht in Schubladen.</p>
-          <p>Wir schauen auf die Zusammenhänge: Energie und Regeneration, Nervensystem, Hormone, Ernährung, Bewegung, Schlaf, Belastung, Gewohnheiten und dein Business. Dafür arbeiten wir mit dem System der sechs Doktoren. Das sind keine sechs Programme, die du abarbeitest, sondern sechs Perspektiven, mit denen wir deine Hebel finden.</p>
+      <details class="phase-teil reveal" data-delay="0.08">
+        <summary>
+          <span class="pt-num">02</span>
+          <span class="pt-body">
+            <span class="pt-titel">Verstehen</span>
+            <span class="pt-key">Warum es ausgerechnet bei dir so ist. Der Unterschied zwischen Information und Einordnung.</span>
+          </span>
+        </summary>
+        <div class="pt-inhalt">
+          <p>Wir schauen auf die Zusammenhänge statt auf Einzelteile: Energie und Regeneration, Nervensystem, Hormone, Ernährung, Bewegung, Schlaf, Belastung, Gewohnheiten und dein Business. Dafür arbeiten wir mit dem System der sechs Doktoren. Das sind keine sechs Programme, die du abarbeitest, sondern sechs Perspektiven, mit denen wir deine Hebel finden.</p>
           <div class="is-doktoren-grid">
             <div class="is-doktor"><p class="is-doktor-name">Dr. Atmung</p><p class="is-doktor-impuls">Dein direktester Zugang zum Nervensystem.</p></div>
             <div class="is-doktor"><p class="is-doktor-name">Dr. Nahrung</p><p class="is-doktor-impuls">Was dein System braucht. Was es gerade kostet.</p></div>
@@ -1060,38 +1420,39 @@
             <div class="is-doktor"><p class="is-doktor-name">Dr. Story</p><p class="is-doktor-impuls">Was du dir erzählst. Und was davon wirklich stimmt.</p></div>
           </div>
         </div>
-      </div>
+      </details>
 
-      <div class="is-phase reveal">
-        <div class="is-phase-dot"><span class="is-phase-n">03</span></div>
-        <div class="is-phase-body">
-          <h3>Deine Strategie</h3>
-          <p class="phase-sub">Nicht mehr machen. Das Richtige machen.</p>
+      <details class="phase-teil reveal" data-delay="0.12">
+        <summary>
+          <span class="pt-num">03</span>
+          <span class="pt-body">
+            <span class="pt-titel">Erleben</span>
+            <span class="pt-key">Du spürst die Veränderung im Alltag, nicht nur auf dem Papier. Das ist der Punkt, an dem es kippt.</span>
+          </span>
+        </summary>
+        <div class="pt-inhalt">
           <p>Aus den Erkenntnissen wird dein Plan. Wir priorisieren, verändern Gewohnheiten dort, wo sie dich ausbremsen, beobachten, was wirkt, und passen an. Was für dich nicht funktioniert, fliegt wieder raus.</p>
           <p>Veränderung braucht keine maximale Disziplin. Sie braucht einen Weg, den du auch in einer vollen Woche gehen kannst.</p>
           <p class="is-phase-result">Wir verändern nicht alles. Wir verändern das, was verändert werden muss.</p>
         </div>
-      </div>
+      </details>
 
-      <div class="is-phase reveal">
-        <div class="is-phase-dot"><span class="is-phase-n">04</span></div>
-        <div class="is-phase-body">
-          <h3>Selbst führen</h3>
-          <p class="phase-sub">Das eigentliche Ziel.</p>
+      <details class="phase-teil reveal" data-delay="0.16">
+        <summary>
+          <span class="pt-num">04</span>
+          <span class="pt-body">
+            <span class="pt-titel">Integrieren</span>
+            <span class="pt-key">Es bleibt. Auch dann noch, wenn die Begleitung vorbei ist.</span>
+          </span>
+        </summary>
+        <div class="pt-inhalt">
           <p>Am Ende sollst du keinen Plan besitzen, den du abarbeitest. Du sollst deine eigenen Signale lesen können: früher merken, wenn es kippt, wissen, was dann hilft, und handeln, bevor dein Körper die Entscheidung für dich trifft.</p>
           <p class="is-phase-result">Nicht zurück zu der Frau von früher. Sondern zu einer, die weiß, wie sie heute arbeitet.</p>
         </div>
-      </div>
+      </details>
+
     </div>
 
-    <div class="is-cta-band reveal">
-      <p>Klingt nach dem Weg, den du suchst?</p>
-      <a href="#klarheits-call" class="cta cta-primary">
-        <span class="cta-shimmer"></span>
-        <span class="label">Klarheits-Call buchen</span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -1108,8 +1469,8 @@
 <section class="section is-light" id="rahmen">
   <div class="container">
     <p class="is-section-tag reveal"><span class="num">07</span> Der Rahmen</p>
-    <h2 class="is-h2 reveal">Was du konkret bekommst.</h2>
-    <p class="is-lead reveal" data-delay="0.08">Im VIP gibt es keine feste Laufzeit. Je nach Ausgangssituation und den Zielen, die du erreichen willst, liegt die Begleitung zwischen 12 Wochen und 6 Monaten. Im Circle ist der Rahmen fest: 16 Wochen mit festen Terminen.</p>
+    <h2 class="is-h2 reveal">Was du konkret bekommst.<br><em>In beiden Wegen.</em></h2>
+    <p class="is-lead reveal" data-delay="0.08">Ob du allein mit mir arbeitest oder in der kleinen Gruppe: Diese sieben Bausteine sind immer dabei. Der Unterschied liegt danach nur noch in Tempo, Tiefe und Rahmen.</p>
     <div class="is-deliverables">
       <div class="is-deliverable reveal" data-delay="0.04">
         <div class="is-deliverable-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
@@ -1135,6 +1496,10 @@
         <div class="is-deliverable-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
         <div class="is-deliverable-text"><strong>Check-ins und WhatsApp</strong><span>Kurze Check-ins bei Bedarf, dazu WhatsApp werktags von 9:00 bis 17:00 Uhr für schnelle Fragen.</span></div>
       </div>
+      <div class="is-deliverable reveal" data-delay="0.22">
+        <div class="is-deliverable-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6"></path><path d="M9 8h6l1.5 9.5a3 3 0 0 1-3 3.5h-3a3 3 0 0 1-3-3.5z"></path><line x1="8.6" y1="14" x2="15.4" y2="14"></line></svg></div>
+        <div class="is-deliverable-text"><strong>Therapeutische Einschätzung, keine Tippsammlung</strong><span>Wo es sinnvoll ist, kommen konkrete Maßnahmen dazu: Mikronährstoffe, Hormone, Darm, Entlastung der Leber, Schilddrüse. Das ist die Seite, die ich aus 14 Jahren Heilpraxis mitbringe. Genau darin unterscheidet sich das hier von reinem Coaching.</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1145,7 +1510,7 @@
     <p class="is-section-tag reveal center"><span class="num">08</span> Dein Weg</p>
     <h2 class="is-h2 reveal" style="text-align:center; margin: 0 auto 1rem;">Dasselbe Ziel.<br><em>Zwei Wege dorthin.</em></h2>
     <p class="is-lead center reveal" style="text-align:center; margin-bottom: 0;" data-delay="0.08">
-      VIP hat keine feste Laufzeit und startet, wenn du startest, zwischen 12 Wochen und 6 Monaten, abgestimmt auf deine Ziele. Der Circle hat einen festen Rahmen von 16 Wochen, feste Termine und eine feste Gruppe. Beide Wege beginnen mit demselben Blind Spot Check.
+      Die sieben Bausteine von eben stecken in beiden Wegen, genauso wie dein Blind Spot Check mit Blutanalyse. Hier steht nur noch, worin sie sich unterscheiden.
     </p>
 
     <div class="is-wege-grid">
@@ -1154,11 +1519,10 @@
         <h3>VIP 1:1</h3>
         <p class="is-weg-sub">Die persönliche Begleitung. Für Frauen, die volle Tiefe, eigenes Tempo und direkten Zugang zu mir wollen.</p>
         <ul class="is-weg-list">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Blind Spot Check mit Blutanalyse als Einstieg, enthalten</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Persönliche Sessions nach Bedarf und Zielsetzung</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>WhatsApp werktags 9:00 bis 17:00 Uhr</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Das System der sechs Doktoren</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Keine feste Laufzeit: 12 Wochen bis 6 Monate, Start nach Absprache</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Keine feste Laufzeit: 12 Wochen bis 6 Monate</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Start nach Absprache, du wartest auf keine Gruppe</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Anzahl und Rhythmus der Sessions richten sich nach dir</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Direkter Draht zu mir per WhatsApp, werktags 9:00 bis 17:00 Uhr</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Nur wenige Plätze pro Jahr, aktuell 3 für 2026</li>
         </ul>
         <p class="is-anrechnung">Kein Standardpaket. Umfang, Dauer und Ablauf richten sich nach deiner Ausgangssituation und den Zielen, die du erreichen willst.</p>
@@ -1180,7 +1544,7 @@
         <p class="is-weg-sub">Dieselbe Methode, derselbe Blind Spot Check, im festen Rahmen einer kleinen Gruppe. Für Frauen, die Struktur und den Rückenwind anderer wollen.</p>
         <ul class="is-weg-list">
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>16 Wochen fester Rahmen, Start am 22. Oktober</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Blind Spot Check 1:1 mit Blutanalyse als Basis, vor dem Gruppenstart</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Dein Blind Spot Check läuft 1:1, vor dem Gruppenstart</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>8 Gruppentermine, donnerstags um 9:00 Uhr</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>5 Check-in-Termine à 30 Minuten in den Wochen dazwischen</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Abschluss-Gespräch 1:1 mit Checkup</li>
@@ -1269,10 +1633,6 @@
     <p class="is-section-tag reveal center"><span class="num">10</span> Was Frauen sagen</p>
     <h2 class="is-h2 reveal" style="text-align:center; margin: 0 auto 0;">Aus der Zusammenarbeit.</h2>
     <div class="is-testimonial-grid">
-      <div class="is-testimonial reveal" data-delay="0.05">
-        <p class="quote">„Es war so viel dabei, was mir vorher nicht bewusst war. Nicole hat mir Zusammenhänge gezeigt, die kein Arzt gesehen hat, und konkrete Wege, die ich selbst gehen kann."</p>
-        <p class="attribution">Verena, Unternehmerin und Schneiderin</p>
-      </div>
       <div class="is-testimonial reveal" data-delay="0.1">
         <p class="quote">„Die Zusammenarbeit mit Nicole hat mir eine völlig neue Perspektive auf meine Situation gegeben. Ihre einfühlsame und gleichzeitig klare Art hat mir geholfen, meinen Fokus zu stärken und Gewohnheiten zu verändern, die mich jahrelang ausgebremst haben."</p>
         <p class="attribution">Imke, Solo-Preneurin</p>
@@ -1280,10 +1640,6 @@
       <div class="is-testimonial reveal" data-delay="0.15">
         <p class="quote">„Nicoles ganzheitliche Herangehensweise hat mir geholfen, nicht nur körperliche Beschwerden zu lindern, sondern auch mentale Blockaden zu überwinden. Nicole strahlt eine warme und positive Energie aus und ihre empathische Art schafft eine vertrauensvolle Atmosphäre, in der ich mich jederzeit wohl und verstanden fühlte."</p>
         <p class="attribution">Anja Tietz, Yogalehrerin und Lifecoach</p>
-      </div>
-      <div class="is-testimonial reveal" data-delay="0.2">
-        <p class="quote">„Danke für die Zusammenfassung. Schade, dass das kein Arzt sieht, der mich jahrelang behandelt."</p>
-        <p class="attribution">Lydia G.</p>
       </div>
     </div>
   </div>
@@ -1357,7 +1713,7 @@
       </details>
       <details class="faq-item reveal">
         <summary>Was kostet The Inner Shift?</summary>
-        <p>Der Circle kostet 2.900 €, inklusive Blind Spot Check und Abschlussgespräch 1:1. Das VIP 1:1 liegt zwischen 3.500 und 8.000 €, je nach Umfang und Dauer, die wir gemeinsam festlegen.</p>
+        <p>Der Circle kostet 2.900 €, inklusive Blind Spot Check und Abschlussgespräch 1:1. Das VIP 1:1 startet bei 3.500 €. Nach oben hängt es von Umfang und Dauer ab, die Spanne geht bis 8.000 €. Was für dich sinnvoll ist, legen wir im Klarheits-Call gemeinsam fest, und du entscheidest danach in Ruhe.</p>
       </details>
       <details class="faq-item reveal">
         <summary>Kommen noch weitere Kosten auf mich zu?</summary>
@@ -1368,6 +1724,54 @@
         <p>30 Minuten, kostenfrei, per Video. Du erzählst mir, wo du stehst, ich stelle Fragen, und am Ende weißt du, ob und welcher Weg für dich sinnvoll ist. Wenn nicht, sage ich dir das auch.</p>
       </details>
     </div>
+  </div>
+</section>
+
+<!-- ══ 13 · WAS HÄLT DICH AB (hell) ══ -->
+<section class="section is-light" id="zoegern">
+  <div class="container narrow">
+    <p class="is-section-tag reveal center"><span class="num">13</span> Ehrlich gefragt</p>
+    <h2 class="is-h2 reveal" style="text-align:center; margin: 0 auto 1rem;">Du hast bis hierher gelesen.<br><em>Und zögerst trotzdem.</em></h2>
+    <div class="is-einwand-intro reveal" data-delay="0.06">
+      <p class="is-lead">Die vier Punkte für deine Entscheidung hast du jetzt beisammen. Trotzdem hat dein Finger den Button noch nicht getroffen. Das ist kein schlechtes Zeichen, Frauen, die schnell ja sagen, sagen oft genauso schnell wieder nein. Aber irgendetwas hält dich gerade. Meistens ist es einer von drei Sätzen.</p>
+    </div>
+
+    <p class="is-haus-hint reveal" data-delay="0.08">Tipp: Tipp den Satz an, der dir am nächsten kommt.</p>
+    <div class="is-einwaende reveal" data-delay="0.1">
+
+      <details class="einwand-item">
+        <summary>„Das ist gerade viel Geld."</summary>
+        <div class="einwand-antwort">
+          <p>Stimmt. Und ich rede es dir nicht klein.</p>
+          <p>Stell die Frage aber einmal andersherum: <strong>Was kostet es dich, mit halbem Akku durch deine Woche zu gehen?</strong> Vielleicht ist dir dieser Preis gar nicht bewusst. Vielleicht denkst du aber auch längst, der Tag müsste 48 Stunden haben, weil du nichts mehr auf die Reihe bekommst. Oder du merkst mitten im Termin, dass deine Gedanken abdriften und du sie nicht zurückholst.</p>
+          <p>Und dann rechne zusammen, was du bis heute schon investiert hast. Nicht nur die Diagnostik, die Präparate und die Programme. Auch die Stunden, die du mit Suchen, Lesen und Ausprobieren verbracht hast.</p>
+          <p><strong>Ganz praktisch:</strong> Ratenzahlung ist möglich. Was bei dir geht, klären wir miteinander, nicht vorher in deinem Kopf.</p>
+        </div>
+      </details>
+
+      <details class="einwand-item">
+        <summary>„Ich habe dafür gerade keine Zeit."</summary>
+        <div class="einwand-antwort">
+          <p>Das glaube ich dir sofort. Und trotzdem geht die Rechnung nicht auf.</p>
+          <p>Was ich in der Zusammenarbeit immer wieder sehe: Sobald die Energie zurückkommt, arbeiten Frauen wieder auf den Punkt. Der Fokus hält länger, Entscheidungen fallen schneller, die Liste türmt sich nicht mehr, weil jede Aufgabe das Doppelte kostet. Am Ende sitzen sie nicht länger am Schreibtisch, sondern kürzer. Und haben abends wieder Zeit, die ihnen gehört.</p>
+          <p><strong>Du gibst also keine Zeit ab. Du holst sie dir zurück.</strong></p>
+          <p>Und heute entscheidest du ohnehin nicht über Monate. Du entscheidest über 30 Minuten.</p>
+        </div>
+      </details>
+
+      <details class="einwand-item">
+        <summary>„Warum sollte ausgerechnet sie mir helfen können?"</summary>
+        <div class="einwand-antwort">
+          <p>Die Frage ist berechtigt. Stell sie ruhig. Du hast Ärztinnen, Therapeuten und Programme hinter dir, bei denen sich nichts Grundlegendes verändert hat.</p>
+          <p>Meine Antwort: weil ich beide Seiten mitbringe. 14 Jahre Heilpraxis, in denen ich therapeutisch gearbeitet habe, und den regenerationsmedizinischen Blick auf dein ganzes System statt auf einen Ausschnitt davon.</p>
+          <p>Und jetzt die ehrlichere Antwort: Ich könnte dir noch zehn Zertifikate und zwanzig Stimmen zeigen. Es würde nichts ändern. <strong>Deine Entscheidung ist innerlich längst gefallen.</strong> Was gerade so laut ist, ist nicht dein Zweifel, sondern dein Kopf, der noch Argumente dafür sucht.</p>
+          <p>Genau dafür gibt es den Klarheits-Call. 30 Minuten, in denen du prüfst, ob es zwischen uns passt. Und falls ich merke, dass ich nicht die Richtige für dich bin, sage ich dir das.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <p class="is-einwand-schluss reveal">Du brauchst keine weitere Information von dieser Seite. Du brauchst 30 Minuten, in denen jemand auf deine Situation schaut. Genau dafür gibt es den Klarheits-Call.</p>
   </div>
 </section>
 
@@ -1382,7 +1786,7 @@
         Du weißt, dass ein Weiter-so keine Lösung ist. Und du willst dein Leben trotzdem nicht umkrempeln. Genau dafür gibt es Inner Shift.
       </p>
       <p class="reveal" data-delay="0.14" style="margin-bottom: 2.2rem;">
-        Buch dir 30 Minuten. Ich schaue mir deine Situation an und sage dir ehrlich, ob und wie ich dich begleiten kann.
+        Buch dir die 30 Minuten. Mehr entscheidest du heute nicht.
       </p>
       <div class="cta-row center reveal" data-delay="0.2">
         <a href="#klarheits-call" class="cta cta-primary cta-large cta-magnetic" data-magnetic data-magnetic-strength="0.45">
@@ -1397,6 +1801,12 @@
     </div>
   </div>
 </section>
+
+<!-- Mitlaufender Buchungs-Button, erscheint nach dem Hero -->
+<div class="is-sticky-cta" id="stickyCta" aria-hidden="false">
+  <a href="#klarheits-call">Klarheits-Call buchen <span aria-hidden="true">→</span></a>
+  <span class="sc-note">30 Minuten, kostenfrei</span>
+</div>
 
 <footer class="footer">
   <div class="container footer-inner">
@@ -1451,6 +1861,30 @@
   initAurora('isHeroAurora', p);
   initAurora('isBridgeAurora', p);
   initAurora('isFinalAurora', p);
+})();
+
+/* Mitlaufender Buchungs-Button: erscheint nach dem Hero, verschwindet beim Kalender */
+(function () {
+  var bar = document.getElementById('stickyCta');
+  var hero = document.querySelector('.is-hero');
+  var kalender = document.getElementById('klarheits-call');
+  if (!bar || !hero) return;
+
+  var heroSichtbar = true, kalenderSichtbar = false;
+  function pruefen() {
+    if (!heroSichtbar && !kalenderSichtbar) bar.classList.add('sichtbar');
+    else bar.classList.remove('sichtbar');
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      heroSichtbar = e[0].isIntersecting; pruefen();
+    }, { threshold: 0.15 }).observe(hero);
+    if (kalender) {
+      new IntersectionObserver(function (e) {
+        kalenderSichtbar = e[0].isIntersecting; pruefen();
+      }, { threshold: 0.12 }).observe(kalender);
+    }
+  }
 })();
 </script>
 </body>
