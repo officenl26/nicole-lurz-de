@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0F1A14">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Dein Platz im Immun-Mentoring ist sicher. Hier findest du deine nächsten Schritte bis zum Start am 19.10.2026.">
+<title>Dein Platz ist sicher · Immun-Mentoring · Nicole Lurz</title>
+<!-- Live-Ziel: nicole-lurz.de/immun-mentoring/danke-fdxij/ -->
+<style>
+@font-face{font-family:'Spectral';font-weight:400;font-style:normal;font-display:swap;src:url('/fonts/spectral-regular.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-weight:400;font-style:italic;font-display:swap;src:url('/fonts/spectral-italic.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-weight:400;font-display:swap;src:url('/fonts/inter-400.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-weight:500;font-display:swap;src:url('/fonts/inter-500.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-weight:600;font-display:swap;src:url('/fonts/inter-600.ttf') format('truetype')}
+
+:root{
+  --wald:#0F1A14; --tief:#0A130E; --karte:#131F18; --dunkel:#1F2D24;
+  --salbei:#7AA890; --salbei-hover:#95C0A8; --salbei-hell:#A8BAB0; --hell:#E8F0E8; --text:#CDD9CF;
+  --wasser:#7FB5C9; --bernstein:#E3A85C;
+  --linie:rgba(122,168,144,.16); --linie-fein:rgba(122,168,144,.09);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--wald);-webkit-font-smoothing:antialiased}
+a{color:var(--salbei)}
+:focus-visible{outline:2px solid var(--wasser);outline-offset:3px;border-radius:4px}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+
+.kopf{border-bottom:1px solid var(--linie-fein)}
+.kopf .wrap{height:68px;display:flex;align-items:center}
+.wortmarke{font-family:'Spectral',Georgia,serif;font-size:23px;color:var(--hell);text-decoration:none}
+.wortmarke .ll{font-style:italic;color:var(--salbei);margin-left:4px}
+
+.label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;color:var(--wasser);margin-bottom:16px}
+h1,h2,h3{color:var(--hell);font-weight:600;letter-spacing:-.02em}
+h1{font-size:clamp(36px,6vw,54px);line-height:1.06;letter-spacing:-.03em;margin-bottom:18px}
+h2{font-size:clamp(26px,4vw,34px);line-height:1.15;margin-bottom:14px}
+h3{font-size:19px;line-height:1.35;margin-bottom:4px}
+h1 em,h2 em{font-family:'Spectral',Georgia,serif;font-style:italic;font-weight:400;color:var(--wasser);letter-spacing:0}
+
+.hero{padding:72px 0 40px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-260px;right:-200px;width:620px;height:620px;background:radial-gradient(closest-side,rgba(127,181,201,.14),transparent 70%);pointer-events:none}
+.hero .lead{font-size:19px;max-width:56ch}
+.haken-gross{width:56px;height:56px;border-radius:50%;background:rgba(127,181,201,.14);border:1px solid rgba(127,181,201,.45);display:flex;align-items:center;justify-content:center;margin-bottom:26px;color:var(--wasser)}
+.haken-gross svg{width:26px;height:26px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:6px;font:600 15px/1.2 'Inter',sans-serif;letter-spacing:.3px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background-color .2s var(--ease),border-color .2s var(--ease)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primaer{background:var(--salbei);color:var(--wald)}
+.btn-primaer:hover{background:var(--salbei-hover)}
+.btn-sekundaer{background:transparent;color:var(--salbei);border-color:rgba(122,168,144,.45)}
+.btn-sekundaer:hover{border-color:var(--salbei);background:rgba(122,168,144,.08)}
+
+/* Schritte */
+.schritte{padding:24px 0 64px}
+.schritte>h2{margin-bottom:24px}
+.schritt{display:grid;grid-template-columns:44px 1fr;gap:18px;background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:24px;margin-bottom:12px}
+.schritt .nr{width:44px;height:44px;border-radius:50%;border:1px solid rgba(127,181,201,.45);display:flex;align-items:center;justify-content:center;font-family:'Spectral',Georgia,serif;font-size:20px;color:var(--hell)}
+.schritt p{font-size:16px;margin-bottom:14px}
+.schritt p:last-child{margin-bottom:0}
+.termine{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px;margin:4px 0 16px}
+.termine li{background:var(--tief);border:1px solid var(--linie-fein);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.4;color:var(--salbei-hell)}
+.termine b{display:block;font-family:'Spectral',Georgia,serif;font-weight:400;font-size:20px;color:var(--hell)}
+
+.vip-hinweis{border:1px solid rgba(127,181,201,.45);background:linear-gradient(165deg,#16272D,#111E21);border-radius:14px;padding:24px 26px;margin-top:22px}
+.vip-hinweis .label{margin-bottom:8px}
+.vip-hinweis p{font-size:16px;margin-bottom:12px}
+.vip-hinweis p:last-child{margin-bottom:0}
+
+/* Stoffwechsel-Ausblick */
+.danach{padding:64px 0 72px;background:var(--tief);border-top:1px solid var(--linie-fein)}
+.danach .label{color:var(--bernstein)}
+.danach h2 em{color:var(--bernstein)}
+.danach .unter{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:20px;line-height:1.45;color:var(--salbei-hell);margin-bottom:16px}
+.danach p{margin-bottom:14px}
+.eck{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 24px}
+.eck span{font-size:13.5px;border:1px solid rgba(227,168,92,.35);border-radius:30px;padding:5px 14px;color:var(--hell)}
+.code-box{background:var(--karte);border:1px dashed rgba(227,168,92,.55);border-radius:14px;padding:24px 26px;margin-bottom:22px}
+.code-box p{font-size:16px;margin:0}
+.code{display:inline-block;font:600 18px/1 'Inter',monospace;letter-spacing:2px;color:var(--wald);background:var(--bernstein);border-radius:6px;padding:8px 14px;margin:12px 0}
+
+.platzhalter{outline:2px dashed #E3A85C;outline-offset:2px}
+
+footer{padding:26px 0 40px;font-size:13px;color:var(--salbei-hell);border-top:1px solid var(--linie-fein)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+footer a{color:var(--salbei-hell);text-decoration:none;margin-left:16px}
+footer a:hover{color:var(--hell)}
+@media (max-width:520px){.schritt{grid-template-columns:1fr;gap:12px}.hero{padding-top:52px}}
+</style>
+<script>window.NL_META_EVENT = { name: "Purchase", params: { content_name: "Immun-Mentoring", currency: "EUR", value: 199 } };</script>
+<script defer src="/js/nl-consent.js"></script>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="wrap"><a class="wortmarke" href="https://nicole-lurz.de/" aria-label="Nicole Lurz, zur Startseite"><span class="lf">Nicole</span><span class="ll">Lurz</span></a></div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="haken-gross" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <span class="label">Immun-Mentoring · 5 Wochen</span>
+    <h1>Dein Platz ist <em>sicher.</em></h1>
+    <p class="lead">Schön, dass du dabei bist. Am Montag, 19.10.2026 um 18 Uhr geht es los, live per Zoom. Bis dahin sind es nur drei kleine Schritte.</p>
+  </div>
+</section>
+
+<section class="schritte">
+  <div class="wrap">
+    <h2>Deine nächsten <em>Schritte</em></h2>
+
+    <div class="schritt">
+      <span class="nr" aria-hidden="true">1</span>
+      <div>
+        <h3>Tritt der WhatsApp-Gruppe bei</h3>
+        <p>Hier tauschen wir uns während der 5 Wochen aus, und hier bekommst du auch die Erinnerungen vor jedem Termin.</p>
+        <a class="btn btn-primaer" href="https://chat.whatsapp.com/L2mVCuxTuMBAL89QEGckvl" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Zur WhatsApp-Gruppe
+        </a>
+      </div>
+    </div>
+
+    <div class="schritt">
+      <span class="nr" aria-hidden="true">2</span>
+      <div>
+        <h3>Trag dir die fünf Termine ein</h3>
+        <p>Immer montags um 18 Uhr, je 60-75 Minuten. Wenn du einmal nicht kannst, schaust du die Aufzeichnung.</p>
+        <ul class="termine">
+          <li><b>19.10.</b>Woche 1</li>
+          <li><b>26.10.</b>Woche 2</li>
+          <li><b>02.11.</b>Woche 3</li>
+          <li><b>09.11.</b>Woche 4</li>
+          <li><b>16.11.</b>Woche 5</li>
+        </ul>
+        <button type="button" class="btn btn-sekundaer" id="kalender">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Alle Termine in den Kalender
+        </button>
+      </div>
+    </div>
+
+    <div class="schritt">
+      <span class="nr" aria-hidden="true">3</span>
+      <div>
+        <h3>Speicher dir den Zoom-Link</h3>
+        <p>Für alle fünf Termine gilt derselbe Link. Er steht auch in deinen Kalendereinträgen, du musst ihn also nicht suchen.</p>
+        <a class="btn btn-sekundaer zoom-link" href="https://us06web.zoom.us/j/84955566039?pwd=5qMuQsGBzcIdbrqw1GNKa9OMGuuvBa.1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+          Zum Zoom-Raum
+        </a>
+        <p style="margin-top:14px;font-size:14px;color:var(--salbei-hell)">Fragen? Schreib mir an <a href="mailto:office@nicole-lurz.com">office@nicole-lurz.com</a>.</p>
+      </div>
+    </div>
+
+    <div class="vip-hinweis" id="vip">
+      <span class="label">Du hast das VIP-Upgrade?</span>
+      <p>Den Link für deinen Termin zur 1:1 Fokus-Analyse Immunsystem (45 Min. Zoom) schicke ich dir per E-Mail.</p>
+      <p>Für den Supplement-Audit kannst du mir deine Liste oder Fotos deiner Supplements schon jetzt per WhatsApp schicken.</p>
+      <a class="btn btn-sekundaer" href="https://wa.me/491799383238?text=Hallo%20Nicole%2C%20ich%20bin%20im%20VIP-Paket%20Immun-Mentoring%20und%20schicke%20dir%20meine%20Supplements" target="_blank" rel="noopener">Supplements per WhatsApp schicken</a>
+    </div>
+  </div>
+</section>
+
+<section class="danach">
+  <div class="wrap">
+    <span class="label">Und danach?</span>
+    <h2>Ab 18.11. geht es mit dem <em>Stoffwechsel</em> weiter.</h2>
+    <p class="unter">Schluss mit der Stoffwechsel-Bremse. Das 5-Wochen-Mentoring für einen stabilen Blutzucker und Energie, die bis zum Abend reicht.</p>
+    <p>Immunsystem und Stoffwechsel gehören zusammen, denn Abwehr kostet Energie, und der Stoffwechsel ist es, der sie verteilt. Das Stoffwechsel-Mentoring schließt nahtlos an und ist vor Weihnachten abgeschlossen.</p>
+    <div class="eck">
+      <span>mittwochs 18 Uhr</span>
+      <span>18.11. bis 16.12.2026</span>
+      <span>live per Zoom, inkl. Aufzeichnung</span>
+    </div>
+    <div class="code-box">
+      <p>Als Teilnehmerin im Immun-Mentoring sparst du mit diesem Code 35 % auf das Basis- oder das VIP-Paket.</p>
+      <span class="code">WINTER26</span>
+      <p>Gültig bis 19.10.2026.</p>
+    </div>
+    <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/" target="_blank" rel="noopener">Platz im Stoffwechsel-Mentoring sichern</a>
+    <p style="margin-top:12px;font-size:14px;color:var(--salbei-hell)">Den Code gibst du im Checkout ein.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Nicole Lurz</span>
+    <span><a href="https://nicole-lurz.de/impressum/">Impressum</a><a href="https://nicole-lurz.de/datenschutz/">Datenschutz</a><a href="#" data-nl-consent-open>Cookie-Einstellungen</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Zoom-Link: hier einmal eintragen, gilt für Button und Kalender */
+  var ZOOM='https://us06web.zoom.us/j/84955566039?pwd=5qMuQsGBzcIdbrqw1GNKa9OMGuuvBa.1';
+  if(ZOOM){var z0=document.querySelector('.zoom-link');z0.href=ZOOM;z0.classList.remove('platzhalter')}
+
+  /* Kalenderdatei mit allen fünf Terminen. Zeiten in UTC: 19.10. noch Sommerzeit, ab 26.10. Winterzeit. */
+  var termine=[
+    ['20261019T160000Z','20261019T171500Z','Woche 1 · Die Immun-Matrix durchschauen'],
+    ['20261026T170000Z','20261026T181500Z','Woche 2 · Das 48-Stunden-Frühwarnsystem'],
+    ['20261102T170000Z','20261102T181500Z','Woche 3 · Die naturheilkundliche Akut-Praxis & Immun-Training'],
+    ['20261109T170000Z','20261109T181500Z','Woche 4 · Biologische Fürsorge & Mikroroutinen'],
+    ['20261116T170000Z','20261116T181500Z','Woche 5 · Dein individueller Winter-Schutzschild']
+  ];
+  document.getElementById('kalender').addEventListener('click',function(){
+    var z=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Nicole Lurz//Immun-Mentoring//DE','CALSCALE:GREGORIAN','METHOD:PUBLISH'];
+    termine.forEach(function(t,i){
+      z.push('BEGIN:VEVENT','UID:immun-mentoring-2026-w'+(i+1)+'@nicole-lurz.de','DTSTAMP:20261006T000000Z','DTSTART:'+t[0],'DTEND:'+t[1],
+        'SUMMARY:Immun-Mentoring · '+t[2],'DESCRIPTION:Live per Zoom'+(ZOOM?': '+ZOOM:'.'),'LOCATION:'+(ZOOM||'Zoom'),
+        'BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:Immun-Mentoring startet in 30 Minuten','END:VALARM');
+      if(ZOOM)z.push('URL:'+ZOOM);
+      z.push('END:VEVENT');
+    });
+    z.push('END:VCALENDAR');
+    var blob=new Blob([z.join('\r\n')],{type:'text/calendar;charset=utf-8'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='immun-mentoring-termine.ics';
+    document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
+  });
+})();
+</script>
+</body>
+</html>

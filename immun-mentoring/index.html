@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immun-Mentoring · 5 Wochen · Nicole Lurz</title>
+<meta name="description" content="Schluss mit der Erkältungs-Dauerschleife. 5-Wochen-Mentoring mit Nicole Lurz: Infekte früher erkennen, rechtzeitig gegensteuern und deiner Abwehr die Energie geben, die sie braucht. Start Montag, 19.10.2026, 18 Uhr, live per Zoom.">
+<meta property="og:title" content="Immun-Mentoring · Schluss mit der Erkältungs-Dauerschleife">
+<meta property="og:description" content="5 Wochen, 5 Live-Termine per Zoom. Start Montag, 19.10.2026, 18 Uhr.">
+<meta property="og:image" content="https://nicole-lurz.de/images/nicole-about.jpg">
+<style>
+@font-face{font-family:'Spectral';font-weight:400;font-style:normal;font-display:swap;src:url('/fonts/spectral-regular.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-weight:400;font-style:italic;font-display:swap;src:url('/fonts/spectral-italic.ttf') format('truetype')}
+@font-face{font-family:'Spectral';font-weight:500;font-style:italic;font-display:swap;src:url('/fonts/spectral-500-italic.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-weight:400;font-display:swap;src:url('/fonts/inter-400.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-weight:500;font-display:swap;src:url('/fonts/inter-500.ttf') format('truetype')}
+@font-face{font-family:'Inter';font-weight:600;font-display:swap;src:url('/fonts/inter-600.ttf') format('truetype')}
+
+:root{
+  /* Tannenmoos Twilight (design.md) */
+  --wald:#0F1A14; --tief:#0A130E; --karte:#131F18; --dunkel:#1F2D24; --oliv:#3D5A2E;
+  --salbei:#7AA890; --salbei-hover:#95C0A8; --salbei-hell:#A8BAB0; --hell:#E8F0E8; --text:#CDD9CF;
+  --blau:#1B4C93;
+  /* Systemfarben (Mini-Kurs-Logik): Immunsystem Wasserblau, Stoffwechsel Bernstein, Nervensystem Salbei */
+  --wasser:#7FB5C9; --wasser-tief:#4E8FA8; --bernstein:#E3A85C; --alarm:#B5543F;
+  --linie:rgba(122,168,144,.16); --linie-fein:rgba(122,168,144,.09);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --breit:1160px; --schmal:820px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--wald);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--salbei)}
+:focus-visible{outline:2px solid var(--wasser);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--breit);margin:0 auto;padding:0 24px}
+.schmal{max-width:var(--schmal);margin:0 auto}
+section{padding:110px 0}
+@media (max-width:720px){section{padding:76px 0}.wrap{padding:0 18px}}
+
+/* Typo */
+.label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;color:var(--salbei);margin-bottom:18px}
+.label.immun{color:var(--wasser)}
+h1,h2,h3{color:var(--hell);font-weight:600;letter-spacing:-.02em}
+h1{font-size:clamp(38px,6vw,66px);line-height:1.04;letter-spacing:-.035em}
+h2{font-size:clamp(30px,4.2vw,46px);line-height:1.1;margin-bottom:22px}
+h3{font-size:21px;line-height:1.3;margin-bottom:8px}
+h1 em,h2 em,h3 em{font-family:'Spectral',Georgia,serif;font-style:italic;font-weight:400;color:var(--wasser);letter-spacing:0}
+.lead{font-size:19px;line-height:1.65;color:var(--text)}
+.leise{color:var(--salbei-hell)}
+.zitat{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:clamp(22px,2.6vw,28px);line-height:1.4;color:var(--hell)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 28px;border-radius:6px;font:600 15px/1.2 'Inter',sans-serif;letter-spacing:.4px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
+.btn-primaer{background:var(--salbei);color:var(--wald)}
+.btn-primaer:hover{background:var(--salbei-hover)}
+.btn-sekundaer{background:transparent;color:var(--salbei);border-color:rgba(122,168,144,.45)}
+.btn-sekundaer:hover{border-color:var(--salbei);background:rgba(122,168,144,.08)}
+.btn-blau{background:var(--blau);color:var(--hell)}
+.btn-blau:hover{background:#245CAD}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Kopf */
+.kopf{position:sticky;top:0;z-index:30;background:rgba(15,26,20,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linie-fein)}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.wortmarke{font-family:'Spectral',Georgia,serif;font-size:23px;color:var(--hell);text-decoration:none}
+.wortmarke .ll{font-style:italic;color:var(--salbei);margin-left:4px}
+.kopf .btn{min-height:42px;padding:10px 18px;font-size:14px}
+@media (max-width:520px){.kopf .btn{display:none}}
+
+/* Hero */
+.hero{padding:72px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,rgba(127,181,201,.13),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;position:relative}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:48px}}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(127,181,201,.35);border-radius:40px;padding:7px 16px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--wasser);margin-bottom:26px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--wasser);box-shadow:0 0 0 4px rgba(127,181,201,.18)}
+.hero h1{margin-bottom:22px}
+.hero .unter{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.4;color:var(--salbei-hell);margin-bottom:22px;max-width:36ch}
+.hero .lead{max-width:56ch;margin-bottom:14px}
+.cta-reihe{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.eckdaten{display:grid;grid-template-columns:repeat(3,1fr);margin-top:38px;border:1px solid var(--linie);border-radius:10px;overflow:hidden}
+.eckdaten div{padding:16px 18px;background:rgba(19,31,24,.6)}
+.eckdaten div+div{border-left:1px solid var(--linie-fein)}
+.eckdaten b{display:block;font-family:'Spectral',Georgia,serif;font-weight:400;font-size:26px;line-height:1.1;color:var(--hell)}
+.eckdaten span{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--salbei-hell);margin-top:6px;line-height:1.4}
+@media (max-width:520px){.eckdaten{grid-template-columns:1fr}.eckdaten div+div{border-left:0;border-top:1px solid var(--linie-fein)}}
+.countdown{margin-top:14px;font-size:14px;color:var(--salbei-hell)}
+.countdown b{color:var(--wasser);font-weight:600}
+
+/* Ampel-Widget */
+.ampel{background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:30px;position:relative}
+.ampel-kopf{font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:var(--salbei-hell);margin-bottom:6px}
+.ampel h3{font-size:22px;margin-bottom:22px}
+.ampel-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px}
+.ampel-tab{appearance:none;background:var(--tief);border:1px solid var(--linie);border-radius:10px;padding:14px 10px 12px;cursor:pointer;color:var(--salbei-hell);font:500 13px/1.3 'Inter',sans-serif;display:flex;flex-direction:column;align-items:center;gap:10px;min-height:44px;transition:border-color .2s var(--ease),background-color .2s var(--ease),color .2s var(--ease)}
+.ampel-tab .licht{width:30px;height:30px;border-radius:50%;opacity:.28;transition:opacity .25s var(--ease),box-shadow .25s var(--ease)}
+.ampel-tab[data-phase="gruen"] .licht{background:var(--salbei)}
+.ampel-tab[data-phase="gelb"] .licht{background:var(--bernstein)}
+.ampel-tab[data-phase="rot"] .licht{background:var(--alarm)}
+.ampel-tab:hover{border-color:rgba(122,168,144,.4);color:var(--hell)}
+.ampel-tab[aria-selected="true"]{background:var(--dunkel);border-color:rgba(232,240,232,.28);color:var(--hell)}
+.ampel-tab[aria-selected="true"] .licht{opacity:1}
+.ampel-tab[aria-selected="true"][data-phase="gruen"] .licht{box-shadow:0 0 24px 4px rgba(122,168,144,.45)}
+.ampel-tab[aria-selected="true"][data-phase="gelb"] .licht{box-shadow:0 0 24px 4px rgba(227,168,92,.45)}
+.ampel-tab[aria-selected="true"][data-phase="rot"] .licht{box-shadow:0 0 24px 4px rgba(181,84,63,.5)}
+.ampel-panel{min-height:190px}
+.ampel-panel[hidden]{display:none}
+.ampel-panel .phase{font-size:13px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:8px}
+.ampel-panel[data-phase="gruen"] .phase{color:var(--salbei)}
+.ampel-panel[data-phase="gelb"] .phase{color:var(--bernstein)}
+.ampel-panel[data-phase="rot"] .phase{color:#D98A76}
+.ampel-panel p{font-size:16px;margin-bottom:14px}
+.ampel-panel .woche{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--salbei-hell);border-top:1px solid var(--linie-fein);padding-top:12px;width:100%}
+.ampel-panel .woche b{color:var(--hell);font-weight:600}
+.ampel-fuss{margin-top:18px;font-size:13px;color:var(--salbei-hell);line-height:1.5}
+@media (prefers-reduced-motion:no-preference){.ampel-panel:not([hidden]){animation:einblenden .3s var(--ease)}}
+@keyframes einblenden{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Kennst du das */
+.muster{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+@media (max-width:980px){.muster{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.muster{grid-template-columns:1fr}}
+.muster article{background:var(--karte);border:1px solid var(--linie-fein);border-radius:12px;padding:26px 24px}
+.muster .nr{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:15px;color:var(--wasser);display:block;margin-bottom:10px}
+.muster h3{font-size:18px;margin-bottom:8px}
+.muster p{font-size:15.5px;line-height:1.6;color:var(--salbei-hell)}
+
+/* Wende */
+.wende{background:var(--tief);border-top:1px solid var(--linie-fein);border-bottom:1px solid var(--linie-fein)}
+.feuerwehr{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media (max-width:900px){.feuerwehr{grid-template-columns:1fr;gap:28px}}
+.feuerwehr .zitat{border-left:2px solid var(--wasser);padding-left:24px;margin:8px 0 26px}
+
+/* Matrix */
+.matrix{margin-top:72px}
+.matrix-kopf{max-width:var(--schmal);margin-bottom:30px}
+.matrix-kopf h2{margin-bottom:14px}
+.matrix-bild{background:var(--karte);border:1px solid var(--linie);border-radius:16px;padding:28px 28px 24px}
+.matrix svg{width:100%;height:auto;display:block;max-width:820px;margin:0 auto}
+.m-kreis{stroke-width:2;transition:opacity .35s var(--ease),stroke-width .35s var(--ease)}
+.m-titel{font-family:'Inter',sans-serif;font-weight:600;font-size:18.5px;fill:var(--hell);text-anchor:middle}
+.m-sub{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:17px;fill:var(--salbei-hell);text-anchor:middle}
+.m-pfeil{fill:none;stroke:#E3A85C;stroke-linecap:round;transition:stroke-width .35s var(--ease)}
+.m-fluss{fill:none;stroke:rgba(15,26,20,.55);stroke-linecap:round;stroke-dasharray:2 14;transition:stroke-width .35s var(--ease)}
+@media (prefers-reduced-motion:no-preference){.m-fluss{animation:fliessen 1.4s linear infinite}}
+@keyframes fliessen{to{stroke-dashoffset:-32}}
+.regler{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;max-width:620px;margin:26px auto 0;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--salbei-hell)}
+.regler label{grid-column:1/-1;text-align:center;font-weight:600;letter-spacing:2px;color:var(--hell)}
+.regler input{width:100%;accent-color:var(--salbei);height:28px;cursor:pointer}
+.regler-text{text-align:center;max-width:58ch;margin:14px auto 0;font-family:'Spectral',Georgia,serif;font-style:italic;font-size:20px;line-height:1.45;color:var(--hell);min-height:2.9em}
+.legende{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+@media (max-width:900px){.legende{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.legende{grid-template-columns:1fr}}
+.legende article{background:var(--karte);border:1px solid var(--linie-fein);border-radius:12px;padding:20px 22px}
+.legende article.fokus{border-color:rgba(127,181,201,.55);background:#14232A}
+.legende h3{font-size:16px;display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.legende h3 i{width:10px;height:10px;border-radius:50%;flex:none}
+.legende p{font-size:15px;line-height:1.55;color:var(--salbei-hell)}
+
+/* Statt */
+.statt{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+@media (max-width:980px){.statt{grid-template-columns:1fr}}
+.statt article{border:1px solid var(--linie);border-radius:14px;overflow:hidden;background:var(--karte);display:flex;flex-direction:column}
+.statt .vorher{padding:18px 26px;background:var(--tief);font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--salbei-hell);text-decoration:line-through;text-decoration-color:rgba(181,84,63,.7);text-decoration-thickness:2px}
+.statt .nachher{padding:26px}
+.statt h3{font-size:22px}
+.statt p{font-size:16px;color:var(--text)}
+
+.termin-aufbau{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--linie)}
+.termin-aufbau div{padding:24px 24px 0 0}
+.termin-aufbau b{font-family:'Spectral',Georgia,serif;font-style:italic;font-weight:400;font-size:26px;color:var(--wasser);display:block;margin-bottom:4px}
+.termin-aufbau span{font-size:15px;color:var(--salbei-hell)}
+@media (max-width:620px){.termin-aufbau{grid-template-columns:1fr}.termin-aufbau div{padding:18px 0 0}}
+
+/* Ablauf */
+.wochen{margin-top:48px;position:relative}
+.wochen::before{content:"";position:absolute;left:31px;top:20px;bottom:20px;width:1px;background:linear-gradient(var(--wasser),var(--salbei) 60%,var(--oliv))}
+.woche-item{position:relative;padding-left:84px;margin-bottom:14px}
+.woche-item .punkt{position:absolute;left:0;top:14px;width:63px;height:63px;border-radius:50%;background:var(--wald);border:1px solid rgba(127,181,201,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.woche-item .punkt small{font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--salbei-hell)}
+.woche-item .punkt b{font-family:'Spectral',Georgia,serif;font-weight:400;font-size:24px;color:var(--hell);margin-top:3px}
+details.woche{background:var(--karte);border:1px solid var(--linie-fein);border-radius:12px;transition:border-color .2s var(--ease)}
+details.woche[open]{border-color:var(--linie)}
+details.woche summary{list-style:none;cursor:pointer;padding:22px 56px 22px 26px;position:relative}
+details.woche summary::-webkit-details-marker{display:none}
+details.woche summary::after{content:"";position:absolute;right:26px;top:32px;width:10px;height:10px;border-right:2px solid var(--salbei);border-bottom:2px solid var(--salbei);transform:rotate(45deg);transition:transform .2s var(--ease)}
+details.woche[open] summary::after{transform:rotate(-135deg);top:36px}
+details.woche summary:hover h3{color:#fff}
+.woche .datum{font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:var(--wasser);font-weight:600}
+.woche h3{font-size:21px;margin:4px 0 2px}
+.woche .frage{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:18px;color:var(--salbei-hell)}
+.woche .inhalt{padding:0 26px 24px}
+.woche .inhalt>p{margin-bottom:16px}
+.mitnehmen{background:var(--tief);border-left:2px solid var(--wasser);border-radius:0 8px 8px 0;padding:14px 18px}
+.mitnehmen small{display:block;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--wasser);margin-bottom:4px}
+.mitnehmen p{font-size:16px;color:var(--hell);margin:0}
+@media (max-width:620px){.wochen::before{left:23px}.woche-item{padding-left:62px}.woche-item .punkt{width:47px;height:47px;top:16px}.woche-item .punkt b{font-size:19px}.woche-item .punkt small{font-size:8px}}
+
+/* Boni */
+.boni{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:48px}
+@media (max-width:900px){.boni{grid-template-columns:1fr}}
+.bonus{background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:30px}
+.bonus.gross{grid-row:span 2;background:linear-gradient(160deg,#1F2D24,#131F18 70%)}
+.bonus .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--wald);background:var(--salbei);border-radius:30px;padding:4px 12px;margin-bottom:16px}
+.bonus .icon{width:44px;height:44px;border-radius:10px;background:rgba(127,181,201,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--wasser)}
+.bonus .icon svg{width:22px;height:22px}
+.bonus h3 em{color:var(--salbei)}
+.bonus .sub{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:19px;color:var(--salbei-hell);margin-bottom:10px}
+.bonus p{font-size:16px}
+
+/* VIP-Kasten */
+.vip{background:var(--tief);border-top:1px solid var(--linie-fein);border-bottom:1px solid var(--linie-fein)}
+.vip-kasten{position:relative;background:linear-gradient(165deg,#16272D 0%,#111E21 55%,#0F1A14 100%);border:1px solid rgba(127,181,201,.45);border-radius:22px;padding:64px 56px 56px;box-shadow:0 30px 80px -40px rgba(127,181,201,.35)}
+@media (max-width:720px){.vip-kasten{padding:48px 20px 24px;border-radius:16px}}
+.vip-marke{position:absolute;top:-15px;left:56px;background:var(--wasser);color:var(--wald);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:30px;padding:6px 16px}
+@media (max-width:720px){.vip-marke{left:20px}}
+.vip-kasten .label{color:var(--wasser)}
+.vip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+@media (max-width:820px){.vip-grid{grid-template-columns:1fr}}
+.vip-grid .bonus{background:rgba(10,19,14,.55);border-color:rgba(127,181,201,.18)}
+.vip-grid .bonus .sub{color:var(--wasser)}
+.vip-grid .bonus.voll{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+.vip-grid .bonus.haupt{background:var(--tief);border-color:rgba(127,181,201,.4)}
+@media (max-width:620px){.vip-grid .bonus.voll{grid-template-columns:1fr;gap:0}}
+
+/* Vergleichstabelle */
+.vergleich-box{margin-top:48px;background:var(--karte);border:1px solid var(--linie);border-radius:16px;padding:8px 28px 28px}
+@media (max-width:620px){.vergleich-box{padding:4px 12px 18px}}
+.vergleich{width:100%;border-collapse:collapse}
+.vergleich th,.vergleich td{padding:16px 12px;border-bottom:1px solid var(--linie-fein);vertical-align:middle;text-align:left}
+.vergleich thead th{border-bottom:1px solid var(--linie);padding-top:26px}
+.vergleich .spalte{width:130px;text-align:center}
+.vergleich .vipcol{background:rgba(127,181,201,.09)}
+.vergleich thead .vipcol{border-top:3px solid var(--wasser);border-radius:8px 8px 0 0}
+.vergleich .kopf-leistung{font-size:12px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--salbei-hell)}
+.vergleich .paketname{display:block;font-size:20px;font-weight:600;color:var(--hell)}
+.vergleich .vipcol .paketname{font-family:'Spectral',Georgia,serif;font-style:italic;font-weight:400;font-size:24px;color:var(--wasser)}
+.vergleich .paketsub{display:block;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--salbei-hell);margin-top:4px}
+.vergleich td.leistung{font-size:16px;color:var(--hell);font-weight:500;line-height:1.45}
+.vergleich td.leistung.nur-vip{color:var(--wasser)}
+.vergleich td.leistung small{display:block;font-weight:400;font-size:14px;color:var(--salbei-hell);margin-top:3px}
+.vergleich .haken{display:inline-flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;background:var(--salbei)}
+.vergleich .vipcol .haken{background:var(--wasser-tief)}
+.vergleich .haken svg{width:14px;height:14px}
+.vergleich .strich{display:inline-block;width:16px;height:2px;background:rgba(168,186,176,.35);vertical-align:middle}
+.vergleich tr.zeile-plaetze td{font-weight:600;color:var(--hell);font-size:15px}
+.vergleich tr.zeile-preis td{border-bottom:0;padding-top:22px;padding-bottom:22px}
+.vergleich .preis{white-space:nowrap;font-family:'Spectral',Georgia,serif;font-size:40px;line-height:1;color:var(--hell)}
+.vergleich .vipcol .preis{color:var(--wasser)}
+.vergleich tr.zeile-preis td.vipcol{border-radius:0 0 8px 8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:620px){
+  .vergleich th,.vergleich td{padding:13px 6px}
+  .vergleich .spalte{width:62px}
+  .vergleich .paketname{font-size:16px}.vergleich .vipcol .paketname{font-size:19px}
+  .vergleich .paketsub{font-size:8.5px;letter-spacing:1px}
+  .vergleich td.leistung{font-size:14.5px}.vergleich td.leistung small{font-size:12.5px}
+  .vergleich .preis{font-size:27px}
+  .vergleich .haken{width:22px;height:22px}
+}
+.tc-hinweis{margin-top:12px;font-size:14px;color:var(--salbei-hell);text-align:right}
+@media (max-width:620px){.tc-hinweis{text-align:left}}
+.vergleich-cta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+@media (max-width:620px){.vergleich-cta{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{margin-top:40px;border-top:1px solid var(--linie)}
+.faq details{border-bottom:1px solid var(--linie)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-weight:600;font-size:17.5px;color:var(--hell);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:2px;background:var(--salbei)}
+.faq summary::before{content:"";position:absolute;right:12px;top:calc(50% - 6px);width:2px;height:14px;background:var(--salbei);transition:transform .2s var(--ease)}
+.faq details[open] summary::before{transform:scaleY(0)}
+.faq details p{padding:0 0 22px;color:var(--text);max-width:68ch}
+
+/* Über Nicole */
+.ueber{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+@media (max-width:860px){.ueber{grid-template-columns:1fr;gap:32px}}
+.ueber figure{border-radius:14px;overflow:hidden;border:1px solid var(--linie);aspect-ratio:4/5;max-width:420px}
+.ueber figure img{width:100%;height:100%;object-fit:cover}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}
+.kpis div{border-top:1px solid var(--linie);padding-top:14px}
+.kpis b{font-family:'Spectral',Georgia,serif;font-weight:400;font-size:34px;color:var(--hell);display:block;line-height:1}
+.kpis span{font-size:13px;color:var(--salbei-hell);display:block;margin-top:6px;line-height:1.4}
+
+/* Schluss */
+.schluss{text-align:center;background:radial-gradient(ellipse at 50% 0,rgba(127,181,201,.12),transparent 60%),var(--tief);border-top:1px solid var(--linie-fein)}
+.schluss .cta-reihe{justify-content:center}
+.schluss .lead{max-width:56ch;margin:0 auto}
+.kontakt{margin-top:26px;font-size:15px;color:var(--salbei-hell)}
+.recht{margin-top:56px;padding-top:24px;border-top:1px solid var(--linie-fein);font-size:13px;line-height:1.6;color:var(--salbei-hell);text-align:left;max-width:var(--schmal);margin-left:auto;margin-right:auto}
+footer{padding:28px 0 110px;font-size:13px;color:var(--salbei-hell);border-top:1px solid var(--linie-fein)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+footer a{color:var(--salbei-hell);text-decoration:none;margin-left:18px}
+footer a:hover{color:var(--hell)}
+
+/* Sticky-Leiste mobil */
+.leiste{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;background:rgba(31,45,36,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--linie);border-radius:12px;padding:10px 10px 10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(140%);transition:transform .3s var(--ease)}
+.leiste.sichtbar{transform:none}
+.leiste p{font-size:13.5px;line-height:1.35;color:var(--salbei-hell)}
+.leiste p b{color:var(--hell);font-weight:600;display:block}
+.leiste .btn{min-height:46px;padding:10px 18px;font-size:14px;white-space:nowrap}
+@media (min-width:900px){.leiste{left:auto;right:24px;bottom:24px;max-width:430px}}
+
+/* Reveal */
+.reveal{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .js .reveal.da{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<link rel="canonical" href="https://nicole-lurz.de/immun-mentoring/">
+<script defer src="/js/nl-consent.js"></script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<header class="kopf">
+  <div class="wrap">
+    <a class="wortmarke" href="https://nicole-lurz.de/" aria-label="Nicole Lurz, zur Startseite"><span class="lf">Nicole</span><span class="ll">Lurz</span></a>
+    <a class="btn btn-primaer" href="#pakete">Platz sichern</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><i></i>Fokus Immunsystem · 5-Wochen-Mentoring</span>
+      <h1>Schluss mit der <em>Erkältungs-Dauerschleife.</em></h1>
+      <p class="unter">Warum Vitamine allein nicht reichen und wie du Infekte früher erkennst und gegensteuerst, bevor sie dich lahmlegen.</p>
+      <p class="lead">Du bist ständig angeschlagen. Kaum ist der eine Infekt weg, kündigt sich der nächste an. Dazwischen fehlt dir die Kraft: Die Treppe wird zur Anstrengung, der Sonntagsspaziergang fällt aus, und Termine sagst du lieber gleich ab, bevor du wieder ausfällst.</p>
+      <p class="lead">In 5 Wochen holst du dir das Steuer zurück. Du erkennst die Signale deines Körpers 48 Stunden früher, weißt genau, was du dann tust, und sorgst dafür, dass deine Abwehr wieder die Energie bekommt, die sie braucht.</p>
+      <div class="cta-reihe">
+        <a class="btn btn-primaer" href="#pakete">Paket wählen, ab 199 €</a>
+        <a class="btn btn-sekundaer" href="#ablauf">Die 5 Wochen ansehen</a>
+      </div>
+      <div class="eckdaten" role="list">
+        <div role="listitem"><b>19.10.</b><span>Start, Montag<br>18 Uhr</span></div>
+        <div role="listitem"><b>5 × live</b><span>per Zoom, je<br>60-75 Min.</span></div>
+        <div role="listitem"><b>inkl.</b><span>Aufzeichnung<br>aller Termine</span></div>
+      </div>
+      <p class="countdown" id="countdown" hidden></p>
+    </div>
+
+    <aside class="ampel reveal" aria-labelledby="ampel-titel">
+      <p class="ampel-kopf">Deine Immun-Ampel</p>
+      <h3 id="ampel-titel">Was tust du, wenn es <em>losgeht?</em></h3>
+      <div class="ampel-tabs" role="tablist" aria-label="Phasen der Immun-Ampel">
+        <button class="ampel-tab" role="tab" id="tab-gruen" data-phase="gruen" aria-selected="false" aria-controls="panel-gruen" tabindex="-1"><span class="licht" aria-hidden="true"></span>Grün<br>Alltag</button>
+        <button class="ampel-tab" role="tab" id="tab-gelb" data-phase="gelb" aria-selected="true" aria-controls="panel-gelb"><span class="licht" aria-hidden="true"></span>Gelb<br>Frühsignal</button>
+        <button class="ampel-tab" role="tab" id="tab-rot" data-phase="rot" aria-selected="false" aria-controls="panel-rot" tabindex="-1"><span class="licht" aria-hidden="true"></span>Rot<br>akut</button>
+      </div>
+      <div class="ampel-panel" role="tabpanel" id="panel-gruen" data-phase="gruen" aria-labelledby="tab-gruen" hidden>
+        <p class="phase">Grün · im Alltag</p>
+        <p>Kleine Reize, große Wirkung. Mit 2-3 Wohlfühl-Ankern gibst du deinem Körper jeden Tag biologische Sicherheit, ganz ohne Zeitaufwand.</p>
+        <p class="woche"><b>Woche 4</b> Biologische Fürsorge &amp; Mikroroutinen</p>
+      </div>
+      <div class="ampel-panel" role="tabpanel" id="panel-gelb" data-phase="gelb" aria-labelledby="tab-gelb">
+        <p class="phase">Gelb · 24-48 Stunden vorher</p>
+        <p>Die Signale sind längst da, du hast nur nie gelernt, sie zu lesen. Mit deiner persönlichen Immun-Ampel steuerst du früher gegen, statt erst beim Fieber zu reagieren.</p>
+        <p class="woche"><b>Woche 2</b> Das 48-Stunden-Frühwarnsystem</p>
+      </div>
+      <div class="ampel-panel" role="tabpanel" id="panel-rot" data-phase="rot" aria-labelledby="tab-rot" hidden>
+        <p class="phase">Rot · es geht los</p>
+        <p>Deine SOS-Prozedur für Tag 1. Im Ernstfall weißt du sofort, was zu tun ist, und unterstützt die biologischen Prozesse, statt sie stur zu unterdrücken.</p>
+        <p class="woche"><b>Woche 3</b> Die naturheilkundliche Akut-Praxis</p>
+      </div>
+      <p class="ampel-fuss">Als Worksheet „Der Frühwarn-Kompass" hängt die Ampel später bei dir am Kühlschrank.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══ KENNST DU DAS ═══ -->
+<section id="muster">
+  <div class="wrap">
+    <div class="schmal reveal">
+      <span class="label immun">Kennst du das?</span>
+      <h2>Jeden Winter <em>dasselbe Muster.</em></h2>
+    </div>
+    <div class="muster">
+      <article class="reveal"><span class="nr">01</span><h3>Der Vitamin-Frust</h3><p>Du schluckst brav Vitamin D, Zink und Vitamin C und liegst trotzdem alle paar Wochen wieder flach.</p></article>
+      <article class="reveal"><span class="nr">02</span><h3>Die Erkältung vom Kollegen</h3><p>Er hustet einmal, dazu ein bisschen Stress, und zwei Tage später kratzt dein Hals. Wie immer.</p></article>
+      <article class="reveal"><span class="nr">03</span><h3>Infekte, die nicht enden</h3><p>Früher hieß es einmal früh ins Bett, und zwei, drei Tage später ging es dir wieder gut. Heute zieht sich alles wie Kaugummi, gefühlt hilft nichts mehr wirklich, und du hast wochenlang damit zu tun.</p></article>
+      <article class="reveal"><span class="nr">04</span><h3>Ibu als Dauerlösung</h3><p>Du hast keine Lust mehr, ständig Ibuprofen zu schlucken, nur um irgendwie zu funktionieren. Und dein Magen beschwert sich längst.</p></article>
+      <article class="reveal"><span class="nr">05</span><h3>Alles wird schwerer</h3><p>Dazwischen bist du nie richtig fit, und selbst Treppensteigen oder ein Spaziergang kosten dich Kraft.</p></article>
+      <article class="reveal"><span class="nr">06</span><h3>Immer einen Schritt zu spät</h3><p>Du merkst es erst, wenn das Fieber da ist, weil dir das Gespür für die leisen Frühsignale fehlt.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WENDE: FEUERWEHR + MATRIX ═══ -->
+<section class="wende" id="matrix">
+  <div class="wrap">
+    <div class="feuerwehr reveal">
+      <div>
+        <span class="label">Die Wahrheit aus 14 Jahren Praxiserfahrung</span>
+        <h2>Dein Immunsystem ist keine <em>isolierte Feuerwehr.</em></h2>
+      </div>
+      <div>
+        <p class="zitat">Abwehr kostet Energie. Und die muss erst einmal bei deinem Immunsystem ankommen.</p>
+        <p>Man kann es nicht einfach mit einer Pille füttern. Es ist Teil einer biologischen Matrix aus Nervensystem, Stoffwechsel und Zellenergie (Mitochondrien). Wenn dein Nervensystem Dauerstress signalisiert oder dein Stoffwechsel im Energiestau steckt, nützen die besten Supplements nichts.</p>
+      </div>
+    </div>
+
+    <div class="matrix">
+      <div class="matrix-kopf reveal">
+        <span class="label">Meine drei Systeme</span>
+        <h2>Wo deine Energie entsteht und <em>wohin sie fließt.</em></h2>
+        <p class="lead">Nervensystem und Immunsystem sind zwei egoistische Systeme, die sich denselben Energietopf teilen.</p>
+      </div>
+      <div class="matrix-bild reveal">
+        <svg viewBox="0 0 760 380" role="img" aria-labelledby="m-svg-titel">
+          <title id="m-svg-titel">In der Zelle entsteht Energie, der Stoffwechsel verteilt sie, und Immunsystem und Nervensystem teilen sich diesen einen Energietopf.</title>
+          <defs>
+            <marker id="spitze" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#E3A85C"/></marker>
+          </defs>
+          <!-- Zelle -->
+          <circle class="m-kreis" cx="100" cy="190" r="80" fill="#0F1A14" stroke="#CDD9CF" stroke-width="1.5"/>
+          <ellipse cx="100" cy="175" rx="42" ry="20" fill="rgba(227,168,92,.22)" stroke="#E3A85C" stroke-width="2" transform="rotate(-12 100 175)"/>
+          <path d="M66 180 l8 -14 l8 16 l8 -16 l8 16 l8 -16 l8 16 l8 -14" fill="none" stroke="#E3A85C" stroke-width="2" stroke-linejoin="round" transform="rotate(-12 100 175)"/>
+          <text class="m-titel" x="100" y="300">Zelle</text>
+          <text class="m-sub" x="100" y="324">Mitochondrien: Energie entsteht</text>
+          <!-- Energie zum Stoffwechsel -->
+          <text x="236" y="176" font-family="Inter" font-size="12" font-weight="600" letter-spacing="2" fill="#A8BAB0" text-anchor="middle">ENERGIE</text>
+          <line class="m-pfeil" x1="192" y1="190" x2="270" y2="190" stroke-width="5" marker-end="url(#spitze)"/>
+          <!-- Stoffwechsel = Energietopf -->
+          <circle class="m-kreis" cx="370" cy="190" r="88" fill="rgba(227,168,92,.10)" stroke="#E3A85C"/>
+          <text class="m-titel" x="370" y="186">Stoffwechsel</text>
+          <text class="m-sub" x="370" y="210">verteilt die Energie</text>
+          <text x="370" y="318" font-family="Spectral, Georgia, serif" font-style="italic" font-size="17" fill="#E3A85C" text-anchor="middle">ein Energietopf</text>
+          <!-- Zwei Abzweige -->
+          <path id="p-immun" class="m-pfeil" d="M456 168 L 570 112" stroke-width="7" marker-end="url(#spitze)"/>
+          <path id="f-immun" class="m-fluss" d="M456 168 L 570 112" stroke-width="7"/>
+          <path id="p-nerven" class="m-pfeil" d="M456 212 L 570 268" stroke-width="7" marker-end="url(#spitze)"/>
+          <path id="f-nerven" class="m-fluss" d="M456 212 L 570 268" stroke-width="7"/>
+          <text x="470" y="96" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16" fill="#A8BAB0" text-anchor="middle">Ohne Energie</text>
+          <text x="470" y="116" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16" fill="#A8BAB0" text-anchor="middle">keine Abwehr</text>
+          <!-- Immunsystem -->
+          <g id="k-immun">
+            <circle cx="650" cy="90" r="80" fill="none" stroke="#7FB5C9" stroke-width="1" stroke-dasharray="4 5" opacity=".7"/>
+            <circle class="m-kreis" cx="650" cy="90" r="68" fill="rgba(127,181,201,.14)" stroke="#7FB5C9" stroke-width="3"/>
+            <text class="m-titel" x="650" y="84">Immunsystem</text>
+            <text class="m-sub" x="650" y="106">Abwehr</text>
+            <rect x="618" y="118" width="64" height="20" rx="4" fill="#4E8FA8"/>
+            <text x="650" y="132" font-family="Inter" font-size="10.5" font-weight="600" letter-spacing="1.6" fill="#E8F0E8" text-anchor="middle">FOKUS</text>
+          </g>
+          <!-- Nervensystem -->
+          <g id="k-nerven">
+            <circle class="m-kreis" cx="650" cy="292" r="64" fill="rgba(122,168,144,.14)" stroke="#7AA890"/>
+            <text class="m-titel" x="650" y="290">Nervensystem</text>
+            <text class="m-sub" x="650" y="312">Steuerung</text>
+          </g>
+        </svg>
+        <div class="regler">
+          <label for="stress">Dein Nervensystem</label>
+          <span>ruhig</span>
+          <input type="range" id="stress" min="0" max="100" value="20" aria-describedby="regler-text">
+          <span>Dauerstress</span>
+        </div>
+        <p class="regler-text" id="regler-text" aria-live="polite">Dein Nervensystem ist ruhig. Aus dem gemeinsamen Topf bleibt genug Energie für deine Abwehr.</p>
+      </div>
+      <div class="legende">
+        <article class="reveal"><h3><i style="background:#E3A85C"></i>Zelle</h3><p>In den Mitochondrien entsteht deine Energie.</p></article>
+        <article class="reveal"><h3><i style="background:#D97B3F"></i>Stoffwechsel</h3><p>Verteilt die Energie. Steckt er im Energiestau, kommt bei der Abwehr zu wenig an.</p></article>
+        <article class="reveal fokus"><h3><i style="background:#7FB5C9"></i>Immunsystem</h3><p>Abwehr kostet Energie. Hier setzen die 5 Wochen an.</p></article>
+        <article class="reveal"><h3><i style="background:#7AA890"></i>Nervensystem</h3><p>Dauerstress zieht Energie ab, die deiner Abwehr dann fehlt.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WAS DU DAVON HAST ═══ -->
+<section id="nutzen">
+  <div class="wrap">
+    <div class="schmal reveal">
+      <span class="label immun">Was du wirklich davon hast</span>
+      <h2>Schluss mit Ausfallen. <em>Du steuerst wieder.</em></h2>
+      <p class="lead leise">Darauf arbeiten wir in den 5 Wochen hin:</p>
+    </div>
+    <div class="statt">
+      <article class="reveal">
+        <div class="vorher">Statt Flachliegen</div>
+        <div class="nachher"><h3>Der 48-Stunden-<em>Vorsprung</em></h3><p>Du spürst die ersten Signale zwei Tage, bevor es dich erwischt, und weißt sofort, was zu tun ist. Statt abzuwarten, bis du im Bett liegst, steuerst du rechtzeitig gegen.</p></div>
+      </article>
+      <article class="reveal">
+        <div class="vorher">Statt Dauer-Erschöpfung</div>
+        <div class="nachher"><h3>Energie, die bei dir <em>ankommt</em></h3><p>Du weißt, wo dein Körper gerade Energie verliert, und drehst den Hahn zu. Damit Treppe, Spaziergang und Arbeitstag wieder Kraft geben, statt Kraft zu kosten.</p></div>
+      </article>
+      <article class="reveal">
+        <div class="vorher">Statt Ibu und Hoffen</div>
+        <div class="nachher"><h3>Dein eigener <em>Plan</em></h3><p>Du hast deinen SOS-Plan für Tag 1 und einfache Routinen aus der Naturheilkunde, auf die du dich verlassen kannst. Statt nur zur Tablette zu greifen, weißt du, was du selbst tun kannst.</p></div>
+      </article>
+    </div>
+    <div class="termin-aufbau reveal" aria-label="So ist jeder Termin aufgebaut">
+      <div><b>Wissen</b><span>einfache Erklärungsmodelle</span></div>
+      <div><b>Erleben</b><span>direkt im eigenen Körper spüren</span></div>
+      <div><b>Integrieren</b><span>konkrete Schritte für deinen Alltag</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABLAUF ═══ -->
+<section class="wende" id="ablauf">
+  <div class="wrap">
+    <div class="schmal reveal">
+      <span class="label">Der Ablauf · montags, 18 Uhr</span>
+      <h2>5 Wochen von der Erkenntnis <em>zur Routine.</em></h2>
+      <p class="lead leise">Jeder Termin 60-75 Minuten, live per Zoom, mit Aufzeichnung. Wenn du einen Montag nicht kannst, schaust du ihn nach.</p>
+    </div>
+    <div class="wochen schmal">
+      <div class="woche-item reveal">
+        <div class="punkt" aria-hidden="true"><small>Woche</small><b>01</b></div>
+        <details class="woche" open>
+          <summary><span class="datum">Mo 19.10.</span><h3>Die Immun-Matrix durchschauen</h3><span class="frage">Warum liege ich trotz Vitaminen ständig flach?</span></summary>
+          <div class="inhalt"><p>Warum Vitamine allein nicht reichen und wo dein Fass gerade Energie verliert.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Ein erstes Gespür für dein Nervensystem, um zu erkennen, was deine Abwehr wirklich schwächt.</p></div></div>
+        </details>
+      </div>
+      <div class="woche-item reveal">
+        <div class="punkt" aria-hidden="true"><small>Woche</small><b>02</b></div>
+        <details class="woche">
+          <summary><span class="datum">Mo 26.10.</span><h3>Das 48-Stunden-Frühwarnsystem</h3><span class="frage">Was dein Körper dir sagt, bevor es im Hals kratzt.</span></summary>
+          <div class="inhalt"><p>Was in deinem Körper 24-48 Stunden vor dem ersten Halskratzen passiert. Die Signale sind da, du hast nur nie gelernt, sie zu lesen.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Deine persönliche Immun-Ampel, um früher gegenzusteuern, statt erst beim Fieber zu reagieren.</p></div></div>
+        </details>
+      </div>
+      <div class="woche-item reveal">
+        <div class="punkt" aria-hidden="true"><small>Woche</small><b>03</b></div>
+        <details class="woche">
+          <summary><span class="datum">Mo 02.11.</span><h3>Die naturheilkundliche Akut-Praxis &amp; Immun-Training</h3><span class="frage">Was tun, wenn es losgeht?</span></summary>
+          <div class="inhalt"><p>Was die Naturheilkunde in Phase Gelb und Rot kann und wie du biologische Prozesse unterstützt, statt sie stur zu unterdrücken.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Deine SOS-Prozedur für Tag 1, um im Ernstfall sofort zu wissen, was zu tun ist.</p></div></div>
+        </details>
+      </div>
+      <div class="woche-item reveal">
+        <div class="punkt" aria-hidden="true"><small>Woche</small><b>04</b></div>
+        <details class="woche">
+          <summary><span class="datum">Mo 09.11.</span><h3>Biologische Fürsorge &amp; Mikroroutinen</h3><span class="frage">Kleine Reize, große Wirkung.</span></summary>
+          <div class="inhalt"><p>Warum die Regulation deines Nervensystems dein stärkster Hebel für die Abwehr ist und wie kleine Reize ganz ohne Zeitaufwand wirken.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>2-3 Wohlfühl-Anker, um deinem Körper jeden Tag biologische Sicherheit zu geben.</p></div></div>
+        </details>
+      </div>
+      <div class="woche-item reveal">
+        <div class="punkt" aria-hidden="true"><small>Woche</small><b>05</b></div>
+        <details class="woche">
+          <summary><span class="datum">Mo 16.11.</span><h3>Dein individueller Winter-Schutzschild</h3><span class="frage">Wie bleibt das, wenn der Alltag zurückkommt?</span></summary>
+          <div class="inhalt"><p>Wie du deinen Fahrplan auch bei Stress, Beruf und Familie durchhältst und dein Immunsystem als Ganzjahres-Partner verstehst.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Dein persönliches Winter-Workbook mit Notfallplan, um gelassen in die Erkältungszeit zu gehen.</p></div></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BONI FÜR ALLE ═══ -->
+<section id="boni">
+  <div class="wrap">
+    <div class="schmal reveal">
+      <span class="label immun">Für alle Teilnehmerinnen</span>
+      <h2>Damit es im Alltag <em>leicht bleibt.</em></h2>
+    </div>
+    <div class="boni">
+      <article class="bonus gross reveal">
+        <span class="tag">Inklusive</span>
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><path d="M6 17h12"/></svg></div>
+        <h3>Dein KI-Küchen-<em>Coach</em></h3>
+        <p class="sub">Null Denkaufwand nach Feierabend.</p>
+        <p>Du tippst ein, was im Kühlschrank ist und wie viel Zeit du hast. Dein Coach schlägt dir in Sekunden vitalstoffreiche Gerichte vor, abgestimmt auf Stoffwechsel und Immunsystem. In 15-20 Minuten auf dem Teller.</p>
+      </article>
+      <article class="bonus reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></div>
+        <h3>Worksheet „Der Frühwarn-Kompass"</h3>
+        <p>Für den Kühlschrank: Was tun bei Grün (Alltag), Gelb (Frühsignal 24-48 Stunden vor dem Infekt) und Rot (akut)?</p>
+      </article>
+      <article class="bonus reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Guide „10 Micro-Habits für den Biologie-Check"</h3>
+        <p>Alltags-Impulse (Vagusnerv-Stimulation, Atem-Anker, Kälte und Wärme), die deine Zellenergie täglich unterstützen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VIP ═══ -->
+<section class="vip" id="vip">
+  <div class="wrap">
+   <div class="vip-kasten">
+    <span class="vip-marke">VIP-Paket</span>
+    <div class="schmal reveal" style="margin-left:0">
+      <span class="label immun">Exklusiv im VIP-Paket · max. 5 Plätze</span>
+      <h2>Dein persönlicher Blick <em>auf deine Abwehr.</em></h2>
+      <p class="lead leise">In der Gruppe lernst du das System kennen, und im VIP-Paket schauen wir zusätzlich auf dein eigenes Muster.</p>
+    </div>
+    <div class="vip-grid">
+      <article class="bonus voll haupt reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <div>
+          <h3>1:1 Fokus-Analyse Immunsystem <span class="leise" style="font-weight:400">(45 Min. Zoom)</span></h3>
+          <p class="sub">Wo deine Abwehr wirklich Energie verliert.</p>
+          <p>Wir schauen gezielt auf deine Infekt-Historie, deine Barrieren und deine Immun-Flaschenhälse. Du gehst mit einem klaren Bild deines eigenen Musters aus dem Gespräch.</p>
+        </div>
+      </article>
+      <article class="bonus reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg></div>
+        <h3>Supplement-Audit &amp; Mikronährstoff-Guide</h3>
+        <p class="sub">Ordnung im Kapselschrank.</p>
+        <p>Ganz ohne Termin: Du schickst mir deine Liste oder Fotos deiner Supplements und bekommst meine persönliche Einschätzung und Empfehlung. Was nützt, was belastet und was dein Fundament ist.</p>
+      </article>
+      <article class="bonus reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6.5L4 19a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3L15 8.5V2"/><path d="M8 2h8M6.5 15h11"/></svg></div>
+        <h3>Labor-Checkliste „Regenerationsfähigkeit"</h3>
+        <p class="sub">Augenhöhe beim Arzt.</p>
+        <p>Du weißt, was du beim Arzt anfragen kannst, um ein vollständiges Bild deiner Abwehr zu bekommen.</p>
+      </article>
+      <article class="bonus voll reveal">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <div>
+          <h3>1:1 WhatsApp-Support während der 5 Wochen</h3>
+          <p class="sub">Keine Frage bleibt liegen.</p>
+          <p>Du schreibst mir, ich antworte. Kurz und direkt, die ganzen 5 Wochen.</p>
+        </div>
+      </article>
+    </div>
+   </div>
+  </div>
+</section>
+
+<!-- ═══ PAKETE ═══ -->
+<section id="pakete">
+  <div class="wrap">
+    <div class="schmal reveal" style="text-align:center">
+      <span class="label immun">Wähle dein Paket</span>
+      <h2>Basis <em>oder</em> VIP.</h2>
+      <p class="lead leise">Start am Montag, 19.10.2026, um 18 Uhr. Du zahlst bequem per Kreditkarte oder PayPal.</p>
+    </div>
+    <div class="vergleich-box reveal">
+      <table class="vergleich">
+        <caption class="sr">Leistungen im Basis- und im VIP-Paket im Vergleich</caption>
+        <thead>
+          <tr><th scope="col" class="kopf-leistung">Leistung</th><th scope="col" class="spalte"><span class="paketname">Basis</span><span class="paketsub">Mentoring</span></th><th scope="col" class="spalte vipcol"><span class="paketname">VIP</span><span class="paketsub">Exklusiv</span></th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="leistung">5 Live-Termine in der Gruppe per Zoom<small>montags 18 Uhr ab 19.10.2026, je 60-75 Min., inkl. Aufzeichnungen</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung">Zugang zur Gruppen-Community und zum Chat</td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung">KI-Küchen-Coach<small>Rezepte aus deinem Kühlschrank, in 15-20 Minuten auf dem Teller</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung">Frühwarn-Kompass und 10 Micro-Habits<small>Worksheet und Guide</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung nur-vip">1:1 Fokus-Analyse Immunsystem<small>45 Min. Zoom: Infekt-Historie, Barrieren und Immun-Flaschenhälse</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung nur-vip">Supplement-Audit &amp; Mikronährstoff-Guide<small>du schickst Liste oder Fotos, ich gebe dir meine Einschätzung und Empfehlung</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung">Labor-Checkliste „Regenerationsfähigkeit"<small>damit du beim Arzt die richtigen Fragen stellst</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung">1:1 WhatsApp-Support<small>für deine Fragen während der 5 Wochen</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr class="zeile-plaetze"><td>Plätze</td><td class="spalte" style="font-weight:400">regulär</td><td class="spalte vipcol">max. 5</td></tr>
+          <tr class="zeile-preis"><td class="leistung">Deine Investition</td><td class="spalte"><span class="preis">199 €</span></td><td class="spalte vipcol"><span class="preis">490 €</span></td></tr>
+        </tbody>
+      </table>
+      <div class="vergleich-cta">
+        <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/">Basis für 199 € buchen</a>
+        <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/" aria-describedby="vip-hinweis-tc">VIP für 490 € buchen</a>
+      </div>
+      <p class="tc-hinweis" id="vip-hinweis-tc">Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ÜBER NICOLE ═══ -->
+<section class="wende" id="nicole">
+  <div class="wrap ueber">
+    <figure class="reveal"><img src="/images/nicole-about.jpg" alt="Nicole Lurz, Heilpraktikerin und Mentorin" width="866" height="1300" loading="lazy"></figure>
+    <div class="reveal">
+      <span class="label">Wer dich durch die 5 Wochen führt</span>
+      <h2>Ich sehe nicht nur Symptome. <em>Ich sehe Systeme.</em></h2>
+      <p>Ich bin Nicole Lurz, Heilpraktikerin mit eigener Praxis in Wiesloch und zertifizierte Mentorin für Regenerative Medizin &amp; Chronische Gesundheit am Mojo-Institut. In der Praxis erlebe ich jeden Herbst, wie Frauen mit der dritten Vitamin-Packung im Schrank trotzdem wieder flachliegen. Und eigentlich fragt kaum jemand, wo die Energie für die Abwehr überhaupt herkommen soll. Genau da setze ich in diesen 5 Wochen an.</p>
+      <div class="kpis">
+        <div><b>14</b><span>Jahre Heilpraxis</span></div>
+        <div><b>1.500+</b><span>Klientinnen begleitet</span></div>
+        <div><b>20+</b><span>Jahre Erfahrung</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <div class="wrap schmal">
+    <div class="reveal">
+      <span class="label immun">Fragen, die vorher kommen</span>
+      <h2>Kurz <em>geklärt.</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Was ist, wenn ich montags um 18 Uhr nicht kann?</summary><p>Jeder Termin wird aufgezeichnet. Du kannst also nachschauen, wann es bei dir passt. Live dabei zu sein lohnt sich trotzdem, weil wir im Teil „Erleben" direkt im eigenen Körper spüren, worum es geht.</p></details>
+      <details><summary>Wie läuft die Anmeldung?</summary><p>Du klickst auf den Button zu deinem Paket und kommst in den Checkout. Dort zahlst du per Kreditkarte oder PayPal. Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade. Direkt danach siehst du deine nächsten Schritte und den Zoom-Link.</p></details>
+      <details><summary>Ist der Supplement-Audit ein eigener Termin?</summary><p>Nein, ganz ohne Termin. Du schickst mir deine Liste oder Fotos deiner Präparate und bekommst meine persönliche Einschätzung und Empfehlung.</p></details>
+      <details><summary>Kann ich im VIP-Paket per WhatsApp schreiben, wenn ich gerade einen Infekt habe?</summary><p>Der WhatsApp-Support ist für deine Fragen während der 5 Wochen gedacht, er ersetzt keine Akut-Beratung. Wenn es dich erwischt hat, ist dein Arzt oder dein Heilpraktiker vor Ort die richtige Adresse.</p></details>
+      <details><summary>Was passiert nach den 5 Wochen?</summary><p>Am 18.11.2026 startet das Stoffwechsel-Mentoring, das nahtlos anschließt.</p></details>
+      <details><summary>Ist das eine Behandlung?</summary><p>Nein. Das Mentoring vermittelt biologisches Wissen und hilft dir, deinen Alltag bewusster zu gestalten. Es ersetzt keine Diagnostik und keine Behandlung beim Arzt oder Heilpraktiker.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCHLUSS ═══ -->
+<section class="schluss" id="start">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label immun">Bereit für den Winter?</span>
+      <h2>Sichere dir <em>deinen Platz.</em></h2>
+      <p class="lead">Start am Montag, 19.10.2026, um 18 Uhr, live per Zoom und mit Aufzeichnung. Die VIP-Plätze sind auf 5 begrenzt.</p>
+      <div class="cta-reihe">
+        <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/">Basis für 199 € buchen</a>
+        <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/" aria-describedby="vip-hinweis-tc2">VIP für 490 € buchen</a>
+      </div>
+      <p class="tc-hinweis" id="vip-hinweis-tc2" style="text-align:center">Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade.</p>
+      <p class="kontakt">Du hast vorher noch eine Frage?
+        <a href="https://wa.me/491799383238?text=Hallo%20Nicole%2C%20ich%20habe%20eine%20Frage%20zum%20Immunkurs" target="_blank" rel="noopener">Schreib mir über WhatsApp</a> oder per E-Mail an <a href="mailto:office@nicole-lurz.com">office@nicole-lurz.com</a>.</p>
+    </div>
+    <p class="recht"><b style="color:var(--hell);font-weight:600">Rechtlicher Hinweis und Transparenz:</b> Dieses Programm vermittelt biologisches Wissen und unterstützt dich dabei, deinen Alltag bewusster und gesünder zu gestalten. Es beinhaltet keine Diagnostik oder Heilbehandlung im Sinne einer individuellen Krankenbehandlung und ersetzt nicht die Konsultation eines Arztes oder Heilpraktikers.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Nicole Lurz · Immun-Mentoring</span>
+    <span><a href="https://nicole-lurz.de/impressum/">Impressum</a><a href="https://nicole-lurz.de/datenschutz/">Datenschutz</a><a href="#" data-nl-consent-open>Cookie-Einstellungen</a></span>
+  </div>
+</footer>
+
+<div class="leiste" id="leiste" aria-hidden="true">
+  <p><b>Start Mo 19.10. · 18 Uhr</b>Basis 199 € · VIP 490 €</p>
+  <a class="btn btn-primaer" href="#pakete" tabindex="-1">Platz sichern</a>
+</div>
+
+<script>
+(function(){
+  /* Ampel-Tabs */
+  var tabs=[].slice.call(document.querySelectorAll('.ampel-tab'));
+  function waehle(t,fokus){
+    tabs.forEach(function(x){var an=x===t;x.setAttribute('aria-selected',an);x.tabIndex=an?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!an});
+    if(fokus)t.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){waehle(t)});
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;waehle(tabs[n],true)}
+    });
+  });
+
+  /* Energietopf-Regler: beide Systeme ziehen aus demselben Topf */
+  var regler=document.getElementById('stress'),rt=document.getElementById('regler-text');
+  var texte=[
+    'Dein Nervensystem ist ruhig. Aus dem gemeinsamen Topf bleibt genug Energie für deine Abwehr.',
+    'Beide Systeme greifen auf denselben Topf zu. Was das Nervensystem verbraucht, kommt beim Immunsystem nicht mehr an.',
+    'Dauerstress zieht Energie ab, die deiner Abwehr dann fehlt.'
+  ];
+  function topf(){
+    var s=regler.value/100,gesamt=18,nerven=3+(gesamt-6)*s,immun=gesamt-nerven;
+    ['p-nerven','f-nerven'].forEach(function(id){document.getElementById(id).setAttribute('stroke-width',nerven.toFixed(1))});
+    ['p-immun','f-immun'].forEach(function(id){document.getElementById(id).setAttribute('stroke-width',immun.toFixed(1))});
+    document.getElementById('k-immun').style.opacity=(1-s*.6).toFixed(2);
+    document.querySelector('#k-nerven .m-kreis').setAttribute('stroke-width',(2+s*4).toFixed(1));
+    var t=texte[s<.34?0:s<.67?1:2];if(rt.textContent!==t)rt.textContent=t;
+  }
+  regler.addEventListener('input',topf);topf();
+
+  /* Countdown bis Start */
+  var start=new Date('2026-10-19T18:00:00+02:00'),jetzt=new Date(),cd=document.getElementById('countdown');
+  var tage=Math.ceil((start-jetzt)/864e5);
+  if(tage>1){cd.innerHTML='Noch <b>'+tage+' Tage</b> bis zum ersten Termin.';cd.hidden=false}
+  else if(tage===1){cd.innerHTML='<b>Morgen</b> geht es los.';cd.hidden=false}
+
+  /* Reveal */
+  var r=[].slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('da');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    r.forEach(function(el){io.observe(el)});
+  } else r.forEach(function(el){el.classList.add('da')});
+
+  /* Sticky-Leiste: nach dem Hero, ausgeblendet im Paket- und Schlussbereich */
+  var leiste=document.getElementById('leiste'),hero=document.querySelector('.hero'),ziele=[document.getElementById('pakete'),document.getElementById('start')];
+  function pruefe(){
+    var nachHero=hero.getBoundingClientRect().bottom<0;
+    var imZiel=ziele.some(function(z){var b=z.getBoundingClientRect();return b.top<innerHeight&&b.bottom>0});
+    var an=nachHero&&!imZiel;leiste.classList.toggle('sichtbar',an);leiste.setAttribute('aria-hidden',!an);leiste.querySelector('a').tabIndex=an?0:-1;
+  }
+  addEventListener('scroll',pruefe,{passive:true});pruefe();
+})();
+</script>
+</body>
+</html>
