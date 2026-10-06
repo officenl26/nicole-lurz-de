@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Immun-Mentoring · 5 Wochen · Nicole Lurz</title>
-<meta name="description" content="Schluss mit der Erkältungs-Dauerschleife. 5-Wochen-Mentoring mit Nicole Lurz: Infekte früher erkennen, rechtzeitig gegensteuern und deiner Abwehr die Energie geben, die sie braucht. Start Montag, 19.10.2026, 18 Uhr, live per Zoom.">
-<meta property="og:title" content="Immun-Mentoring · Schluss mit der Erkältungs-Dauerschleife">
-<meta property="og:description" content="5 Wochen, 5 Live-Termine per Zoom. Start Montag, 19.10.2026, 18 Uhr.">
+<title>Stoffwechsel-Mentoring · 5 Wochen · Nicole Lurz</title>
+<meta name="description" content="Schluss mit der Stoffwechsel-Bremse. 5-Wochen-Mentoring mit Nicole Lurz für einen stabileren Blutzucker und mehr Energie bis in den Abend. Ganz ohne Kalorienzählen. Start Mittwoch, 18.11.2026, 18 Uhr, live per Zoom.">
+<meta property="og:title" content="Stoffwechsel-Mentoring · Schluss mit der Stoffwechsel-Bremse">
+<meta property="og:description" content="5 Wochen, 5 Live-Termine per Zoom. Start Mittwoch, 18.11.2026, 18 Uhr.">
 <meta property="og:image" content="https://nicole-lurz.de/images/nicole-about.jpg">
 <style>
 @font-face{font-family:'Spectral';font-weight:400;font-style:normal;font-display:swap;src:url('/fonts/spectral-regular.ttf') format('truetype')}
@@ -22,7 +22,7 @@
   --salbei:#7AA890; --salbei-hover:#95C0A8; --salbei-hell:#A8BAB0; --hell:#E8F0E8; --text:#CDD9CF;
   --blau:#1B4C93;
   /* Systemfarben (Mini-Kurs-Logik): Immunsystem Wasserblau, Stoffwechsel Bernstein, Nervensystem Salbei */
-  --wasser:#7FB5C9; --wasser-tief:#4E8FA8; --bernstein:#E3A85C; --alarm:#B5543F;
+  --wasser:#E3A85C; --wasser-tief:#B8662E; --bernstein:#E3A85C; --alarm:#B5543F;
   --linie:rgba(122,168,144,.16); --linie-fein:rgba(122,168,144,.09);
   --ease:cubic-bezier(.16,1,.3,1);
   --breit:1160px; --schmal:820px;
@@ -70,11 +70,11 @@ h1 em,h2 em,h3 em{font-family:'Spectral',Georgia,serif;font-style:italic;font-we
 
 /* Hero */
 .hero{padding:72px 0 96px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,rgba(127,181,201,.13),transparent 70%);pointer-events:none}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,rgba(227,168,92,.13),transparent 70%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;position:relative}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:48px}}
-.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(127,181,201,.35);border-radius:40px;padding:7px 16px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--wasser);margin-bottom:26px}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--wasser);box-shadow:0 0 0 4px rgba(127,181,201,.18)}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(227,168,92,.35);border-radius:40px;padding:7px 16px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--wasser);margin-bottom:26px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--wasser);box-shadow:0 0 0 4px rgba(227,168,92,.18)}
 .hero h1{margin-bottom:22px}
 .hero .unter{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.4;color:var(--salbei-hell);margin-bottom:22px;max-width:36ch}
 .hero .lead{max-width:56ch;margin-bottom:14px}
@@ -153,13 +153,13 @@ h1 em,h2 em,h3 em{font-family:'Spectral',Georgia,serif;font-style:italic;font-we
 @media (max-width:900px){.legende{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.legende{grid-template-columns:1fr}}
 .legende article{background:var(--karte);border:1px solid var(--linie-fein);border-radius:12px;padding:20px 22px}
-.legende article.fokus{border-color:rgba(127,181,201,.55);background:#14232A}
+.legende article.fokus{border-color:rgba(227,168,92,.55);background:#2A2418}
 .legende h3{font-size:16px;display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .legende h3 i{width:10px;height:10px;border-radius:50%;flex:none}
 .legende p{font-size:15px;line-height:1.55;color:var(--salbei-hell)}
 
 /* Statt */
-.statt{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.statt{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
 @media (max-width:980px){.statt{grid-template-columns:1fr}}
 .statt article{border:1px solid var(--linie);border-radius:14px;overflow:hidden;background:var(--karte);display:flex;flex-direction:column}
 .statt .vorher{padding:18px 26px;background:var(--tief);font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--salbei-hell);text-decoration:line-through;text-decoration-color:rgba(181,84,63,.7);text-decoration-thickness:2px}
@@ -177,7 +177,7 @@ h1 em,h2 em,h3 em{font-family:'Spectral',Georgia,serif;font-style:italic;font-we
 .wochen{margin-top:48px;position:relative}
 .wochen::before{content:"";position:absolute;left:31px;top:20px;bottom:20px;width:1px;background:linear-gradient(var(--wasser),var(--salbei) 60%,var(--oliv))}
 .woche-item{position:relative;padding-left:84px;margin-bottom:14px}
-.woche-item .punkt{position:absolute;left:0;top:14px;width:63px;height:63px;border-radius:50%;background:var(--wald);border:1px solid rgba(127,181,201,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.woche-item .punkt{position:absolute;left:0;top:14px;width:63px;height:63px;border-radius:50%;background:var(--wald);border:1px solid rgba(227,168,92,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
 .woche-item .punkt small{font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--salbei-hell)}
 .woche-item .punkt b{font-family:'Spectral',Georgia,serif;font-weight:400;font-size:24px;color:var(--hell);margin-top:3px}
 details.woche{background:var(--karte);border:1px solid var(--linie-fein);border-radius:12px;transition:border-color .2s var(--ease)}
@@ -203,7 +203,7 @@ details.woche summary:hover h3{color:#fff}
 .bonus{background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:30px}
 .bonus.gross{grid-row:span 2;background:linear-gradient(160deg,#1F2D24,#131F18 70%)}
 .bonus .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--wald);background:var(--salbei);border-radius:30px;padding:4px 12px;margin-bottom:16px}
-.bonus .icon{width:44px;height:44px;border-radius:10px;background:rgba(127,181,201,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--wasser)}
+.bonus .icon{width:44px;height:44px;border-radius:10px;background:rgba(227,168,92,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--wasser)}
 .bonus .icon svg{width:22px;height:22px}
 .bonus h3 em{color:var(--salbei)}
 .bonus .sub{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:19px;color:var(--salbei-hell);margin-bottom:10px}
@@ -211,17 +211,17 @@ details.woche summary:hover h3{color:#fff}
 
 /* VIP-Kasten */
 .vip{background:var(--tief);border-top:1px solid var(--linie-fein);border-bottom:1px solid var(--linie-fein)}
-.vip-kasten{position:relative;background:linear-gradient(165deg,#16272D 0%,#111E21 55%,#0F1A14 100%);border:1px solid rgba(127,181,201,.45);border-radius:22px;padding:64px 56px 56px;box-shadow:0 30px 80px -40px rgba(127,181,201,.35)}
+.vip-kasten{position:relative;background:linear-gradient(165deg,#2A2418 0%,#1C1A14 55%,#0F1A14 100%);border:1px solid rgba(227,168,92,.45);border-radius:22px;padding:64px 56px 56px;box-shadow:0 30px 80px -40px rgba(227,168,92,.35)}
 @media (max-width:720px){.vip-kasten{padding:48px 20px 24px;border-radius:16px}}
 .vip-marke{position:absolute;top:-15px;left:56px;background:var(--wasser);color:var(--wald);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:30px;padding:6px 16px}
 @media (max-width:720px){.vip-marke{left:20px}}
 .vip-kasten .label{color:var(--wasser)}
 .vip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
 @media (max-width:820px){.vip-grid{grid-template-columns:1fr}}
-.vip-grid .bonus{background:rgba(10,19,14,.55);border-color:rgba(127,181,201,.18)}
+.vip-grid .bonus{background:rgba(10,19,14,.55);border-color:rgba(227,168,92,.18)}
 .vip-grid .bonus .sub{color:var(--wasser)}
 .vip-grid .bonus.voll{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
-.vip-grid .bonus.haupt{background:var(--tief);border-color:rgba(127,181,201,.4)}
+.vip-grid .bonus.haupt{background:var(--tief);border-color:rgba(227,168,92,.4)}
 @media (max-width:620px){.vip-grid .bonus.voll{grid-template-columns:1fr;gap:0}}
 
 /* Vergleichstabelle */
@@ -231,7 +231,7 @@ details.woche summary:hover h3{color:#fff}
 .vergleich th,.vergleich td{padding:16px 12px;border-bottom:1px solid var(--linie-fein);vertical-align:middle;text-align:left}
 .vergleich thead th{border-bottom:1px solid var(--linie);padding-top:26px}
 .vergleich .spalte{width:130px;text-align:center}
-.vergleich .vipcol{background:rgba(127,181,201,.09)}
+.vergleich .vipcol{background:rgba(227,168,92,.09)}
 .vergleich thead .vipcol{border-top:3px solid var(--wasser);border-radius:8px 8px 0 0}
 .vergleich .kopf-leistung{font-size:12px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--salbei-hell)}
 .vergleich .paketname{display:block;font-size:20px;font-weight:600;color:var(--hell)}
@@ -285,7 +285,7 @@ details.woche summary:hover h3{color:#fff}
 .kpis span{font-size:13px;color:var(--salbei-hell);display:block;margin-top:6px;line-height:1.4}
 
 /* Schluss */
-.schluss{text-align:center;background:radial-gradient(ellipse at 50% 0,rgba(127,181,201,.12),transparent 60%),var(--tief);border-top:1px solid var(--linie-fein)}
+.schluss{text-align:center;background:radial-gradient(ellipse at 50% 0,rgba(227,168,92,.12),transparent 60%),var(--tief);border-top:1px solid var(--linie-fein)}
 .schluss .cta-reihe{justify-content:center}
 .schluss .lead{max-width:56ch;margin:0 auto}
 .kontakt{margin-top:26px;font-size:15px;color:var(--salbei-hell)}
@@ -310,8 +310,28 @@ footer a:hover{color:var(--hell)}
   .js .reveal.da{opacity:1;transform:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.schalter{display:inline-flex;background:var(--tief);border:1px solid var(--linie);border-radius:40px;padding:4px}
+.schalter button{appearance:none;border:0;background:transparent;color:var(--salbei-hell);font:600 14px 'Inter',sans-serif;padding:10px 20px;border-radius:40px;cursor:pointer;min-height:42px;transition:background-color .2s var(--ease),color .2s var(--ease)}
+.schalter button[aria-pressed="true"]{background:var(--wasser);color:var(--wald)}
+.muster.zwei{grid-template-columns:repeat(2,1fr)}
+@media (max-width:620px){.muster.zwei{grid-template-columns:1fr}}
+.gutschein-hinweis{margin-top:18px;padding:14px 18px;border:1px dashed rgba(227,168,92,.5);border-radius:10px;font-size:15px;color:var(--hell)}
+/* Tageskurve */
+.kurve{background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:28px}
+.kurve h3{font-size:22px;margin-bottom:16px}
+.kurve-kopf{font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:var(--salbei-hell);margin-bottom:6px}
+.kurve svg{width:100%;height:auto;display:block}
+.kurve .linie-k{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;transition:opacity .35s var(--ease)}
+.kurve .marke{font-family:'Inter',sans-serif;font-size:12px;fill:var(--salbei-hell)}
+.kurve .warn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#E3A85C;transition:opacity .35s var(--ease)}
+.kurve-text{min-height:92px;font-size:15.5px;margin-top:14px}
+.kurve-fuss{font-size:12.5px;color:var(--salbei-hell);margin-top:8px}
+.matrix-svg{max-width:860px;margin:0 auto}
+.legende article.fokus{border-color:rgba(227,168,92,.55);background:#2A2418}
+.bonus.einzeln{max-width:var(--schmal)}
 </style>
-<link rel="canonical" href="https://nicole-lurz.de/immun-mentoring/">
+<link rel="canonical" href="https://nicole-lurz.de/stoffwechsel-mentoring/">
 <script defer src="/js/nl-consent.js"></script>
 </head>
 <body>
@@ -330,47 +350,45 @@ footer a:hover{color:var(--hell)}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="pill"><i></i>Fokus Immunsystem · 5-Wochen-Mentoring</span>
-      <h1>Schluss mit der <em>Erkältungs-Dauerschleife.</em></h1>
-      <p class="unter">Warum Vitamine allein nicht reichen und wie du Infekte früher erkennst und gegensteuerst, bevor sie dich lahmlegen.</p>
-      <p class="lead">Du bist ständig angeschlagen. Kaum ist der eine Infekt weg, kündigt sich der nächste an. Dazwischen fehlt dir die Kraft: Die Treppe wird zur Anstrengung, der Sonntagsspaziergang fällt aus, und Termine sagst du lieber gleich ab, bevor du wieder ausfällst.</p>
-      <p class="lead">In 5 Wochen holst du dir das Steuer zurück. Du erkennst die Signale deines Körpers 48 Stunden früher, weißt genau, was du dann tust, und sorgst dafür, dass deine Abwehr wieder die Energie bekommt, die sie braucht.</p>
+      <span class="pill"><i></i>Fokus Stoffwechsel · 5-Wochen-Mentoring</span>
+      <h1>Schluss mit der <em>Stoffwechsel-Bremse.</em></h1>
+      <p class="unter">Das 5-Wochen-Mentoring für einen stabileren Blutzucker und mehr Energie bis in den Abend.</p>
+      <p class="lead">Lerne, wie du deine Zellen wieder auf „Empfang" stellst, dem Heißhunger die Macht nimmst und deinen Stoffwechsel von „Speichern" auf „Regeneration" umschaltest. Ganz ohne Kalorienzählen.</p>
       <div class="cta-reihe">
         <a class="btn btn-primaer" href="#pakete">Paket wählen, ab 199 €</a>
         <a class="btn btn-sekundaer" href="#ablauf">Die 5 Wochen ansehen</a>
       </div>
       <div class="eckdaten" role="list">
-        <div role="listitem"><b>19.10.</b><span>Start, Montag<br>18 Uhr</span></div>
-        <div role="listitem"><b>5 × live</b><span>per Zoom, je<br>60-75 Min.</span></div>
+        <div role="listitem"><b>18.11.</b><span>Start, Mittwoch<br>18 Uhr</span></div>
+        <div role="listitem"><b>5 × live</b><span>per Zoom</span></div>
         <div role="listitem"><b>inkl.</b><span>Aufzeichnung<br>aller Termine</span></div>
       </div>
       <p class="countdown" id="countdown" hidden></p>
     </div>
 
-    <aside class="ampel reveal" aria-labelledby="ampel-titel">
-      <p class="ampel-kopf">Deine Immun-Ampel</p>
-      <h3 id="ampel-titel">Was tust du, wenn es <em>losgeht?</em></h3>
-      <div class="ampel-tabs" role="tablist" aria-label="Phasen der Immun-Ampel">
-        <button class="ampel-tab" role="tab" id="tab-gruen" data-phase="gruen" aria-selected="false" aria-controls="panel-gruen" tabindex="-1"><span class="licht" aria-hidden="true"></span>Grün<br>Alltag</button>
-        <button class="ampel-tab" role="tab" id="tab-gelb" data-phase="gelb" aria-selected="true" aria-controls="panel-gelb"><span class="licht" aria-hidden="true"></span>Gelb<br>Frühsignal</button>
-        <button class="ampel-tab" role="tab" id="tab-rot" data-phase="rot" aria-selected="false" aria-controls="panel-rot" tabindex="-1"><span class="licht" aria-hidden="true"></span>Rot<br>akut</button>
+    <aside class="kurve reveal" aria-labelledby="kurve-titel">
+      <p class="kurve-kopf">Dein Tag als Kurve</p>
+      <h3 id="kurve-titel">Achterbahn <em>oder</em> stabilere Energie?</h3>
+      <div class="schalter" role="group" aria-label="Kurve wählen" style="margin-bottom:14px">
+        <button type="button" data-kurve="achter" aria-pressed="true">Achterbahn</button>
+        <button type="button" data-kurve="stabil" aria-pressed="false">Stabiler</button>
       </div>
-      <div class="ampel-panel" role="tabpanel" id="panel-gruen" data-phase="gruen" aria-labelledby="tab-gruen" hidden>
-        <p class="phase">Grün · im Alltag</p>
-        <p>Kleine Reize, große Wirkung. Mit 2-3 Wohlfühl-Ankern gibst du deinem Körper jeden Tag biologische Sicherheit, ganz ohne Zeitaufwand.</p>
-        <p class="woche"><b>Woche 4</b> Biologische Fürsorge &amp; Mikroroutinen</p>
-      </div>
-      <div class="ampel-panel" role="tabpanel" id="panel-gelb" data-phase="gelb" aria-labelledby="tab-gelb">
-        <p class="phase">Gelb · 24-48 Stunden vorher</p>
-        <p>Die Signale sind längst da, du hast nur nie gelernt, sie zu lesen. Mit deiner persönlichen Immun-Ampel steuerst du früher gegen, statt erst beim Fieber zu reagieren.</p>
-        <p class="woche"><b>Woche 2</b> Das 48-Stunden-Frühwarnsystem</p>
-      </div>
-      <div class="ampel-panel" role="tabpanel" id="panel-rot" data-phase="rot" aria-labelledby="tab-rot" hidden>
-        <p class="phase">Rot · es geht los</p>
-        <p>Deine SOS-Prozedur für Tag 1. Im Ernstfall weißt du sofort, was zu tun ist, und unterstützt die biologischen Prozesse, statt sie stur zu unterdrücken.</p>
-        <p class="woche"><b>Woche 3</b> Die naturheilkundliche Akut-Praxis</p>
-      </div>
-      <p class="ampel-fuss">Als Worksheet „Der Frühwarn-Kompass" hängt die Ampel später bei dir am Kühlschrank.</p>
+      <svg viewBox="0 0 520 250" role="img" aria-labelledby="kurve-svg-titel">
+        <title id="kurve-svg-titel">Schematische Blutzuckerkurve über einen Tag, einmal mit starken Schwankungen, einmal gleichmäßig.</title>
+        <line x1="20" y1="205" x2="505" y2="205" stroke="rgba(168,186,176,.25)"/>
+        <line x1="20" y1="125" x2="505" y2="125" stroke="rgba(168,186,176,.12)" stroke-dasharray="4 6"/>
+        <path id="k-achter" class="linie-k" stroke="#E3A85C" d="M20 135 C 40 135, 50 60, 70 55 S 95 160, 120 170 S 150 140, 165 135 C 180 130, 190 45, 210 40 S 240 175, 265 190 S 300 150, 320 140 C 335 135, 345 70, 365 65 S 395 150, 420 160 C 440 168, 455 190, 470 200 S 495 150, 505 140"/>
+        <path id="k-stabil" class="linie-k" stroke="#7AA890" style="opacity:0" d="M20 135 C 45 130, 60 105, 80 108 S 115 128, 140 128 C 165 128, 185 100, 210 102 S 245 126, 270 127 C 295 128, 330 106, 355 108 S 395 126, 420 127 C 445 128, 475 130, 505 130"/>
+        <text class="marke" x="70" y="235" text-anchor="middle">Frühstück</text>
+        <text class="marke" x="210" y="235" text-anchor="middle">Mittag</text>
+        <text class="marke" x="270" y="235" text-anchor="middle">15 Uhr</text>
+        <text class="marke" x="365" y="235" text-anchor="middle">Abend</text>
+        <text class="marke" x="470" y="235" text-anchor="middle">3 Uhr</text>
+        <text class="warn" id="w1" x="265" y="182" text-anchor="middle" dy="-0">15-Uhr-Tief</text>
+        <text class="warn" id="w2" x="470" y="190" text-anchor="end">hellwach</text>
+      </svg>
+      <p class="kurve-text" id="kurve-text" aria-live="polite"></p>
+      <p class="kurve-fuss">Schematische Darstellung, keine Messwerte.</p>
     </aside>
   </div>
 </section>
@@ -380,30 +398,29 @@ footer a:hover{color:var(--hell)}
   <div class="wrap">
     <div class="schmal reveal">
       <span class="label immun">Kennst du das?</span>
-      <h2>Jeden Winter <em>dasselbe Muster.</em></h2>
+      <h2>Wenn der Stoffwechsel <em>bremst.</em></h2>
     </div>
-    <div class="muster">
-      <article class="reveal"><span class="nr">01</span><h3>Der Vitamin-Frust</h3><p>Du schluckst brav Vitamin D, Zink und Vitamin C und liegst trotzdem alle paar Wochen wieder flach.</p></article>
-      <article class="reveal"><span class="nr">02</span><h3>Die Erkältung vom Kollegen</h3><p>Er hustet einmal, dazu ein bisschen Stress, und zwei Tage später kratzt dein Hals. Wie immer.</p></article>
-      <article class="reveal"><span class="nr">03</span><h3>Infekte, die nicht enden</h3><p>Früher hieß es einmal früh ins Bett, und zwei, drei Tage später ging es dir wieder gut. Heute zieht sich alles wie Kaugummi, gefühlt hilft nichts mehr wirklich, und du hast wochenlang damit zu tun.</p></article>
-      <article class="reveal"><span class="nr">04</span><h3>Ibu als Dauerlösung</h3><p>Du hast keine Lust mehr, ständig Ibuprofen zu schlucken, nur um irgendwie zu funktionieren. Und dein Magen beschwert sich längst.</p></article>
-      <article class="reveal"><span class="nr">05</span><h3>Alles wird schwerer</h3><p>Dazwischen bist du nie richtig fit, und selbst Treppensteigen oder ein Spaziergang kosten dich Kraft.</p></article>
-      <article class="reveal"><span class="nr">06</span><h3>Immer einen Schritt zu spät</h3><p>Du merkst es erst, wenn das Fieber da ist, weil dir das Gespür für die leisen Frühsignale fehlt.</p></article>
+    <div class="muster zwei">
+      <article class="reveal"><span class="nr">01</span><h3>Das 15-Uhr-Tief und der Nebel im Kopf</h3><p>Nach dem Essen fällt der Vorhang. Die Konzentration bricht ein, du fühlst dich wie unter Watte, und ohne Kaffee oder Süßes geht nichts mehr.</p></article>
+      <article class="reveal"><span class="nr">02</span><h3>Der „Vergebliche Mühe"-Effekt</h3><p>Du isst gefühlt immer weniger, reißt dich zusammen oder machst Sport. Und das Bauchfett bleibt.</p></article>
+      <article class="reveal"><span class="nr">03</span><h3>Das 3-Uhr-nachts-Erwachen</h3><p>Du wachst mitten in der Nacht schlagartig auf. Das Herz rast, die Gedanken kreisen, an Schlaf ist nicht mehr zu denken.</p></article>
+      <article class="reveal"><span class="nr">04</span><h3>Der Labor-Trugschluss</h3><p>Dein Arzt sagt „Der Nüchternzucker ist super", während deine Bauchspeicheldrüse im Hintergrund längst ein Vielfaches an Insulin ausschüttet, um das System am Laufen zu halten.</p></article>
     </div>
   </div>
 </section>
 
-<!-- ═══ WENDE: FEUERWEHR + MATRIX ═══ -->
+<!-- ═══ WENDE + MATRIX ═══ -->
 <section class="wende" id="matrix">
   <div class="wrap">
     <div class="feuerwehr reveal">
       <div>
-        <span class="label">Die Wahrheit aus 14 Jahren Praxiserfahrung</span>
-        <h2>Dein Immunsystem ist keine <em>isolierte Feuerwehr.</em></h2>
+        <span class="label">Die Wahrheit aus der Regenerationsmedizin</span>
+        <h2>Dein Körper ist nicht kaputt. <em>Er ist im falschen Modus.</em></h2>
       </div>
       <div>
-        <p class="zitat">Abwehr kostet Energie. Und die muss erst einmal bei deinem Immunsystem ankommen.</p>
-        <p>Man kann es nicht einfach mit einer Pille füttern. Es ist Teil einer biologischen Matrix aus Nervensystem, Stoffwechsel und Zellenergie (Mitochondrien). Wenn dein Nervensystem Dauerstress signalisiert oder dein Stoffwechsel im Energiestau steckt, nützen die besten Supplements nichts.</p>
+        <p class="zitat">Nüchternzucker ist oft der allerletzte Wert, der ansteigt.</p>
+        <p>Eine schleichende Insulinresistenz blockiert deine Fettverbrennung und raubt dir Energie, oft schon jahrelang, bevor ein Laborwert Alarm schlägt. Das ständige Auf und Ab des Blutzuckers hält dein Nervensystem im Dauerstress. Und es trifft dein Immunsystem direkt, denn deine Abwehrzellen reagieren selbst auf Insulin.</p>
+        <p style="color:var(--hell);font-weight:600">Die Folge: Du funktionierst nur noch, statt zu leben.</p>
       </div>
     </div>
 
@@ -411,95 +428,64 @@ footer a:hover{color:var(--hell)}
       <div class="matrix-kopf reveal">
         <span class="label">Meine drei Systeme</span>
         <h2>Wo deine Energie entsteht und <em>wohin sie fließt.</em></h2>
-        <p class="lead">Nervensystem und Immunsystem sind zwei egoistische Systeme, die sich denselben Energietopf teilen.</p>
       </div>
       <div class="matrix-bild reveal">
-        <svg viewBox="0 0 760 380" role="img" aria-labelledby="m-svg-titel">
-          <title id="m-svg-titel">In der Zelle entsteht Energie, der Stoffwechsel verteilt sie, und Immunsystem und Nervensystem teilen sich diesen einen Energietopf.</title>
-          <defs>
-            <marker id="spitze" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#E3A85C"/></marker>
-          </defs>
-          <!-- Zelle -->
-          <circle class="m-kreis" cx="100" cy="190" r="80" fill="#0F1A14" stroke="#CDD9CF" stroke-width="1.5"/>
+        <svg class="matrix-svg" viewBox="0 0 760 380" role="img" aria-labelledby="m-svg-titel">
+          <title id="m-svg-titel">In der Zelle entsteht Energie, der Stoffwechsel verteilt sie an Immunsystem und Nervensystem. Insulin wirkt direkt auf die Abwehr.</title>
+          <defs><marker id="spitze" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#E3A85C"/></marker></defs>
+          <circle cx="100" cy="190" r="80" fill="#0F1A14" stroke="#CDD9CF" stroke-width="1.5"/>
           <ellipse cx="100" cy="175" rx="42" ry="20" fill="rgba(227,168,92,.22)" stroke="#E3A85C" stroke-width="2" transform="rotate(-12 100 175)"/>
           <path d="M66 180 l8 -14 l8 16 l8 -16 l8 16 l8 -16 l8 16 l8 -14" fill="none" stroke="#E3A85C" stroke-width="2" stroke-linejoin="round" transform="rotate(-12 100 175)"/>
           <text class="m-titel" x="100" y="300">Zelle</text>
           <text class="m-sub" x="100" y="324">Mitochondrien: Energie entsteht</text>
-          <!-- Energie zum Stoffwechsel -->
           <text x="236" y="176" font-family="Inter" font-size="12" font-weight="600" letter-spacing="2" fill="#A8BAB0" text-anchor="middle">ENERGIE</text>
           <line class="m-pfeil" x1="192" y1="190" x2="270" y2="190" stroke-width="5" marker-end="url(#spitze)"/>
-          <!-- Stoffwechsel = Energietopf -->
-          <circle class="m-kreis" cx="370" cy="190" r="88" fill="rgba(227,168,92,.10)" stroke="#E3A85C"/>
-          <text class="m-titel" x="370" y="186">Stoffwechsel</text>
-          <text class="m-sub" x="370" y="210">verteilt die Energie</text>
-          <text x="370" y="318" font-family="Spectral, Georgia, serif" font-style="italic" font-size="17" fill="#E3A85C" text-anchor="middle">ein Energietopf</text>
-          <!-- Zwei Abzweige -->
-          <path id="p-immun" class="m-pfeil" d="M456 168 L 570 112" stroke-width="7" marker-end="url(#spitze)"/>
-          <path id="f-immun" class="m-fluss" d="M456 168 L 570 112" stroke-width="7"/>
-          <path id="p-nerven" class="m-pfeil" d="M456 212 L 570 268" stroke-width="7" marker-end="url(#spitze)"/>
-          <path id="f-nerven" class="m-fluss" d="M456 212 L 570 268" stroke-width="7"/>
-          <text x="470" y="96" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16" fill="#A8BAB0" text-anchor="middle">Ohne Energie</text>
-          <text x="470" y="116" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16" fill="#A8BAB0" text-anchor="middle">keine Abwehr</text>
-          <!-- Immunsystem -->
-          <g id="k-immun">
-            <circle cx="650" cy="90" r="80" fill="none" stroke="#7FB5C9" stroke-width="1" stroke-dasharray="4 5" opacity=".7"/>
-            <circle class="m-kreis" cx="650" cy="90" r="68" fill="rgba(127,181,201,.14)" stroke="#7FB5C9" stroke-width="3"/>
-            <text class="m-titel" x="650" y="84">Immunsystem</text>
-            <text class="m-sub" x="650" y="106">Abwehr</text>
-            <rect x="618" y="118" width="64" height="20" rx="4" fill="#4E8FA8"/>
-            <text x="650" y="132" font-family="Inter" font-size="10.5" font-weight="600" letter-spacing="1.6" fill="#E8F0E8" text-anchor="middle">FOKUS</text>
-          </g>
-          <!-- Nervensystem -->
-          <g id="k-nerven">
-            <circle class="m-kreis" cx="650" cy="292" r="64" fill="rgba(122,168,144,.14)" stroke="#7AA890"/>
-            <text class="m-titel" x="650" y="290">Nervensystem</text>
-            <text class="m-sub" x="650" y="312">Steuerung</text>
-          </g>
+          <circle cx="370" cy="190" r="100" fill="none" stroke="#E3A85C" stroke-width="1" stroke-dasharray="4 5" opacity=".7"/>
+          <circle cx="370" cy="190" r="88" fill="rgba(227,168,92,.16)" stroke="#E3A85C" stroke-width="3"/>
+          <text class="m-titel" x="370" y="178">Stoffwechsel</text>
+          <text class="m-sub" x="370" y="202">verteilt die Energie</text>
+          <rect x="338" y="216" width="64" height="20" rx="4" fill="#B8662E"/>
+          <text x="370" y="230" font-family="Inter" font-size="10.5" font-weight="600" letter-spacing="1.6" fill="#E8F0E8" text-anchor="middle">FOKUS</text>
+          <path class="m-pfeil" d="M462 160 L 564 112" stroke-width="5" marker-end="url(#spitze)"/>
+          <path class="m-pfeil" d="M462 220 L 564 268" stroke-width="5" marker-end="url(#spitze)"/>
+          <text x="500" y="88" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16" fill="#A8BAB0" text-anchor="middle">Insulin wirkt direkt</text>
+          <text x="500" y="108" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16" fill="#A8BAB0" text-anchor="middle">auf deine Abwehr</text>
+          <circle cx="650" cy="90" r="72" fill="rgba(127,181,201,.12)" stroke="#7FB5C9" stroke-width="2"/>
+          <text class="m-titel" x="650" y="88">Immunsystem</text>
+          <text class="m-sub" x="650" y="110">Abwehr</text>
+          <circle cx="650" cy="292" r="72" fill="rgba(122,168,144,.14)" stroke="#7AA890" stroke-width="2"/>
+          <text class="m-titel" x="650" y="290">Nervensystem</text>
+          <text class="m-sub" x="650" y="312">Steuerung</text>
         </svg>
-        <div class="regler">
-          <label for="stress">Dein Nervensystem</label>
-          <span>ruhig</span>
-          <input type="range" id="stress" min="0" max="100" value="20" aria-describedby="regler-text">
-          <span>Dauerstress</span>
-        </div>
-        <p class="regler-text" id="regler-text" aria-live="polite">Dein Nervensystem ist ruhig. Aus dem gemeinsamen Topf bleibt genug Energie für deine Abwehr.</p>
       </div>
       <div class="legende">
         <article class="reveal"><h3><i style="background:#E3A85C"></i>Zelle</h3><p>In den Mitochondrien entsteht deine Energie.</p></article>
-        <article class="reveal"><h3><i style="background:#D97B3F"></i>Stoffwechsel</h3><p>Verteilt die Energie. Steckt er im Energiestau, kommt bei der Abwehr zu wenig an.</p></article>
-        <article class="reveal fokus"><h3><i style="background:#7FB5C9"></i>Immunsystem</h3><p>Abwehr kostet Energie. Hier setzen die 5 Wochen an.</p></article>
-        <article class="reveal"><h3><i style="background:#7AA890"></i>Nervensystem</h3><p>Dauerstress zieht Energie ab, die deiner Abwehr dann fehlt.</p></article>
+        <article class="reveal fokus"><h3><i style="background:#D97B3F"></i>Stoffwechsel</h3><p>Verteilt die Energie. Insulin entscheidet mit, wohin sie geht. Hier setzen die 5 Wochen an.</p></article>
+        <article class="reveal"><h3><i style="background:#7FB5C9"></i>Immunsystem</h3><p>Abwehr kostet viel Energie und reagiert direkt auf Insulin.</p></article>
+        <article class="reveal"><h3><i style="background:#7AA890"></i>Nervensystem</h3><p>Stress treibt den Blutzucker hoch, auch wenn du nichts isst.</p></article>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ WAS DU DAVON HAST ═══ -->
+<!-- ═══ NUTZEN ═══ -->
 <section id="nutzen">
   <div class="wrap">
     <div class="schmal reveal">
       <span class="label immun">Deine Veränderung in 5 Wochen</span>
-      <h2>Schluss mit Ausfallen. <em>Du steuerst wieder.</em></h2>
-      <p class="lead leise">Darauf arbeiten wir in den 5 Wochen hin:</p>
+      <h2>Vom Funktionieren zurück zu <em>stabilerer Energie.</em></h2>
+      <p class="lead leise">Wir drehen den Spieß um. In 5 Wochen lernst du die Sprache deines Stoffwechsels und bekommst die Werkzeuge, mit denen du ihn im Alltag steuerst.</p>
     </div>
     <div class="statt">
-      <article class="reveal">
-        <div class="vorher">Statt Flachliegen</div>
-        <div class="nachher"><h3>Der 48-Stunden-<em>Vorsprung</em></h3><p>Du spürst die ersten Signale zwei Tage, bevor es dich erwischt, und weißt sofort, was zu tun ist. Statt abzuwarten, bis du im Bett liegst, steuerst du rechtzeitig gegen.</p></div>
-      </article>
-      <article class="reveal">
-        <div class="vorher">Statt Dauer-Erschöpfung</div>
-        <div class="nachher"><h3>Energie, die bei dir <em>ankommt</em></h3><p>Du weißt, wo dein Körper gerade Energie verliert, und drehst den Hahn zu. Damit Treppe, Spaziergang und Arbeitstag wieder Kraft geben, statt Kraft zu kosten.</p></div>
-      </article>
-      <article class="reveal">
-        <div class="vorher">Statt Ibu und Hoffen</div>
-        <div class="nachher"><h3>Dein eigener <em>Plan</em></h3><p>Du hast deinen SOS-Plan für Tag 1 und einfache Routinen aus der Naturheilkunde, auf die du dich verlassen kannst. Statt nur zur Tablette zu greifen, weißt du, was du selbst tun kannst.</p></div>
-      </article>
+      <article class="reveal"><div class="vorher">Statt Verzicht</div><div class="nachher"><h3>Echte <em>Sättigung</em></h3><p>Du stellst deinen inneren Sättigungsregler (den Appestat) so ein, dass der Heißhunger seine Macht verliert. Essen macht wieder Freude, ohne schlechtes Gewissen.</p></div></article>
+      <article class="reveal"><div class="vorher">Statt 15-Uhr-Loch</div><div class="nachher"><h3>Stabilere <em>Energie</em></h3><p>Du weißt, welche Mahlzeit dich müde macht und welche dich wach hält. Deinen Nachmittag planst du wieder, statt ihn zu überstehen.</p></div></article>
+      <article class="reveal"><div class="vorher">Statt 3 Uhr hellwach</div><div class="nachher"><h3>Ruhigere <em>Nächte</em></h3><p>Du verstehst, warum ein absackender Blutzucker dich nachts weckt, und hast Werkzeuge, damit dein Körper nachts nicht in den Stressmodus kippt.</p></div></article>
+      <article class="reveal"><div class="vorher">Statt Speicher-Modus</div><div class="nachher"><h3>Zugang zu deinen <em>Reserven</em></h3><p>Wenn der Insulin-Schlüssel wieder passt, kann dein Körper an seine eigenen Fettreserven heran. Genau dort setzen wir an.</p></div></article>
     </div>
     <div class="termin-aufbau reveal" aria-label="So ist jeder Termin aufgebaut">
-      <div><b>Wissen</b><span>einfache Erklärungsmodelle</span></div>
-      <div><b>Erleben</b><span>direkt im eigenen Körper spüren</span></div>
-      <div><b>Integrieren</b><span>konkrete Schritte für deinen Alltag</span></div>
+      <div><b>Wissen</b><span>kurz und auf den Punkt</span></div>
+      <div><b>Erleben</b><span>sofort im eigenen Körper spüren</span></div>
+      <div><b>Integrieren</b><span>leicht in deinen Alltag übernehmen</span></div>
     </div>
   </div>
 </section>
@@ -508,79 +494,69 @@ footer a:hover{color:var(--hell)}
 <section class="wende" id="ablauf">
   <div class="wrap">
     <div class="schmal reveal">
-      <span class="label">Der Ablauf · montags, 18 Uhr</span>
-      <h2>5 Wochen von der Erkenntnis <em>zur Routine.</em></h2>
-      <p class="lead leise">Jeder Termin 60-75 Minuten, live per Zoom, mit Aufzeichnung. Wenn du einen Montag nicht kannst, schaust du ihn nach.</p>
+      <span class="label">Der Ablauf · mittwochs, 18 Uhr</span>
+      <h2>5 Wochen zu <em>stabilerer Energie.</em></h2>
+      <p class="lead leise">Live per Zoom, mit Aufzeichnung. Wenn du einen Mittwoch nicht kannst, schaust du ihn nach.</p>
     </div>
     <div class="wochen schmal">
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>01</b></div>
         <details class="woche" open>
-          <summary><span class="datum">Mo 19.10.</span><h3>Die Immun-Matrix durchschauen</h3><span class="frage">Warum liege ich trotz Vitaminen ständig flach?</span></summary>
-          <div class="inhalt"><p>Warum Vitamine allein nicht reichen und wo dein Fass gerade Energie verliert.</p>
-          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Ein erstes Gespür für dein Nervensystem, um zu erkennen, was deine Abwehr wirklich schwächt.</p></div></div>
+          <summary><span class="datum">Mi 18.11.</span><h3>Der Blutzucker-Code und das Ende des 15-Uhr-Tiefs</h3><span class="frage">Warum bin ich so müde, und wie lege ich den Schalter um?</span></summary>
+          <div class="inhalt"><p>Das Geheimnis der 5 Gramm: In deinem gesamten Blut zirkuliert nur etwa ein Teelöffel Zucker. Du erfährst, warum die Reihenfolge auf deinem Teller deine Blutzuckerkurve deutlich flacher macht, ohne dass du weniger isst. Oft darfst du sogar mehr essen.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Kleine Änderung, große Wirkung: deine ersten Routinen für einen Blutzucker-Reset, um deinen Nachmittag wieder selbst in der Hand zu haben.</p></div></div>
         </details>
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>02</b></div>
         <details class="woche">
-          <summary><span class="datum">Mo 26.10.</span><h3>Das 48-Stunden-Frühwarnsystem</h3><span class="frage">Was dein Körper dir sagt, bevor es im Hals kratzt.</span></summary>
-          <div class="inhalt"><p>Was in deinem Körper 24-48 Stunden vor dem ersten Halskratzen passiert. Die Signale sind da, du hast nur nie gelernt, sie zu lesen.</p>
-          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Deine persönliche Immun-Ampel, um früher gegenzusteuern, statt erst beim Fieber zu reagieren.</p></div></div>
+          <summary><span class="datum">Mi 25.11.</span><h3>Der Muskel als Zucker-Schwamm</h3><span class="frage">Wie du Kohlenhydrate wieder genießt, ohne Blutzucker-Achterbahn.</span></summary>
+          <div class="inhalt"><p>Deine Muskeln haben eine Superkraft: Sie holen Zucker aus dem Blut, ganz ohne Insulin. Wir probieren gemeinsam aus, wie wenig dafür nötig ist.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Einen einfachen Handgriff vor dem Essen, um Kohlenhydrate wieder zu genießen, statt sie zu fürchten.</p></div></div>
         </details>
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>03</b></div>
         <details class="woche">
-          <summary><span class="datum">Mo 02.11.</span><h3>Die naturheilkundliche Akut-Praxis &amp; Immun-Training</h3><span class="frage">Was tun, wenn es losgeht?</span></summary>
-          <div class="inhalt"><p>Was die Naturheilkunde in Phase Gelb und Rot kann und wie du biologische Prozesse unterstützt, statt sie stur zu unterdrücken.</p>
-          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Deine SOS-Prozedur für Tag 1, um im Ernstfall sofort zu wissen, was zu tun ist.</p></div></div>
+          <summary><span class="datum">Mi 02.12.</span><h3>Das Sättigungs-Geheimnis (Appestat-Reset)</h3><span class="frage">Warum Snack-Pausen keine Disziplin brauchen.</span></summary>
+          <div class="inhalt"><p>Warum ständiges Snacken deine Fettverbrennung ausbremst und woran du echten Zellhunger von Kopf-Hunger unterscheidest.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Ein neues Gespür für Hunger, um stundenlang satt zu bleiben, ohne dich mit Willenskraft durchzubeißen.</p></div></div>
         </details>
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>04</b></div>
         <details class="woche">
-          <summary><span class="datum">Mo 09.11.</span><h3>Biologische Fürsorge &amp; Mikroroutinen</h3><span class="frage">Kleine Reize, große Wirkung.</span></summary>
-          <div class="inhalt"><p>Warum die Regulation deines Nervensystems dein stärkster Hebel für die Abwehr ist und wie kleine Reize ganz ohne Zeitaufwand wirken.</p>
-          <div class="mitnehmen"><small>Das nimmst du mit</small><p>2-3 Wohlfühl-Anker, um deinem Körper jeden Tag biologische Sicherheit zu geben.</p></div></div>
+          <summary><span class="datum">Mi 09.12.</span><h3>Die Stress-Falle und der 3-Uhr-nachts-Effekt</h3><span class="frage">Wie Sorgen, Schlaf und Blutzucker zusammenhängen.</span></summary>
+          <div class="inhalt"><p>Cortisol treibt den Blutzucker hoch, selbst wenn du nichts isst. Du erfährst, was das mit deinem 3-Uhr-Erwachen und deinem Bauchfett zu tun hat.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Einen 3-Minuten-Anker, um abends leichter vom Stressmodus in Richtung Ruhe und Reparatur umzuschalten.</p></div></div>
         </details>
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>05</b></div>
         <details class="woche">
-          <summary><span class="datum">Mo 16.11.</span><h3>Dein individueller Winter-Schutzschild</h3><span class="frage">Wie bleibt das, wenn der Alltag zurückkommt?</span></summary>
-          <div class="inhalt"><p>Wie du deinen Fahrplan auch bei Stress, Beruf und Familie durchhältst und dein Immunsystem als Ganzjahres-Partner verstehst.</p>
-          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Dein persönliches Winter-Workbook mit Notfallplan, um gelassen in die Erkältungszeit zu gehen.</p></div></div>
+          <summary><span class="datum">Mi 16.12.</span><h3>Dein Stoffwechsel-Flow: Freiheit statt Regeln</h3><span class="frage">Wie du metabolische Flexibilität aufbaust und behältst.</span></summary>
+          <div class="inhalt"><p>Die Königsdisziplin: wie dein Körper mühelos zwischen Zucker- und Fettverbrennung hin- und herschaltet.</p>
+          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Deinen persönlichen Stoffwechsel-Fahrplan, um Einladungen, Urlaub und Feste zu genießen, ohne in alte Muster zurückzufallen.</p></div></div>
         </details>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ BONI FÜR ALLE ═══ -->
+<!-- ═══ BONUS ═══ -->
 <section id="boni">
   <div class="wrap">
     <div class="schmal reveal">
       <span class="label immun">Für alle Teilnehmerinnen</span>
       <h2>Damit es im Alltag <em>leicht bleibt.</em></h2>
     </div>
-    <div class="boni">
-      <article class="bonus gross reveal">
+    <div style="margin-top:40px">
+      <article class="bonus gross einzeln reveal">
         <span class="tag">Inklusive</span>
         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><path d="M6 17h12"/></svg></div>
         <h3>Dein KI-Küchen-<em>Coach</em></h3>
         <p class="sub">Null Denkaufwand nach Feierabend.</p>
         <p>Du tippst ein, was im Kühlschrank ist und wie viel Zeit du hast. Dein Coach schlägt dir in Sekunden vitalstoffreiche Gerichte vor, abgestimmt auf Stoffwechsel und Immunsystem. In 15-20 Minuten auf dem Teller.</p>
-      </article>
-      <article class="bonus reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></div>
-        <h3>Worksheet „Der Frühwarn-Kompass"</h3>
-        <p>Für den Kühlschrank: Was tun bei Grün (Alltag), Gelb (Frühsignal 24-48 Stunden vor dem Infekt) und Rot (akut)?</p>
-      </article>
-      <article class="bonus reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <h3>Guide „10 Micro-Habits für den Biologie-Check"</h3>
-        <p>Alltags-Impulse (Vagusnerv-Stimulation, Atem-Anker, Kälte und Wärme), die deine Zellenergie täglich unterstützen.</p>
       </article>
     </div>
   </div>
@@ -593,29 +569,29 @@ footer a:hover{color:var(--hell)}
     <span class="vip-marke">VIP-Paket</span>
     <div class="schmal reveal" style="margin-left:0">
       <span class="label immun">Exklusiv im VIP-Paket · max. 5 Plätze</span>
-      <h2>Dein persönlicher Blick <em>auf deine Abwehr.</em></h2>
-      <p class="lead leise">In der Gruppe lernst du das System kennen, und im VIP-Paket schauen wir zusätzlich auf dein eigenes Muster.</p>
+      <h2>Präzision statt <em>Rätselraten.</em></h2>
+      <p class="lead leise">Die VIP-Plätze sind auf 5 begrenzt, damit die 1:1-Begleitung intensiv bleibt.</p>
     </div>
     <div class="vip-grid">
       <article class="bonus voll haupt reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <div>
-          <h3>1:1 Fokus-Analyse Immunsystem <span class="leise" style="font-weight:400">(45 Min. Zoom)</span></h3>
-          <p class="sub">Wo deine Abwehr wirklich Energie verliert.</p>
-          <p>Wir schauen gezielt auf deine Infekt-Historie, deine Barrieren und deine Immun-Flaschenhälse. Du gehst mit einem klaren Bild deines eigenen Musters aus dem Gespräch.</p>
+          <h3>Blutzucker-Sensor FreeStyle Libre 3, inkl. Versand</h3>
+          <p class="sub">Schluss mit Rätselraten.</p>
+          <p>14 Tage lang siehst du live auf deinem Smartphone, welches Essen dir Energie gibt und welche vermeintlich gesunden Lebensmittel dich ausbremsen. Ein Spiegel deines Stoffwechsels, der dir jahrelange Diät-Experimente erspart.</p>
         </div>
       </article>
       <article class="bonus reveal">
-        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg></div>
-        <h3>Supplement-Audit &amp; Mikronährstoff-Guide</h3>
-        <p class="sub">Ordnung im Kapselschrank.</p>
-        <p>Ganz ohne Termin: Du schickst mir deine Liste oder Fotos deiner Supplements und bekommst meine persönliche Einschätzung und Empfehlung. Was nützt, was belastet und was dein Fundament ist.</p>
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg></div>
+        <h3>1:1 Auswertungsgespräch (45 Min.)</h3>
+        <p class="sub">Deine persönliche Landkarte.</p>
+        <p>Während der 14 Tage füllst du einen kurzen Fragebogen aus und schickst ihn mir vorab. So kenne ich deine Kurven und deinen Alltag schon vor dem Gespräch. Gemeinsam übersetzen wir deine Messdaten auf dein Leben, und du gehst mit den 2-3 Stellschrauben raus, die bei dir den größten Unterschied machen.</p>
       </article>
       <article class="bonus reveal">
         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6.5L4 19a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3L15 8.5V2"/><path d="M8 2h8M6.5 15h11"/></svg></div>
-        <h3>Labor-Checkliste „Regenerationsfähigkeit"</h3>
+        <h3>Labor-Checkliste „Metabolische Gesundheit"</h3>
         <p class="sub">Augenhöhe beim Arzt.</p>
-        <p>Du weißt, was du beim Arzt anfragen kannst, um ein vollständiges Bild deiner Abwehr zu bekommen.</p>
+        <p>Du weißt, welche Werte für deinen Stoffwechsel wirklich zählen, und gehst nicht mehr mit einem „Blutzucker ist okay" nach Hause.</p>
       </article>
       <article class="bonus voll reveal">
         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
@@ -636,7 +612,7 @@ footer a:hover{color:var(--hell)}
     <div class="schmal reveal" style="text-align:center">
       <span class="label immun">Wähle dein Paket</span>
       <h2>Basis <em>oder</em> VIP.</h2>
-      <p class="lead leise">Start am Montag, 19.10.2026, um 18 Uhr. Du zahlst bequem per Kreditkarte oder PayPal.</p>
+      <p class="lead leise">Start am Mittwoch, 18.11.2026, um 18 Uhr. Du zahlst bequem per Kreditkarte oder PayPal.</p>
     </div>
     <div class="vergleich-box reveal">
       <table class="vergleich">
@@ -645,23 +621,23 @@ footer a:hover{color:var(--hell)}
           <tr><th scope="col" class="kopf-leistung">Leistung</th><th scope="col" class="spalte"><span class="paketname">Basis</span><span class="paketsub">Mentoring</span></th><th scope="col" class="spalte vipcol"><span class="paketname">VIP</span><span class="paketsub">Exklusiv</span></th></tr>
         </thead>
         <tbody>
-          <tr><td class="leistung">5 Live-Termine in der Gruppe per Zoom<small>montags 18 Uhr ab 19.10.2026, je 60-75 Min., inkl. Aufzeichnungen</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung">5 Live-Termine in der Gruppe per Zoom<small>mittwochs 18 Uhr ab 18.11.2026, inkl. Aufzeichnungen</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung">Zugang zur Gruppen-Community und zum Chat</td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung">KI-Küchen-Coach<small>Rezepte aus deinem Kühlschrank, in 15-20 Minuten auf dem Teller</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
-          <tr><td class="leistung">Frühwarn-Kompass und 10 Micro-Habits<small>Worksheet und Guide</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
-          <tr><td class="leistung nur-vip">1:1 Fokus-Analyse Immunsystem<small>45 Min. Zoom: Infekt-Historie, Barrieren und Immun-Flaschenhälse</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
-          <tr><td class="leistung nur-vip">Supplement-Audit &amp; Mikronährstoff-Guide<small>du schickst Liste oder Fotos, ich gebe dir meine Einschätzung und Empfehlung</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
-          <tr><td class="leistung">Labor-Checkliste „Regenerationsfähigkeit"<small>damit du beim Arzt die richtigen Fragen stellst</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung nur-vip">1 FreeStyle Libre 3 Blutzuckersensor<small>direkt zu dir nach Hause, 14 Tage Live-Messung</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung nur-vip">45 Min. 1:1 Auswertungsgespräch mit Nicole<small>inkl. Fragebogen zu deinen 14 Messtagen, vorab von mir gesichtet</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung">Labor-Checkliste „Metabolische Gesundheit"<small>damit du beim Arzt die richtigen Fragen stellst</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung">1:1 WhatsApp-Support<small>für deine Fragen während der 5 Wochen</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr class="zeile-plaetze"><td>Plätze</td><td class="spalte" style="font-weight:400">regulär</td><td class="spalte vipcol">max. 5</td></tr>
-          <tr class="zeile-preis"><td class="leistung">Deine Investition</td><td class="spalte"><span class="preis">199 €</span></td><td class="spalte vipcol"><span class="preis">490 €</span></td></tr>
+          <tr class="zeile-preis"><td class="leistung">Deine Investition</td><td class="spalte"><span class="preis">199 €</span></td><td class="spalte vipcol"><span class="preis">529 €</span></td></tr>
         </tbody>
       </table>
       <div class="vergleich-cta">
-        <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/">Basis für 199 € buchen</a>
-        <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/" aria-describedby="vip-hinweis-tc">VIP für 490 € buchen</a>
+        <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/">Basis für 199 € buchen</a>
+        <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/" aria-describedby="vip-hinweis-tc">VIP für 529 € buchen</a>
       </div>
       <p class="tc-hinweis" id="vip-hinweis-tc">Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade.</p>
+      <p class="gutschein-hinweis">Und wenn du schon das Immun-Mentoring gebucht hast, gibst du im Checkout deinen individuellen Gutscheincode ein.</p>
     </div>
   </div>
 </section>
@@ -673,7 +649,7 @@ footer a:hover{color:var(--hell)}
     <div class="reveal">
       <span class="label">Wer dich durch die 5 Wochen führt</span>
       <h2>Ich sehe nicht nur Symptome. <em>Ich sehe Systeme.</em></h2>
-      <p>Ich bin Nicole Lurz, Heilpraktikerin mit eigener Praxis in Wiesloch und zertifizierte Mentorin für Regenerative Medizin &amp; Chronische Gesundheit am Mojo-Institut. In der Praxis erlebe ich jeden Herbst, wie Frauen mit der dritten Vitamin-Packung im Schrank trotzdem wieder flachliegen. Und eigentlich fragt kaum jemand, wo die Energie für die Abwehr überhaupt herkommen soll. Genau da setze ich in diesen 5 Wochen an.</p>
+      <p>Ich bin Nicole Lurz, Heilpraktikerin mit eigener Praxis in Wiesloch und zertifizierte Mentorin für Regenerative Medizin &amp; Chronische Gesundheit am Mojo-Institut. In der Praxis sehe ich seit Jahren, wie eng Blutzucker, Stress und Energie zusammenhängen, und wie oft das niemandem auffällt, solange der Nüchternzucker im grünen Bereich ist.</p>
       <div class="kpis">
         <div><b>14</b><span>Jahre Heilpraxis</span></div>
         <div><b>1.500+</b><span>Klientinnen begleitet</span></div>
@@ -691,11 +667,10 @@ footer a:hover{color:var(--hell)}
       <h2>Bevor du <em>buchst.</em></h2>
     </div>
     <div class="faq reveal">
-      <details><summary>Was ist, wenn ich montags um 18 Uhr nicht kann?</summary><p>Jeder Termin wird aufgezeichnet. Du kannst also nachschauen, wann es bei dir passt. Live dabei zu sein lohnt sich trotzdem, weil wir im Teil „Erleben" direkt im eigenen Körper spüren, worum es geht.</p></details>
+      <details><summary>Was ist, wenn ich mittwochs um 18 Uhr nicht kann?</summary><p>Jeder Termin wird aufgezeichnet. Du kannst also nachschauen, wann es bei dir passt. Live dabei zu sein lohnt sich trotzdem, weil wir im Teil „Erleben" direkt im eigenen Körper ausprobieren, worum es geht.</p></details>
+      <details><summary>Muss ich Kalorien zählen oder auf etwas verzichten?</summary><p>Nein, ganz ohne Kalorienzählen. In Woche 1 erfährst du, warum die Reihenfolge auf deinem Teller deine Blutzuckerkurve flacher macht, ohne dass du weniger isst.</p></details>
       <details><summary>Wie läuft die Anmeldung?</summary><p>Du klickst auf den Button zu deinem Paket und kommst in den Checkout. Dort zahlst du per Kreditkarte oder PayPal. Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade. Direkt danach siehst du deine nächsten Schritte und den Zoom-Link.</p></details>
-      <details><summary>Ist der Supplement-Audit ein eigener Termin?</summary><p>Nein, ganz ohne Termin. Du schickst mir deine Liste oder Fotos deiner Präparate und bekommst meine persönliche Einschätzung und Empfehlung.</p></details>
-      <details><summary>Kann ich im VIP-Paket per WhatsApp schreiben, wenn ich gerade einen Infekt habe?</summary><p>Der WhatsApp-Support ist für deine Fragen während der 5 Wochen gedacht, er ersetzt keine Akut-Beratung. Wenn es dich erwischt hat, ist dein Arzt oder dein Heilpraktiker vor Ort die richtige Adresse.</p></details>
-      <details><summary>Was passiert nach den 5 Wochen?</summary><p>Am 18.11.2026 startet das Stoffwechsel-Mentoring, das nahtlos anschließt.</p></details>
+      <details><summary>Wie kommt der Sensor im VIP-Paket zu mir?</summary><p>Der FreeStyle Libre 3 kommt direkt zu dir nach Hause. Nach der Buchung schickst du mir deine Postadresse, dann geht er raus.</p></details>
       <details><summary>Ist das eine Behandlung?</summary><p>Nein. Das Mentoring vermittelt biologisches Wissen und hilft dir, deinen Alltag bewusster zu gestalten. Es ersetzt keine Diagnostik und keine Behandlung beim Arzt oder Heilpraktiker.</p></details>
     </div>
   </div>
@@ -705,16 +680,16 @@ footer a:hover{color:var(--hell)}
 <section class="schluss" id="start">
   <div class="wrap">
     <div class="reveal">
-      <span class="label immun">Bereit für den Winter?</span>
+      <span class="label immun">Bereit, den Schalter umzulegen?</span>
       <h2>Sichere dir <em>deinen Platz.</em></h2>
-      <p class="lead">Start am Montag, 19.10.2026, um 18 Uhr, live per Zoom und mit Aufzeichnung. Die VIP-Plätze sind auf 5 begrenzt.</p>
+      <p class="lead">Start am Mittwoch, 18.11.2026, um 18 Uhr, live per Zoom und mit Aufzeichnung. Die VIP-Plätze sind auf 5 begrenzt, damit die 1:1-Begleitung intensiv bleibt.</p>
       <div class="cta-reihe">
-        <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/">Basis für 199 € buchen</a>
-        <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/" aria-describedby="vip-hinweis-tc2">VIP für 490 € buchen</a>
+        <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/">Basis für 199 € buchen</a>
+        <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/" aria-describedby="vip-hinweis-tc2">VIP für 529 € buchen</a>
       </div>
       <p class="tc-hinweis" id="vip-hinweis-tc2" style="text-align:center">Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade.</p>
       <p class="kontakt">Du hast vorher noch eine Frage?
-        <a href="https://wa.me/491799383238?text=Hallo%20Nicole%2C%20ich%20habe%20eine%20Frage%20zum%20Immunkurs" target="_blank" rel="noopener">Schreib mir über WhatsApp</a> oder per E-Mail an <a href="mailto:office@nicole-lurz.com">office@nicole-lurz.com</a>.</p>
+        <a href="https://wa.me/491799383238?text=Hallo%20Nicole%2C%20ich%20habe%20eine%20Frage%20zum%20Stoffwechselkurs" target="_blank" rel="noopener">Schreib mir über WhatsApp</a> oder per E-Mail an <a href="mailto:office@nicole-lurz.com">office@nicole-lurz.com</a>.</p>
     </div>
     <p class="recht"><b style="color:var(--hell);font-weight:600">Rechtlicher Hinweis und Transparenz:</b> Dieses Programm vermittelt biologisches Wissen und unterstützt dich dabei, deinen Alltag bewusster und gesünder zu gestalten. Es beinhaltet keine Diagnostik oder Heilbehandlung im Sinne einer individuellen Krankenbehandlung und ersetzt nicht die Konsultation eines Arztes oder Heilpraktikers.</p>
   </div>
@@ -724,51 +699,38 @@ footer a:hover{color:var(--hell)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Nicole Lurz · Immun-Mentoring</span>
+    <span>© 2026 Nicole Lurz · Stoffwechsel-Mentoring</span>
     <span><a href="https://nicole-lurz.de/impressum/">Impressum</a><a href="https://nicole-lurz.de/datenschutz/">Datenschutz</a><a href="#" data-nl-consent-open>Cookie-Einstellungen</a></span>
   </div>
 </footer>
 
 <div class="leiste" id="leiste" aria-hidden="true">
-  <p><b>Start Mo 19.10. · 18 Uhr</b>Basis 199 € · VIP 490 €</p>
+  <p><b>Start Mi 18.11. · 18 Uhr</b>Basis 199 € · VIP 529 €</p>
   <a class="btn btn-primaer" href="#pakete" tabindex="-1">Platz sichern</a>
 </div>
 
 <script>
 (function(){
-  /* Ampel-Tabs */
-  var tabs=[].slice.call(document.querySelectorAll('.ampel-tab'));
-  function waehle(t,fokus){
-    tabs.forEach(function(x){var an=x===t;x.setAttribute('aria-selected',an);x.tabIndex=an?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!an});
-    if(fokus)t.focus();
+  .gutschein-hinweis{margin-top:18px;padding:14px 18px;border:1px dashed rgba(227,168,92,.5);border-radius:10px;font-size:15px;color:var(--hell)}
+/* Tageskurve */
+  var texte={
+    achter:'Nach dem Essen fällt der Vorhang. Die Konzentration bricht ein, und ohne Kaffee oder Süßes geht nichts mehr. Nachts sackt der Blutzucker ab, und du bist um 3 Uhr hellwach.',
+    stabil:'Du weißt, welche Mahlzeit dich müde macht und welche dich wach hält. Deinen Nachmittag planst du wieder, statt ihn zu überstehen.'
+  };
+  var kb=[].slice.call(document.querySelectorAll('[data-kurve]')),kt=document.getElementById('kurve-text');
+  function kurve(w){
+    kb.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-kurve')===w)});
+    document.getElementById('k-achter').style.opacity=w==='achter'?1:.12;
+    document.getElementById('k-stabil').style.opacity=w==='stabil'?1:0;
+    document.getElementById('w1').style.opacity=document.getElementById('w2').style.opacity=w==='achter'?1:0;
+    kt.textContent=texte[w];
   }
-  tabs.forEach(function(t,i){
-    t.addEventListener('click',function(){waehle(t)});
-    t.addEventListener('keydown',function(e){
-      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;waehle(tabs[n],true)}
-    });
-  });
-
-  /* Energietopf-Regler: beide Systeme ziehen aus demselben Topf */
-  var regler=document.getElementById('stress'),rt=document.getElementById('regler-text');
-  var texte=[
-    'Dein Nervensystem ist ruhig. Aus dem gemeinsamen Topf bleibt genug Energie für deine Abwehr.',
-    'Beide Systeme greifen auf denselben Topf zu. Was das Nervensystem verbraucht, kommt beim Immunsystem nicht mehr an.',
-    'Dauerstress zieht Energie ab, die deiner Abwehr dann fehlt.'
-  ];
-  function topf(){
-    var s=regler.value/100,gesamt=18,nerven=3+(gesamt-6)*s,immun=gesamt-nerven;
-    ['p-nerven','f-nerven'].forEach(function(id){document.getElementById(id).setAttribute('stroke-width',nerven.toFixed(1))});
-    ['p-immun','f-immun'].forEach(function(id){document.getElementById(id).setAttribute('stroke-width',immun.toFixed(1))});
-    document.getElementById('k-immun').style.opacity=(1-s*.6).toFixed(2);
-    document.querySelector('#k-nerven .m-kreis').setAttribute('stroke-width',(2+s*4).toFixed(1));
-    var t=texte[s<.34?0:s<.67?1:2];if(rt.textContent!==t)rt.textContent=t;
-  }
-  regler.addEventListener('input',topf);topf();
+  kb.forEach(function(b){b.addEventListener('click',function(){kurve(b.getAttribute('data-kurve'))})});
+  kurve('achter');
 
   /* Countdown bis Start */
-  var start=new Date('2026-10-19T18:00:00+02:00'),jetzt=new Date(),cd=document.getElementById('countdown');
-  var tage=Math.ceil((start-jetzt)/864e5);
+  var start=new Date('2026-11-18T18:00:00+01:00'),cd=document.getElementById('countdown');
+  var tage=Math.ceil((start-new Date())/864e5);
   if(tage>1){cd.innerHTML='Noch <b>'+tage+' Tage</b> bis zum ersten Termin.';cd.hidden=false}
   else if(tage===1){cd.innerHTML='<b>Morgen</b> geht es los.';cd.hidden=false}
 
@@ -779,7 +741,7 @@ footer a:hover{color:var(--hell)}
     r.forEach(function(el){io.observe(el)});
   } else r.forEach(function(el){el.classList.add('da')});
 
-  /* Sticky-Leiste: nach dem Hero, ausgeblendet im Paket- und Schlussbereich */
+  /* Sticky-Leiste */
   var leiste=document.getElementById('leiste'),hero=document.querySelector('.hero'),ziele=[document.getElementById('pakete'),document.getElementById('start')];
   function pruefe(){
     var nachHero=hero.getBoundingClientRect().bottom<0;
