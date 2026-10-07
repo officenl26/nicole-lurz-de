@@ -132,6 +132,20 @@ h1 em,h2 em,h3 em{font-family:'Spectral',Georgia,serif;font-style:italic;font-we
 @media (max-width:900px){.feuerwehr{grid-template-columns:1fr;gap:28px}}
 .feuerwehr .zitat{border-left:2px solid var(--wasser);padding-left:24px;margin:8px 0 26px}
 
+.mit-nicole{display:flex;align-items:center;gap:14px;margin-top:26px}
+.mit-nicole .avatar{width:68px;height:68px;border-radius:50%;overflow:hidden;border:2px solid rgba(127,181,201,.45);flex:none;position:relative}
+.mit-nicole .avatar img{position:absolute;width:250%;max-width:none;height:auto;left:-70%;top:-4px}
+.mit-nicole p{font-size:14px;line-height:1.45;color:var(--salbei-hell)}
+.mit-nicole b{display:block;color:var(--hell);font-weight:600;font-size:15px}
+/* Brain Pull / Immun Pull */
+.pulls{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+@media (max-width:720px){.pulls{grid-template-columns:1fr}}
+.pulls article{background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:24px 26px}
+.pull-tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--wald);background:var(--wasser);border-radius:30px;padding:4px 12px;margin-bottom:12px}
+.pulls article:first-child .pull-tag{background:var(--salbei)}
+.pulls p{font-size:16px}
+.statt.vier{grid-template-columns:repeat(2,1fr)}
+@media (max-width:980px){.statt.vier{grid-template-columns:1fr}}
 /* Matrix */
 .matrix{margin-top:72px}
 .matrix-kopf{max-width:var(--schmal);margin-bottom:30px}
@@ -339,7 +353,7 @@ footer a:hover{color:var(--hell)}
       <p class="lead">Du bist ständig angeschlagen. Kaum ist der eine Infekt weg, kündigt sich der nächste an. Dazwischen fehlt dir die Kraft: Die Treppe wird zur Anstrengung, der Sonntagsspaziergang fällt aus, und Termine sagst du lieber gleich ab, bevor du wieder ausfällst.</p>
       <p class="lead">In 5 Wochen holst du dir das Steuer zurück. Du erkennst die Signale deines Körpers 48 Stunden früher, weißt genau, was du dann tust, und sorgst dafür, dass deine Abwehr wieder die Energie bekommt, die sie braucht.</p>
       <div class="cta-reihe">
-        <a class="btn btn-primaer" href="#pakete">Paket wählen, ab 199 €</a>
+        <a class="btn btn-primaer" href="#pakete">Platz sichern, ab 199 €</a>
         <a class="btn btn-sekundaer" href="#ablauf">Die 5 Wochen ansehen</a>
       </div>
       <div class="eckdaten" role="list">
@@ -348,6 +362,7 @@ footer a:hover{color:var(--hell)}
         <div role="listitem"><b>inkl.</b><span>Aufzeichnung<br>aller Termine</span></div>
       </div>
       <p class="countdown" id="countdown" hidden></p>
+      <div class="mit-nicole"><span class="avatar"><img src="/images/nicole-about.jpg" alt="Nicole Lurz" width="866" height="1300"></span><p><b>Mit Nicole Lurz</b>Heilpraktikerin, 14 Jahre eigene Praxis, Mentorin für Regenerationsmedizin</p></div>
     </div>
 
     <aside class="ampel reveal" aria-labelledby="ampel-titel">
@@ -383,16 +398,17 @@ footer a:hover{color:var(--hell)}
   <div class="wrap">
     <div class="schmal reveal">
       <span class="label immun">Kennst du das?</span>
-      <h2>Jeden Winter <em>dasselbe Muster.</em></h2>
+      <h2>Du weißt eigentlich, <em>was gut für dich wäre.</em></h2>
     </div>
     <div class="muster">
       <article class="reveal"><span class="nr">01</span><h3>Der Vitamin-Frust</h3><p>Du schluckst brav Vitamin D, Zink und Vitamin C und liegst trotzdem alle paar Wochen wieder flach.</p></article>
-      <article class="reveal"><span class="nr">02</span><h3>Die Erkältung vom Kollegen</h3><p>Er hustet einmal, dazu ein bisschen Stress, und zwei Tage später kratzt dein Hals. Wie immer.</p></article>
-      <article class="reveal"><span class="nr">03</span><h3>Infekte, die nicht enden</h3><p>Früher hieß es einmal früh ins Bett, und zwei, drei Tage später ging es dir wieder gut. Heute zieht sich alles wie Kaugummi, gefühlt hilft nichts mehr wirklich, und du hast wochenlang damit zu tun.</p></article>
-      <article class="reveal"><span class="nr">04</span><h3>Ibu als Dauerlösung</h3><p>Du hast keine Lust mehr, ständig Ibuprofen zu schlucken, nur um irgendwie zu funktionieren. Und dein Magen beschwert sich längst.</p></article>
-      <article class="reveal"><span class="nr">05</span><h3>Alles wird schwerer</h3><p>Dazwischen bist du nie richtig fit, und selbst Treppensteigen oder ein Spaziergang kosten dich Kraft.</p></article>
+      <article class="reveal"><span class="nr">02</span><h3>Wissen ohne Umsetzung</h3><p>Du weißt eigentlich, was gesund wäre, mehr Schlaf, besseres Essen, mehr frische Luft. Aber im stressigen Alltag fehlt dir einfach die Kraft für die Umsetzung.</p></article>
+      <article class="reveal"><span class="nr">03</span><h3>Die Erkältung vom Kollegen</h3><p>Er hustet einmal, dazu ein bisschen Stress, und zwei Tage später kratzt dein Hals. Wie immer.</p></article>
+      <article class="reveal"><span class="nr">04</span><h3>Infekte, die nicht enden</h3><p>Früher hieß es einmal früh ins Bett, und zwei, drei Tage später ging es dir wieder gut. Heute zieht sich alles wie Kaugummi, und du hast wochenlang damit zu tun.</p></article>
+      <article class="reveal"><span class="nr">05</span><h3>Nur noch funktionieren</h3><p>Sobald es draußen kälter und dunkler wird, kommt diese tiefe Müdigkeit. Du funktionierst, aber die echte Lebendigkeit fehlt.</p></article>
       <article class="reveal"><span class="nr">06</span><h3>Immer einen Schritt zu spät</h3><p>Du merkst es erst, wenn das Fieber da ist, weil dir das Gespür für die leisen Frühsignale fehlt.</p></article>
     </div>
+    <p class="zitat reveal schmal" style="margin-top:48px;text-align:center">Du bist damit nicht allein. Und es liegt nicht an deiner Disziplin.</p>
   </div>
 </section>
 
@@ -412,9 +428,13 @@ footer a:hover{color:var(--hell)}
 
     <div class="matrix">
       <div class="matrix-kopf reveal">
-        <span class="label">Meine drei Systeme</span>
-        <h2>Wo deine Energie entsteht und <em>wohin sie fließt.</em></h2>
-        <p class="lead">Nervensystem und Immunsystem sind zwei egoistische Systeme, die sich denselben Energietopf teilen.</p>
+        <span class="label">Aus der Regenerationsmedizin</span>
+        <h2>Zwei egoistische Systeme, <em>ein Energietopf.</em></h2>
+        <p class="lead">Nervensystem und Immunsystem teilen sich dieselbe Energie. Und jedes von beiden nimmt sich, was es braucht, wenn es unter Druck gerät.</p>
+      </div>
+      <div class="pulls">
+        <article class="reveal"><span class="pull-tag">Brain Pull</span><h3>Wenn der Stress zieht</h3><p>Unter Stress wird dein Gehirn egoistisch und zieht über die Stressachse Zucker und Fett zu sich. Für den Moment ist das sinnvoll. Hält der Stress an, fehlt deinem Immunsystem die Energie für die Abwehr.</p></article>
+        <article class="reveal"><span class="pull-tag">Immun Pull</span><h3>Wenn die Abwehr zieht</h3><p>Es geht auch andersherum. Wenn dein Immunsystem arbeitet, holt es sich die Energie, und die fehlt dann deinem Gehirn. Deshalb bist du im Infekt so müde und willst eigentlich nur noch ins Bett.</p></article>
       </div>
       <div class="matrix-bild reveal">
         <svg viewBox="0 0 760 380" role="img" aria-labelledby="m-svg-titel">
@@ -482,17 +502,21 @@ footer a:hover{color:var(--hell)}
   <div class="wrap">
     <div class="schmal reveal">
       <span class="label immun">Deine Veränderung in 5 Wochen</span>
-      <h2>Schluss mit Ausfallen. <em>Du steuerst wieder.</em></h2>
-      <p class="lead leise">Darauf arbeiten wir in den 5 Wochen hin:</p>
+      <h2>Architektur kommt vor <em>Disziplin.</em></h2>
+      <p class="lead leise">Nervensystem, Immunsystem und Stoffwechsel bilden jeweils ihr eigenes Gedächtnis. Was du ihnen immer wieder zeigst, merken sie sich, Stress genauso wie Ruhe. Genau da setzen wir an, ohne strenge Verbote und ohne Programm, das du nach drei Tagen wieder abbrichst.</p>
     </div>
-    <div class="statt">
+    <div class="statt vier">
+      <article class="reveal">
+        <div class="vorher">Statt Willenskraft</div>
+        <div class="nachher"><h3>Ein neues Körper-<em>Gedächtnis</em></h3><p>Wir arbeiten mit winzigen täglichen Reizen, Atem-Anker, Kälte und Wärme, kleine Impulse für deinen Vagusnerv. Dein Körper speichert sie ab, und mit der Zeit wird aus Anstrengung Routine.</p></div>
+      </article>
       <article class="reveal">
         <div class="vorher">Statt Flachliegen</div>
         <div class="nachher"><h3>Der 48-Stunden-<em>Vorsprung</em></h3><p>Du spürst die ersten Signale zwei Tage, bevor es dich erwischt, und weißt sofort, was zu tun ist. Statt abzuwarten, bis du im Bett liegst, steuerst du rechtzeitig gegen.</p></div>
       </article>
       <article class="reveal">
-        <div class="vorher">Statt Dauer-Erschöpfung</div>
-        <div class="nachher"><h3>Energie, die bei dir <em>ankommt</em></h3><p>Du weißt, wo dein Körper gerade Energie verliert, und drehst den Hahn zu. Damit Treppe, Spaziergang und Arbeitstag wieder Kraft geben, statt Kraft zu kosten.</p></div>
+        <div class="vorher">Statt Keimangst</div>
+        <div class="nachher"><h3>Abwehr mit <em>Energie</em></h3><p>Dein Immunsystem darf auf Erreger reagieren, dafür ist es da. Du lernst, wie du ihm die Energie dafür gibst und deinem Körper hilfst, danach wieder in die Ruhe zu finden.</p></div>
       </article>
       <article class="reveal">
         <div class="vorher">Statt Ibu und Hoffen</div>
@@ -512,7 +536,7 @@ footer a:hover{color:var(--hell)}
   <div class="wrap">
     <div class="schmal reveal">
       <span class="label">Der Ablauf · montags, 18 Uhr</span>
-      <h2>5 Wochen von der Erkenntnis <em>zur Routine.</em></h2>
+      <h2>Dein Fahrplan <em>durch den Winter.</em></h2>
       <p class="lead leise">Jeder Termin 60-75 Minuten, live per Zoom, mit Aufzeichnung. Wenn du einen Montag nicht kannst, schaust du ihn nach.</p>
     </div>
     <div class="wochen schmal">
@@ -564,7 +588,7 @@ footer a:hover{color:var(--hell)}
 <section id="boni">
   <div class="wrap">
     <div class="schmal reveal">
-      <span class="label immun">Für alle Teilnehmerinnen</span>
+      <span class="label immun">Für alle im Mentoring</span>
       <h2>Damit es im Alltag <em>leicht bleibt.</em></h2>
     </div>
     <div class="boni">
@@ -675,11 +699,12 @@ footer a:hover{color:var(--hell)}
     <figure class="reveal"><img src="/images/nicole-about.jpg" alt="Nicole Lurz, Heilpraktikerin und Mentorin" width="866" height="1300" loading="lazy"></figure>
     <div class="reveal">
       <span class="label">Wer dich durch die 5 Wochen führt</span>
-      <h2>Ich sehe nicht nur Symptome. <em>Ich sehe Systeme.</em></h2>
-      <p>Ich bin Nicole Lurz, Heilpraktikerin mit eigener Praxis in Wiesloch und zertifizierte Mentorin für Regenerative Medizin &amp; Chronische Gesundheit am Mojo-Institut. In der Praxis erlebe ich jeden Herbst, wie Frauen mit der dritten Vitamin-Packung im Schrank trotzdem wieder flachliegen. Und eigentlich fragt kaum jemand, wo die Energie für die Abwehr überhaupt herkommen soll. Genau da setze ich in diesen 5 Wochen an.</p>
+      <h2>Veränderung braucht <em>einen sicheren Raum.</em></h2>
+      <p>Ich bin Nicole Lurz, Heilpraktikerin mit eigener Praxis in Wiesloch und zertifizierte Mentorin für Regenerative Medizin &amp; Chronische Gesundheit am Mojo-Institut.</p>
+      <p>Was ich in 14 Jahren Praxis gelernt habe: Den Menschen, die zu mir kommen, fehlt es selten an Informationen, das Internet ist ja voll davon. Es fehlt an der Umsetzung im Alltag und an jemandem, der dranbleibt. Deshalb erkläre ich dir in diesen 5 Wochen nicht nur, wie dein Immunsystem funktioniert. Ich begleite dich durch die 5 Wochen, damit aus Wissen Routine wird.</p>
       <div class="kpis">
         <div><b>14</b><span>Jahre Heilpraxis</span></div>
-        <div><b>1.500+</b><span>Klientinnen begleitet</span></div>
+        <div><b>1.500+</b><span>Menschen begleitet</span></div>
         <div><b>20+</b><span>Jahre Erfahrung</span></div>
       </div>
     </div>
@@ -694,6 +719,8 @@ footer a:hover{color:var(--hell)}
       <h2>Bevor du <em>buchst.</em></h2>
     </div>
     <div class="faq reveal">
+      <details><summary>Ist das Mentoring anstrengend?</summary><p>Nein. Wir arbeiten mit kleinen Schritten, die du jeden Tag wiederholst, ohne dich zu überfordern. Die Wohlfühl-Anker aus Woche 4 wirken ganz ohne Zeitaufwand.</p></details>
+      <details><summary>Brauche ich teure Supplements?</summary><p>Nein. Wir fangen beim Fundament an, bei deinem Alltag, deiner Atmung und echter Nahrung. Wenn du wissen willst, was in deinem Kapselschrank nützt und was nicht, gibt es im VIP-Paket den Supplement-Audit.</p></details>
       <details><summary>Was ist, wenn ich montags um 18 Uhr nicht kann?</summary><p>Jeder Termin wird aufgezeichnet. Du kannst also nachschauen, wann es bei dir passt. Live dabei zu sein lohnt sich trotzdem, weil wir im Teil „Erleben" direkt im eigenen Körper spüren, worum es geht.</p></details>
       <details><summary>Wie läuft die Anmeldung?</summary><p>Du klickst auf den Button zu deinem Paket und kommst in den Checkout. Dort zahlst du per Kreditkarte oder PayPal. Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade. Direkt danach siehst du deine nächsten Schritte und den Zoom-Link.</p></details>
       <details><summary>Ist der Supplement-Audit ein eigener Termin?</summary><p>Nein, ganz ohne Termin. Du schickst mir deine Liste oder Fotos deiner Präparate und bekommst meine persönliche Einschätzung und Empfehlung.</p></details>
@@ -709,8 +736,8 @@ footer a:hover{color:var(--hell)}
   <div class="wrap">
     <div class="reveal">
       <span class="label immun">Bereit für den Winter?</span>
-      <h2>Sichere dir <em>deinen Platz.</em></h2>
-      <p class="lead">Start am Montag, 19.10.2026, um 18 Uhr, live per Zoom und mit Aufzeichnung. Die VIP-Plätze sind auf 5 begrenzt.</p>
+      <h2>Lass uns dein Immunsystem auf <em>Winter umstellen.</em></h2>
+      <p class="lead">Das beste Immunsystem ist das, um das du dir keine Sorgen mehr machen musst. Wir starten am Montag, 19.10.2026, um 18 Uhr, live per Zoom und mit Aufzeichnung. Die VIP-Plätze sind auf 5 begrenzt.</p>
       <div class="cta-reihe">
         <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/">Basis für 199 € buchen</a>
         <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/immun-mentoring--5-wochen/" aria-describedby="vip-hinweis-tc2">VIP für 490 € buchen</a>
