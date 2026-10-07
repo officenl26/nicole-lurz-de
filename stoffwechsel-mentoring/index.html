@@ -320,6 +320,9 @@ footer a:hover{color:var(--hell)}
 .muster.zwei{grid-template-columns:repeat(2,1fr)}
 @media (max-width:620px){.muster.zwei{grid-template-columns:1fr}}
 .gutschein-hinweis{margin-top:18px;padding:14px 18px;border:1px dashed rgba(227,168,92,.5);border-radius:10px;font-size:15px;color:var(--hell)}
+.feuerwehr p+p{margin-top:16px}
+.woche-kurz{background:var(--karte);border:1px solid var(--linie-fein);border-radius:12px}
+.woche-kurz .kopfzeile{padding:22px 26px}
 /* Tageskurve */
 .kurve{background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:28px}
 .kurve h3{font-size:22px;margin-bottom:16px}
@@ -403,12 +406,15 @@ footer a:hover{color:var(--hell)}
       <span class="label immun">Kennst du das?</span>
       <h2>Wenn der Stoffwechsel <em>bremst.</em></h2>
     </div>
-    <div class="muster zwei">
+    <div class="muster">
       <article class="reveal"><span class="nr">01</span><h3>Das 15-Uhr-Tief und der Nebel im Kopf</h3><p>Nach dem Essen fällt der Vorhang. Die Konzentration bricht ein, du fühlst dich wie unter Watte, und ohne Kaffee oder Süßes geht nichts mehr.</p></article>
       <article class="reveal"><span class="nr">02</span><h3>Der „Vergebliche Mühe"-Effekt</h3><p>Du isst gefühlt immer weniger, reißt dich zusammen oder machst Sport. Und das Bauchfett bleibt.</p></article>
       <article class="reveal"><span class="nr">03</span><h3>Das 3-Uhr-nachts-Erwachen</h3><p>Du wachst mitten in der Nacht schlagartig auf. Das Herz rast, die Gedanken kreisen, an Schlaf ist nicht mehr zu denken.</p></article>
       <article class="reveal"><span class="nr">04</span><h3>Der Labor-Trugschluss</h3><p>Dein Arzt sagt „Der Nüchternzucker ist super", während deine Bauchspeicheldrüse im Hintergrund längst ein Vielfaches an Insulin ausschüttet, um das System am Laufen zu halten.</p></article>
+      <article class="reveal"><span class="nr">05</span><h3>Der ständige Hunger</h3><p>Egal wie viel du isst, kurz darauf kreisen deine Gedanken schon wieder um den nächsten Snack.</p></article>
+      <article class="reveal"><span class="nr">06</span><h3>Erschöpft trotz Schlaf</h3><p>Du wachst morgens schon müde auf, obwohl du eigentlich lange genug geschlafen hast.</p></article>
     </div>
+    <p class="zitat reveal schmal" style="margin-top:48px;text-align:center">Du bist damit nicht allein. Und es liegt nicht an deiner Disziplin.</p>
   </div>
 </section>
 
@@ -423,7 +429,9 @@ footer a:hover{color:var(--hell)}
       <div>
         <p class="zitat">Nüchternzucker ist oft der allerletzte Wert, der ansteigt.</p>
         <p>Eine schleichende Insulinresistenz blockiert deine Fettverbrennung und raubt dir Energie, oft schon jahrelang, bevor ein Laborwert Alarm schlägt. Das ständige Auf und Ab des Blutzuckers hält dein Nervensystem im Dauerstress. Und es trifft dein Immunsystem direkt, denn deine Abwehrzellen reagieren selbst auf Insulin.</p>
-        <p style="color:var(--hell);font-weight:600">Die Folge: Du funktionierst nur noch, statt zu leben.</p>
+        <p>Deine Zellen machen die Tür zu, weil sie überlastet sind. Der Zucker bleibt im Blut, die Bauchspeicheldrüse schüttet noch mehr Insulin aus, und der Überschuss landet in deinen Fettdepots. Das heißt im Endeffekt, dein Körper hungert auf Zellebene und lagert gleichzeitig Fett ein.</p>
+        <p>Und Stress spielt mit. Cortisol treibt deinen Blutzucker hoch, selbst wenn du nichts isst, ähnlich wie ein Stück Kuchen.</p>
+        <p style="color:var(--hell);font-weight:600">Die Folge: Du funktionierst nur noch, statt zu leben. Und das ist nicht deine Schuld, deine Zellen schützen sich nur.</p>
       </div>
     </div>
 
@@ -476,8 +484,8 @@ footer a:hover{color:var(--hell)}
   <div class="wrap">
     <div class="schmal reveal">
       <span class="label immun">Deine Veränderung in 5 Wochen</span>
-      <h2>Vom Funktionieren zurück zu <em>stabilerer Energie.</em></h2>
-      <p class="lead leise">Wir drehen den Spieß um. In 5 Wochen lernst du die Sprache deines Stoffwechsels und bekommst die Werkzeuge, mit denen du ihn im Alltag steuerst.</p>
+      <h2>Hör auf, Kalorien zu zählen. <em>Fang an, Energie zu regulieren.</em></h2>
+      <p class="lead leise">Mein Prinzip dafür heißt Reihenfolge statt Verzicht. Bevor wir irgendetwas streichen, ändern wir die Reihenfolge, auf deinem Teller und in deinem Tag. In 5 Wochen lernst du so die Sprache deines Stoffwechsels und bekommst die Werkzeuge, mit denen du ihn im Alltag steuerst, auf dem Weg zu stabilerer Energie.</p>
     </div>
     <div class="statt">
       <article class="reveal"><div class="vorher">Statt Verzicht</div><div class="nachher"><h3>Echte <em>Sättigung</em></h3><p>Du stellst deinen inneren Sättigungsregler (den Appestat) so ein, dass der Heißhunger seine Macht verliert. Essen macht wieder Freude, ohne schlechtes Gewissen.</p></div></article>
@@ -504,15 +512,11 @@ footer a:hover{color:var(--hell)}
     <div class="wochen schmal">
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>01</b></div>
-        <details class="woche" open>
-          <summary><span class="datum">Mi 18.11.</span><h3>Der Blutzucker-Code und das Ende des 15-Uhr-Tiefs</h3><span class="frage">Warum bin ich so müde, und wie lege ich den Schalter um?</span></summary>
-          <div class="inhalt"><p>Das Geheimnis der 5 Gramm: In deinem gesamten Blut zirkuliert nur etwa ein Teelöffel Zucker. Du erfährst, warum die Reihenfolge auf deinem Teller deine Blutzuckerkurve deutlich flacher macht, ohne dass du weniger isst. Oft darfst du sogar mehr essen.</p>
-          <div class="mitnehmen"><small>Das nimmst du mit</small><p>Kleine Änderung, große Wirkung: deine ersten Routinen für einen Blutzucker-Reset, um deinen Nachmittag wieder selbst in der Hand zu haben.</p></div></div>
-        </details>
+        <div class="woche woche-kurz"><div class="kopfzeile"><span class="datum">Mi 18.11.</span><h3>Der Blutzucker-Code und das Ende des 15-Uhr-Tiefs</h3><span class="frage">Warum bin ich so müde, und wie lege ich den Schalter um?</span></div></div>
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>02</b></div>
-        <details class="woche">
+        <details class="woche" open>
           <summary><span class="datum">Mi 25.11.</span><h3>Der Muskel als Zucker-Schwamm</h3><span class="frage">Wie du Kohlenhydrate wieder genießt, ohne Blutzucker-Achterbahn.</span></summary>
           <div class="inhalt"><p>Deine Muskeln haben eine Superkraft: Sie holen Zucker aus dem Blut, ganz ohne Insulin. Wir probieren gemeinsam aus, wie wenig dafür nötig ist.</p>
           <div class="mitnehmen"><small>Das nimmst du mit</small><p>Einen einfachen Handgriff vor dem Essen, um Kohlenhydrate wieder zu genießen, statt sie zu fürchten.</p></div></div>
@@ -670,6 +674,8 @@ footer a:hover{color:var(--hell)}
       <h2>Bevor du <em>buchst.</em></h2>
     </div>
     <div class="faq reveal">
+      <details><summary>Muss ich Keto machen oder hungern?</summary><p>Nein. Es geht um metabolische Flexibilität, also darum, dass dein Körper zwischen Zucker- und Fettverbrennung hin- und herschalten kann. Kohlenhydrate bleiben erlaubt. In Woche 2 lernst du, sie wieder zu genießen, statt sie zu fürchten.</p></details>
+      <details><summary>Ich habe einen sehr stressigen Job. Schaffe ich das?</summary><p>Gerade dann. Die Werkzeuge sind für einen vollen Alltag gebaut, ein Handgriff vor dem Essen, ein 3-Minuten-Anker am Abend. Sie sollen dir Energie sparen und keine zusätzliche kosten.</p></details>
       <details><summary>Was ist, wenn ich mittwochs um 18 Uhr nicht kann?</summary><p>Jeder Termin wird aufgezeichnet. Du kannst also nachschauen, wann es bei dir passt. Live dabei zu sein lohnt sich trotzdem, weil wir im Teil „Erleben" direkt im eigenen Körper ausprobieren, worum es geht.</p></details>
       <details><summary>Muss ich Kalorien zählen oder auf etwas verzichten?</summary><p>Nein, ganz ohne Kalorienzählen. In Woche 1 erfährst du, warum die Reihenfolge auf deinem Teller deine Blutzuckerkurve flacher macht, ohne dass du weniger isst.</p></details>
       <details><summary>Wie läuft die Anmeldung?</summary><p>Du klickst auf den Button zu deinem Paket und kommst in den Checkout. Dort zahlst du per Kreditkarte oder PayPal. Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade. Direkt danach siehst du deine nächsten Schritte und den Zoom-Link.</p></details>
