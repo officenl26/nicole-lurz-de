@@ -310,6 +310,9 @@ footer a:hover{color:var(--hell)}
   .js .reveal.da{opacity:1;transform:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Sicherung: falls das Skript abbricht, wird nach 2,5 Sek. trotzdem alles sichtbar */
+@keyframes nlzeigen{to{opacity:1;transform:none}}
+.js:not(.nl-ok) .reveal{animation:nlzeigen .6s 2.5s forwards}
 
 .schalter{display:inline-flex;background:var(--tief);border:1px solid var(--linie);border-radius:40px;padding:4px}
 .schalter button{appearance:none;border:0;background:transparent;color:var(--salbei-hell);font:600 14px 'Inter',sans-serif;padding:10px 20px;border-radius:40px;cursor:pointer;min-height:42px;transition:background-color .2s var(--ease),color .2s var(--ease)}
@@ -711,8 +714,7 @@ footer a:hover{color:var(--hell)}
 
 <script>
 (function(){
-  .gutschein-hinweis{margin-top:18px;padding:14px 18px;border:1px dashed rgba(227,168,92,.5);border-radius:10px;font-size:15px;color:var(--hell)}
-/* Tageskurve */
+  /* Tageskurve */
   var texte={
     achter:'Nach dem Essen fällt der Vorhang. Die Konzentration bricht ein, und ohne Kaffee oder Süßes geht nichts mehr. Nachts sackt der Blutzucker ab, und du bist um 3 Uhr hellwach.',
     stabil:'Du weißt, welche Mahlzeit dich müde macht und welche dich wach hält. Deinen Nachmittag planst du wieder, statt ihn zu überstehen.'
@@ -749,6 +751,7 @@ footer a:hover{color:var(--hell)}
     var an=nachHero&&!imZiel;leiste.classList.toggle('sichtbar',an);leiste.setAttribute('aria-hidden',!an);leiste.querySelector('a').tabIndex=an?0:-1;
   }
   addEventListener('scroll',pruefe,{passive:true});pruefe();
+  document.documentElement.classList.add('nl-ok');
 })();
 </script>
 </body>
