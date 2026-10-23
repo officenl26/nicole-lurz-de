@@ -734,6 +734,12 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
   padding: 0.7rem 1rem; background: var(--bg-card);
   border-radius: 7px; line-height: 1.55;
 }
+.is-wert { margin: 1.2rem 0 0; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.is-wert-label { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
+.is-wert ul { list-style: none; padding: 0; margin: 0; }
+.is-wert li { display: flex; justify-content: space-between; gap: 1rem; font-family: var(--font-sans); font-size: 0.88rem; color: var(--text-muted); padding: 0.32rem 0; border-bottom: 1px dashed var(--line); }
+.is-wert li span:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.is-wert li.sum { border-bottom: none; font-weight: 600; color: var(--head); padding-top: 0.5rem; }
 .is-weg-price { margin-bottom: 1.3rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
 .is-weg-price .amount { font-family: var(--font-serif); font-size: clamp(1.7rem, 3.4vw, 2.1rem); font-weight: 500; color: var(--head); line-height: 1.1; }
 .is-weg-price .note { font-family: var(--font-sans); font-size: 0.83rem; color: var(--text-muted); line-height: 1.55; margin-top: 0.35rem; }
@@ -1556,9 +1562,20 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
 
         <p class="is-anrechnung">Den genauen Ablauf mit allen Terminen bekommst du, sobald du auf der Warteliste stehst.</p>
 
+        <div class="is-wert">
+          <p class="is-wert-label">Was im Circle steckt</p>
+          <ul>
+            <li><span>Blind Spot Check mit Blutanalyse</span><span>530 €</span></li>
+            <li><span>8 Gruppencalls</span><span>2.000 €</span></li>
+            <li><span>5 Check-ins à 30 Minuten</span><span>650 €</span></li>
+            <li><span>Abschluss 1:1 mit Checkup</span><span>400 €</span></li>
+            <li><span>WhatsApp-Support und Austausch in der Gruppe</span><span>250 €</span></li>
+            <li class="sum"><span>Gesamtwert</span><span>3.830 €</span></li>
+          </ul>
+        </div>
         <div class="is-weg-price">
           <div class="amount">2.900 €</div>
-          <p class="note">Fester Preis. Blind Spot Check mit Blutanalyse und Abschlussgespräch 1:1 enthalten.</p>
+          <p class="note">Dein Preis im Circle, inklusive MwSt, bei Anmeldung bis 31.12.2026. Alles oben Genannte ist enthalten.</p>
           <p class="extra">Ratenzahlung möglich. Zusätzlich Labor und Diagnostik, in der Regel 150 bis 450 €.</p>
         </div>
         <a href="https://wa.me/message/QXAYPG3GPUZRF1" target="_blank" rel="noopener" class="cta cta-secondary">
@@ -1683,7 +1700,7 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
       </details>
       <details class="faq-item reveal">
         <summary>Was kostet The Inner Shift?</summary>
-        <p>Der Circle kostet 2.900 €, inklusive Blind Spot Check und Abschlussgespräch 1:1. Das VIP 1:1 gibt es ab 250 € pro Monat, mit mindestens drei Monaten Laufzeit, und Voraussetzung dafür ist der Blind Spot Check. Was für dich sinnvoll ist, legen wir im Strategie-Call gemeinsam fest, und du entscheidest danach in Ruhe.</p>
+        <p>Der Circle kostet 2.900 € inklusive MwSt bei Anmeldung bis 31.12.2026, Blind Spot Check und Abschlussgespräch 1:1 sind enthalten. Das VIP 1:1 gibt es ab 250 € pro Monat, mit mindestens drei Monaten Laufzeit, und Voraussetzung dafür ist der Blind Spot Check. Was für dich sinnvoll ist, legen wir im Strategie-Call gemeinsam fest, und du entscheidest danach in Ruhe.</p>
       </details>
       <details class="faq-item reveal">
         <summary>Kommen noch weitere Kosten auf mich zu?</summary>
