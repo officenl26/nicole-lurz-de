@@ -215,6 +215,33 @@ section{padding:110px 0;position:relative}
 .hero-clock-caption{margin-top:4px;font-family:var(--font-serif);font-style:italic;font-size:.82rem;color:var(--sage)}
 @media (max-width:860px){.hero-photo{max-width:340px;margin:0 auto}}
 
+
+/* Hero-Foto randlos wie auf der Inner-Shift-Seite */
+.hero-grid{display:block;position:static;width:100%}
+.hero-text{max-width:540px;position:static}
+.hero-text>*:not(.hero-photo-bleed){position:relative;z-index:2}
+.hero-photo-bleed{position:absolute;top:0;right:0;bottom:0;width:52%;z-index:1;pointer-events:none}
+.hero-photo-bleed img{width:100%;height:100%;object-fit:cover;object-position:46% 14%;display:block;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 26%,rgba(0,0,0,.65) 44%,black 62%);
+  mask-image:linear-gradient(90deg,transparent 0%,transparent 26%,rgba(0,0,0,.65) 44%,black 62%);
+  filter:contrast(1.02) brightness(1.06)}
+.hero-photo-bleed::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,var(--night) 0%,transparent 26%),linear-gradient(180deg,var(--night) 0%,transparent 10%)}
+.hero-photo-bleed .hero-clock{left:auto;right:7%;bottom:12%;z-index:2}
+@media (min-width:861px) and (max-width:1180px){.hero-text{max-width:440px}.hero h1{font-size:clamp(2.2rem,4.2vw,3rem)}}
+@media (max-width:860px){
+  .hero{min-height:auto;display:block;padding:110px 0 60px}
+  .hero-text{display:flex;flex-direction:column;max-width:100%}
+  .hero-text .eyebrow{order:1}.hero-text h1{order:2}.hero-photo-bleed{order:3}
+  .hero-sub{order:4}.hero-ctas{order:5}.hero-text .cta-note{order:6}
+  .hero-photo-bleed{position:relative;width:calc(100% + 48px);margin:0 -24px 28px;height:auto}
+  .hero-photo-bleed img{height:auto;aspect-ratio:3/2;object-position:58% 10%;
+    -webkit-mask-image:linear-gradient(0deg,transparent 0%,black 22%,black 88%,transparent 100%);
+    mask-image:linear-gradient(0deg,transparent 0%,black 22%,black 88%,transparent 100%)}
+  .hero-photo-bleed::after{background:linear-gradient(0deg,var(--night) 0%,transparent 22%),linear-gradient(180deg,var(--night) 0%,transparent 14%)}
+  .hero-photo-bleed .hero-clock{right:auto;left:24px;bottom:14px}
+  .hero-scroll{display:none}
+}
 /* ═══════════ 2 · CHAOS ═══════════ */
 .sec-chaos{background:var(--bg)}
 .chaos-stage{--p:0;position:relative;margin:56px auto 0;max-width:820px}
@@ -365,7 +392,7 @@ section{padding:110px 0;position:relative}
       <a class="nav-link" href="#ueber-mich">Über mich</a>
       <a class="nav-link" href="https://nicole-lurz.de/bsc">Blind Spot Check</a>
       <a class="nav-link" href="inner-shift.html">Inner Shift</a>
-      <a class="nav-link" href="https://alfima.com/nicolelurz/business-blind-spot-check">Business</a>
+      <a class="nav-link" href="https://alfima.com/nicolelurz/business-blind-spot-check">Business-Mentoring</a>
       <a class="nav-cta" href="https://kalender.nicole-lurz.com/strategiecall">Strategie-Call buchen</a>
       <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="mmenu" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </nav>
@@ -376,7 +403,7 @@ section{padding:110px 0;position:relative}
   <a href="#ueber-mich">Über mich</a>
   <a href="https://nicole-lurz.de/bsc">Blind Spot Check</a>
   <a href="inner-shift.html">Inner Shift</a>
-  <a href="https://alfima.com/nicolelurz/business-blind-spot-check">Business</a>
+  <a href="https://alfima.com/nicolelurz/business-blind-spot-check">Business-Mentoring</a>
   <a href="/selbsttest/">Selbsttest</a>
   <a class="mmenu-cta" href="https://kalender.nicole-lurz.com/strategiecall">Strategie-Call buchen →</a>
 </div>
@@ -384,9 +411,16 @@ section{padding:110px 0;position:relative}
 <!-- ═══ 1 · HERO: NACHTS UM DREI ═══ -->
 <section class="hero">
   <div class="container hero-grid">
-    <div>
+    <div class="hero-text">
       <span class="eyebrow">Online-Mentoring · Für Unternehmerinnen ab 50</span>
       <h1>Du hast alles im Griff. <em class="soft">Nur deinen Körper nicht mehr.</em></h1>
+      <div class="hero-photo-bleed">
+        <img src="images/nicole-hero-sw.jpg" alt="Nicole Lurz, Heilpraktikerin und Diplom-Betriebswirtin" width="1122" height="1402" loading="eager">
+        <div class="hero-clock">
+          <div class="hero-clock-time"><span id="clock-h">03</span><span class="colon">:</span><span id="clock-m">12</span></div>
+          <p class="hero-clock-caption">Du kennst diese Uhrzeit.</p>
+        </div>
+      </div>
       <p class="hero-sub">Nachts um drei bist du wach und fragst dich, warum dein Körper nicht mehr mitspielt. Ich helfe dir zu verstehen, was sich gerade verändert. Und wie du Klarheit und Kontrolle über Energie, Gewicht und Leistungsfähigkeit zurückgewinnst.</p>
       <div class="hero-ctas">
         <a class="cta cta-primary" href="/selbsttest/">Mach den Selbsttest <span class="arrow">→</span></a>
@@ -394,17 +428,9 @@ section{padding:110px 0;position:relative}
       </div>
       <p class="cta-note">Selbsttest kostenfrei · 12 Fragen · Strategie-Call kostenfrei · 30 Minuten</p>
     </div>
-    <div class="hero-photo reveal">
-      <img src="images/nicole-hero.jpg" alt="Nicole Lurz, Heilpraktikerin und Diplom-Betriebswirtin" width="720" height="966">
-      <div class="hero-clock">
-        <div class="hero-clock-time"><span id="clock-h">03</span><span class="colon">:</span><span id="clock-m">12</span></div>
-        <p class="hero-clock-caption">Du kennst diese Uhrzeit.</p>
-      </div>
-    </div>
   </div>
   <div class="hero-scroll">Scroll</div>
 </section>
-
 <!-- ═══ 2 · DAS CHAOS ═══ -->
 <section class="sec-chaos" id="problem">
   <div class="container">
@@ -458,7 +484,7 @@ section{padding:110px 0;position:relative}
 <section class="sec-about" id="ueber-mich">
   <div class="container about-grid">
     <div class="about-photo reveal">
-      <img src="images/nicole-about.jpg" alt="Nicole Lurz" loading="lazy">
+      <img src="images/nicole-uebermich-2026.jpg" alt="Nicole Lurz" loading="lazy">
     </div>
     <div class="about-body">
       <span class="eyebrow reveal">Wer dich hier begleitet</span>
@@ -622,7 +648,7 @@ section{padding:110px 0;position:relative}
       <a href="#ueber-mich">Über mich</a>
       <a href="https://nicole-lurz.de/bsc">Blind Spot Check</a>
       <a href="inner-shift.html">Inner Shift</a>
-      <a href="https://alfima.com/nicolelurz/business-blind-spot-check">Business</a>
+      <a href="https://alfima.com/nicolelurz/business-blind-spot-check">Business-Mentoring</a>
     </nav>
     <div class="footer-legal">
       <a href="https://nicole-lurz.de/impressum/">Impressum</a>
