@@ -111,6 +111,29 @@
     color: var(--accent); margin-top: 0.4rem !important;
   }
 
+  /* Strategie-Call, leiser zweiter Schritt */
+  .lc-call {
+    max-width: 600px; margin: 1rem auto 0; text-align: left;
+    display: flex; gap: 1.6rem; align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px; padding: 1.6rem 1.8rem;
+  }
+  .lc-call img {
+    width: 120px; height: 150px; object-fit: cover; object-position: 50% 20%;
+    border-radius: 10px; flex-shrink: 0;
+    border: 1px solid rgba(122, 168, 144, 0.25);
+  }
+  .lc-call h2 {
+    font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600;
+    color: var(--head); margin-bottom: 0.5rem;
+  }
+  .lc-call p {
+    font-family: var(--font-sans); font-size: 0.93rem; color: var(--text);
+    line-height: 1.65; margin: 0 0 1rem;
+  }
+  .lc-call .cta { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+
   .nav-danke .nav-links, .nav-danke .nav-cta, .nav-danke .nav-burger { display: none !important; }
   .nav-danke .nav-inner { justify-content: center; }
 
@@ -120,6 +143,9 @@
     .lc-viewer { padding: 0.7rem; }
     .lc-download .cta { min-width: 0; width: 100%; }
     .lc-card { padding: 1.5rem 1.4rem; }
+    .lc-call { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.4rem; }
+    .lc-call img { width: 100%; height: 260px; }
+    .lc-call .cta { width: 100%; justify-content: center; }
   }
   @media (max-width: 480px) {
     .doi-connector { width: 28px; }
@@ -200,6 +226,18 @@
     <p>Druck dir die letzte Seite aus und leg sie neben die Kaffeemaschine. Da siehst du sie jeden Morgen und trägst abends schnell ein, wann der Bildschirm ausging und wie du geschlafen hast.</p>
     <p>Und wenn du trotzdem nachts um drei wach liegst, hat das ganz oft auch mit dem Blutzucker zu tun. Davon erzähle ich dir nächsten Sonntag.</p>
     <p class="lc-gruss">Herzlich, Nicole</p>
+  </div>
+
+  <div class="lc-call">
+    <img src="/images/nicole-uebermich-2026.jpg" alt="Nicole Lurz im Herbstlicht" loading="lazy">
+    <div>
+      <h2>Wenn du nicht warten möchtest</h2>
+      <p>Manchmal zeigt der Bogen schon nach ein paar Tagen, dass bei dir mehr zusammenspielt als das Licht. Wenn du wissen möchtest, was bei dir dahintersteckt, nimm dir 30 Minuten mit mir. Im Strategie-Call schauen wir gemeinsam auf deine Situation und klären, was dein nächster sinnvoller Schritt ist. Er kostet dich nichts.</p>
+      <a href="/strategie-call/" class="cta cta-secondary">
+        <span class="label">Strategie-Call buchen</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 
 </main>
