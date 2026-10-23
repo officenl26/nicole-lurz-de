@@ -38,7 +38,7 @@
   --line:rgba(122,168,144,.18);
   --line-light:rgba(36,66,49,.16);
   --radius:10px;
-  --ws-bar-h:40px;      /* Ankuendigungsleiste Workshop, nach dem 20.09.2026 entfernen */
+  --ws-bar-h:0px;       /* Ankuendigungsleiste aktuell aus, bei Bedarf wieder auf 40px setzen */
   --font-sans:'Inter',system-ui,-apple-system,sans-serif;
   --font-serif:'Spectral',Georgia,serif;
   --ease:cubic-bezier(.22,.61,.36,1);
@@ -167,6 +167,9 @@ section{padding:110px 0;position:relative}
 .cta-primary:hover{filter:brightness(1.07);box-shadow:0 10px 30px rgba(122,168,144,.3)}
 .cta-primary .arrow{transition:transform .2s var(--ease)}
 .cta-primary:hover .arrow{transform:translateX(4px)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.cta-ghost{background:transparent;color:var(--paper);border:1px solid var(--sage)}
+.cta-ghost:hover{background:rgba(122,168,144,.12)}
 .cta-dark{background:var(--pine);color:var(--paper);box-shadow:0 8px 26px rgba(36,66,49,.28)}
 .cta-dark:hover{filter:brightness(1.12);box-shadow:0 10px 30px rgba(36,66,49,.36)}
 .cta-dark .arrow{transition:transform .2s var(--ease)}
@@ -354,13 +357,6 @@ section{padding:110px 0;position:relative}
 </head>
 <body>
 
-<!-- ═══ ANKUENDIGUNG WORKSHOP · nach dem 20.09.2026 entfernen ═══ -->
-<a class="ws-bar" href="/workshop/">
-  <b>Live-Workshop am <span class="ws-day">Sonntag, </span>20. September</b>
-  <span class="ws-when">11:00 bis 12:30 Uhr, kostenlos auf Zoom</span>
-  <span class="ws-go">Platz sichern &rarr;</span>
-</a>
-
 <!-- ═══ NAV ═══ -->
 <header class="nav" id="nav">
   <div class="container nav-inner">
@@ -370,7 +366,7 @@ section{padding:110px 0;position:relative}
       <a class="nav-link" href="https://nicole-lurz.de/bsc">Blind Spot Check</a>
       <a class="nav-link" href="inner-shift.html">Inner Shift</a>
       <a class="nav-link" href="https://alfima.com/nicolelurz/business-blind-spot-check">Business</a>
-      <a class="nav-cta" href="https://nicole-lurz.de/bsc">Zum Blind Spot Check</a>
+      <a class="nav-cta" href="https://kalender.nicole-lurz.com/strategiecall">Strategie-Call buchen</a>
       <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="mmenu" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </nav>
   </div>
@@ -381,7 +377,8 @@ section{padding:110px 0;position:relative}
   <a href="https://nicole-lurz.de/bsc">Blind Spot Check</a>
   <a href="inner-shift.html">Inner Shift</a>
   <a href="https://alfima.com/nicolelurz/business-blind-spot-check">Business</a>
-  <a class="mmenu-cta" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Mach den Selbsttest →</a>
+  <a href="/selbsttest/">Selbsttest</a>
+  <a class="mmenu-cta" href="https://kalender.nicole-lurz.com/strategiecall">Strategie-Call buchen →</a>
 </div>
 
 <!-- ═══ 1 · HERO: NACHTS UM DREI ═══ -->
@@ -391,8 +388,11 @@ section{padding:110px 0;position:relative}
       <span class="eyebrow">Online-Mentoring · Für Unternehmerinnen ab 50</span>
       <h1>Du hast alles im Griff. <em class="soft">Nur deinen Körper nicht mehr.</em></h1>
       <p class="hero-sub">Nachts um drei bist du wach und fragst dich, warum dein Körper nicht mehr mitspielt. Ich helfe dir zu verstehen, was sich gerade verändert. Und wie du Klarheit und Kontrolle über Energie, Gewicht und Leistungsfähigkeit zurückgewinnst.</p>
-      <a class="cta cta-primary" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Mach den Selbsttest <span class="arrow">→</span></a>
-      <p class="cta-note">Kostenfrei · 12 Fragen · Deine Standortbestimmung</p>
+      <div class="hero-ctas">
+        <a class="cta cta-primary" href="/selbsttest/">Mach den Selbsttest <span class="arrow">→</span></a>
+        <a class="cta cta-ghost" href="https://kalender.nicole-lurz.com/strategiecall">Strategie-Call buchen</a>
+      </div>
+      <p class="cta-note">Selbsttest kostenfrei · 12 Fragen · Strategie-Call kostenfrei · 30 Minuten</p>
     </div>
     <div class="hero-photo reveal">
       <img src="images/nicole-hero.jpg" alt="Nicole Lurz, Heilpraktikerin und Diplom-Betriebswirtin" width="720" height="966">
@@ -482,7 +482,7 @@ section{padding:110px 0;position:relative}
   <div class="container">
     <div class="center narrow" style="margin:0 auto 26px">
       <span class="eyebrow reveal">Meine Arbeitsweise</span>
-      <h2 class="reveal">Ich sehe nicht nur Symptome. <em>Ich sehe Systeme.</em></h2>
+      <h2 class="reveal">Ich sehe nicht nur Symptome. <em>Ich sehe Muster und Systeme.</em></h2>
     </div>
     <div class="method-grid">
       <div class="reveal">
@@ -530,8 +530,8 @@ section{padding:110px 0;position:relative}
         <div>
           <p class="step-q">„Wo stehe ich?“</p>
           <p class="step-name">Der Selbsttest <span class="tag">· kostenfrei</span></p>
-          <p>12 Fragen, wenige Minuten. Der System-Kompass zeigt dir, wo dein Körper gerade steht und welches deiner Systeme am lautesten ruft.</p>
-          <a class="step-link" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Zum Selbsttest →</a>
+          <p>12 Fragen, drei Minuten. Das Körper-Cockpit zeigt dir, wo dein Körper gerade steht und welches deiner Systeme dich gerade am meisten ausbremst.</p>
+          <a class="step-link" href="/selbsttest/">Zum Selbsttest →</a>
         </div>
       </article>
       <article class="step reveal">
@@ -541,6 +541,7 @@ section{padding:110px 0;position:relative}
           <p class="step-name">Der Blind Spot Check</p>
           <p>Deine Befunde, deine Geschichte, deine bisherigen Versuche. Alle Puzzleteile kommen auf einen Tisch. Du bekommst den Zusammenhang, der dir bisher gefehlt hat, und eine klare Prioritäten-Roadmap statt einer weiteren Liste.</p>
           <a class="step-link" href="https://nicole-lurz.de/bsc">Mehr erfahren →</a>
+          <a class="step-link" href="https://kalender.nicole-lurz.com/strategiecall" style="margin-left:22px">Strategie-Call buchen →</a>
         </div>
       </article>
       <article class="step reveal">
@@ -554,7 +555,7 @@ section{padding:110px 0;position:relative}
       </article>
     </div>
 
-    <p class="weg-note reveal">Der Selbsttest ist der einfachste Einstieg. Wenn du deine Befunde längst gesammelt hast und jetzt den Zusammenhang willst, starte direkt mit dem Blind Spot Check.</p>
+    <p class="weg-note reveal">Der Selbsttest ist der einfachste Einstieg. Wenn du genug auf eigene Faust ausprobiert hast und wissen willst, wo du bei dir ansetzen musst, buch dir direkt einen <a href="https://kalender.nicole-lurz.com/strategiecall">Strategie-Call</a>.</p>
   </div>
 </section>
 
@@ -569,7 +570,7 @@ section{padding:110px 0;position:relative}
       <article class="testi reveal">
         <span class="testi-mark" aria-hidden="true">„</span>
         <p class="testi-quote">Es war so viel dabei, was mir vorher nicht bewusst war. Nicole hat mir Zusammenhänge gezeigt, die kein Arzt gesehen hat, und konkrete Wege, die ich selbst gehen kann.</p>
-        <p class="testi-author">Verena <span>· Klientin</span></p>
+        <p class="testi-author">Verena <span>· Designerin &amp; Schneidermeisterin</span></p>
       </article>
       <article class="testi reveal">
         <span class="testi-mark" aria-hidden="true">„</span>
@@ -607,9 +608,9 @@ section{padding:110px 0;position:relative}
     <span class="eyebrow reveal">Der nächste Schritt</span>
     <h2 class="reveal">Die Nacht um drei muss nicht <em>dein Dauerzustand</em> bleiben.</h2>
     <p class="lead reveal">Der Selbsttest zeigt dir in wenigen Minuten, wo du stehst. Kostenfrei, ohne Vorbereitung, ohne Verpflichtung.</p>
-    <a class="cta cta-dark reveal" href="https://alfima.com/nicolelurz/system-kompass" data-swap="SELBSTTEST-LINK-VORLAEUFIG">Mach den Selbsttest <span class="arrow">→</span></a>
-    <p class="cta-note reveal">12 Fragen · Ergebnis sofort · Kein Newsletter-Zwang</p>
-    <p class="cta-note reveal">Deine Befunde sind schon beisammen? Dann starte direkt mit dem <a href="https://nicole-lurz.de/bsc">Blind Spot Check</a>.</p>
+    <a class="cta cta-dark reveal" href="/selbsttest/">Mach den Selbsttest <span class="arrow">→</span></a>
+    <p class="cta-note reveal">12 Fragen · 3 Minuten · Ergebnis sofort</p>
+    <p class="cta-note reveal">Du hast genug auf eigene Faust ausprobiert und willst wissen, wo du bei dir ansetzen musst? Dann buch dir direkt einen <a href="https://kalender.nicole-lurz.com/strategiecall">Strategie-Call</a>.</p>
   </div>
 </section>
 
