@@ -76,6 +76,8 @@
   display: flex; align-items: center;
   overflow: hidden; padding: 9rem 0 5rem;
 }
+.is-weg-alt { margin-top: 0.9rem; font-size: 0.88rem; opacity: 0.85; }
+.is-weg-alt a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .is-hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .is-hero-photo-bleed { position: absolute; top: 0; right: 0; bottom: 0; width: 60%; z-index: 1; pointer-events: none; }
 .is-hero-photo-bleed img {
@@ -1063,9 +1065,9 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
       </ul>
     </div>
     <div class="cta-row reveal" data-delay="0.24">
-      <a href="#strategie-call" class="cta cta-primary cta-magnetic" data-magnetic data-magnetic-strength="0.4">
+      <a href="#wege" class="cta cta-primary cta-magnetic" data-magnetic data-magnetic-strength="0.4">
         <span class="cta-shimmer"></span>
-        <span class="label">Strategie-Call buchen</span>
+        <span class="label">Die zwei Wege ansehen</span>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a href="https://wa.me/message/QXAYPG3GPUZRF1" target="_blank" rel="noopener" class="cta cta-secondary">
@@ -1122,9 +1124,9 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
     <div class="is-cta-band reveal">
       <p class="band-gain">Punkt 1 für deine Entscheidung</p>
       <p>Du hast dich gerade in mindestens einer Szene wiedererkannt. Das ist kein Zufall. Und es ist auch nicht einfach das Alter.</p>
-      <a href="#strategie-call" class="cta cta-primary">
+      <a href="#wege" class="cta cta-primary">
         <span class="cta-shimmer"></span>
-        <span class="label">Strategie-Call buchen</span>
+        <span class="label">Die zwei Wege ansehen</span>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <p class="band-fork">Dafür ist es dir noch zu früh? Völlig in Ordnung. Dann lies zuerst, <a href="#ueber">wer da eigentlich mit dir arbeiten würde</a>.</p>
@@ -1158,9 +1160,9 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
         <p class="is-nicole-creds">Mentorin für Regenerationsmedizin · Immunsignatur-Coach · Expertin für Frauengesundheit und Hormone · Diplom-Kauffrau</p>
         <div class="is-nicole-cta">
           <p class="band-gain">Punkt 2 für deine Entscheidung</p>
-          <a href="#strategie-call" class="cta cta-primary">
+          <a href="#wege" class="cta cta-primary">
             <span class="cta-shimmer"></span>
-            <span class="label">Strategie-Call buchen</span>
+            <span class="label">Die zwei Wege ansehen</span>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
           <p class="band-fork">Du willst erst verstehen, warum bei dir bisher nichts richtig gegriffen hat? <a href="#schon-getan">Das kommt als Nächstes</a>.</p>
@@ -1243,9 +1245,9 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
     <div class="is-cta-band reveal">
       <p class="band-gain">Punkt 3 für deine Entscheidung</p>
       <p>Du weißt jetzt, warum bisher jeder nur seinen Ausschnitt gesehen hat. Im Strategie-Call schauen wir gemeinsam auf deine Situation, mit allen Facetten.</p>
-      <a href="#strategie-call" class="cta cta-primary">
+      <a href="#wege" class="cta cta-primary">
         <span class="cta-shimmer"></span>
-        <span class="label">Strategie-Call buchen</span>
+        <span class="label">Die zwei Wege ansehen</span>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <p class="band-fork">Dir fehlt noch, wie ich das konkret mache? Dann geht es hier zu <a href="#ansatz">meiner Methode</a>.</p>
@@ -1359,9 +1361,9 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
     <div class="is-cta-band reveal">
       <p class="band-gain">Punkt 4 für deine Entscheidung</p>
       <p>Du musst nicht alles verändern. Du musst das Richtige verändern. Wo bei dir das größte Leck sitzt, ist die erste Frage im Strategie-Call.</p>
-      <a href="#strategie-call" class="cta cta-primary">
+      <a href="#wege" class="cta cta-primary">
         <span class="cta-shimmer"></span>
-        <span class="label">Strategie-Call buchen</span>
+        <span class="label">Die zwei Wege ansehen</span>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <p class="band-fork">Du willst vorher wissen, was das kostet und wie lange es dauert? <a href="#wege">Beides steht weiter unten, offen ausgeschrieben</a>.</p>
@@ -1510,7 +1512,7 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
     <p class="is-section-tag reveal center"><span class="num">08</span> Dein Weg</p>
     <h2 class="is-h2 reveal" style="text-align:center; margin: 0 auto 1rem;">Dasselbe Ziel.<br><em>Zwei Wege dorthin.</em></h2>
     <p class="is-lead center reveal" style="text-align:center; margin-bottom: 0;" data-delay="0.08">
-      Die sieben Bausteine von eben stecken in beiden Wegen, genauso wie dein Blind Spot Check mit Blutanalyse. Hier steht nur noch, worin sie sich unterscheiden.
+      Die sieben Bausteine von eben stecken in beiden Wegen. Hier siehst du, worin sie sich unterscheiden und was sie kosten.
     </p>
 
     <div class="is-wege-grid">
@@ -1519,31 +1521,32 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
         <h3>VIP 1:1</h3>
         <p class="is-weg-sub">Die persönliche Begleitung. Für Frauen, die volle Tiefe, eigenes Tempo und direkten Zugang zu mir wollen.</p>
         <ul class="is-weg-list">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Keine feste Laufzeit: 12 Wochen bis 6 Monate</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Laufzeit mindestens 3 Monate, danach so lange, wie es für dich sinnvoll ist</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Start nach Absprache, du wartest auf keine Gruppe</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Anzahl und Rhythmus der Sessions richten sich nach dir</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Meist im ersten Monat wöchentlich, im zweiten alle zwei Wochen, mit kurzen Check-ins dazwischen</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Direkter Draht zu mir per WhatsApp, werktags 9:00 bis 17:00 Uhr</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Je nach Kapazität nur wenige Plätze pro Jahr</li>
         </ul>
         <p class="is-anrechnung">Kein Standardpaket. Umfang, Dauer und Ablauf richten sich nach deiner Ausgangssituation und den Zielen, die du erreichen willst.</p>
         <div class="is-weg-price">
-          <div class="amount">ab 3.500 €</div>
-          <p class="note">Der Preis richtet sich nach Umfang und Dauer, von 12 Wochen bis 6 Monate. Was du brauchst, legen wir im Strategie-Call gemeinsam fest. Blind Spot Check mit Blutanalyse ist enthalten.</p>
-          <p class="extra">Ratenzahlung möglich. Zusätzlich Labor und Diagnostik, in der Regel 150 bis 450 €.</p>
+          <div class="amount">ab 250 € <span style="font-size:.5em;font-weight:400">pro Monat</span></div>
+          <p class="note">Bei einem Termin à 60 Minuten pro Monat und mindestens 3 Monaten Laufzeit. Weil die meisten Frauen am Anfang engere Begleitung brauchen, bekommst du ein individuelles Angebot, das wir im Strategie-Call gemeinsam festlegen. Voraussetzung ist dein Blind Spot Check.</p>
+          <p class="extra">Zusätzlich Labor und Diagnostik, in der Regel 150 bis 450 €.</p>
         </div>
         <a href="#strategie-call" class="cta cta-primary">
           <span class="cta-shimmer"></span>
           <span class="label">Strategie-Call buchen</span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
+        <p class="is-weg-alt"><a href="https://wa.me/message/QXAYPG3GPUZRF1" target="_blank" rel="noopener">Lieber erst eine Frage per WhatsApp</a></p>
       </div>
 
       <div class="is-weg reveal" id="circle" data-delay="0.1">
-        <span class="is-weg-badge soon">Nächster Start 22. Oktober</span>
+        <span class="is-weg-badge soon">Nächster Start 25. Februar 2027</span>
         <h3>The Inner Shift Circle</h3>
         <p class="is-weg-sub">Dieselbe Methode, derselbe Blind Spot Check, im festen Rahmen einer kleinen Gruppe. Für Frauen, die Struktur und den Rückenwind anderer wollen.</p>
         <ul class="is-weg-list">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>16 Wochen fester Rahmen, Start am 22. Oktober</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>16 Wochen fester Rahmen, Start am 25. Februar 2027</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Dein Blind Spot Check läuft 1:1, vor dem Gruppenstart</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>8 Gruppentermine, donnerstags um 18:00 Uhr</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>5 Check-in-Termine à 30 Minuten in den Wochen dazwischen</li>
@@ -1551,51 +1554,18 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Maximal 3 bis 5 Frauen, WhatsApp-Support begleitend</li>
         </ul>
 
-        <details class="is-timeline-toggle">
-          <summary>Ablauf und Termine ansehen</summary>
-          <ol class="is-timeline">
-            <li>
-              <span class="tl-when">12. bis 26. Oktober</span>
-              <span class="tl-what">Dein Blind Spot Check mit Blutanalyse, 1:1</span>
-              <span class="tl-note">Die Basis: Orientierung, Rahmen und Klarheit, bevor die Gruppe startet.</span>
-            </li>
-            <li>
-              <span class="tl-when">22. Oktober</span>
-              <span class="tl-what">Kick-off und Onboarding, Woche 1</span>
-              <span class="tl-note">Wir setzen den Rahmen für das Programm und lernen die Gruppe kennen.</span>
-            </li>
-            <li>
-              <span class="tl-when">Ab Woche 3 bis Weihnachten</span>
-              <span class="tl-what">6 Gruppentermine, donnerstags 18:00 Uhr</span>
-              <span class="tl-note">Alle zwei Wochen. Dazwischen die Check-ins, mit Schwerpunkt in den ersten acht Wochen.</span>
-            </li>
-            <li>
-              <span class="tl-when">Über Weihnachten</span>
-              <span class="tl-what">2 Wochen Integrationspause</span>
-              <span class="tl-note">Zeit, das Neue im Alltag ankommen zu lassen, statt noch mehr Input.</span>
-            </li>
-            <li>
-              <span class="tl-when">Januar</span>
-              <span class="tl-what">2 Gruppentermine und 1 Check-in</span>
-              <span class="tl-note">Wir schauen, was trägt, und justieren nach.</span>
-            </li>
-            <li>
-              <span class="tl-when">KW 4 bis 5</span>
-              <span class="tl-what">Abschluss 1:1 mit jeder Frau</span>
-              <span class="tl-note">Checkup, was sich verändert hat und wie es für dich persönlich weitergeht.</span>
-            </li>
-          </ol>
-        </details>
+        <p class="is-anrechnung">Den genauen Ablauf mit allen Terminen bekommst du, sobald du auf der Warteliste stehst.</p>
 
         <div class="is-weg-price">
           <div class="amount">2.900 €</div>
           <p class="note">Fester Preis. Blind Spot Check mit Blutanalyse und Abschlussgespräch 1:1 enthalten.</p>
           <p class="extra">Ratenzahlung möglich. Zusätzlich Labor und Diagnostik, in der Regel 150 bis 450 €.</p>
         </div>
-        <a href="#strategie-call" class="cta cta-secondary">
-          <span class="label">Strategie-Call buchen</span>
+        <a href="https://wa.me/message/QXAYPG3GPUZRF1" target="_blank" rel="noopener" class="cta cta-secondary">
+          <span class="label">Auf die Warteliste setzen lassen</span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
+        <p class="is-weg-alt">Schreib mir kurz per WhatsApp, dann setze ich dich auf die Warteliste. Oder <a href="#strategie-call">buch dir einen Strategie-Call</a>.</p>
       </div>
     </div>
   </div>
@@ -1713,7 +1683,7 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
       </details>
       <details class="faq-item reveal">
         <summary>Was kostet The Inner Shift?</summary>
-        <p>Der Circle kostet 2.900 €, inklusive Blind Spot Check und Abschlussgespräch 1:1. Das VIP 1:1 startet bei 3.500 €. Nach oben hängt es von Umfang und Dauer ab, die Spanne geht bis 8.000 €. Was für dich sinnvoll ist, legen wir im Strategie-Call gemeinsam fest, und du entscheidest danach in Ruhe.</p>
+        <p>Der Circle kostet 2.900 €, inklusive Blind Spot Check und Abschlussgespräch 1:1. Das VIP 1:1 gibt es ab 250 € pro Monat, mit mindestens drei Monaten Laufzeit, und Voraussetzung dafür ist der Blind Spot Check. Was für dich sinnvoll ist, legen wir im Strategie-Call gemeinsam fest, und du entscheidest danach in Ruhe.</p>
       </details>
       <details class="faq-item reveal">
         <summary>Kommen noch weitere Kosten auf mich zu?</summary>
