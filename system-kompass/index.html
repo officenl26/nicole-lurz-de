@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Der System-Kompass · Nicole Lurz</title>
+<title>Das Körper-Cockpit · Nicole Lurz</title>
 <base target="_top">
 
 <style>
@@ -135,6 +135,13 @@ main{flex:1}
 .sys-card svg{width:36px;height:36px;margin:0 auto 12px;display:block}
 .sys-name{font-family:'Spectral',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:12px}
 .main-tag{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-mid);font-weight:700;margin-bottom:8px}
+.sys-card .gauge{width:100%;max-width:150px;height:auto;margin:0 auto 10px}
+.sys-card .state-tag{margin-bottom:0}
+.main-tag-empty{visibility:hidden}
+@media(max-width:540px){.main-tag-empty{display:none}}
+.gauge-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;font-size:.74rem;color:var(--ink3);margin:4px 0 22px}
+.gauge-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.block-energie{border-left:4px solid var(--blue)}
 .pills{display:flex;flex-direction:column;gap:5px}
 .pill{font-size:.67rem;font-weight:600;padding:4px 10px;border-radius:4px;background:#edf0ed;color:#aaa;letter-spacing:.04em}
 .pill.on{color:#fff}
@@ -268,12 +275,14 @@ footer{background:var(--forest);border-top:1px solid rgba(255,255,255,.06);paddi
 </footer>
 
 <script>
-var BOOKING_URL="https://nicole-lurz.de/bsc";
+var BOOKING_URL="https://kalender.nicole-lurz.com/strategiecall";
+var BSC_URL="https://nicole-lurz.de/bsc/";
 var QS=[
   {id:"f1",title:"Wie ist dein Schlaf gerade?",opts:[
     {v:"a",t:"Ich schlafe schnell und gut ein und bin morgens fit, ohne Kaffee oder Tee."},
-    {v:"b",t:"Ich schlafe schlecht oder lange ein oder wache nachts häufig auf."},
-    {v:"c",t:"Ich schlafe sofort ein, weil ich kaputt bin, und bin nach wenigen Stunden hellwach, ohne wieder einzuschlafen."},
+    {v:"b",t:"Ich liege lange wach, bevor ich einschlafe, mein Kopf kommt nicht zur Ruhe."},
+    {v:"c",t:"Ich schlafe ein, wache aber nachts auf, oft zwischen zwei und vier Uhr, und liege dann lange wach."},
+    {v:"e",t:"Beides: Ich schlafe schwer ein und wache nachts wieder auf."},
     {v:"d",t:"Ich schlafe gut ein und durch und wache trotzdem wie gerädert auf und brauche erst mal einen Kaffee."}
   ]},
   {id:"f12",title:"Was hast du bereits versucht?",hint:"Mehrfachauswahl möglich.",multi:true,opts:[
@@ -296,8 +305,10 @@ var QS=[
   ]},
   {id:"f4",title:"Wie ist deine Temperaturregulation?",opts:[
     {v:"a",t:"Unauffällig."},
-    {v:"b",t:"Ich schwitze schnell, Hitzewallungen oder Nachtschweiß."},
-    {v:"c",t:"Ich friere schnell, kalte Hände und Füße."}
+    {v:"b",t:"Ich friere schnell, kalte Hände und Füße."},
+    {v:"c",t:"Hitzewallungen, vor allem tagsüber, zum Beispiel in Stressmomenten."},
+    {v:"d",t:"Hitzewallungen, vor allem nach dem Essen."},
+    {v:"e",t:"Hitzewallungen oder Nachtschweiß, vor allem abends oder nachts."}
   ]},
   {id:"f5",title:"Wie verlaufen Infekte bei dir?",opts:[
     {v:"a",t:"Selten krank, und wenn, dann kurz und kräftig durch."},
@@ -321,6 +332,8 @@ var QS=[
   {id:"f8",title:"Wie sieht dein Frühstück aus?",opts:[
     {v:"a",t:"Gibt es nicht, Kaffee muss reichen."},
     {v:"b",t:"Müsli oder Porridge mit Früchten oder Ähnlichem."},
+    {v:"d",t:"Brot oder Brötchen mit Marmelade, Wurst oder Käse."},
+    {v:"e",t:"Protein-Shake, Rühreier oder Ähnliches."},
     {v:"c",t:"Ich faste im Intervall, meine erste Mahlzeit ist mittags, morgens kein Kaffee."}
   ]},
   {id:"f9",title:"Wie ernährst du dich?",opts:[
@@ -346,21 +359,30 @@ var QS=[
 var TX={
   ns:{reguliert:"Dein Nervensystem kann zwischen Anspannung und Ruhe wechseln. Du fährst hoch, wenn es nötig ist, und kommst wieder runter. Das ist die Basis, auf der Regeneration überhaupt stattfinden kann.",aktiviert:"Dein Nervensystem steht unter Dauerspannung. Es hält dich im Modus, in dem du funktionierst, leistest und durchhältst. Der Preis ist, dass es nicht mehr richtig in die Ruhe kommt. Genau in der Ruhe würde dein Körper sich erholen. Solange dieser Schalter oben bleibt, verpufft vieles, was du sonst tust.",erschoepft:"Dein Nervensystem ist lange auf Hochtouren gelaufen und in den Schutzmodus gekippt. Was sich wie Antriebslosigkeit oder fehlende Freude anfühlt, ist oft kein Charakterzug und kein Versagen, sondern ein System, das auf Sparflamme schaltet, um dich zu schützen. Wenn diese Schwere länger anhält, gehört sie auch fachlich begleitet."},
   sm:{flexibel:"Dein Stoffwechsel ist anpassungsfähig. Er schaltet zwischen Zucker und Fett um und liefert dir auch dann Energie, wenn eine Mahlzeit mal später kommt.",uebersaeuert:"Dein Stoffwechsel kommt schwer an deine Fettreserven und ist auf schnellen Zucker angewiesen. Daher die Heißhungerwellen und das Nachmittagstief. Dein Gehirn fordert Zucker an, um arbeiten zu können. Das erklärt den Griff zur Schokolade, und es hat nichts mit fehlendem Willen zu tun.",sparmodus:"Dein Stoffwechsel ist heruntergefahren. Dein Körper hält Energie zurück, statt sie freizugeben. Du funktionierst noch, nach außen oft erstaunlich gut, aber die Reserve, aus der du das ziehst, wird kleiner."},
-  im:{resilient:"Dein Immunsystem arbeitet beweglich. Es reagiert, wenn nötig, und beruhigt sich danach wieder.",entzuendet:"Dein Immunsystem ist in einer Daueralarmbereitschaft, die nicht mehr abklingt. Unverträglichkeiten, Allergien, Migräne oder eine schlechte Wundheilung sind häufig Zeichen dafür, dass es nicht zur Ruhe kommt. Diese stille Entzündung zieht Energie ab, die dir an anderer Stelle fehlt.",erschoepft:"Dein Immunsystem ist weder im Alarm noch richtig leistungsfähig. Das Gefühl, kaum noch richtig krank zu werden und trotzdem nie richtig fit zu sein, deutet darauf hin, dass die Reparaturkraft nachlässt."},
+  im:{resilient:"Dein Immunsystem arbeitet beweglich. Es reagiert, wenn nötig, und beruhigt sich danach wieder.",entzuendet:"Dein Immunsystem ist in einer Daueralarmbereitschaft, die nicht mehr abklingt. Unverträglichkeiten, Allergien oder eine schlechte Wundheilung sind häufig Zeichen dafür, dass es nicht zur Ruhe kommt. Diese stille Entzündung zieht Energie ab, die dir an anderer Stelle fehlt.",erschoepft:"Dein Immunsystem ist weder im Alarm noch richtig leistungsfähig. Das Gefühl, kaum noch richtig krank zu werden und trotzdem nie richtig fit zu sein, deutet darauf hin, dass die Reparaturkraft nachlässt."},
   scope:"Wichtig zur Einordnung: Diese zwölf Fragen zeigen einen Ausschnitt, eine Momentaufnahme. In dein genaues Bild spielen deutlich mehr Faktoren hinein, von deinen Befunden über deine Geschichte bis zu deinem Alltag. Oft sind mehrere Systeme latent beteiligt, auch wenn hier nur eines auffällig wird. Genau dieses Gesamtbild erarbeiten wir mit der 360-Grad-Methode im Blind Spot Check oder in der tieferen Begleitung im Inner Shift.",
-  regenBase:"Ein zweiter Punkt fällt auf. Dein Schlaf ist zwar da, aber er regeneriert dich nicht mehr tief genug, und deinem Körper fehlt oft schon morgens der Baustoff für Reparatur. Regenerationsfähigkeit ist die Voraussetzung dafür, dass alles andere überhaupt greifen kann. Sie lässt sich zurückgewinnen, aber nicht über das nächste Supplement, sondern über einen Veränderungsprozess.",
-  regenAlt:"Ein zweiter Punkt fällt auf. Deinem System fehlen gerade wichtige Voraussetzungen für tiefe Regeneration. Sie lässt sich zurückgewinnen, aber nicht über das nächste Supplement, sondern über einen Veränderungsprozess.",
+  regenBase:"Ein zweiter Punkt fällt auf. Dein Schlaf ist zwar da, aber er regeneriert dich nicht mehr tief genug, und deinem Körper fehlt oft schon morgens der Baustoff für Reparatur. Regenerationsfähigkeit ist die Voraussetzung dafür, dass alles andere überhaupt greifen kann. Sie lässt sich zurückgewinnen, nur kommst du da mit dem nächsten Supplement kaum weiter. Es geht um ein paar gezielte Stellschrauben in deinem Alltag, und welche das bei dir sind, hängt von deinem Engpass ab.",
+  regenAlt:"Ein zweiter Punkt fällt auf. Deinem System fehlen gerade wichtige Voraussetzungen für tiefe Regeneration. Sie lässt sich zurückgewinnen, nur kommst du da mit dem nächsten Supplement kaum weiter. Es geht um ein paar gezielte Stellschrauben in deinem Alltag, und welche das bei dir sind, hängt von deinem Engpass ab.",
   regenBett:"Der tiefschlafreiche Teil der Nacht liegt in den frühen Stunden. Wer spät ins Bett geht, verliert genau das Fenster, in dem das System sich am stärksten erholt.",
   regenKaffee:"Ohne Frühstück startet dein Körper den Tag über Stresshormone. Der Kaffee mobilisiert Energie aus deinen Reserven, liefert aber keinen Baustoff für Reparatur und Regeneration.",
+  regenBrot:"Brot und Brötchen sind vor allem schnelle Kohlenhydrate. Mit Wurst oder Käse kommt zwar etwas Eiweiß dazu, für Reparatur und Regeneration ist das morgens aber meistens zu wenig.",
+  proteinSm:"Dein Frühstück ist eiweißreich, damit bekommt dein Körper morgens schon den Baustoff, den er für Reparatur braucht. Wenn dein Stoffwechsel trotzdem bremst, bringt eine weitere Ernährungsumstellung wahrscheinlich wenig, und der Hebel liegt eher bei der Bewegung und bei deinem Nervensystem.",
   regenMuesli:"Dein Frühstück liefert vor allem schnellen Zucker und wenig von dem Baustoff, den dein Körper für Reparatur und Regeneration braucht.",
   regenVeg:"Bei deiner Ernährungsform lohnt der genaue Blick, ob genug Protein und Fett für Reparatur und Regeneration zusammenkommen.",
+  vegSpar:"Wenn du vegetarisch oder vegan isst, lohnt sich hier ein genauer Blick, weil zu wenig Protein und Zink den Stoffwechsel in den Sparmodus schicken können.",
+  migraene:"Auch deine Migräne gehört hierher, weil sie häufig am Stoffwechsel hängt. Wenn der Blutzucker stark schwankt, schüttet der Körper Stresshormone aus, und das kann Migräne begünstigen. Die Entzündung, die dabei mitläuft, kommt dann oft aus dem Stoffwechsel.",
+  durchschlaf:"Dass du nachts aufwachst und wach liegst, passt in dieses Bild. Die meisten Frauen schieben das auf Stress oder die Hormone. In der Regenerationsmedizin schaut man da genauer hin, denn wer schlecht einschläft, hat eher ein Thema im Nervensystem, und wer nachts aufwacht und wach liegt, eher im Immunsystem oder im Stoffwechsel, zum Beispiel wenn nachts der Blutzucker absackt und der Körper mit Stresshormonen gegensteuert.",
   fastenSparmodus:"Intervallfasten ist nicht gut oder schlecht an sich, es kommt auf deinen Systemzustand an. Bei einem System, das ohnehin auf Sparflamme läuft, kann das Fasten dem Körper genau den Baustoff entziehen, den er für Reparatur braucht.",
   hormonBase:"Dein Bauchgefühl, dass das etwas mit deinen Hormonen zu tun hat, trügt dich nicht. Nur sind die Hormone hier die Folge, nicht der Auslöser. Ein Nervensystem im Dauerbetrieb, ein Stoffwechsel auf Sparflamme und ein Immunsystem unter Spannung verändern deine Hormonregulation.",
-  zyklus:{a:"Dass dein Zyklus noch regelmäßig ist, heißt nicht, dass es nichts mit deinen Hormonen zu tun hat. Die ersten Veränderungen beginnen lange vor der letzten Blutung, oft mit einem Abfall von Progesteron, und werden häufig als Stress abgetan.",b:"Dein veränderter Zyklus passt ins Bild. Diese Phase ist ein Übergang, in dem dein System besonders davon abhängt, wie gut es regenerieren kann.",c:"Auch nach der letzten Blutung bleibt entscheidend, in welchem Zustand deine drei Systeme sind. Sie bestimmen, wie viel Energie und Stabilität dir zur Verfügung stehen.",d:null},
+  zyklus:{a:"Dass dein Zyklus noch regelmäßig ist, heißt nicht, dass es nichts mit deinen Hormonen zu tun hat. Die ersten Veränderungen beginnen lange vor der letzten Blutung, oft mit einem Abfall von Progesteron, und werden häufig als Stress abgetan.",b:"Dein veränderter Zyklus passt ins Bild. Diese Phase ist ein Übergang, in dem dein Körper besonders davon abhängt, wie gut er regenerieren kann und wie viele Ressourcen er dafür noch hat.",c:"Auch nach der letzten Blutung bleibt entscheidend, in welchem Zustand deine drei Systeme sind. Sie bestimmen, wie viel Energie und Stabilität dir zur Verfügung stehen.",d:null},
   trigger:{a:"eine Erkrankung oder OP",b:"Trauer oder Schreck",c:"eine intensive berufliche Phase",d:"Schwangerschaft oder Stillzeit"}
 };
 
-var MARKER_LABEL={unvertraeglichkeiten:"Nahrungsmittelunverträglichkeiten",allergien:"Allergien",migraene:"Migräne",wundheilung:"schlechte Wundheilung",autoimmun:"Autoimmunerkrankung"};
+var MARKER_LABEL={unvertraeglichkeiten:"Nahrungsmittelunverträglichkeiten",allergien:"Allergien",wundheilung:"schlechte Wundheilung",autoimmun:"Autoimmunerkrankung"};
+
+/* Hitzewallungen nach Tageszeit (Frage f4, Antworten c bis e).
+   Zuordnung legt Nicole fest, z. B. {sys:"ns",st:"aktiviert"}. Solange null, zählen sie für kein System. */
+var HITZE={c:null,d:null,e:null};
 
 var TRIED_LABEL={hormone:"Hormonpräparate",supplements:"Supplements",ernaehrung:"eine Ernährungsumstellung",sport:"Sport und Training",coaching:"Coaching oder Therapie"};
 var TRIED_TX={
@@ -405,7 +427,7 @@ var HEBEL={
   }
 };
 var SYS_FULL={ns:"Nervensystem",sm:"Energiestoffwechsel",im:"Immunsystem"};
-var SL={ns:{reguliert:"reguliert",aktiviert:"aktiviert",erschoepft:"erschöpft"},sm:{flexibel:"flexibel",uebersaeuert:"übersäuert",sparmodus:"Sparmodus"},im:{resilient:"resilient",entzuendet:"chronisch entzündet",erschoepft:"erschöpft"}};
+var SL={ns:{reguliert:"reguliert",aktiviert:"Daueranspannung",erschoepft:"erschöpft"},sm:{flexibel:"flexibel",uebersaeuert:"Zucker-Modus",sparmodus:"Sparmodus"},im:{resilient:"stabil",entzuendet:"Daueralarm",erschoepft:"erschöpft"}};
 var SC={ns:{reguliert:"g",aktiviert:"r",erschoepft:"gr"},sm:{flexibel:"g",uebersaeuert:"r",sparmodus:"gr"},im:{resilient:"g",entzuendet:"r",erschoepft:"gr"}};
 var ICONS={
   brain:'<svg viewBox="0 0 24 24" fill="none" stroke="COL" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5a2.8 2.8 0 0 0-2.8 2.8 2.9 2.9 0 0 0-2.2 4.8 2.9 2.9 0 0 0 1.3 5.3 2.8 2.8 0 0 0 2.7 3.6H11V2.5H9.5z"/><path d="M14.5 2.5a2.8 2.8 0 0 1 2.8 2.8 2.9 2.9 0 0 1 2.2 4.8 2.9 2.9 0 0 1-1.3 5.3 2.8 2.8 0 0 1-2.7 3.6H13V2.5h1.5z"/></svg>',
@@ -438,49 +460,18 @@ function showResult(){gateDone=true;render();}
 
 function renderIntro(){
   pbWrap.classList.add("hidden");
-  var arr='<div class="story-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>';
-  var h='<div class="story">';
-
-  h+='<div class="story-step hero-step">'+
-    '<div class="intro-badge">Der System-Kompass · für Unternehmerinnen 50+</div>'+
-    '<h1>Du glaubst, deine <em>Hormone</em> sind das Problem?</h1>'+
-    '<p class="lead">Bei Unternehmerinnen liegt der eigentliche Engpass meistens ganz woanders. Du hast schon vieles versucht, alle Werte sind unauffällig, und trotzdem stimmt irgendetwas fundamental nicht mehr.</p>'+
-    '</div>'+arr;
-
-  h+='<div class="story-step">'+
-    '<div class="story-eyebrow">Eine Einordnung vorab</div>'+
-    '<h2>Jeder Mensch hat einen gesundheitlichen <em>blinden Fleck.</em></h2>'+
-    '<div class="blindspot-box">'+
-      '<p class="lead-line">Manche investieren in Ernährungsumstellungen. Andere in Hormone. Andere in Supplements, Biohacking oder die nächste Methode.</p>'+
-      '<p>Alles davon kann richtig sein. Aber wenn der eigentliche Engpass woanders liegt, bringt selbst die beste Einzelmaßnahme nur wenig. Sie optimiert von außen, während das System innen weiter in Dysregulation läuft.</p>'+
-      '<p>In 14 Jahren Praxis mit über 1.500 begleiteten Klientinnen war das häufigste Muster nie die fehlende Maßnahme. Es war die falsche Perspektive.</p>'+
-    '</div></div>'+arr;
-
-  h+='<div class="story-step">'+
-    '<div class="story-eyebrow">Das Modell</div>'+
-    '<h2>Die 3 <em>Regenerationssysteme</em></h2>'+
-    '<p>Drei Systeme entscheiden darüber, wie viel Energie, Klarheit und Stabilität dir tatsächlich zur Verfügung stehen. Hormone sind dabei fast immer die Folge, nicht die Ursache.</p>'+
-    '<div class="model-grid">'+
-      '<div class="model-card">'+ICONS.brain.replace("COL","#3D5A2E")+'<h3>Nervensystem</h3><p>Reguliert, ob dein Körper in den Erholungsmodus schaltet. Ohne funktionierende Erholung läuft nichts anderes optimal. Im Akutfall kann es seinen Energiebedarf fast vervierfachen und über Stresshormone alles andere zurückstellen.</p></div>'+
-      '<div class="model-card">'+ICONS.flame.replace("COL","#3D5A2E")+'<h3>Energiestoffwechsel</h3><p>Verwandelt die Energie aus deiner Nahrung in nutzbare Lebensenergie. Er bestimmt, ob du über den Tag stabile, fließende Energie hast oder gezwungen bist, von Koffein und Willenskraft zu leben.</p></div>'+
-      '<div class="model-card">'+ICONS.shield.replace("COL","#3D5A2E")+'<h3>Immunsystem</h3><p>Kann seinen Energiebedarf bei Aktivierung extrem vervielfachen. Bleibt es chronisch aktiv, zieht es im Hintergrund permanent Energie ab. Ein Zustand, der oft über Jahre völlig unbemerkt bleibt.</p></div>'+
-    '</div>'+
-    '<p style="margin-top:26px;font-family:\'Spectral\',serif;font-style:italic;font-size:1.08rem;color:var(--ink);">Diese drei Systeme arbeiten eng zusammen. Gemeinsam entscheiden sie darüber, wie viel Energie, Klarheit und Stabilität dir im Alltag wirklich zur Verfügung stehen.</p>'+
-    '</div>'+arr;
-
-  h+='<div class="story-step story-cta">'+
-    '<h2>Welches dieser drei Systeme bremst gerade <em>dich</em> aus?</h2>'+
-    '<p>12 kurze Fragen. Du erfährst, wo dein größter Engpass liegt, warum deine bisherigen Versuche womöglich verpufft sind, und was als erstes dran wäre.</p>'+
-    '<div class="stats-pill">'+
+  var h='<div class="story"><div class="story-step hero-step">'+
+    '<div class="intro-badge">Das Körper-Cockpit · für Unternehmerinnen ab 50</div>'+
+    '<h1>Deine KPIs schaust du dir jede Woche an. Und bei deinem wichtigsten Business-Asset, deiner Gesundheit, bist du im <em>Blindflug.</em></h1>'+
+    '<p class="lead">Falls du denkst, die Hormone sind schuld, lohnt sich ein genauerer Blick. Mit zwölf Fragen siehst du in drei Minuten, welches deiner drei Körpersysteme dich gerade ausbremst und wo du als Erstes ansetzt.</p>'+
+    '<div class="stats-pill" style="margin-top:34px">'+
       '<div class="stat"><div class="stat-num">12</div><div class="stat-label">Fragen</div></div>'+
       '<div class="stat"><div class="stat-num">3</div><div class="stat-label">Min</div></div>'+
-      '<div class="stat"><div class="stat-num">100%</div><div class="stat-label">Kostenlos</div></div>'+
+      '<div class="stat"><div class="stat-num">3</div><div class="stat-label">Anzeigen</div></div>'+
     '</div><br>'+
-    '<button class="btn btn-primary" onclick="startTest()">Jetzt meinen Engpass finden</button>'+
-    '<p class="intro-privacy">Deine Antworten werden ausschließlich in deinem Browser ausgewertet. Nichts wird gespeichert oder übertragen.</p>'+
-    '</div>';
-
-  h+='</div>';
+    '<button class="btn btn-primary" onclick="startTest()">Mein Cockpit starten</button>'+
+    '<p class="intro-privacy">Entwickelt aus 14 Jahren Praxis mit über 1.500 begleiteten Klientinnen. Deine Antworten werden ausschließlich in deinem Browser ausgewertet, nichts wird gespeichert oder übertragen.</p>'+
+    '</div></div>';
   app.innerHTML=h;
 }
 
@@ -512,25 +503,44 @@ function goBack(){if(step===0)step=-1;else step--;render();}
 
 function evaluate(){
   var sev=function(v,o){var b=null;v.forEach(function(x){if(!x)return;if(b===null||o.indexOf(x)>o.indexOf(b))b=x;});return b;};
-  var ns;var nm1={a:"reguliert",b:"aktiviert",c:"aktiviert",d:"aktiviert"};var nm2={a:"reguliert",b:"aktiviert",c:"erschoepft"};
-  if(answers.f1==="c"&&answers.f2==="c"){ns="erschoepft";}
-  else{var nv=[nm1[answers.f1],nm2[answers.f2]];if(answers.f8==="a")nv.push("aktiviert");ns=sev(nv,["reguliert","aktiviert","erschoepft"])||"reguliert";}
-  var smM={a:"flexibel",b:"uebersaeuert",c:"sparmodus"};var veg=answers.f9==="b"||answers.f9==="c";var brkBad=answers.f8==="a"||answers.f8==="b";
-  var sv=[smM[answers.f3],smM[answers.f4]];if(veg&&brkBad)sv.push("uebersaeuert");
+  /* Einschlafen = Nervensystem, Durchschlafen = Immunsystem (Regenerationsmedizin, Modul 2.2.5) */
+  var nm1={a:"reguliert",b:"aktiviert",c:"reguliert",d:"aktiviert",e:"aktiviert"};var nm2={a:"reguliert",b:"aktiviert",c:"erschoepft"};
+  var durch=answers.f1==="c"||answers.f1==="e";
+  var nv=[nm1[answers.f1],nm2[answers.f2]];if(answers.f8==="a")nv.push("aktiviert");
+  var f4h=HITZE[answers.f4];if(f4h&&f4h.sys==="ns")nv.push(f4h.st);
+  var ns=sev(nv,["reguliert","aktiviert","erschoepft"])||"reguliert";
+  var f6=answers.f6||[];var mig=f6.indexOf("migraene")>-1;
+  var smM={a:"flexibel",b:"uebersaeuert",c:"sparmodus"};var veg=answers.f9==="b"||answers.f9==="c";var brkBad=answers.f8==="a"||answers.f8==="b"||answers.f8==="d";
+  /* Ernährung verändert den Zustand nicht, sie liefert nur Hinweise im Ergebnis */
+  var sv=[smM[answers.f3]];if(answers.f4==="b")sv.push("sparmodus");if(f4h&&f4h.sys==="sm")sv.push(f4h.st);
+  if(mig)sv.push("uebersaeuert");
   var sm=sev(sv,["flexibel","uebersaeuert","sparmodus"]);
-  var imM={a:"resilient",b:"entzuendet",c:"erschoepft"};var im=imM[answers.f5];var f6=answers.f6||[];
-  if(["unvertraeglichkeiten","allergien","migraene","autoimmun","wundheilung"].some(function(k){return f6.indexOf(k)>-1;})&&im==="resilient")im="entzuendet";
+  var imM={a:"resilient",b:"entzuendet",c:"erschoepft"};var im=imM[answers.f5];
+  if((durch||["unvertraeglichkeiten","allergien","autoimmun","wundheilung"].some(function(k){return f6.indexOf(k)>-1;}))&&im==="resilient")im="entzuendet";
+  if(f4h&&f4h.sys==="im"&&RANK.im[f4h.st]>RANK.im[im])im=f4h.st;
   var f1d=answers.f1==="d",late=answers.f7==="c"||answers.f7==="d";
   var fac=0;if(f1d)fac++;if(late)fac++;if(brkBad)fac++;if(veg)fac++;
   var rt=f1d||answers.f8==="a"||(late&&fac>=2);
-  return{ns,sm,im,rt,f1d,late,veg,brkBad,fac,fsp:answers.f8==="c"&&sm==="sparmodus"};
+  /* Belastungspunkte pro System: entscheiden, welches belastete System der größte Engpass ist.
+     Gedrosselte Zustände zählen 3, überdrehte 2, Begleitzeichen 1. */
+  var pick=function(map,v){return map[v]||0;};
+  var sc={
+    ns:pick({b:2,e:2,d:1},answers.f1)+pick({b:2,c:3},answers.f2)+(answers.f8==="a"?1:0),
+    sm:pick({b:2,c:3},answers.f3)+(answers.f4==="b"?2:0)+(mig?1:0)+(durch?1:0),
+    im:pick({b:2,c:3},answers.f5)+pick({c:2,e:1},answers.f1)+Math.min(2,f6.filter(function(k){return k!=="migraene"&&k!=="nichts";}).length)
+  };
+  if(f4h)sc[f4h.sys]+=2;
+  return{ns,sm,im,sc,rt,f1d,late,veg,brkBad,fac,durch,mig,fsp:answers.f8==="c"&&sm==="sparmodus"};
 }
 
 var RANK={ns:{erschoepft:2,aktiviert:1,reguliert:0},sm:{sparmodus:2,uebersaeuert:1,flexibel:0},im:{erschoepft:2,entzuendet:1,resilient:0}};
 function mainBottleneck(r){
-  var s=[["ns",RANK.ns[r.ns]],["sm",RANK.sm[r.sm]],["im",RANK.im[r.im]]];
-  s.sort(function(a,b){return b[1]-a[1];});
-  return s[0][1]>0?s[0][0]:null;
+  /* Nur belastete Systeme. Reihenfolge: mehr Punkte, dann tieferer Zustand. Bleibt es gleich,
+     geht das Nervensystem vor, weil es den Schalter für Regeneration hält (siehe WHY_MAIN). */
+  var s=["ns","sm","im"].filter(function(k){return RANK[k][r[k]]>0;});
+  if(!s.length)return null;
+  s.sort(function(a,b){return (r.sc[b]-r.sc[a])||(RANK[b][r[b]]-RANK[a][r[a]]);});
+  return s[0];
 }
 function belastetCount(r){
   var c=0;
@@ -540,10 +550,21 @@ function belastetCount(r){
   return c;
 }
 
-function card(ic,name,sys,st,isMain){
+/* Cockpit-Anzeige: links gedrosselt, Mitte grüner Bereich, rechts überdreht (die drei Funktionszustände).
+   Je mehr Belastungspunkte, desto weiter schlägt die Nadel im jeweiligen Bereich aus. */
+function gaugePt(a,rad){var t=a*Math.PI/180;return(60+rad*Math.sin(t)).toFixed(1)+" "+(64-rad*Math.cos(t)).toFixed(1);}
+function gaugeArc(a1,a2,col){return'<path d="M'+gaugePt(a1,48)+' A48 48 0 0 1 '+gaugePt(a2,48)+'" style="stroke:'+col+'" stroke-width="10" fill="none"/>';}
+function gauge(name,sys,st,score,isMain){
   var c=SC[sys][st];
-  var ps=Object.keys(SL[sys]).map(function(s){return'<span class="pill'+(s===st?' on '+SC[sys][s]:'')+'">'+ SL[sys][s]+'</span>';}).join("");
-  return'<div class="sys-card'+(isMain?' is-main':'')+'">'+(isMain?'<span class="main-tag">Größter Engpass</span>':'')+ICONS[ic].replace("COL",COL_HEX[c])+'<div class="sys-name">'+name+'</div><div class="pills">'+ps+'</div></div>';
+  var dir=c==="g"?0:(c==="r"?1:-1);
+  var ang=dir*Math.min(84,40+score*7);
+  return'<div class="sys-card'+(isMain?' is-main':'')+'">'+(isMain?'<span class="main-tag">Größter Engpass</span>':'<span class="main-tag main-tag-empty">&nbsp;</span>')+
+    '<svg class="gauge" viewBox="0 0 120 72" role="img" aria-label="'+name+': '+SL[sys][st]+'">'+
+      gaugeArc(-90,-31,"var(--mist)")+gaugeArc(-29,29,"var(--forest-mid)")+gaugeArc(31,90,"var(--blue)")+
+      '<line x1="60" y1="64" x2="'+gaugePt(ang,40).replace(" ",'" y2="')+'" style="stroke:var(--ink)" stroke-width="2.5" stroke-linecap="round"/>'+
+      '<circle cx="60" cy="64" r="4.5" style="fill:var(--ink)"/>'+
+    '</svg>'+
+    '<div class="sys-name">'+name+'</div><span class="state-tag '+c+'">'+SL[sys][st]+'</span></div>';
 }
 function blk(name,sys,st,ex,txt){
   var h='<div class="block"><h3>'+name+'</h3><span class="state-tag '+SC[sys][st]+'">'+SL[sys][st]+'</span><p>'+(txt||TX[sys][st])+'</p>';
@@ -567,26 +588,41 @@ function renderResult(){
     var mk=(answers.f6||[]).filter(function(k){return MARKER_LABEL[k];}).map(function(k){return MARKER_LABEL[k];});
     if(mk.length>0){
       imTxt="Dein Immunsystem ist in einer Daueralarmbereitschaft, die nicht mehr abklingt. Deine "+joinDE(mk)+" und noch einige andere Faktoren sind häufig Zeichen für ein aktiviertes Immunsystem, das nicht mehr regulieren kann. Diese stille Entzündung zieht Energie ab, die dir an anderer Stelle fehlt.";
+    } else if(r.durch&&answers.f5!=="b"){
+      imTxt="Dein Immunsystem ist in einer Daueralarmbereitschaft, die nicht mehr abklingt. Diese stille Entzündung zieht Energie ab, die dir an anderer Stelle fehlt.";
     }
   }
 
   var h='<div class="wrap"><div class="result-wrap">';
-  h+='<div class="result-top"><div class="result-badge">Dein Ergebnis</div><h2>Dein System-<em>Kompass</em></h2><p class="sub">So laufen deine drei Systeme gerade.</p></div>';
-  h+='<div class="sys-grid">'+card("brain","Nervensystem","ns",r.ns,main==="ns")+card("flame","Energiestoffwechsel","sm",r.sm,main==="sm")+card("shield","Immunsystem","im",r.im,main==="im")+'</div>';
+  h+='<div class="result-top"><div class="result-badge">Dein Ergebnis</div><h2>Dein Körper-<em>Cockpit</em></h2><p class="sub">So stehen deine drei Anzeigen gerade.</p></div>';
+  h+='<div class="sys-grid">'+gauge("Nervensystem","ns",r.ns,r.sc.ns,main==="ns")+gauge("Energiestoffwechsel","sm",r.sm,r.sc.sm,main==="sm")+gauge("Immunsystem","im",r.im,r.sc.im,main==="im")+'</div>';
+  h+='<div class="gauge-legend"><span><i style="background:var(--mist)"></i>gedrosselt</span><span><i style="background:var(--forest-mid)"></i>im grünen Bereich</span><span><i style="background:var(--blue)"></i>überdreht</span></div>';
+  h+='<div class="block block-energie"><h3>Warum alle Werte unauffällig sind und trotzdem etwas nicht stimmt</h3>'+
+    '<p>Nervensystem, Energiestoffwechsel und Immunsystem teilen sich ein gemeinsames Energiebudget. Zwei von ihnen haben dabei Vorfahrt, das Nervensystem und das Immunsystem. Sobald dein Körper Gefahr meldet, ob durch Dauerstress oder durch eine Entzündung, die nicht abklingt, holen sich diese beiden die Energie zuerst. Für Verdauung, Reparatur, Hormone und einen klaren Kopf bleibt dann weniger übrig.</p>'+
+    '<p>Hält dieser Ausnahmezustand über Monate an, merkt sich dein Körper ihn. An einem einzelnen auffälligen Laborwert siehst du das selten. Du merkst es eher an Müdigkeit, Gehirnnebel, schlechtem Schlaf oder fehlendem Antrieb, und deshalb fühlst du dich oft schlechter, als deine Befunde es vermuten lassen.</p></div>';
   h+='<div class="scope-note">'+TX.scope+'</div>';
 
   var smX=[];
   if(!r.rt&&r.fsp)smX.push(TX.fastenSparmodus);
-  if(!r.rt&&r.veg)smX.push(TX.regenVeg);
-  h+=blk("Nervensystem","ns",r.ns)+blk("Energiestoffwechsel","sm",r.sm,smX)+blk("Immunsystem","im",r.im,null,imTxt);
+  var vegSpar=r.veg&&r.sm==="sparmodus";
+  if(vegSpar)smX.push(TX.vegSpar);
+  else if(!r.rt&&r.veg)smX.push(TX.regenVeg);
+  if(r.mig)smX.push(TX.migraene);
+  if(answers.f8==="e"&&r.sm!=="flexibel")smX.push(TX.proteinSm);
+  /* Nur über Migräne in den Zucker-Modus gerutscht: Text ohne Heißhunger, den sie nicht angegeben hat */
+  var smTxt=(r.sm==="uebersaeuert"&&answers.f3!=="b")?"Dein Stoffwechsel zeigt Zeichen dafür, dass dein Blutzucker stärker schwankt, als dir im Alltag auffällt. Er kommt schwerer an deine Fettreserven und greift schneller auf Zucker zurück.":null;
+  var imX=[];
+  if(r.durch&&r.im!=="resilient")imX.push(TX.durchschlaf);
+  h+=blk("Nervensystem","ns",r.ns)+blk("Energiestoffwechsel","sm",r.sm,smX,smTxt)+blk("Immunsystem","im",r.im,imX,imTxt);
 
   if(r.rt){
     h+='<div class="block block-regen'+(r.fac>=2?' deutlich':'')+'"><h3>Regenerations-Hinweis</h3><p>'+(r.f1d?TX.regenBase:TX.regenAlt)+'</p>';
     if(r.late)h+='<p>'+TX.regenBett+'</p>';
     if(answers.f8==="a")h+='<p>'+TX.regenKaffee+'</p>';
     if(answers.f8==="b")h+='<p>'+TX.regenMuesli+'</p>';
+    if(answers.f8==="d")h+='<p>'+TX.regenBrot+'</p>';
     if(r.fsp)h+='<p>'+TX.fastenSparmodus+'</p>';
-    if(r.veg)h+='<p>'+TX.regenVeg+'</p>';
+    if(r.veg&&!vegSpar)h+='<p>'+TX.regenVeg+'</p>';
     h+='</div>';
   }
 
@@ -636,8 +672,9 @@ function renderResult(){
     '<div class="calc-out" id="co" style="display:none"></div></div>';
 
   h+='<div class="cta"><h3>Dein nächster Schritt</h3>'+
-    '<p>Du kennst jetzt deinen größten Engpass. Was du noch nicht kennst, ist die Blockade, die dich dort festhält. Genau die schauen wir uns im Blind Spot Check an. Online, 90 Minuten, nach der 360-Grad-Methode: Körper, Geist, Seele und Hormone. Mit Auswertung deiner Befunde und deinen ersten drei konkreten Schritten zurück in die Regeneration.</p>'+
-    '<a class="btn btn-sage" href="'+BOOKING_URL+'" style="margin-top:22px;display:inline-block">Blind Spot Check buchen</a>'+
+    '<p>Deinen größten Engpass kennst du jetzt. Im kostenfreien Strategie-Call mache ich mir ein erstes Bild von deiner Situation, und wir besprechen, welche Blutwerte dafür sinnvoll sind. Danach weißt du, ob der Blind Spot Check für dich der richtige nächste Schritt ist.</p>'+
+    '<a class="btn btn-sage" href="'+BOOKING_URL+'" style="margin-top:22px;display:inline-block">Strategie-Call buchen</a>'+
+    '<p style="margin-top:14px"><a href="'+BSC_URL+'" style="color:var(--sage)">Mehr zum Blind Spot Check</a></p>'+
     '<div class="trust">14 Jahre Praxis. Über 1.500 begleitete Klientinnen. Zertifizierte Mentorin für Regenerationsmedizin.</div></div>';
 
   h+='<div class="disclaimer">Dieser Test beschreibt Funktionszustände und Zusammenhänge. Er stellt keine Diagnose und ersetzt keine ärztliche oder heilkundliche Untersuchung. Bei anhaltenden oder belastenden Beschwerden lass dich bitte fachlich begleiten.</div>';
@@ -657,7 +694,7 @@ function doCalc(){
     '<div class="calc-row"><span>Im Jahr</span><strong>'+fmt(yL)+' €</strong></div>'+
     '<div class="calc-row"><span>Über drei Jahre</span><strong>'+fmt(y3)+' €</strong></div>'+
     '<div class="calc-row gain"><span>Hälfte der Kapazität zurückgewinnen = über 3 Jahre</span><strong>+'+fmt(gain)+' €</strong></div>'+
-    '<div class="calc-compare">Der Blind Spot Check kostet 530 €. Dein geschätzter Kapazitätsverlust liegt pro Monat oft um ein Vielfaches darüber.</div>';
+    '<div class="calc-compare">Der Blind Spot Check als Gesundheits-Audit kostet 530 €. Danach weißt du, wie bei dir alles zusammenhängt, und hast eine klare Entscheidungsgrundlage für deinen nächsten Schritt, so wie du sie vor jeder größeren Investition im Business auch haben willst. '+(mL>=1060?'Dein geschätzter Kapazitätsverlust liegt mit rund '+fmt(mL)+' € pro Monat beim '+fmt(Math.floor(mL/530))+'-Fachen davon.':'Dein geschätzter Kapazitätsverlust liegt bei rund '+fmt(mL)+' € pro Monat, also bei '+fmt(yL)+' € im Jahr.')+'</div>';
 }
 render();
 </script>
