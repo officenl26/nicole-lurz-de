@@ -741,6 +741,10 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
 .is-wert li span:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .is-wert li.sum { border-bottom: none; font-weight: 600; color: var(--head); padding-top: 0.5rem; }
 .is-weg-price { margin-bottom: 1.3rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
+.is-price-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.is-deadline { display: flex; flex-direction: column; align-items: flex-end; text-align: right; border: 1px solid var(--accent); border-radius: 10px; padding: 0.5rem 0.9rem; line-height: 1.15; }
+.is-deadline span { font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+.is-deadline strong { font-family: var(--font-serif); font-size: clamp(1.25rem, 2.6vw, 1.55rem); font-weight: 500; color: var(--accent); }
 .is-weg-price .amount { font-family: var(--font-serif); font-size: clamp(1.7rem, 3.4vw, 2.1rem); font-weight: 500; color: var(--head); line-height: 1.1; }
 .is-weg-price .note { font-family: var(--font-sans); font-size: 0.83rem; color: var(--text-muted); line-height: 1.55; margin-top: 0.35rem; }
 .is-weg-price .extra { font-family: var(--font-sans); font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.5rem; opacity: 0.85; }
@@ -1574,8 +1578,11 @@ p.band-fork a:focus-visible { outline: 2px solid var(--accent); outline-offset: 
           </ul>
         </div>
         <div class="is-weg-price">
-          <div class="amount">2.900 €</div>
-          <p class="note">Dein Preis im Circle, inklusive MwSt, bei Anmeldung bis 31.12.2026. Alles oben Genannte ist enthalten.</p>
+          <div class="is-price-row">
+            <div class="amount">2.900 €</div>
+            <div class="is-deadline"><span>Preis gesichert bis</span><strong>31.12.2026</strong></div>
+          </div>
+          <p class="note">Inklusive MwSt. Wer sich bis zum 31.12.2026 auf die Warteliste setzt, bekommt diesen Preis. Alles oben Genannte ist enthalten.</p>
           <p class="extra">Ratenzahlung möglich. Zusätzlich Labor und Diagnostik, in der Regel 150 bis 450 €.</p>
         </div>
         <a href="https://wa.me/message/QXAYPG3GPUZRF1" target="_blank" rel="noopener" class="cta cta-secondary">
