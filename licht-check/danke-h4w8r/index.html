@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1A14">
+<title>Dein Licht-Check · Nicole Lurz</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/premium.css">
+<style>
+  /* ── Danke 2 nach DOI: Licht-Check mit eingebettetem PDF ── */
+  .lc-wrap {
+    padding: 7.5rem 1.5rem 5rem;
+    text-align: center;
+  }
+  .doi-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 3rem;
+    animation: lc-up 0.6s var(--ease) 0.2s both;
+  }
+  .doi-step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .doi-step-circle {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(122, 168, 144, 0.18);
+    border: 2px solid var(--accent);
+  }
+  .doi-step-circle svg {
+    width: 18px; height: 18px; stroke: var(--accent); fill: none;
+    stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .doi-step-label {
+    font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+    color: var(--accent); white-space: nowrap;
+  }
+  .doi-connector {
+    width: 48px; height: 2px; background: rgba(122, 168, 144, 0.4);
+    margin-bottom: 1.4rem; flex-shrink: 0;
+  }
+  .lc-eyebrow {
+    font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1rem;
+    animation: lc-up 0.7s var(--ease) 0.35s both;
+  }
+  .lc-h1 {
+    font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400; color: var(--head); line-height: 1.18; margin-bottom: 1.2rem;
+    animation: lc-up 0.7s var(--ease) 0.45s both;
+  }
+  .lc-h1 em { font-style: italic; color: var(--accent); }
+  .lc-sub {
+    font-family: var(--font-sans); font-size: clamp(1rem, 2.2vw, 1.12rem);
+    color: var(--text-muted); line-height: 1.7; max-width: 600px;
+    margin: 0 auto 2.2rem;
+    animation: lc-up 0.7s var(--ease) 0.55s both;
+  }
+  .lc-download {
+    display: flex; justify-content: center; margin: 0 auto 3rem;
+    animation: lc-up 0.7s var(--ease) 0.65s both;
+  }
+  .lc-download .cta { min-width: 300px; justify-content: center; }
+
+  /* PDF-Ansicht */
+  .lc-viewer {
+    max-width: 860px; margin: 0 auto 3.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1rem;
+    animation: lc-up 0.7s var(--ease) 0.75s both;
+  }
+  .lc-viewer object {
+    display: block; width: 100%; height: 1100px;
+    border-radius: 10px; background: #0A130E;
+  }
+  .lc-pages { display: none; }
+  .lc-pages img {
+    display: block; width: 100%; height: auto;
+    border-radius: 8px; margin-bottom: 1rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  }
+  .lc-pages img:last-child { margin-bottom: 0; }
+  .lc-hinweis {
+    font-family: var(--font-sans); font-size: 0.82rem; color: var(--text-muted);
+    margin-top: 0.9rem;
+  }
+  .lc-hinweis a { color: var(--accent); }
+
+  /* Tipp und Ausblick */
+  .lc-card {
+    max-width: 600px; margin: 0 auto 2rem; text-align: left;
+    background: var(--bg-card-2);
+    border: 1px solid rgba(122, 168, 144, 0.28);
+    border-radius: 16px; padding: 1.8rem 2rem;
+  }
+  .lc-card h2 {
+    font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600;
+    color: var(--head); margin-bottom: 0.6rem;
+  }
+  .lc-card p {
+    font-family: var(--font-sans); font-size: 0.95rem; color: var(--text);
+    line-height: 1.7; margin: 0 0 0.7rem;
+  }
+  .lc-card p:last-child { margin-bottom: 0; }
+  .lc-gruss {
+    font-family: var(--font-serif); font-style: italic; font-size: 1.15rem;
+    color: var(--accent); margin-top: 0.4rem !important;
+  }
+
+  .nav-danke .nav-links, .nav-danke .nav-cta, .nav-danke .nav-burger { display: none !important; }
+  .nav-danke .nav-inner { justify-content: center; }
+
+  @media (max-width: 760px) {
+    .lc-viewer object { display: none; }
+    .lc-pages { display: block; }
+    .lc-viewer { padding: 0.7rem; }
+    .lc-download .cta { min-width: 0; width: 100%; }
+    .lc-card { padding: 1.5rem 1.4rem; }
+  }
+  @media (max-width: 480px) {
+    .doi-connector { width: 28px; }
+    .doi-step-label { font-size: 0.65rem; }
+  }
+  @keyframes lc-up {
+    from { transform: translateY(18px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+</style>
+
+<!-- Consent-Banner + Meta-Pixel -->
+<script>window.NL_META_EVENT = { name: "CompleteRegistration", params: { content_name: "Licht-Check" } };</script>
+<script defer src="/js/nl-consent.js"></script>
+</head>
+<body>
+
+<div class="cursor cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav nav-danke" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="lf">Nicole</span><span class="ll">Lurz</span>
+    </a>
+  </div>
+</header>
+
+<main class="lc-wrap">
+
+  <div class="doi-steps" role="list" aria-label="Fortschritt abgeschlossen">
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+      <span class="doi-step-label">Eingetragen</span>
+    </div>
+    <div class="doi-connector" aria-hidden="true"></div>
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+      <span class="doi-step-label">Bestätigt</span>
+    </div>
+    <div class="doi-connector" aria-hidden="true"></div>
+    <div class="doi-step" role="listitem">
+      <div class="doi-step-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+      <span class="doi-step-label">Licht-Check</span>
+    </div>
+  </div>
+
+  <p class="lc-eyebrow">Schön, dass du da bist</p>
+  <h1 class="lc-h1">Hier ist dein<br><em>Licht-Check.</em></h1>
+  <p class="lc-sub">Du kannst ihn dir gleich hier anschauen oder als PDF herunterladen. Am besten fängst du morgen früh an, mit ein paar Minuten draußen, bevor du aufs Handy schaust.</p>
+
+  <div class="lc-download">
+    <a href="Licht-Check_Nicole-Lurz.pdf" download class="cta cta-primary">
+      <span class="label">Licht-Check herunterladen</span>
+      <span class="arrow" aria-hidden="true">↓</span>
+    </a>
+  </div>
+
+  <div class="lc-viewer">
+    <object data="Licht-Check_Nicole-Lurz.pdf#view=FitH&amp;toolbar=1" type="application/pdf" aria-label="Licht-Check als PDF">
+      <div class="lc-pages" style="display:block">
+        <img src="seite-1.jpg" alt="Seite 1: Deine Zellen lesen Licht, fünf Zahlen über Licht und deine Nacht">
+        <img src="seite-2.jpg" alt="Seite 2: Dein Licht-Check in zwei Minuten und dein Tag für ruhigere Nächte">
+        <img src="seite-3.jpg" alt="Seite 3: Bogen für eine Woche">
+      </div>
+    </object>
+    <div class="lc-pages">
+      <img src="seite-1.jpg" alt="Seite 1: Deine Zellen lesen Licht, fünf Zahlen über Licht und deine Nacht" loading="lazy">
+      <img src="seite-2.jpg" alt="Seite 2: Dein Licht-Check in zwei Minuten und dein Tag für ruhigere Nächte" loading="lazy">
+      <img src="seite-3.jpg" alt="Seite 3: Bogen für eine Woche" loading="lazy">
+    </div>
+    <p class="lc-hinweis">Zum Ausdrucken und Ausfüllen nimm am besten das PDF. <a href="Licht-Check_Nicole-Lurz.pdf" download>Hier noch einmal der Download.</a></p>
+  </div>
+
+  <div class="lc-card">
+    <h2>Mein Tipp</h2>
+    <p>Druck dir die letzte Seite aus und leg sie neben die Kaffeemaschine. Da siehst du sie jeden Morgen und trägst abends schnell ein, wann der Bildschirm ausging und wie du geschlafen hast.</p>
+    <p>Und wenn du trotzdem nachts um drei wach liegst, hat das ganz oft auch mit dem Blutzucker zu tun. Davon erzähle ich dir nächsten Sonntag.</p>
+    <p class="lc-gruss">Herzlich, Nicole</p>
+  </div>
+
+</main>
+
+<footer class="footer" style="padding: 3.5rem 0 2.5rem;">
+  <div class="container footer-inner">
+    <div class="footer-logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></div>
+    <p class="footer-sub">High Performance beginnt im Nervensystem</p>
+    <nav class="footer-links" aria-label="Footer-Navigation">
+      <a href="/">Startseite</a>
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+      <a href="#" data-nl-consent-open>Cookie-Einstellungen</a>
+    </nav>
+    <p class="footer-copy">© 2026 Nicole Lurz · Alle Rechte vorbehalten</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var dot = document.getElementById('cursorDot');
+    var ring = document.getElementById('cursorRing');
+    if (dot && ring) {
+      document.addEventListener('mousemove', function(e){
+        dot.style.transform = 'translate(' + (e.clientX - 4) + 'px,' + (e.clientY - 4) + 'px)';
+        ring.style.transform = 'translate(' + (e.clientX - 20) + 'px,' + (e.clientY - 20) + 'px)';
+      });
+    }
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function(){
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
