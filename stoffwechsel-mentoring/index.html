@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stoffwechsel-Mentoring · 5 Wochen · Nicole Lurz</title>
-<meta name="description" content="Schluss mit der Stoffwechsel-Bremse. 5-Wochen-Mentoring mit Nicole Lurz für einen stabileren Blutzucker und mehr Energie bis in den Abend. Ganz ohne Kalorienzählen. Start Mittwoch, 18.11.2026, 18 Uhr, live per Zoom.">
-<meta property="og:title" content="Stoffwechsel-Mentoring · Schluss mit der Stoffwechsel-Bremse">
+<meta name="description" content="Dein Nachmittag gehört wieder dir. 5-Wochen-Mentoring mit Nicole Lurz für Frauen in den Wechseljahren: Blutzucker im Alltag steuern, ganz ohne Kalorienzählen. Start Mittwoch, 18.11.2026, 18 Uhr, live per Zoom.">
+<meta property="og:title" content="Stoffwechsel-Mentoring · Dein Nachmittag gehört wieder dir">
 <meta property="og:description" content="5 Wochen, 5 Live-Termine per Zoom. Start Mittwoch, 18.11.2026, 18 Uhr.">
 <meta property="og:image" content="https://nicole-lurz.de/images/nicole-about.jpg">
 <style>
@@ -73,6 +73,7 @@ h1 em,h2 em,h3 em{font-family:'Spectral',Georgia,serif;font-style:italic;font-we
 .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,rgba(227,168,92,.13),transparent 70%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;position:relative}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:48px}}
+@media (max-width:620px){.hero{padding-top:36px}.pill{margin-bottom:18px}}
 .pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(227,168,92,.35);border-radius:40px;padding:7px 16px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--wasser);margin-bottom:26px}
 .pill i{width:8px;height:8px;border-radius:50%;background:var(--wasser);box-shadow:0 0 0 4px rgba(227,168,92,.18)}
 .hero h1{margin-bottom:22px}
@@ -336,6 +337,26 @@ footer a:hover{color:var(--hell)}
 .matrix-svg{max-width:860px;margin:0 auto}
 .legende article.fokus{border-color:rgba(227,168,92,.55);background:#2A2418}
 .bonus.einzeln{max-width:var(--schmal)}
+/* Autoritätszeile im Hero */
+.autor{display:flex;align-items:center;gap:14px;margin:0 0 22px}
+.autor img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:1px solid var(--linie);flex:none}
+.autor p{font-size:14px;line-height:1.45;color:var(--salbei-hell)}
+.autor b{display:block;color:var(--hell);font-weight:600;font-size:15px}
+/* Stimmen */
+.stimme-einzeln{max-width:var(--schmal);margin:44px auto 0;border-left:2px solid var(--wasser);padding-left:24px}
+.stimme-einzeln cite,.stimmen cite{display:block;font-style:normal;font-size:14px;color:var(--salbei-hell);margin-top:12px}
+.stimmen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+@media (max-width:900px){.stimmen{grid-template-columns:1fr}}
+.stimmen blockquote{background:var(--karte);border:1px solid var(--linie-fein);border-radius:12px;padding:28px 26px}
+.stimmen blockquote p{font-family:'Spectral',Georgia,serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--hell)}
+.stimmen-fuss{margin-top:18px;font-size:13.5px;color:var(--salbei-hell)}
+/* Garantie */
+.garantie{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;margin-top:22px;padding:22px 24px;border:1px solid rgba(122,168,144,.35);border-radius:12px;background:rgba(122,168,144,.06)}
+.garantie svg{width:30px;height:30px;color:var(--salbei)}
+.garantie h3{font-size:18px;margin-bottom:4px}
+.garantie p{font-size:15.5px}
+/* ENTWURF: offene Entscheidungen, vor dem Veröffentlichen klären und Markierung entfernen */
+.offen{outline:2px dashed #E3A85C;outline-offset:4px;background:rgba(227,168,92,.10)}
 </style>
 <link rel="canonical" href="https://nicole-lurz.de/stoffwechsel-mentoring/">
 <script defer src="/js/nl-consent.js"></script>
@@ -357,13 +378,17 @@ footer a:hover{color:var(--hell)}
   <div class="wrap hero-grid">
     <div>
       <span class="pill"><i></i>Fokus Stoffwechsel · 5-Wochen-Mentoring</span>
-      <h1>Schluss mit der <em>Stoffwechsel-Bremse.</em></h1>
-      <p class="unter">Das 5-Wochen-Mentoring für einen stabileren Blutzucker und mehr Energie bis in den Abend.</p>
-      <p class="lead">Lerne, wie du deine Zellen wieder auf „Empfang" stellst, dem Heißhunger die Macht nimmst und deinen Stoffwechsel von „Speichern" auf „Regeneration" umschaltest. Ganz ohne Kalorienzählen.</p>
-      <div class="cta-reihe">
+      <h1>Dein Nachmittag gehört <em>wieder dir.</em></h1>
+      <p class="unter">Das 5-Wochen-Mentoring für dich, wenn du nachmittags ohne Kaffee oder Süßes nicht mehr durchkommst und dein Arzt trotzdem sagt, der Nüchternzucker ist super.</p>
+      <div class="autor">
+        <img src="/images/nicole-portrait-kreis.jpg" alt="" width="52" height="52">
+        <p><b>Nicole Lurz</b>Heilpraktikerin, 14 Jahre eigene Praxis · Mentorin für Regenerative Medizin (Mojo-Institut)</p>
+      </div>
+      <div class="cta-reihe" style="margin-top:0;margin-bottom:22px">
         <a class="btn btn-primaer" href="#pakete">Paket wählen, ab 199 €</a>
         <a class="btn btn-sekundaer" href="#ablauf">Die 5 Wochen ansehen</a>
       </div>
+      <p class="lead">In den Wechseljahren klappt auf einmal nicht mehr, was mit 30 noch funktioniert hat. In 5 Wochen lernst du, wie du deinen Blutzucker im Alltag steuerst, ganz ohne Kalorienzählen.</p>
       <div class="eckdaten" role="list">
         <div role="listitem"><b>18.11.</b><span>Start, Mittwoch<br>18 Uhr</span></div>
         <div role="listitem"><b>5 × live</b><span>per Zoom</span></div>
@@ -403,7 +428,7 @@ footer a:hover{color:var(--hell)}
 <section id="muster">
   <div class="wrap">
     <div class="schmal reveal">
-      <span class="label immun">Kennst du das?</span>
+      <span class="label immun">Sechs Signale aus deinem Alltag</span>
       <h2>Wenn der Stoffwechsel <em>bremst.</em></h2>
     </div>
     <div class="muster">
@@ -414,6 +439,10 @@ footer a:hover{color:var(--hell)}
       <article class="reveal"><span class="nr">05</span><h3>Der ständige Hunger</h3><p>Egal wie viel du isst, kurz darauf kreisen deine Gedanken schon wieder um den nächsten Snack.</p></article>
       <article class="reveal"><span class="nr">06</span><h3>Erschöpft trotz Schlaf</h3><p>Du wachst morgens schon müde auf, obwohl du eigentlich lange genug geschlafen hast.</p></article>
     </div>
+    <blockquote class="stimme-einzeln reveal">
+      <p class="zitat">„Danke für die Zusammenfassung. Schade, dass das kein Arzt sieht, der mich jahrelang behandelt.“</p>
+      <cite>Lydia G., per WhatsApp an Nicole</cite>
+    </blockquote>
     <p class="zitat reveal schmal" style="margin-top:48px;text-align:center">Du bist damit nicht allein. Und es liegt nicht an deiner Disziplin.</p>
   </div>
 </section>
@@ -427,53 +456,11 @@ footer a:hover{color:var(--hell)}
         <h2>Dein Körper ist nicht kaputt. <em>Er ist im falschen Modus.</em></h2>
       </div>
       <div>
-        <p class="zitat">Nüchternzucker ist oft der allerletzte Wert, der ansteigt.</p>
-        <p>Eine schleichende Insulinresistenz blockiert deine Fettverbrennung und raubt dir Energie, oft schon jahrelang, bevor ein Laborwert Alarm schlägt. Das ständige Auf und Ab des Blutzuckers hält dein Nervensystem im Dauerstress. Und es trifft dein Immunsystem direkt, denn deine Abwehrzellen reagieren selbst auf Insulin.</p>
-        <p>Deine Zellen machen die Tür zu, weil sie überlastet sind. Der Zucker bleibt im Blut, die Bauchspeicheldrüse schüttet noch mehr Insulin aus, und der Überschuss landet in deinen Fettdepots. Das heißt im Endeffekt, dein Körper hungert auf Zellebene und lagert gleichzeitig Fett ein.</p>
+        <p class="zitat">Lange bevor dein Nüchternzucker steigt, ist dein Insulin oft schon erhöht.</p>
+        <p>Deine Zellen machen die Tür zu, weil sie überlastet sind. Der Zucker bleibt im Blut, die Bauchspeicheldrüse schüttet noch mehr Insulin aus, und der Überschuss landet in deinen Fettdepots. Das heißt im Endeffekt, dein Körper hungert auf Zellebene und lagert gleichzeitig Fett ein. Und das oft schon jahrelang, bevor dein Blutzucker im Labor auffällt.</p>
         <p>Und Stress spielt mit. Cortisol treibt deinen Blutzucker hoch, selbst wenn du nichts isst, ähnlich wie ein Stück Kuchen.</p>
-        <p style="color:var(--hell);font-weight:600">Die Folge: Du funktionierst nur noch, statt zu leben. Und das ist nicht deine Schuld, deine Zellen schützen sich nur.</p>
-      </div>
-    </div>
-
-    <div class="matrix">
-      <div class="matrix-kopf reveal">
-        <span class="label">Meine drei Systeme</span>
-        <h2>Wo deine Energie entsteht und <em>wohin sie fließt.</em></h2>
-      </div>
-      <div class="matrix-bild reveal">
-        <svg class="matrix-svg" viewBox="0 0 760 380" role="img" aria-labelledby="m-svg-titel">
-          <title id="m-svg-titel">In der Zelle entsteht Energie, der Stoffwechsel verteilt sie an Immunsystem und Nervensystem. Insulin wirkt direkt auf die Abwehr.</title>
-          <defs><marker id="spitze" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#E3A85C"/></marker></defs>
-          <circle cx="100" cy="190" r="80" fill="#0F1A14" stroke="#CDD9CF" stroke-width="1.5"/>
-          <ellipse cx="100" cy="175" rx="42" ry="20" fill="rgba(227,168,92,.22)" stroke="#E3A85C" stroke-width="2" transform="rotate(-12 100 175)"/>
-          <path d="M66 180 l8 -14 l8 16 l8 -16 l8 16 l8 -16 l8 16 l8 -14" fill="none" stroke="#E3A85C" stroke-width="2" stroke-linejoin="round" transform="rotate(-12 100 175)"/>
-          <text class="m-titel" x="100" y="300">Zelle</text>
-          <text class="m-sub" x="100" y="324">Mitochondrien: Energie entsteht</text>
-          <text x="236" y="176" font-family="Inter" font-size="12" font-weight="600" letter-spacing="2" fill="#A8BAB0" text-anchor="middle">ENERGIE</text>
-          <line class="m-pfeil" x1="192" y1="190" x2="270" y2="190" stroke-width="5" marker-end="url(#spitze)"/>
-          <circle cx="370" cy="190" r="100" fill="none" stroke="#E3A85C" stroke-width="1" stroke-dasharray="4 5" opacity=".7"/>
-          <circle cx="370" cy="190" r="88" fill="rgba(227,168,92,.16)" stroke="#E3A85C" stroke-width="3"/>
-          <text class="m-titel" x="370" y="178">Stoffwechsel</text>
-          <text class="m-sub" x="370" y="202">verteilt die Energie</text>
-          <rect x="338" y="216" width="64" height="20" rx="4" fill="#B8662E"/>
-          <text x="370" y="230" font-family="Inter" font-size="10.5" font-weight="600" letter-spacing="1.6" fill="#E8F0E8" text-anchor="middle">FOKUS</text>
-          <path class="m-pfeil" d="M462 160 L 564 112" stroke-width="5" marker-end="url(#spitze)"/>
-          <path class="m-pfeil" d="M462 220 L 564 268" stroke-width="5" marker-end="url(#spitze)"/>
-          <text x="500" y="88" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16" fill="#A8BAB0" text-anchor="middle">Insulin wirkt direkt</text>
-          <text x="500" y="108" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16" fill="#A8BAB0" text-anchor="middle">auf deine Abwehr</text>
-          <circle cx="650" cy="90" r="72" fill="rgba(127,181,201,.12)" stroke="#7FB5C9" stroke-width="2"/>
-          <text class="m-titel" x="650" y="88">Immunsystem</text>
-          <text class="m-sub" x="650" y="110">Abwehr</text>
-          <circle cx="650" cy="292" r="72" fill="rgba(122,168,144,.14)" stroke="#7AA890" stroke-width="2"/>
-          <text class="m-titel" x="650" y="290">Nervensystem</text>
-          <text class="m-sub" x="650" y="312">Steuerung</text>
-        </svg>
-      </div>
-      <div class="legende">
-        <article class="reveal"><h3><i style="background:#E3A85C"></i>Zelle</h3><p>In den Mitochondrien entsteht deine Energie.</p></article>
-        <article class="reveal fokus"><h3><i style="background:#D97B3F"></i>Stoffwechsel</h3><p>Verteilt die Energie. Insulin entscheidet mit, wohin sie geht. Hier setzen die 5 Wochen an.</p></article>
-        <article class="reveal"><h3><i style="background:#7FB5C9"></i>Immunsystem</h3><p>Abwehr kostet viel Energie und reagiert direkt auf Insulin.</p></article>
-        <article class="reveal"><h3><i style="background:#7AA890"></i>Nervensystem</h3><p>Stress treibt den Blutzucker hoch, auch wenn du nichts isst.</p></article>
+        <p>Dann kommen die Wechseljahre dazu. Die sind eigentlich nur noch ein Sandkorn mehr auf einer Waage, die schon lange voll ist. Dein Körper hat jahrelang ausgeglichen, ohne dass du es gemerkt hast, und jetzt schafft er es einfach nicht mehr.</p>
+        <p style="color:var(--hell);font-weight:600">Du funktionierst dann nur noch, statt zu leben. Und das ist nicht deine Schuld, deine Zellen schützen sich nur.</p>
       </div>
     </div>
   </div>
@@ -507,7 +494,7 @@ footer a:hover{color:var(--hell)}
     <div class="schmal reveal">
       <span class="label">Der Ablauf · mittwochs, 18 Uhr</span>
       <h2>5 Wochen zu <em>stabilerer Energie.</em></h2>
-      <p class="lead leise">Live per Zoom, mit Aufzeichnung. Wenn du einen Mittwoch nicht kannst, schaust du ihn nach.</p>
+      <p class="lead leise">Live per Zoom, etwa 60-90 Minuten, mit Aufzeichnung. Wenn du einen Mittwoch nicht kannst, schaust du ihn nach.</p>
     </div>
     <div class="wochen schmal">
       <div class="woche-item reveal">
@@ -520,7 +507,7 @@ footer a:hover{color:var(--hell)}
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>02</b></div>
-        <details class="woche">
+        <details class="woche" open>
           <summary><span class="datum">Mi 25.11.</span><h3>Der Muskel als Zucker-Schwamm</h3><span class="frage">Wie du Kohlenhydrate wieder genießt, ohne Blutzucker-Achterbahn.</span></summary>
           <div class="inhalt"><p>Deine Muskeln haben eine Superkraft: Sie holen Zucker aus dem Blut, ganz ohne Insulin. Wir probieren gemeinsam aus, wie wenig dafür nötig ist.</p>
           <div class="mitnehmen"><small>Das nimmst du mit</small><p>Einen einfachen Handgriff vor dem Essen, um Kohlenhydrate wieder zu genießen, statt sie zu fürchten.</p></div></div>
@@ -528,7 +515,7 @@ footer a:hover{color:var(--hell)}
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>03</b></div>
-        <details class="woche">
+        <details class="woche" open>
           <summary><span class="datum">Mi 02.12.</span><h3>Das Sättigungs-Geheimnis (Appestat-Reset)</h3><span class="frage">Warum Snack-Pausen keine Disziplin brauchen.</span></summary>
           <div class="inhalt"><p>Warum ständiges Snacken deine Fettverbrennung ausbremst und woran du echten Zellhunger von Kopf-Hunger unterscheidest.</p>
           <div class="mitnehmen"><small>Das nimmst du mit</small><p>Ein neues Gespür für Hunger, um stundenlang satt zu bleiben, ohne dich mit Willenskraft durchzubeißen.</p></div></div>
@@ -536,7 +523,7 @@ footer a:hover{color:var(--hell)}
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>04</b></div>
-        <details class="woche">
+        <details class="woche" open>
           <summary><span class="datum">Mi 09.12.</span><h3>Die Stress-Falle und der 3-Uhr-nachts-Effekt</h3><span class="frage">Wie Sorgen, Schlaf und Blutzucker zusammenhängen.</span></summary>
           <div class="inhalt"><p>Cortisol treibt den Blutzucker hoch, selbst wenn du nichts isst. Du erfährst, was das mit deinem 3-Uhr-Erwachen und deinem Bauchfett zu tun hat.</p>
           <div class="mitnehmen"><small>Das nimmst du mit</small><p>Einen 3-Minuten-Anker, um abends leichter vom Stressmodus in Richtung Ruhe und Reparatur umzuschalten.</p></div></div>
@@ -544,7 +531,7 @@ footer a:hover{color:var(--hell)}
       </div>
       <div class="woche-item reveal">
         <div class="punkt" aria-hidden="true"><small>Woche</small><b>05</b></div>
-        <details class="woche">
+        <details class="woche" open>
           <summary><span class="datum">Mi 16.12.</span><h3>Dein Stoffwechsel-Flow: Freiheit statt Regeln</h3><span class="frage">Wie du metabolische Flexibilität aufbaust und behältst.</span></summary>
           <div class="inhalt"><p>Die Königsdisziplin: wie dein Körper mühelos zwischen Zucker- und Fettverbrennung hin- und herschaltet.</p>
           <div class="mitnehmen"><small>Das nimmst du mit</small><p>Deinen persönlichen Stoffwechsel-Fahrplan, um Einladungen, Urlaub und Feste zu genießen, ohne in alte Muster zurückzufallen.</p></div></div>
@@ -570,6 +557,39 @@ footer a:hover{color:var(--hell)}
         <p>Du tippst ein, was im Kühlschrank ist und wie viel Zeit du hast. Dein Coach schlägt dir in Sekunden vitalstoffreiche Gerichte vor, abgestimmt auf Stoffwechsel und Immunsystem. In 15-20 Minuten auf dem Teller.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ═══ ÜBER NICOLE ═══ -->
+<section class="wende" id="nicole">
+  <div class="wrap ueber">
+    <figure class="reveal"><img src="/images/nicole-uebermich-2026.jpg" alt="Nicole Lurz, Heilpraktikerin und Mentorin" width="1100" height="1375" loading="lazy"></figure>
+    <div class="reveal">
+      <span class="label">Wer dich durch die 5 Wochen führt</span>
+      <h2>Ich sehe nicht nur Symptome. <em>Ich sehe Systeme.</em></h2>
+      <p>Ich bin Nicole Lurz, Heilpraktikerin mit eigener Praxis in Wiesloch und zertifizierte Mentorin für Regenerative Medizin &amp; Chronische Gesundheit am Mojo-Institut. In der Praxis sehe ich seit Jahren, wie eng Blutzucker, Stress und Energie zusammenhängen, und wie oft das niemandem auffällt, solange der Nüchternzucker im grünen Bereich ist.</p>
+      <div class="kpis">
+        <div><b>14</b><span>Jahre Heilpraxis</span></div>
+        <div><b>1.500+</b><span>Menschen begleitet</span></div>
+        <div><b>20+</b><span>Jahre Erfahrung</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STIMMEN ═══ -->
+<section id="stimmen">
+  <div class="wrap">
+    <div class="schmal reveal">
+      <span class="label immun">Stimmen aus meiner Begleitung</span>
+      <h2>Was sich ändert, wenn du <em>beim Essen ansetzt.</em></h2>
+    </div>
+    <div class="stimmen">
+      <blockquote class="reveal"><p>„Schon nach zwölf Wochen, dank der Ernährungsumstellung und Nicoles wertvollen Tipps, fühlte ich mich erheblich besser. Ich bin Nicole unendlich dankbar für ihre entscheidende Unterstützung.“</p><cite>Kathrin, 52, in den Wechseljahren</cite></blockquote>
+      <blockquote class="reveal"><p>„Ich habe wieder mehr Energie und kann wieder Dinge tun, die vorher nicht möglich waren. … Nicole stand mir immer zur Seite und beantwortete alle aufkommenden Fragen.“</p><cite>Lydia G.</cite></blockquote>
+      <blockquote class="reveal"><p>„In dieser relativ kurzen Zeit habe ich mehr erreicht, als ich erwartet und erhofft habe. … mein Energielevel hat sich deutlich erhöht, ich kann signifikant viel besser schlafen und ich fühle mich wieder selbstbestimmt.“</p><cite>Silvia</cite></blockquote>
+    </div>
+    <p class="stimmen-fuss reveal">Stimmen von Frauen, die ich in meiner Praxis und im Mentoring begleitet habe.</p>
   </div>
 </section>
 
@@ -624,6 +644,7 @@ footer a:hover{color:var(--hell)}
       <span class="label immun">Wähle dein Paket</span>
       <h2>Basis <em>oder</em> VIP.</h2>
       <p class="lead leise">Start am Mittwoch, 18.11.2026, um 18 Uhr. Du zahlst bequem per Kreditkarte oder PayPal.</p>
+      <p class="lead leise">Die Gruppe bleibt bewusst klein, mit höchstens 10 Frauen. Die VIP-Anmeldung läuft bis zum 13.11., damit dein Sensor rechtzeitig bei dir ist und deine 14 Messtage in die 5 Wochen fallen. Die 5 VIP-Plätze vergebe ich in der Reihenfolge der Anmeldung. Sind sie vorher voll, schließt die VIP-Anmeldung früher. Für Basis kannst du dich bis zum 17.11. anmelden, dort sind noch 5 Plätze frei.</p>
     </div>
     <div class="vergleich-box reveal">
       <table class="vergleich">
@@ -632,14 +653,14 @@ footer a:hover{color:var(--hell)}
           <tr><th scope="col" class="kopf-leistung">Leistung</th><th scope="col" class="spalte"><span class="paketname">Basis</span><span class="paketsub">Mentoring</span></th><th scope="col" class="spalte vipcol"><span class="paketname">VIP</span><span class="paketsub">Exklusiv</span></th></tr>
         </thead>
         <tbody>
-          <tr><td class="leistung">5 Live-Termine in der Gruppe per Zoom<small>mittwochs 18 Uhr ab 18.11.2026, inkl. Aufzeichnungen</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
+          <tr><td class="leistung">5 Live-Termine in der Gruppe per Zoom, mit je einem Werkzeug für deinen Alltag<small>Blutzucker-Routine, Handgriff vor dem Essen, neues Gespür für Hunger, 3-Minuten-Anker für den Abend, dein Stoffwechsel-Fahrplan. Mittwochs 18 Uhr ab 18.11.2026, inkl. Aufzeichnungen</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung">Zugang zur Gruppen-Community und zum Chat</td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung">KI-Küchen-Coach<small>Rezepte aus deinem Kühlschrank, in 15-20 Minuten auf dem Teller</small></td><td class="spalte"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung nur-vip">1 FreeStyle Libre 3 Blutzuckersensor<small>direkt zu dir nach Hause, 14 Tage Live-Messung</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung nur-vip">45 Min. 1:1 Auswertungsgespräch mit Nicole<small>inkl. Fragebogen zu deinen 14 Messtagen, vorab von mir gesichtet</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung">Labor-Checkliste „Metabolische Gesundheit"<small>damit du beim Arzt die richtigen Fragen stellst</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
           <tr><td class="leistung">1:1 WhatsApp-Support<small>für deine Fragen während der 5 Wochen</small></td><td class="spalte"><span class="strich" aria-hidden="true"></span><span class="sr">nicht enthalten</span></td><td class="spalte vipcol"><span class="haken" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><span class="sr">enthalten</span></td></tr>
-          <tr class="zeile-plaetze"><td>Plätze</td><td class="spalte" style="font-weight:400">regulär</td><td class="spalte vipcol">max. 5</td></tr>
+          <tr class="zeile-plaetze"><td>Plätze</td><td class="spalte" style="font-weight:400">noch 5</td><td class="spalte vipcol">max. 5</td></tr>
           <tr class="zeile-preis"><td class="leistung">Deine Investition</td><td class="spalte"><span class="preis">199 €</span></td><td class="spalte vipcol"><span class="preis">529 €</span></td></tr>
         </tbody>
       </table>
@@ -647,25 +668,16 @@ footer a:hover{color:var(--hell)}
         <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/">Basis für 199 € buchen</a>
         <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/" aria-describedby="vip-hinweis-tc">VIP für 529 € buchen</a>
       </div>
+      <!-- OFFEN: Sobald es in ThriveCart einen eigenen VIP-Checkout gibt, beide VIP-Buttons dorthin verlinken und die Häkchen-Hinweise (hier, im Schluss und im FAQ) löschen. -->
       <p class="tc-hinweis" id="vip-hinweis-tc">Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade.</p>
-      <p class="gutschein-hinweis">Und wenn du schon das Immun-Mentoring gebucht hast, gibst du im Checkout deinen individuellen Gutscheincode ein.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ÜBER NICOLE ═══ -->
-<section class="wende" id="nicole">
-  <div class="wrap ueber">
-    <figure class="reveal"><img src="/images/nicole-about.jpg" alt="Nicole Lurz, Heilpraktikerin und Mentorin" width="866" height="1300" loading="lazy"></figure>
-    <div class="reveal">
-      <span class="label">Wer dich durch die 5 Wochen führt</span>
-      <h2>Ich sehe nicht nur Symptome. <em>Ich sehe Systeme.</em></h2>
-      <p>Ich bin Nicole Lurz, Heilpraktikerin mit eigener Praxis in Wiesloch und zertifizierte Mentorin für Regenerative Medizin &amp; Chronische Gesundheit am Mojo-Institut. In der Praxis sehe ich seit Jahren, wie eng Blutzucker, Stress und Energie zusammenhängen, und wie oft das niemandem auffällt, solange der Nüchternzucker im grünen Bereich ist.</p>
-      <div class="kpis">
-        <div><b>14</b><span>Jahre Heilpraxis</span></div>
-        <div><b>1.500+</b><span>Menschen begleitet</span></div>
-        <div><b>20+</b><span>Jahre Erfahrung</span></div>
+      <div class="garantie">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div>
+          <h3>Du gehst kein Risiko ein</h3>
+          <p>Du merkst nach dem ersten Termin am 18.11., das ist nicht dein Weg? Dann schreib mir bis zum 20.11., und du bekommst dein Geld zurück. Beim VIP-Paket ziehe ich nur den Sensor ab, wenn er schon zu dir unterwegs ist.</p>
+        </div>
       </div>
+      <p class="gutschein-hinweis">Und wenn du schon das Immun-Mentoring gebucht hast, gibst du im Checkout deinen individuellen Gutscheincode ein.</p>
     </div>
   </div>
 </section>
@@ -678,12 +690,15 @@ footer a:hover{color:var(--hell)}
       <h2>Bevor du <em>buchst.</em></h2>
     </div>
     <div class="faq reveal">
-      <details><summary>Muss ich Keto machen oder hungern?</summary><p>Nein. Es geht um metabolische Flexibilität, also darum, dass dein Körper zwischen Zucker- und Fettverbrennung hin- und herschalten kann. Kohlenhydrate bleiben erlaubt. In Woche 2 lernst du, sie wieder zu genießen, statt sie zu fürchten.</p></details>
+      <details><summary>Ich bin in den Wechseljahren. Ist das trotzdem das Richtige für mich?</summary><p>Gerade dann. Viele Frauen merken genau in dieser Zeit, dass ihr Körper anders auf Essen und Stress reagiert als früher. Die Wechseljahre kommen auf eine Waage, die oft schon lange voll ist, und genau dort setzen die 5 Wochen an, bei deinem Blutzucker im Alltag.</p></details>
+      <details><summary>Muss ich Keto machen, hungern oder Kalorien zählen?</summary><p>Nein. Es geht um metabolische Flexibilität, also darum, dass dein Körper zwischen Zucker- und Fettverbrennung hin- und herschalten kann. Kohlenhydrate bleiben erlaubt. In Woche 1 erfährst du, warum die Reihenfolge auf deinem Teller deine Blutzuckerkurve flacher macht, ohne dass du weniger isst, und in Woche 2 lernst du, Kohlenhydrate wieder zu genießen, statt sie zu fürchten.</p></details>
       <details><summary>Ich habe einen sehr stressigen Job. Schaffe ich das?</summary><p>Gerade dann. Die Werkzeuge sind für einen vollen Alltag gebaut, ein Handgriff vor dem Essen, ein 3-Minuten-Anker am Abend. Sie sollen dir Energie sparen und keine zusätzliche kosten.</p></details>
       <details><summary>Was ist, wenn ich mittwochs um 18 Uhr nicht kann?</summary><p>Jeder Termin wird aufgezeichnet. Du kannst also nachschauen, wann es bei dir passt. Live dabei zu sein lohnt sich trotzdem, weil wir im Teil „Erleben" direkt im eigenen Körper ausprobieren, worum es geht.</p></details>
-      <details><summary>Muss ich Kalorien zählen oder auf etwas verzichten?</summary><p>Nein, ganz ohne Kalorienzählen. In Woche 1 erfährst du, warum die Reihenfolge auf deinem Teller deine Blutzuckerkurve flacher macht, ohne dass du weniger isst.</p></details>
+      <details><summary>Wie viel Zeit brauche ich pro Woche?</summary><p>Der Live-Termin ist mittwochs um 18 Uhr und dauert etwa 60-90 Minuten. Dazu kommt, das neue Werkzeug der Woche in deinen Alltag einzubauen. Das meiste davon passiert sowieso beim Essen.</p></details>
       <details><summary>Wie läuft die Anmeldung?</summary><p>Du klickst auf den Button zu deinem Paket und kommst in den Checkout. Dort zahlst du per Kreditkarte oder PayPal. Für VIP setzt du im Checkout das Häkchen beim VIP-Upgrade. Direkt danach siehst du deine nächsten Schritte und den Zoom-Link.</p></details>
       <details><summary>Wie kommt der Sensor im VIP-Paket zu mir?</summary><p>Der FreeStyle Libre 3 kommt direkt zu dir nach Hause. Nach der Buchung schickst du mir deine Postadresse, dann geht er raus.</p></details>
+      <details><summary>Für wen ist das Mentoring nicht gedacht?</summary><p>Wenn du eine schnelle Lösung für ein paar Tage suchst und danach weitermachen willst wie bisher, bist du hier nicht richtig. In den 5 Wochen veränderst du Schritt für Schritt, wie du isst und wie du deinen Alltag gestaltest. Dafür brauchst du die Bereitschaft, wirklich etwas zu ändern.</p></details>
+      <details><summary>Was ist, wenn ich merke, dass es nicht zu mir passt?</summary><p>Dann schreib mir bis zum 20.11., also nach dem ersten Termin, und du bekommst dein Geld zurück. Beim VIP-Paket ziehe ich nur den Sensor ab, wenn er schon zu dir unterwegs ist.</p></details>
       <details><summary>Ist das eine Behandlung?</summary><p>Nein. Das Mentoring vermittelt biologisches Wissen und hilft dir, deinen Alltag bewusster zu gestalten. Es ersetzt keine Diagnostik und keine Behandlung beim Arzt oder Heilpraktiker.</p></details>
     </div>
   </div>
@@ -695,7 +710,7 @@ footer a:hover{color:var(--hell)}
     <div class="reveal">
       <span class="label immun">Bereit, den Schalter umzulegen?</span>
       <h2>Sichere dir <em>deinen Platz.</em></h2>
-      <p class="lead">Start am Mittwoch, 18.11.2026, um 18 Uhr, live per Zoom und mit Aufzeichnung. Die VIP-Plätze sind auf 5 begrenzt, damit die 1:1-Begleitung intensiv bleibt.</p>
+      <p class="lead">Start am Mittwoch, 18.11.2026, um 18 Uhr, live per Zoom und mit Aufzeichnung. Die Gruppe bleibt klein, mit höchstens 10 Frauen, und die VIP-Plätze sind auf 5 begrenzt, damit die 1:1-Begleitung intensiv bleibt.</p>
       <div class="cta-reihe">
         <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/">Basis für 199 € buchen</a>
         <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/" aria-describedby="vip-hinweis-tc2">VIP für 529 € buchen</a>
