@@ -346,6 +346,13 @@ footer a:hover{color:var(--hell)}
 .kurve .warn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#E3A85C;transition:opacity .35s var(--ease)}
 .kurve-text{min-height:92px;font-size:15.5px;margin-top:14px}
 .kurve-fuss{font-size:12.5px;color:var(--salbei-hell);margin-top:8px}
+.kurve-matrix{margin-top:36px}
+.hero-video,.angebot-video{margin:0 auto;width:100%;max-width:380px}
+.hero-video video,.angebot-video video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:var(--karte);border:1px solid var(--linie);border-radius:14px;object-fit:cover}
+.hero-video figcaption{font-size:12.5px;color:var(--salbei-hell);text-align:center;margin-top:10px}
+.angebot-video{margin-top:40px}
+#video-angebot{padding-bottom:0}
+@media (max-width:620px){.hero-video,.angebot-video{max-width:300px}}
 .matrix-svg{max-width:860px;margin:0 auto}
 .legende article.fokus{border-color:rgba(227,168,92,.55);background:#2A2418}
 .bonus.einzeln{max-width:var(--schmal)}
@@ -409,30 +416,12 @@ footer a:hover{color:var(--hell)}
       <p class="countdown" id="countdown" hidden></p>
     </div>
 
-    <aside class="kurve reveal" aria-labelledby="kurve-titel">
-      <p class="kurve-kopf">Dein Tag als Kurve</p>
-      <h3 id="kurve-titel">Achterbahn <em>oder</em> stabilere Energie?</h3>
-      <div class="schalter" role="group" aria-label="Kurve wählen" style="margin-bottom:14px">
-        <button type="button" data-kurve="achter" aria-pressed="true">Achterbahn</button>
-        <button type="button" data-kurve="stabil" aria-pressed="false">Stabiler</button>
-      </div>
-      <svg viewBox="0 0 520 250" role="img" aria-labelledby="kurve-svg-titel">
-        <title id="kurve-svg-titel">Schematische Blutzuckerkurve über einen Tag, einmal mit starken Schwankungen, einmal gleichmäßig.</title>
-        <line x1="20" y1="205" x2="505" y2="205" stroke="rgba(168,186,176,.25)"/>
-        <line x1="20" y1="125" x2="505" y2="125" stroke="rgba(168,186,176,.12)" stroke-dasharray="4 6"/>
-        <path id="k-achter" class="linie-k" stroke="#E3A85C" d="M20 135 C 40 135, 50 60, 70 55 S 95 160, 120 170 S 150 140, 165 135 C 180 130, 190 45, 210 40 S 240 175, 265 190 S 300 150, 320 140 C 335 135, 345 70, 365 65 S 395 150, 420 160 C 440 168, 455 190, 470 200 S 495 150, 505 140"/>
-        <path id="k-stabil" class="linie-k" stroke="#7AA890" style="opacity:0" d="M20 135 C 45 130, 60 105, 80 108 S 115 128, 140 128 C 165 128, 185 100, 210 102 S 245 126, 270 127 C 295 128, 330 106, 355 108 S 395 126, 420 127 C 445 128, 475 130, 505 130"/>
-        <text class="marke" x="70" y="235" text-anchor="middle">Frühstück</text>
-        <text class="marke" x="210" y="235" text-anchor="middle">Mittag</text>
-        <text class="marke" x="270" y="235" text-anchor="middle">15 Uhr</text>
-        <text class="marke" x="365" y="235" text-anchor="middle">Abend</text>
-        <text class="marke" x="470" y="235" text-anchor="middle">3 Uhr</text>
-        <text class="warn" id="w1" x="265" y="182" text-anchor="middle" dy="-0">15-Uhr-Tief</text>
-        <text class="warn" id="w2" x="470" y="190" text-anchor="end">hellwach</text>
-      </svg>
-      <p class="kurve-text" id="kurve-text" aria-live="polite"></p>
-      <p class="kurve-fuss">Schematische Darstellung, keine Messwerte.</p>
-    </aside>
+    <figure class="hero-video reveal">
+      <video controls playsinline preload="none" poster="videos/nicole-kurz.jpg" width="720" height="1280" aria-label="Nicole Lurz stellt das Stoffwechsel-Mentoring vor, mit Untertiteln">
+        <source src="videos/nicole-kurz.mp4" type="video/mp4">
+      </video>
+      <figcaption>Nicole in 35 Sekunden, mit Untertiteln</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -466,6 +455,30 @@ footer a:hover{color:var(--hell)}
       <div>
         <span class="label">Die Wahrheit aus der Regenerationsmedizin</span>
         <h2>Dein Körper ist nicht kaputt. <em>Er ist im falschen Modus.</em></h2>
+        <aside class="kurve kurve-matrix" aria-labelledby="kurve-titel">
+          <p class="kurve-kopf">Dein Tag als Kurve</p>
+          <h3 id="kurve-titel">Achterbahn <em>oder</em> stabilere Energie?</h3>
+          <div class="schalter" role="group" aria-label="Kurve wählen" style="margin-bottom:14px">
+            <button type="button" data-kurve="achter" aria-pressed="true">Achterbahn</button>
+            <button type="button" data-kurve="stabil" aria-pressed="false">Stabiler</button>
+          </div>
+          <svg viewBox="0 0 520 250" role="img" aria-labelledby="kurve-svg-titel">
+            <title id="kurve-svg-titel">Schematische Blutzuckerkurve über einen Tag, einmal mit starken Schwankungen, einmal gleichmäßig.</title>
+            <line x1="20" y1="205" x2="505" y2="205" stroke="rgba(168,186,176,.25)"/>
+            <line x1="20" y1="125" x2="505" y2="125" stroke="rgba(168,186,176,.12)" stroke-dasharray="4 6"/>
+            <path id="k-achter" class="linie-k" stroke="#E3A85C" d="M20 135 C 40 135, 50 60, 70 55 S 95 160, 120 170 S 150 140, 165 135 C 180 130, 190 45, 210 40 S 240 175, 265 190 S 300 150, 320 140 C 335 135, 345 70, 365 65 S 395 150, 420 160 C 440 168, 455 190, 470 200 S 495 150, 505 140"/>
+            <path id="k-stabil" class="linie-k" stroke="#7AA890" style="opacity:0" d="M20 135 C 45 130, 60 105, 80 108 S 115 128, 140 128 C 165 128, 185 100, 210 102 S 245 126, 270 127 C 295 128, 330 106, 355 108 S 395 126, 420 127 C 445 128, 475 130, 505 130"/>
+            <text class="marke" x="70" y="235" text-anchor="middle">Frühstück</text>
+            <text class="marke" x="210" y="235" text-anchor="middle">Mittag</text>
+            <text class="marke" x="270" y="235" text-anchor="middle">15 Uhr</text>
+            <text class="marke" x="365" y="235" text-anchor="middle">Abend</text>
+            <text class="marke" x="470" y="235" text-anchor="middle">3 Uhr</text>
+            <text class="warn" id="w1" x="265" y="182" text-anchor="middle" dy="-0">15-Uhr-Tief</text>
+            <text class="warn" id="w2" x="470" y="190" text-anchor="end">hellwach</text>
+          </svg>
+          <p class="kurve-text" id="kurve-text" aria-live="polite"></p>
+          <p class="kurve-fuss">Schematische Darstellung, keine Messwerte.</p>
+        </aside>
       </div>
       <div>
         <p class="zitat">Lange bevor dein Nüchternzucker steigt, ist dein Insulin oft schon erhöht.</p>
@@ -646,6 +659,21 @@ footer a:hover{color:var(--hell)}
       </article>
     </div>
    </div>
+  </div>
+</section>
+
+<!-- ═══ VIDEO ANGEBOT ═══ -->
+<section id="video-angebot">
+  <div class="wrap">
+    <div class="schmal reveal" style="text-align:center">
+      <span class="label">Von mir persönlich</span>
+      <h2>Was dich in den 5 Wochen <em>erwartet.</em></h2>
+    </div>
+    <figure class="angebot-video reveal">
+      <video controls playsinline preload="none" poster="videos/nicole-angebot.jpg" width="720" height="1280" aria-label="Nicole Lurz erklärt das Stoffwechsel-Mentoring, mit Untertiteln">
+        <source src="videos/nicole-angebot.mp4" type="video/mp4">
+      </video>
+    </figure>
   </div>
 </section>
 
