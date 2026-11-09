@@ -276,6 +276,9 @@ details.woche summary:hover h3{color:#fff}
 @media (max-width:620px){.tc-hinweis{text-align:left}}
 .vergleich-cta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
 @media (max-width:620px){.vergleich-cta{grid-template-columns:1fr}}
+.btn-whatsapp{grid-column:1/-1;min-height:60px;font-size:16px;background:rgba(122,168,144,.08);color:var(--hell);border-color:rgba(122,168,144,.45)}
+.btn-whatsapp:hover{border-color:var(--salbei);background:rgba(122,168,144,.16)}
+.btn-whatsapp svg{width:22px;height:22px;color:var(--salbei)}
 
 /* FAQ */
 .faq{margin-top:40px;border-top:1px solid var(--linie)}
@@ -356,6 +359,11 @@ footer a:hover{color:var(--hell)}
 .matrix-svg{max-width:860px;margin:0 auto}
 .legende article.fokus{border-color:rgba(227,168,92,.55);background:#2A2418}
 .bonus.einzeln{max-width:var(--schmal)}
+.coach-bilder{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;align-items:start}
+@media (max-width:620px){.coach-bilder{grid-template-columns:1fr;gap:24px}}
+.coach-bilder figure{margin:0}
+.coach-bilder img{display:block;width:100%;height:auto;border:1px solid var(--linie);border-radius:14px}
+.coach-bilder figcaption{font-size:13.5px;color:var(--salbei-hell);margin-top:10px;text-align:center}
 /* Autoritätszeile im Hero */
 .autor{display:flex;align-items:center;gap:14px;margin:0 0 22px}
 .autor img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:1px solid var(--linie);flex:none}
@@ -379,6 +387,9 @@ footer a:hover{color:var(--hell)}
 </style>
 <link rel="canonical" href="https://nicole-lurz.de/stoffwechsel-mentoring/">
 <script defer src="/js/nl-consent.js"></script>
+<!-- GoatCounter: anonymer Seitenzähler, keine Cookies, keine personenbezogenen
+     Daten, läuft deshalb unabhängig vom Consent-Banner. -->
+<script data-goatcounter="https://nicolelurz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
@@ -580,6 +591,10 @@ footer a:hover{color:var(--hell)}
         <h3>Dein KI-Küchen-<em>Coach</em></h3>
         <p class="sub">Null Denkaufwand nach Feierabend.</p>
         <p>Du tippst ein, was im Kühlschrank ist und wie viel Zeit du hast. Dein Coach schlägt dir in Sekunden vitalstoffreiche Gerichte vor, abgestimmt auf Stoffwechsel und Immunsystem. In 15-20 Minuten auf dem Teller.</p>
+        <div class="coach-bilder">
+          <figure><img src="/images/kuechen-coach-abfrage.jpg" alt="Der Küchen-Coach auf dem Handy: Kühlschrank-Inhalt eintippen, Mahlzeit, Zeit und Ernährungsweise wählen" width="800" height="1294" loading="lazy"><figcaption>Das tippst du ein</figcaption></figure>
+          <figure><img src="/images/kuechen-coach-rezept.jpg" alt="Beispielrezept aus dem Küchen-Coach: Süßkartoffel-Hack-Pfanne mit Brokkoli, mit Zutaten, Schritten und Nährwerten" width="800" height="1624" loading="lazy"><figcaption>Das bekommst du zurück, hier eins von drei Rezepten</figcaption></figure>
+        </div>
       </article>
     </div>
   </div>
@@ -705,10 +720,10 @@ footer a:hover{color:var(--hell)}
           <tr class="zeile-preis"><td class="leistung">Deine Investition</td><td class="spalte"><span class="preis">199 €</span><span class="beta">Beta-Preis</span></td><td class="spalte vipcol"><span class="preis">529 €</span></td></tr>
         </tbody>
       </table>
-      <p class="beta-hinweis">Diese erste Runde läuft als Beta-Runde, deshalb kostet Basis jetzt 199 €. In der zweiten Runde wird der Preis höher.</p>
       <div class="vergleich-cta">
         <a class="btn btn-sekundaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring/">Basis für 199 € buchen</a>
         <a class="btn btn-primaer" href="https://nicole-lurz.thrivecart.com/stoffwechsel-mentoring-vip/">VIP für 529 € buchen</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/491799383238?text=Hallo%20Nicole%2C%20ich%20habe%20eine%20Frage%20zum%20Stoffwechsel-Mentoring" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>Noch eine Frage? Schreib mir über WhatsApp</a>
       </div>
       <div class="garantie">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
