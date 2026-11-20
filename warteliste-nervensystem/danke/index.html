@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1A14">
+<title>Du stehst auf der Warteliste · Nicole Lurz</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="stylesheet" href="/premium.css">
+<style>
+  /* ── Danke-Seite Warteliste Nervensystem-Mentoring (20.11.2026) ──
+     Bewusst ohne Preis, der kommt erst in der Mail am 14.12.
+     Geschenk: Atemübung mit Kreis, drei Runden à 10 Sekunden (4 ein, 6 aus).
+     Text abgestimmt mit Nicole im Chat am 20.11.2026. */
+  .wn-wrap { padding: 7rem 1.5rem 4rem; max-width: 640px; margin: 0 auto; }
+  .wn-head { text-align: center; margin-bottom: 3rem; }
+  .wn-eyebrow { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; animation: wn-up 0.7s var(--ease) 0.2s both; }
+  .wn-h1 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; color: var(--head); line-height: 1.18; margin-bottom: 1.2rem; animation: wn-up 0.7s var(--ease) 0.3s both; }
+  .wn-h1 em { font-style: italic; color: var(--accent); }
+  .wn-lead { font-family: var(--font-sans); font-size: clamp(1rem, 2.2vw, 1.12rem); color: var(--text-muted); line-height: 1.7; max-width: 540px; margin: 0 auto; animation: wn-up 0.7s var(--ease) 0.4s both; }
+
+  .wn-card { background: var(--bg-card-2); border: 1px solid rgba(122,168,144,0.28); border-radius: 16px; padding: 2.2rem; margin: 0 auto 2rem; position: relative; overflow: hidden; animation: wn-up 0.7s var(--ease) 0.5s both; }
+  .wn-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), rgba(149,192,168,0.4)); }
+  .wn-gift-label { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem; }
+  .wn-card h2, .wn-section h2 { font-family: var(--font-serif); font-size: clamp(1.4rem, 3.4vw, 1.75rem); font-weight: 400; color: var(--head); line-height: 1.3; margin-bottom: 1.1rem; }
+  .wn-card p, .wn-section p { font-family: var(--font-sans); font-size: 0.98rem; color: var(--text); line-height: 1.75; margin-bottom: 1.1rem; }
+  .wn-card p:last-child, .wn-section p:last-child { margin-bottom: 0; }
+
+  /* Atemkreis */
+  .wn-breath { text-align: center; margin: 2rem 0 1.6rem; }
+  .wn-stage { position: relative; width: 220px; height: 220px; margin: 0 auto 1.4rem; }
+  .wn-ring, .wn-core { position: absolute; inset: 0; border-radius: 50%; transform: scale(0.72); }
+  .wn-ring { border: 1px solid rgba(122,168,144,0.35); }
+  .wn-core { inset: 26px; background: radial-gradient(circle at 50% 45%, rgba(122,168,144,0.28), rgba(122,168,144,0.06) 70%); border: 1px solid rgba(122,168,144,0.2); }
+  .wn-stage.is-in .wn-ring, .wn-stage.is-in .wn-core { transform: scale(1); transition: transform 4s ease-in-out; }
+  .wn-stage.is-out .wn-ring, .wn-stage.is-out .wn-core { transform: scale(0.72); transition: transform 6s ease-in-out; }
+  .wn-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 2.6rem; font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; line-height: 1.35; color: var(--head); text-align: center; }
+  .wn-round { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-muted); min-height: 1.3em; margin-bottom: 1rem; }
+  .wn-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; color: var(--bg); background: var(--accent); border: 0; border-radius: 999px; padding: 0.85rem 1.7rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .wn-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px -10px rgba(122,168,144,0.7); }
+  .wn-btn:focus-visible { outline: 2px solid var(--head); outline-offset: 3px; }
+  .wn-btn[hidden] { display: none; }
+
+  .wn-section { padding: 0.4rem 0.2rem; margin: 0 auto 2.4rem; animation: wn-up 0.7s var(--ease) 0.6s both; }
+
+  .wn-steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+  .wn-steps li { display: flex; align-items: flex-start; gap: 0.75rem; font-family: var(--font-sans); font-size: 0.95rem; color: var(--text); line-height: 1.6; }
+  .wn-steps .num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(122,168,144,0.12); border: 1px solid rgba(122,168,144,0.25); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; color: var(--accent); margin-top: 1px; }
+
+  .wn-wa { text-align: center; background: rgba(122,168,144,0.06); border: 1px solid rgba(122,168,144,0.18); border-radius: 14px; padding: 2rem 1.6rem; margin: 0 auto 1rem; }
+  .wn-wa h2 { font-family: var(--font-serif); font-size: clamp(1.3rem, 3vw, 1.55rem); font-weight: 400; color: var(--head); margin-bottom: 0.7rem; }
+  .wn-wa p { font-family: var(--font-sans); font-size: 0.95rem; color: var(--text); line-height: 1.7; margin: 0 auto 1.4rem; max-width: 440px; }
+  .wn-wa .wn-btn { text-decoration: none; }
+
+  .nav-danke .nav-links, .nav-danke .nav-cta, .nav-danke .nav-burger { display: none !important; }
+  .nav-danke .nav-inner { justify-content: center; }
+  /* premium.js laeuft hier nicht, das sonst .is-ready setzt. */
+  .nav.nav-danke { transform: translateY(0); }
+  @keyframes wn-up { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  @media (max-width: 480px) {
+    .wn-wrap { padding: 6rem 1rem 3rem; }
+    .wn-card { padding: 1.7rem 1.3rem; }
+    .wn-stage { width: 200px; height: 200px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wn-stage.is-in .wn-ring, .wn-stage.is-in .wn-core,
+    .wn-stage.is-out .wn-ring, .wn-stage.is-out .wn-core { transition: none; }
+    .wn-eyebrow, .wn-h1, .wn-lead, .wn-card, .wn-section { animation: none; }
+  }
+
+  /* ── Heller und mit Akzenten (Nicole, 20.11.2026) ──
+     Grund Dunkelgrün statt Waldgrün, Geschenk-Karte hell in Fast-Weiß,
+     Highlights als Salbei-Marker, Handlungsfarbe Marineblau. Nur Töne aus design.md. */
+  body { background: #1F2D24; }
+  .footer { background: #1F2D24; }
+  mark { background: linear-gradient(transparent 55%, rgba(122,168,144,0.45) 55%); color: var(--head); font-weight: 600; padding: 0 0.1em; }
+  .wn-lead mark { color: var(--head); }
+
+  .wn-card.wn-light { background: #E8F0E8; border-color: #3D5A2E; }
+  .wn-card.wn-light::before { height: 4px; background: linear-gradient(90deg, #3D5A2E, #7AA890); }
+  .wn-light .wn-gift-label { color: #3D5A2E; }
+  .wn-light h2 { color: #0F1A14; }
+  .wn-light p { color: #1F2D24; }
+  .wn-light mark { color: #0F1A14; background: linear-gradient(transparent 50%, rgba(122,168,144,0.55) 50%); }
+  .wn-light .wn-ring { border: 2px solid #3D5A2E; }
+  .wn-light .wn-core { background: radial-gradient(circle at 50% 45%, rgba(122,168,144,0.85), rgba(122,168,144,0.35) 70%); border: 1px solid #3D5A2E; }
+  .wn-light .wn-label { color: #0F1A14; }
+  .wn-light .wn-round { color: #3D5A2E; font-weight: 600; }
+  .wn-light .wn-btn { background: #0F1A14; color: #E8F0E8; }
+  .wn-light .wn-btn:hover { box-shadow: 0 8px 22px -10px rgba(15,26,20,0.6); }
+
+  .wn-section h2 { color: var(--accent); }
+  .wn-steps-card { background: rgba(122,168,144,0.14); border: 1px solid rgba(122,168,144,0.5); }
+  .wn-steps-card h2 { color: var(--head); }
+  .wn-steps .num { background: var(--accent); border-color: var(--accent); color: #0F1A14; }
+  .wn-steps li strong { color: var(--head); font-weight: 600; }
+
+  .wn-wa { background: #0F1A14; border: 1px solid rgba(122,168,144,0.5); }
+  .wn-wa .wn-btn { background: #1B4C93; color: #E8F0E8; }
+  .wn-wa .wn-btn:hover { box-shadow: 0 8px 22px -10px rgba(27,76,147,0.8); }
+</style>
+
+<!-- Consent-Banner + Meta-Pixel -->
+<script>
+  window.NL_META_EVENT = { name: "CompleteRegistration", params: { content_name: "Warteliste Nervensystem" } };
+</script>
+<script defer src="/js/nl-consent.js"></script>
+<!-- GoatCounter: anonymer Seitenzähler, keine Cookies, keine personenbezogenen
+     Daten, läuft deshalb unabhängig vom Consent-Banner. -->
+<script data-goatcounter="https://nicolelurz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<div class="cursor cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav nav-danke" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></a>
+  </div>
+</header>
+
+<main class="wn-wrap">
+  <div class="wn-head">
+    <p class="wn-eyebrow">Warteliste Nervensystem-Mentoring</p>
+    <h1 class="wn-h1">Du stehst auf der <em>Warteliste.</em></h1>
+    <p class="wn-lead">Am 14.&nbsp;Dezember öffne ich die Plätze für das Nervensystem-Mentoring und <mark>du erfährst es als Erste</mark>, noch bevor ich es irgendwo anders ankündige. Bis dahin hast du hier schon mal was für dich.</p>
+  </div>
+
+  <section class="wn-card wn-light" aria-labelledby="wn-gift">
+    <p class="wn-gift-label">Mein Geschenk für dich</p>
+    <h2 id="wn-gift">Eine Atemübung für den Abend, an dem der Kopf nicht abschaltet</h2>
+    <p>Du kennst das bestimmt: Der Tag ist eigentlich vorbei und im Kopf läuft trotzdem noch das Meeting von heute Nachmittag weiter. Dann hilft es wenig, sich zu sagen, dass man jetzt mal abschalten soll, weil dein Nervensystem auf Gedanken nicht hört. <mark>Auf deinen Atem hört es aber</mark> und der ist das Einzige, was du in so einem Moment direkt in der Hand hast.</p>
+    <p>Atme mit dem Kreis durch die Nase ein und <mark>lass die Ausatmung länger werden als die Einatmung</mark>. Ausatmen geht durch die Nase oder durch den Mund. Wenn sich gerade viel angestaut hat, Ärger oder Druck, dann lass es ruhig <mark>mit einem hörbaren Seufzer durch den Mund raus</mark>. Drei Runden reichen für den Anfang.</p>
+
+    <div class="wn-breath">
+      <div class="wn-stage" id="wnStage" aria-hidden="true">
+        <div class="wn-ring"></div>
+        <div class="wn-core"></div>
+        <div class="wn-label" id="wnLabel">Bereit?</div>
+      </div>
+      <p class="wn-round" id="wnRound" aria-live="polite"></p>
+      <button type="button" class="wn-btn" id="wnStart">Übung starten</button>
+    </div>
+
+    <p>Und, wie fühlt sich das an? Während du auf deinen Atem achtest, bist du mit dem Kopf hier bei dir und spürst deinen Körper und das ist für dein Nervensystem <mark>das Zeichen, dass gerade keine Gefahr da ist</mark>.</p>
+  </section>
+
+  <section class="wn-section" aria-labelledby="wn-why">
+    <h2 id="wn-why">Warum es beim letzten Mal nicht gehalten hat</h2>
+    <p>Vielleicht hast du so etwas schon mal ausprobiert, mit einer Atem-App oder einer Meditation am Abend. Und nach ein paar Tagen war alles wieder wie vorher. <mark>Das lag nicht an dir.</mark> Einmal durchatmen tut gut, hält aber nicht lange an, das ist wie beim Muskeltraining, <mark>ein einziges Training macht noch keinen Muskel</mark>. Dein Gehirn fährt bei Stress seit Jahren dieselbe Autobahn und die führt ziemlich zuverlässig in den Alarm. Eine neue Strecke entsteht nur, wenn du sie immer wieder fährst und <mark>allein ist das schwer durchzuhalten</mark>, weil dich der Alltag nach ein paar Tagen wieder auf die alte Autobahn zieht.</p>
+    <p>Im Mentoring fahren wir diese neue Strecke <mark>zwölf Wochen lang gemeinsam</mark>, mit dem Atem und mit dem, was du dabei im Körper spürst. Und irgendwann merkst du, dass dich die Mail um 22 Uhr nicht mehr bis in den Schlaf verfolgt.</p>
+  </section>
+
+  <section class="wn-card wn-steps-card" aria-labelledby="wn-next">
+    <h2 id="wn-next">So geht es weiter</h2>
+    <ol class="wn-steps">
+      <li><span class="num">1</span><span><strong>Speicher dir diese Seite</strong>, dann hast du die Übung abends parat. Den Link schicke ich dir auch noch mal per Mail.</span></li>
+      <li><span class="num">2</span><span><strong>Am 14.&nbsp;Dezember</strong> bekommst du von mir als Erste alle Infos zum Mentoring.</span></li>
+      <li><span class="num">3</span><span><strong>In der Woche vom 15.&nbsp;Februar 2027</strong> geht es los.</span></li>
+    </ol>
+  </section>
+
+  <section class="wn-wa" aria-labelledby="wn-wa">
+    <h2 id="wn-wa">Du willst nicht bis zum 14.&nbsp;Dezember warten?</h2>
+    <p>Dann schreib mir auf WhatsApp. Wir klären deine Fragen und du sicherst dir deinen Platz schon jetzt.</p>
+    <a class="wn-btn" href="https://wa.me/message/QXAYPG3GPUZRF1" target="_blank" rel="noopener">Auf WhatsApp schreiben</a>
+  </section>
+</main>
+
+<footer class="footer" style="padding: 2.5rem 0;">
+  <div class="container footer-inner">
+    <p class="footer-copy">© 2026 Nicole Lurz · <a href="/impressum" style="color: inherit; opacity: 0.6;">Impressum</a> · <a href="/datenschutz" style="color: inherit; opacity: 0.6;">Datenschutz</a> · <a href="#" data-nl-consent-open style="color: inherit; opacity: 0.6;">Cookie-Einstellungen</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing');
+    if(dot&&ring){document.addEventListener('mousemove',function(e){
+      dot.style.transform='translate('+(e.clientX-4)+'px,'+(e.clientY-4)+'px)';
+      ring.style.transform='translate('+(e.clientX-20)+'px,'+(e.clientY-20)+'px)';});}
+    var nav=document.getElementById('nav');
+    window.addEventListener('scroll',function(){nav.classList.toggle('is-scrolled',window.scrollY>24);},{passive:true});
+
+    // Atemübung: drei Runden, 4 Sekunden ein, 6 Sekunden aus
+    var stage=document.getElementById('wnStage'), label=document.getElementById('wnLabel'),
+        round=document.getElementById('wnRound'), btn=document.getElementById('wnStart');
+    var IN=4000, OUT=6000, ROUNDS=3, timers=[];
+    function clear(){ timers.forEach(clearTimeout); timers=[]; }
+    function at(ms,fn){ timers.push(setTimeout(fn,ms)); }
+    btn.addEventListener('click', function(){
+      clear();
+      btn.hidden=true;
+      for(var r=0;r<ROUNDS;r++){
+        (function(r){
+          var t=r*(IN+OUT);
+          at(t,function(){ stage.className='wn-stage is-in'; label.textContent='Einatmen, durch die Nase'; round.textContent='Runde '+(r+1)+' von '+ROUNDS; });
+          at(t+IN,function(){ stage.className='wn-stage is-out'; label.textContent='Ausatmen, lang, durch Nase oder Mund'; });
+        })(r);
+      }
+      at(ROUNDS*(IN+OUT),function(){
+        stage.className='wn-stage'; label.textContent='Schön.'; round.textContent='';
+        btn.textContent='Noch einmal'; btn.hidden=false;
+      });
+    });
+  })();
+</script>
+</body>
+</html>
