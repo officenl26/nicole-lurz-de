@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#E8F0E8">
+<meta name="robots" content="noindex">
+<title>Das Winter-Paket · Nicole Lurz</title>
+<meta name="description" content="Gesundheit.machbar und Stoffwechsel.RESET im Paket: zehn kleine Missionen zwischen den Jahren, gemeinsamer Start am 27.12., WhatsApp-Gruppe, danach Stoffwechsel.RESET in deinem Tempo.">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/premium.css">
+<style>
+  /* Landingpage Winter-Paket (Gesundheit.machbar plus Stoffwechsel.RESET), Black Friday 27.-30.11.2026 und Weihnachtsfenster 21.-23.12.2026.
+     Aufbau nach der Warteliste-Nervensystem-Seite. Farben nur aus design.md, Bernstein als Stoffwechsel-Akzent wie auf /stoffwechsel-mentoring/.
+     Verkaufsphasen steuert das Skript unten (Datum Europe/Berlin), zum Testen ?phase=97, ?phase=zu, ?phase=149, ?phase=ende. */
+  :root{--wald:#0F1A14;--dunkel:#1F2D24;--oliv:#3D5A2E;--salbei:#7AA890;--salbei2:#95C0A8;--hell:#A8BAB0;--weiss:#E8F0E8;--fliess:#CDD9CF;--marine:#1B4C93;--bernstein:#E3A85C}
+  html{scroll-behavior:smooth}
+  body{background:var(--weiss);color:var(--dunkel);font-family:'Inter',sans-serif}
+  .grain,.cursor{display:none!important}
+  .nav.nav-danke{transform:none;background:rgba(232,240,232,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(61,90,46,.15)}
+  .nav-danke .nav-links,.nav-danke .nav-cta,.nav-danke .nav-burger{display:none!important}
+  .nav-danke .nav-inner{justify-content:center}
+  .nav-danke .lf{color:var(--wald)} .nav-danke .ll{color:var(--oliv)}
+  .w{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+  .it{font-family:'Spectral',Georgia,serif;font-style:italic;font-weight:500}
+  .kicker{font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--oliv);margin-bottom:1rem}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;text-decoration:none;border:0;border-radius:999px;padding:1.05rem 1.9rem;min-height:52px;cursor:pointer;transition:box-shadow .2s,transform .2s}
+  .btn-m{background:var(--marine);color:#fff}
+  .btn-m:hover{box-shadow:0 14px 28px -12px rgba(27,76,147,.8);transform:translateY(-1px)}
+  .btn-m:focus-visible{outline:3px solid var(--marine);outline-offset:3px}
+  .preis-hinweis{font-size:.92rem;color:var(--oliv);margin-top:1rem}
+
+  /* Hero */
+  .ah{padding:7.5rem 0 4rem}
+  .ah-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+  .ah h1{font-weight:600;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.1;letter-spacing:-.02em;color:var(--wald);margin-bottom:1.4rem}
+  .ah h1 .it{color:var(--oliv);letter-spacing:0}
+  .ah p.sub{font-size:clamp(1.02rem,2vw,1.15rem);line-height:1.7;max-width:33rem;margin-bottom:1.8rem}
+  .kal{background:#fff;border-radius:22px;padding:1.6rem;box-shadow:0 40px 70px -40px rgba(15,26,20,.45);max-width:380px;width:100%;margin:0 auto}
+  .kal .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1rem}
+  .kal .top b{font-family:'Spectral',serif;font-style:italic;font-weight:500;font-size:1.4rem;color:var(--wald)}
+  .kal .top span{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--oliv)}
+  .kal .g{display:grid;grid-template-columns:repeat(5,1fr);gap:.45rem}
+  .kal .d{aspect-ratio:1;border-radius:12px;background:var(--weiss);display:grid;place-items:center;font-weight:600;color:var(--wald);font-size:.95rem}
+  .kal .d small{display:block;font-size:.62rem;font-weight:500;color:var(--oliv);text-align:center;line-height:1}
+  .kal .d.on{background:var(--salbei);color:var(--wald)}
+  .kal .d.on small{color:var(--wald)}
+  .kal .reset{margin-top:.9rem;border-radius:12px;background:rgba(227,168,92,.18);border:1px solid var(--bernstein);padding:.75rem .9rem;font-size:.9rem;color:var(--wald)}
+
+  /* Szene */
+  .sz{background:var(--salbei);padding:4.5rem 0}
+  .sz-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;max-width:960px;margin:0 auto;align-items:start}
+  .sz h2{font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.7rem,3.8vw,2.4rem);line-height:1.2;color:var(--wald)}
+  .sz p{font-size:1.05rem;line-height:1.75;margin-bottom:1rem;color:var(--wald)}
+  .sz .big{font-family:'Spectral',serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.35;border-left:3px solid var(--marine);padding-left:1.1rem;margin-top:1.4rem}
+
+  /* Missionen */
+  .mi{padding:4.5rem 0 3rem}
+  .mi .head{max-width:960px;margin:0 auto 1.6rem}
+  .mi h2,.rs h2,.pk h2{font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.6rem,3.6vw,2.3rem);color:var(--wald);line-height:1.2;margin-bottom:.8rem}
+  .mi .head p{font-size:1.05rem;line-height:1.7;max-width:40rem}
+  .ml{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+  .m{display:grid;grid-template-columns:74px 1fr;gap:1rem;align-items:start;background:#fff;border-radius:16px;padding:1.1rem 1.2rem;border:1px solid rgba(61,90,46,.15)}
+  .m .dt{font-family:'Spectral',serif;font-style:italic;font-size:1.35rem;color:var(--oliv);line-height:1.1}
+  .m b{display:block;color:var(--wald);margin-bottom:.2rem}
+  .m p{margin:0;font-size:.97rem;line-height:1.55}
+  .wa{max-width:960px;margin:1.4rem auto 0;background:var(--wald);color:var(--weiss);border-radius:18px;padding:1.4rem 1.6rem;line-height:1.7}
+
+  /* RESET */
+  .rs{padding:3rem 0 4.5rem}
+  .rs-box{max-width:960px;margin:0 auto;background:#fff;border-radius:22px;padding:2.2rem 2rem;border-top:6px solid var(--bernstein)}
+  .rs h2 .it{color:var(--oliv)}
+  .rs p{font-size:1.05rem;line-height:1.75;margin-bottom:1rem}
+
+  /* Paket und Preis */
+  .pk{padding:0 0 4.5rem}
+  .pk-box{max-width:620px;margin:0 auto;background:var(--wald);color:var(--weiss);border-radius:22px;padding:2.4rem 2.2rem}
+  .pk h2{color:var(--weiss)}
+  .pk ul{list-style:none;padding:0;margin:0 0 1.6rem}
+  .pk li{padding:.65rem 0 .65rem 1.8rem;position:relative;border-bottom:1px solid rgba(168,186,176,.2);line-height:1.5;color:var(--fliess)}
+  .pk li:before{content:"";position:absolute;left:0;top:1.05rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--salbei)}
+  .pk .preis{font-family:'Spectral',serif;font-size:3rem;line-height:1;color:var(--weiss);margin-bottom:.6rem}
+  .pk .frist{color:var(--hell);line-height:1.65;margin-bottom:1.5rem}
+  .pk .btn{width:100%;background:var(--salbei);color:var(--wald)}
+  .pk .btn:hover{background:var(--salbei2)}
+  .zu{background:rgba(232,240,232,.08);border-radius:14px;padding:1.2rem 1.3rem;color:var(--weiss);line-height:1.65}
+  .zu a{color:var(--salbei2)}
+  [hidden]{display:none!important}
+
+  .me{padding:0 0 4rem}
+  .me-grid{max-width:820px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:2.2rem;align-items:center;background:#fff;border-radius:22px;padding:1.6rem}
+  .me img{width:200px;height:230px;object-fit:cover;object-position:center 20%;border-radius:14px}
+  .me p{line-height:1.75;margin:0}
+  .fine{max-width:820px;margin:0 auto;padding:0 1.5rem 4rem;font-size:.84rem;line-height:1.65;color:var(--oliv)}
+  .footer{background:var(--wald)}
+  .footer .footer-copy,.footer .footer-copy a{color:var(--hell)!important;opacity:1!important}
+
+  @media (max-width:860px){
+    .ah{padding:6.5rem 0 3rem}
+    .ah-grid,.sz-grid{grid-template-columns:1fr;gap:2rem}
+    .ah .btn{width:100%}
+    .ml{grid-template-columns:1fr}
+    .me-grid{grid-template-columns:1fr;text-align:center}
+    .me img{margin:0 auto;width:170px;height:200px}
+  }
+  @media (max-width:480px){.w{padding:0 1.1rem}.pk-box,.rs-box{padding:2rem 1.3rem}.m{grid-template-columns:60px 1fr;padding:1rem}}
+</style>
+<script defer src="/js/nl-consent.js"></script>
+<script data-goatcounter="https://nicolelurz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="nav nav-danke" id="nav"><div class="nav-inner"><a href="/" class="nav-logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></a></div></header>
+<main>
+  <section class="ah"><div class="w ah-grid">
+    <div>
+      <p class="kicker">Das Winter-Paket</p>
+      <h1>Zwischen den Jahren hast du endlich mal Luft. <span class="it">Nimm dir zehn Tage davon für dich.</span></h1>
+      <p class="sub">Gesundheit.machbar und Stoffwechsel.RESET zusammen, mit gemeinsamem Start am 27.12. <span data-ph="97">Bis Montag, 30.11., kostet das Paket 97&nbsp;€.</span><span data-ph="149" hidden>Bis Mittwoch, 23.12., kostet das Paket 149&nbsp;€.</span></p>
+      <a class="btn btn-m" href="#paket" data-ph="97 149">Ich bin ab 27.12. dabei</a>
+      <p class="preis-hinweis" data-ph="zu ende" hidden>Das Paket ist gerade geschlossen.</p>
+    </div>
+    <div class="kal" aria-hidden="true">
+      <div class="top"><b>Gesundheit.machbar</b><span>10 Tage</span></div>
+      <div class="g">
+        <div class="d on">27<small>Dez</small></div><div class="d on">28<small>Dez</small></div><div class="d on">29<small>Dez</small></div><div class="d on">30<small>Dez</small></div><div class="d on">31<small>Dez</small></div>
+        <div class="d on">1<small>Jan</small></div><div class="d on">2<small>Jan</small></div><div class="d on">3<small>Jan</small></div><div class="d on">4<small>Jan</small></div><div class="d on">5<small>Jan</small></div>
+      </div>
+      <div class="reset">Danach Stoffwechsel.RESET in deinem Tempo</div>
+    </div>
+  </div></section>
+
+  <section class="sz"><div class="w sz-grid">
+    <h2>„Im Januar mach ich das dann aber wirklich.“</h2>
+    <div>
+      <p>Im Dezember läuft bei dir wahrscheinlich alles auf Hochtouren. Und irgendwann zwischen Weihnachten und Silvester sitzt du auf dem Sofa und merkst erst, wie platt du eigentlich bist. Dann nimmst du dir für den Januar wieder einiges vor und Mitte Januar ist davon nicht mehr viel übrig.</p>
+      <p>Für genau diese Tage öffne ich Gesundheit.machbar noch einmal.</p>
+      <p class="big">Du brauchst keine neuen Regeln. Du brauchst einen Kompass.</p>
+    </div>
+  </div></section>
+
+  <section class="mi"><div class="w">
+    <div class="head">
+      <h2>Zehn Tage, jeden Tag eine kleine Mission</h2>
+      <p>Jeden Morgen wartet ein kurzes Video mit einer Aufgabe auf dich, die in deinen Tag passt. Wenn an Silvester was anderes ansteht, holst du die Mission einfach am nächsten Tag nach.</p>
+    </div>
+    <div class="ml">
+      <div class="m"><div class="dt">27.12.</div><div><b>Dein Check-in</b><p>Wo stehst du gerade mit Schlaf, Energie und Verdauung?</p></div></div>
+      <div class="m"><div class="dt">28.12.</div><div><b>Körpersprache</b><p>Was dir Haut, Nägel und Verdauung über dein Inneres verraten.</p></div></div>
+      <div class="m"><div class="dt">29.12.</div><div><b>Batterie aufladen</b><p>Wie viel du wirklich trinkst und welches Wasser deine Zellen versorgt.</p></div></div>
+      <div class="m"><div class="dt">30.12.</div><div><b>Echtes Essen</b><p>Ein Blick auf die Zutatenlisten in deiner Küche.</p></div></div>
+      <div class="m"><div class="dt">31.12.</div><div><b>Energie-Check</b><p>Einen Tag lang aufschreiben, was du isst, und sehen, wie viel Eiweiß dabei ist.</p></div></div>
+      <div class="m"><div class="dt">01.01.</div><div><b>Dein Teller</b><p>Eiweiß zu jeder Mahlzeit und ein kleiner Ölwechsel in der Küche.</p></div></div>
+      <div class="m"><div class="dt">02.01.</div><div><b>Licht und Rhythmus</b><p>Morgens zehn Minuten raus und abends das Handy früher weg.</p></div></div>
+      <div class="m"><div class="dt">03.01.</div><div><b>Atmung</b><p>Merken, wann du durch den Mund atmest, und auf die Nase umschalten.</p></div></div>
+      <div class="m"><div class="dt">04.01.</div><div><b>Druck ohne Stress</b><p>Kurz innehalten, bevor du auf den nächsten Impuls reagierst.</p></div></div>
+      <div class="m"><div class="dt">05.01.</div><div><b>Abschluss</b><p>Zurückschauen, was sich verändert hat, und drei Dinge für den Januar auswählen.</p></div></div>
+    </div>
+    <p class="wa">In den zehn Tagen sind wir zusammen in einer WhatsApp-Gruppe. Da kannst du mir deine Fragen stellen und du siehst, wie es den anderen Frauen mit den Missionen geht.</p>
+  </div></section>
+
+  <section class="rs"><div class="w"><div class="rs-box">
+    <h2>Und für den Januar <span class="it">Stoffwechsel.RESET</span></h2>
+    <p>Stoffwechsel.RESET ist gleich nach dem Kauf für dich offen. Gedacht ist er für die Zeit nach den zehn Tagen, wenn du tiefer einsteigen willst. Du verstehst, warum du nach dem Mittagessen durchhängst, obwohl du gesund isst. Und du siehst, was Insulin damit zu tun hat.</p>
+    <p>Du erfährst auch, welche Öle in deiner Küche stille Entzündungen anheizen können und warum Leber und Schilddrüse für deine Energie wichtig sind. Ein paar Minuten Bewegung vor dem Essen helfen deinem Blutzucker, und auch das zeige ich dir dort. Das arbeitest du in deinem eigenen Tempo durch.</p>
+  </div></div></section>
+
+  <section class="pk" id="paket"><div class="w"><div class="pk-box">
+    <h2>Das Winter-Paket</h2>
+    <ul>
+      <li>Gesundheit.machbar mit 10 Missionen, gemeinsamer Start am 27.12.</li>
+      <li>WhatsApp-Gruppe vom 27.12. bis 05.01.</li>
+      <li>Stoffwechsel.RESET, gleich nach dem Kauf offen</li>
+      <li>Zugang zu beiden Kursen mindestens 12 Monate</li>
+    </ul>
+    <div data-ph="97">
+      <div class="preis">97&nbsp;€</div>
+      <p class="frist">Bis Montag, 30.11., um 23:59 Uhr kostet das Paket 97&nbsp;€, danach mache ich es zu. Kurz vor Weihnachten öffne ich es noch einmal für drei Tage, dann für 149&nbsp;€.</p>
+    </div>
+    <div data-ph="149" hidden>
+      <div class="preis">149&nbsp;€</div>
+      <p class="frist">Bis Mittwoch, 23.12., um 23:59 Uhr kannst du das Paket noch buchen. Am 27.12. geht es los.</p>
+    </div>
+    <!-- Platzhalter: echte ThriveCart-Adresse des Winter-Pakets im href eintragen -->
+    <a class="btn" id="kauf" href="https://nicole-lurz.thrivecart.com/winter-paket/" data-ph="97 149">Ich bin ab 27.12. dabei</a>
+    <div class="zu" data-ph="zu" hidden>Das Winter-Paket ist gerade geschlossen. Kurz vor Weihnachten, vom 21. bis 23.12., öffne ich es noch einmal für drei Tage. Wenn du das nicht verpassen willst, trag dich in meinen <a href="/selbsttest/">Newsletter</a> ein.</div>
+    <div class="zu" data-ph="ende" hidden>Das Winter-Paket ist geschlossen. Die zehn Tage laufen gerade, ich wünsche allen Frauen in der Gruppe einen guten Start ins neue Jahr.</div>
+  </div></div></section>
+
+  <section class="me"><div class="w"><div class="me-grid">
+    <img src="/images/nicole-hero.jpg" alt="Nicole Lurz" loading="lazy">
+    <div><p class="kicker">Kurz zu mir</p><p>Ich bin Nicole, Heilpraktikerin seit 2011 und Mentorin für Regenerationsmedizin. Ich sehe in der Praxis und im Mentoring immer wieder, dass es die einfachen Dinge im Alltag sind, die etwas verändern, wenn man sie wirklich macht. Aus genau diesen Dingen sind die Missionen entstanden.</p></div>
+  </div></div></section>
+
+  <p class="fine">Die Inhalte sind Gesundheitsbildung und ersetzen keine ärztliche oder heilpraktische Behandlung. Wenn du Medikamente nimmst, zum Beispiel gegen Bluthochdruck, sprich Veränderungen bei Ernährung und Nahrungsergänzung vorher mit deiner Ärztin oder deinem Arzt ab. Die WhatsApp-Gruppe ist freiwillig. Deine Nummer ist dort für die anderen Teilnehmerinnen sichtbar, bitte stell keine Befunde oder Laborwerte in die Gruppe.</p>
+</main>
+<footer class="footer" style="padding:2.5rem 0"><div class="container footer-inner"><p class="footer-copy">© 2026 Nicole Lurz · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · <a href="#" data-nl-consent-open>Cookie-Einstellungen</a></p></div></footer>
+<script>
+(function(){
+  // Verkaufsphasen (Zeiten in deutscher Winterzeit, UTC+1)
+  var t=Date.now(), ph;
+  var Q=new URLSearchParams(location.search).get('phase');
+  if(Q){ph=Q;}
+  else if(t<Date.parse('2026-12-01T00:00:00+01:00')){ph='97';}
+  else if(t<Date.parse('2026-12-21T00:00:00+01:00')){ph='zu';}
+  else if(t<Date.parse('2026-12-24T00:00:00+01:00')){ph='149';}
+  else{ph='ende';}
+  document.querySelectorAll('[data-ph]').forEach(function(el){
+    el.hidden = el.getAttribute('data-ph').split(' ').indexOf(ph)===-1;
+  });
+})();
+</script>
+</body>
+</html>
