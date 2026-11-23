@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1F2D24">
+<title>Atemübung und Warteliste Nervensystem-Mentoring · Nicole Lurz</title>
+<meta name="description" content="Eine Atemübung für den Abend, an dem dein Kopf nicht abschaltet. Dazu die Warteliste für das Nervensystem-Mentoring von Nicole Lurz.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="stylesheet" href="/premium.css">
+<style>
+  /* ── Landingpage Warteliste Nervensystem-Mentoring (23.11.2026) ──
+     Vor der Danke-Seite /warteliste-nervensystem/danke/. Ziel aus Instagram (Kommentar-Wort HANDBREMSE)
+     und Newsletter. Text von Nicole im Chat am 23.11.2026 freigegeben. Kein Preis, kein Startdatum.
+     Formular kommt aus Brevo (Double-Opt-in, Weiterleitung nach Bestätigung auf /danke/).
+     Farben nur aus design.md (Tannenmoos Twilight), Look wie die Danke-Seite. */
+  body { background: #1F2D24; }
+  .footer { background: #1F2D24; }
+  .wl-wrap { padding: 7rem 1.5rem 4rem; max-width: 640px; margin: 0 auto; }
+  .wl-eyebrow { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; text-align: center; animation: wl-up 0.7s var(--ease) 0.2s both; }
+  .wl-h1 { font-family: var(--font-serif); font-size: clamp(2rem, 5.4vw, 3.1rem); font-weight: 400; color: var(--head); line-height: 1.16; margin-bottom: 2.2rem; text-align: center; animation: wl-up 0.7s var(--ease) 0.3s both; }
+  .wl-h1 em { font-style: italic; color: var(--accent); }
+  .wl-text { animation: wl-up 0.7s var(--ease) 0.4s both; }
+  .wl-text p { font-family: var(--font-sans); font-size: clamp(1rem, 2.2vw, 1.08rem); color: var(--text); line-height: 1.75; margin-bottom: 1.15rem; }
+  mark { background: linear-gradient(transparent 55%, rgba(122,168,144,0.45) 55%); color: var(--head); font-weight: 600; padding: 0 0.1em; }
+
+  /* Formular-Karte hell, wie die Geschenk-Karte auf der Danke-Seite */
+  .wl-card { background: #E8F0E8; border: 1px solid #3D5A2E; border-radius: 16px; padding: 2.2rem; margin: 2.2rem auto 2.6rem; position: relative; overflow: hidden; }
+  .wl-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #3D5A2E, #7AA890); }
+  .wl-form { display: flex; flex-direction: column; gap: 0.9rem; }
+  .wl-form label { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3D5A2E; margin-bottom: -0.45rem; }
+  .wl-form input { font-family: var(--font-sans); font-size: 1rem; color: #0F1A14; background: #fff; border: 1px solid rgba(61,90,46,0.45); border-radius: 10px; padding: 0.9rem 1rem; width: 100%; }
+  .wl-form input:focus { outline: 2px solid #7AA890; outline-offset: 1px; border-color: #3D5A2E; }
+  .wl-btn { margin-top: 0.4rem; font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: #E8F0E8; background: #0F1A14; border: 0; border-radius: 999px; padding: 1rem 1.7rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .wl-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px -10px rgba(15,26,20,0.6); }
+  .wl-btn:focus-visible { outline: 2px solid #1B4C93; outline-offset: 3px; }
+  .wl-fine { font-family: var(--font-sans); font-size: 0.85rem; color: #1F2D24; line-height: 1.6; margin-top: 1.1rem; }
+  .wl-fine a { color: #3D5A2E; text-decoration: underline; text-underline-offset: 2px; }
+  .wl-note { display: none; font-family: var(--font-sans); font-size: 0.9rem; color: #0F1A14; background: rgba(122,168,144,0.35); border-radius: 8px; padding: 0.7rem 0.9rem; margin-top: 0.8rem; }
+  .wl-note.is-on { display: block; }
+
+  /* Kurz zu mir */
+  .wl-about { display: flex; align-items: center; gap: 1.4rem; background: #0F1A14; border: 1px solid rgba(122,168,144,0.4); border-radius: 14px; padding: 1.6rem; }
+  .wl-about img { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; object-position: center 22%; flex-shrink: 0; filter: grayscale(1); }
+  .wl-about h2 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .wl-about p { font-family: var(--font-sans); font-size: 0.98rem; color: var(--text); line-height: 1.7; margin: 0; }
+
+  .nav-danke .nav-links, .nav-danke .nav-cta, .nav-danke .nav-burger { display: none !important; }
+  .nav-danke .nav-inner { justify-content: center; }
+  .nav.nav-danke { transform: translateY(0); }
+  @keyframes wl-up { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  @media (max-width: 480px) {
+    .wl-wrap { padding: 6rem 1rem 3rem; }
+    .wl-card { padding: 1.7rem 1.3rem; }
+    .wl-about { flex-direction: column; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) { .wl-eyebrow, .wl-h1, .wl-text { animation: none; } }
+
+  /* ── Hell (Nicole, 23.11.2026): Grund Fast-Weiß, Text Waldgrün, Formular-Karte dunkel als Kontrast.
+     Nur Töne aus design.md. */
+  body { background: #E8F0E8; --head: #0F1A14; --text: #1F2D24; --text-muted: #3D5A2E; --accent: #3D5A2E; }
+  .grain { display: none; }
+  .nav.nav-danke { background: #E8F0E8; border-bottom: 1px solid rgba(61,90,46,0.2); }
+  .nav-danke .nav-logo .lf { color: #0F1A14; }
+  .nav-danke .nav-logo .ll { color: #3D5A2E; }
+  .wl-h1 em { color: #3D5A2E; }
+  mark { background: linear-gradient(transparent 52%, rgba(122,168,144,0.6) 52%); color: #0F1A14; }
+  .wl-card { background: #1F2D24; border-color: #1F2D24; }
+  .wl-card::before { background: linear-gradient(90deg, #7AA890, #A8BAB0); }
+  .wl-form label { color: #A8BAB0; }
+  .wl-form input { background: #E8F0E8; border-color: transparent; }
+  .wl-btn { background: #7AA890; color: #0F1A14; }
+  .wl-btn:hover { box-shadow: 0 8px 22px -10px rgba(122,168,144,0.8); }
+  .wl-fine { color: #A8BAB0; }
+  .wl-fine a { color: #E8F0E8; }
+  .wl-note { color: #E8F0E8; background: rgba(122,168,144,0.25); }
+  .wl-about { background: #fff; border-color: rgba(61,90,46,0.3); }
+  .footer { background: #E8F0E8; }
+  .footer .footer-copy, .footer .footer-copy a { color: #3D5A2E !important; opacity: 1 !important; }
+
+  /* Brevo-Zustände */
+  .sib-form-message-panel { display: none; }
+  .wl-msg { font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.6; border-radius: 10px; padding: 0.9rem 1rem; margin-bottom: 1rem; }
+  .wl-msg--ok { background: #7AA890; color: #0F1A14; font-weight: 600; }
+  .wl-msg--err { background: #E8F0E8; color: #0F1A14; border: 1px solid #A8BAB0; }
+  .input--hidden { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+  .wl-form .form__label-row { display: flex; flex-direction: column; gap: 0.45rem; }
+  .wl-form .entry__error { display: block; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; text-transform: none; letter-spacing: 0; color: #E8F0E8; margin-top: 0.3rem; min-height: 0; }
+  .wl-form .entry__error:empty { display: none; }
+  .wl-form label { margin-bottom: 0; }
+  .sib-hide-loader-icon { display: none; }
+</style>
+
+<!-- Consent-Banner + Meta-Pixel (PageView erst nach Zustimmung) -->
+<script defer src="/js/nl-consent.js"></script>
+<!-- GoatCounter: anonymer Seitenzähler, keine Cookies -->
+<script data-goatcounter="https://nicolelurz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<div class="cursor cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav nav-danke" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="lf">Nicole</span><span class="ll">Lurz</span></a>
+  </div>
+</header>
+
+<main class="wl-wrap">
+  <p class="wl-eyebrow">Warteliste Nervensystem-Mentoring</p>
+  <h1 class="wl-h1">Der Laptop ist zu. Nur dein Kopf hat das noch <em>nicht mitbekommen.</em></h1>
+
+  <div class="wl-text">
+    <p>Du liegst im Bett und im Kopf läuft das Meeting von heute Nachmittag einfach weiter, dazu die unbeantwortete Mail und die Frage, wer dieses Jahr eigentlich die Weihnachtsgeschenke besorgt.</p>
+    <p>Dann sagst du dir, jetzt schalte ich aber mal ab. Und es passiert halt nichts, weil dein Nervensystem auf solche Sätze nämlich gar nicht hört.</p>
+    <p><mark>Auf deinen Atem hört es aber.</mark> Dafür hab ich dir eine kleine Übung gebaut, drei Runden, die du abends im Bett machen kannst, ohne dass es jemand neben dir merkt.</p>
+    <p>Ich halte übrigens nicht viel davon, dir zu sagen, du sollst einfach mal entspannen. Das hast du bestimmt schon oft genug gehört. Und wenn es so einfach wäre, hättest du es längst gemacht.</p>
+    <p>Mit der Übung stehst du gleichzeitig auf der Warteliste für mein Nervensystem-Mentoring. Am 14.&nbsp;Dezember erfährst du dann <mark>als Erste</mark>, wie es abläuft und wann es losgeht. Und du kannst dir einen Platz sichern, bevor ich es irgendwo anders ankündige. Bis dahin schick ich dir ein paar Mails, in denen wir uns das Nervensystem von mehreren Seiten anschauen. Zum Beispiel, warum dein Gehirn bei Stress ein ziemlicher Egoist ist und warum du dich nicht stressfrei denken kannst.</p>
+  </div>
+
+  <section class="wl-card" id="eintragen" aria-label="Atemübung anfordern">
+    <!-- Brevo-Formular (Nicole, 23.11.2026). Feldnamen und Adresse aus dem Brevo-Embed-Code,
+         Gestaltung eigen. Kein Brevo-CSS, keine Brevo-Schriften, kein Captcha.
+         main.js von sibforms.com schickt das Formular ab und zeigt die Meldungen. -->
+    <div id="sib-form-container" class="sib-form-container">
+      <div id="error-message" class="sib-form-message-panel wl-msg wl-msg--err" role="alert">
+        <span class="sib-form-message-panel__inner-text">Das hat leider nicht geklappt. Versuch es bitte noch einmal.</span>
+      </div>
+      <div id="success-message" class="sib-form-message-panel wl-msg wl-msg--ok" role="status">
+        <span class="sib-form-message-panel__inner-text">Fast geschafft. Schau jetzt in dein Postfach und klick in meiner Mail auf Bestätigen, dann kommst du direkt zur Übung.</span>
+      </div>
+      <div id="sib-container">
+        <form id="sib-form" class="wl-form" method="POST" action="https://abceda7d.sibforms.com/serve/MUIFANv_YPFRf1xRTLr6qpbTuLsy04YbhkKLd7vWsXKTLP2FYJv978bhq7yckqaWfKth9t6lj53INetd1faLcsJaXQNAKC_hJeZdFUBsZ8D-xV2qGYYtptI-KacFXQ9yovwXc9IgdF1JjhMFNWbtl25E6LkAMKW1ZvMJyTTrSLcNa8NHp0fjdCiivSX1GXyu8ElflDHWA-9YVMBk" data-type="subscription">
+          <div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row">
+            <label for="VORNAME">Vorname</label>
+            <div class="entry__field"><input class="input" maxlength="200" type="text" id="VORNAME" name="VORNAME" autocomplete="given-name" data-required="true" required></div>
+          </div><label class="entry__error entry__error--primary"></label></div></div>
+          <div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row">
+            <label for="EMAIL">E-Mail</label>
+            <div class="entry__field"><input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" value="" data-required="true" required></div>
+          </div><label class="entry__error entry__error--primary"></label></div></div>
+          <button class="wl-btn sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">Schick mir die Atemübung</button>
+          <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="locale" value="de">
+        </form>
+      </div>
+    </div>
+    <p class="wl-fine">Du bekommst gleich eine Mail von mir. Da klickst du einmal auf Bestätigen und landest direkt bei der Übung. Abmelden geht jederzeit mit einem Klick, alles Weitere steht in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+  </section>
+
+  <section class="wl-about" aria-labelledby="wl-me">
+    <img src="/images/nicole-hero-sw.jpg" alt="Nicole Lurz" width="104" height="104" loading="lazy">
+    <div>
+      <h2 id="wl-me">Kurz zu mir</h2>
+      <p>Ich bin Nicole, seit über 14 Jahren Heilpraktikerin und selbst Unternehmerin in den Wechseljahren. Den Funktionsmodus kenne ich aus meiner Praxis und auch von mir selbst.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" style="padding: 2.5rem 0;">
+  <div class="container footer-inner">
+    <p class="footer-copy">© 2026 Nicole Lurz · <a href="/impressum" style="color: inherit; opacity: 0.6;">Impressum</a> · <a href="/datenschutz" style="color: inherit; opacity: 0.6;">Datenschutz</a> · <a href="#" data-nl-consent-open style="color: inherit; opacity: 0.6;">Cookie-Einstellungen</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var dot=document.getElementById('cursorDot'), ring=document.getElementById('cursorRing');
+    if(dot&&ring){document.addEventListener('mousemove',function(e){
+      dot.style.transform='translate('+(e.clientX-4)+'px,'+(e.clientY-4)+'px)';
+      ring.style.transform='translate('+(e.clientX-20)+'px,'+(e.clientY-20)+'px)';});}
+    var nav=document.getElementById('nav');
+    window.addEventListener('scroll',function(){nav.classList.toggle('is-scrolled',window.scrollY>24);},{passive:true});
+  })();
+</script>
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte eine Ländervorwahl aus.';
+  window.LOCALE = 'de';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Bitte prüf noch mal deine E-Mail-Adresse.";
+  window.REQUIRED_ERROR_MESSAGE = "Bitte füll dieses Feld aus.";
+  window.GENERIC_INVALID_MESSAGE = "Bitte prüf noch mal deine Eingabe.";
+  window.INVALID_NUMBER = "Bitte prüf noch mal deine Eingabe.";
+  window.INVALID_DATE = "Bitte gib ein gültiges Datum ein.";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Wähle bitte mindestens eine Option aus.';
+  window.translation = { common: { selectedList: '{quantity} Liste ausgewählt', selectedLists: '{quantity} Listen ausgewählt', selectedOption: '{quantity} ausgewählt', selectedOptions: '{quantity} ausgewählt' } };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+</body>
+</html>
