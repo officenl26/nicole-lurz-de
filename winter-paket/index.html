@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#E8F0E8">
 <meta name="robots" content="noindex">
 <title>Das Winter-Paket · Nicole Lurz</title>
-<meta name="description" content="Gesundheit.machbar und Stoffwechsel.RESET im Paket: zehn kleine Missionen zwischen den Jahren, gemeinsamer Start am 27.12., WhatsApp-Gruppe, danach Stoffwechsel.RESET in deinem Tempo.">
+<meta name="description" content="Gesundheit.machbar und Stoffwechsel.RESET im Paket: zehn kleine Missionen zwischen den Jahren mit höchstens 15 Minuten am Tag, Start am 27.12., danach Stoffwechsel.RESET in deinem Tempo.">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/favicon-180.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -35,7 +35,7 @@
   /* Hero */
   .ah{padding:7.5rem 0 4rem}
   .ah-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-  .ah h1{font-weight:600;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.1;letter-spacing:-.02em;color:var(--wald);margin-bottom:1.4rem}
+  .ah h1{font-family:'Inter',sans-serif;font-weight:600;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.1;letter-spacing:-.02em;color:var(--wald);margin-bottom:1.4rem}
   .ah h1 .it{color:var(--oliv);letter-spacing:0}
   .ah p.sub{font-size:clamp(1.02rem,2vw,1.15rem);line-height:1.7;max-width:33rem;margin-bottom:1.8rem}
   .kal{background:#fff;border-radius:22px;padding:1.6rem;box-shadow:0 40px 70px -40px rgba(15,26,20,.45);max-width:380px;width:100%;margin:0 auto}
@@ -52,14 +52,14 @@
   /* Szene */
   .sz{background:var(--salbei);padding:4.5rem 0}
   .sz-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;max-width:960px;margin:0 auto;align-items:start}
-  .sz h2{font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.7rem,3.8vw,2.4rem);line-height:1.2;color:var(--wald)}
+  .sz h2{font-family:'Inter',sans-serif;font-weight:600;font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.2;letter-spacing:-.01em;color:var(--wald)}
+  .sz h2 .it,.mi h2 .it,.rs h2 .it,.st h2 .it{letter-spacing:0}
   .sz p{font-size:1.05rem;line-height:1.75;margin-bottom:1rem;color:var(--wald)}
-  .sz .big{font-family:'Spectral',serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.35;border-left:3px solid var(--marine);padding-left:1.1rem;margin-top:1.4rem}
 
   /* Missionen */
   .mi{padding:4.5rem 0 3rem}
   .mi .head{max-width:960px;margin:0 auto 1.6rem}
-  .mi h2,.rs h2,.pk h2{font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.6rem,3.6vw,2.3rem);color:var(--wald);line-height:1.2;margin-bottom:.8rem}
+  .mi h2,.rs h2,.pk h2,.st h2{font-family:'Inter',sans-serif;font-weight:600;font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.01em;color:var(--wald);line-height:1.2;margin-bottom:.8rem}
   .mi .head p{font-size:1.05rem;line-height:1.7;max-width:40rem}
   .ml{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
   .m{display:grid;grid-template-columns:74px 1fr;gap:1rem;align-items:start;background:#fff;border-radius:16px;padding:1.1rem 1.2rem;border:1px solid rgba(61,90,46,.15)}
@@ -73,6 +73,23 @@
   .rs-box{max-width:960px;margin:0 auto;background:#fff;border-radius:22px;padding:2.2rem 2rem;border-top:6px solid var(--bernstein)}
   .rs h2 .it{color:var(--oliv)}
   .rs p{font-size:1.05rem;line-height:1.75;margin-bottom:1rem}
+  .rs figure{margin:1.6rem 0 1.4rem}
+  .rs figure img{width:100%;height:auto;border-radius:14px;border:1px solid rgba(61,90,46,.15);display:block}
+  .rs figcaption{font-size:.85rem;color:var(--oliv);margin-top:.5rem}
+  .mod{list-style:none;padding:0;margin:0 0 1.8rem;display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem 1.4rem}
+  .mod li{padding:.55rem 0;border-bottom:1px solid rgba(61,90,46,.15);line-height:1.45;display:flex;justify-content:space-between;gap:1rem}
+  .mod li span{color:var(--oliv);font-size:.9rem;white-space:nowrap}
+  .coach{display:grid;grid-template-columns:1fr 230px;gap:1.8rem;align-items:center;background:var(--weiss);border-radius:18px;padding:1.4rem 1.5rem}
+  .coach p{margin:0;font-size:1rem;line-height:1.7}
+  .coach b{display:block;color:var(--wald);margin-bottom:.4rem}
+  .coach img{width:230px;height:290px;object-fit:cover;object-position:center 12%;border-radius:14px;display:block}
+
+  /* Stimmen */
+  .st{padding:1rem 0 3rem}
+  .st .in{max-width:960px;margin:0 auto}
+  .st-g{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  .st blockquote{margin:0;background:#fff;border-radius:18px;padding:1.5rem 1.5rem 1.3rem;border-left:4px solid var(--salbei);line-height:1.7}
+  .st cite{display:block;font-style:normal;font-size:.88rem;color:var(--oliv);margin-top:.8rem}
 
   /* Paket und Preis */
   .pk{padding:0 0 4.5rem}
@@ -81,10 +98,12 @@
   .pk ul{list-style:none;padding:0;margin:0 0 1.6rem}
   .pk li{padding:.65rem 0 .65rem 1.8rem;position:relative;border-bottom:1px solid rgba(168,186,176,.2);line-height:1.5;color:var(--fliess)}
   .pk li:before{content:"";position:absolute;left:0;top:1.05rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--salbei)}
-  .pk .preis{font-family:'Spectral',serif;font-size:3rem;line-height:1;color:var(--weiss);margin-bottom:.6rem}
+  .pk .preis{font-family:'Inter',sans-serif;font-weight:600;letter-spacing:-.02em;font-size:3rem;line-height:1;color:var(--weiss);margin-bottom:.6rem}
   .pk .frist{color:var(--hell);line-height:1.65;margin-bottom:1.5rem}
   .pk .btn{width:100%;background:var(--salbei);color:var(--wald)}
   .pk .btn:hover{background:var(--salbei2)}
+  .gar{font-size:.95rem;line-height:1.65;color:var(--fliess);margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid rgba(168,186,176,.2)}
+  .gar a{color:var(--salbei2)}
   .zu{background:rgba(232,240,232,.08);border-radius:14px;padding:1.2rem 1.3rem;color:var(--weiss);line-height:1.65}
   .zu a{color:var(--salbei2)}
   [hidden]{display:none!important}
@@ -93,6 +112,7 @@
   .me-grid{max-width:820px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:2.2rem;align-items:center;background:#fff;border-radius:22px;padding:1.6rem}
   .me img{width:200px;height:230px;object-fit:cover;object-position:center 20%;border-radius:14px}
   .me p{line-height:1.75;margin:0}
+  .me .zert{width:110px;height:110px;margin-top:1.1rem;display:block}
   .fine{max-width:820px;margin:0 auto;padding:0 1.5rem 4rem;font-size:.84rem;line-height:1.65;color:var(--oliv)}
   .footer{background:var(--wald)}
   .footer .footer-copy,.footer .footer-copy a{color:var(--hell)!important;opacity:1!important}
@@ -101,7 +121,10 @@
     .ah{padding:6.5rem 0 3rem}
     .ah-grid,.sz-grid{grid-template-columns:1fr;gap:2rem}
     .ah .btn{width:100%}
-    .ml{grid-template-columns:1fr}
+    .ml,.st-g,.mod{grid-template-columns:1fr}
+    .coach{grid-template-columns:1fr}
+    .coach img{width:100%;max-width:300px;height:300px;margin:0 auto}
+    .me .zert{margin:1.1rem auto 0}
     .me-grid{grid-template-columns:1fr;text-align:center}
     .me img{margin:0 auto;width:170px;height:200px}
   }
@@ -117,7 +140,7 @@
     <div>
       <p class="kicker">Das Winter-Paket</p>
       <h1>Zwischen den Jahren hast du endlich mal Luft. <span class="it">Nimm dir zehn Tage davon für dich.</span></h1>
-      <p class="sub">Gesundheit.machbar und Stoffwechsel.RESET zusammen, mit gemeinsamem Start am 27.12. <span data-ph="97">Bis Montag, 30.11., kostet das Paket 97&nbsp;€.</span><span data-ph="149" hidden>Bis Mittwoch, 23.12., kostet das Paket 149&nbsp;€.</span></p>
+      <p class="sub">Zehn Tage mit höchstens 15 Minuten am Tag und jeden Morgen einem Impuls von mir in der WhatsApp-Gruppe. Start am 27.12.<span data-ph="97">, bis Montag für 97&nbsp;€.</span><span data-ph="149" hidden>, bis Mittwoch für 149&nbsp;€.</span></p>
       <a class="btn btn-m" href="#paket" data-ph="97 149">Ich bin ab 27.12. dabei</a>
       <p class="preis-hinweis" data-ph="zu ende" hidden>Das Paket ist gerade geschlossen.</p>
     </div>
@@ -132,11 +155,13 @@
   </div></section>
 
   <section class="sz"><div class="w sz-grid">
-    <h2>„Im Januar mach ich das dann aber wirklich.“</h2>
+    <h2>„Im Januar mach ich das dann aber <span class="it">wirklich</span>.“</h2>
     <div>
-      <p>Im Dezember läuft bei dir wahrscheinlich alles auf Hochtouren. Und irgendwann zwischen Weihnachten und Silvester sitzt du auf dem Sofa und merkst erst, wie platt du eigentlich bist. Dann nimmst du dir für den Januar wieder einiges vor und Mitte Januar ist davon nicht mehr viel übrig.</p>
-      <p>Für genau diese Tage öffne ich Gesundheit.machbar noch einmal.</p>
-      <p class="big">Du brauchst keine neuen Regeln. Du brauchst einen Kompass.</p>
+      <p>Nach Weihnachten höre ich jedes Jahr dieselben Sätze. Du hast drei Tage lang viel zu viel gegessen, der Bauch ist voll und du fühlst dich träge und unwohl in deiner Haut. Und obendrauf kommt das schlechte Gewissen.</p>
+      <p>Also nimmst du dir für den Januar richtig viel vor, ab jetzt keinen Zucker mehr und jeden Tag Sport. Und Mitte Januar ist davon nicht mehr viel übrig.</p>
+      <p>Das Weihnachtsessen gehört dazu und ich finde, das sollst du auch genießen. Schwierig wird es erst, wenn du danach mit schlechtem Gewissen in eine strenge Diät startest, die im Alltag dann doch nicht durchzuhalten ist. Und meistens liegt es gar nicht daran, dass du zu wenig weißt. Im Podcast hörst du das eine und die Freundin schwört auf etwas ganz anderes. Vor lauter Bäumen sieht man den Wald nicht mehr. Bei so viel Wissen weißt du am Ende gar nicht, wo du anfangen sollst.</p>
+      <p>Deshalb ist mein Gedanke ganz einfach. Gesundheit muss machbar sein. Mit Gesundheit.machbar bekommst du für die Tage zwischen den Jahren kleine Dinge an die Hand, mit denen du nach den Feiertagen wieder in deinen Rhythmus findest, ohne Fastenkur. Und Silvester feierst du trotzdem ganz normal mit. Zehn Tage lang gibt es jeden Tag einen kleinen Impuls zum Ausprobieren und du brauchst dafür höchstens 15 Minuten. Meistens ist es eine Beobachtung, du schaust zum Beispiel, wie viel du wirklich trinkst oder wann du durch den Mund atmest. Jeden Morgen schicke ich dir in der WhatsApp-Gruppe einen kurzen Anstoß, damit du dranbleibst, auch wenn das Haus voll ist.</p>
+      <p>Am 5. Januar weißt du dann, wo du stehst, weil du es an dir selbst ausprobiert hast. Und du hast drei kleine Dinge gefunden, die du mit in den Januar nimmst, weil es eben die kleinen Dinge sind, die etwas verändern.</p>
     </div>
   </div></section>
 
@@ -160,18 +185,43 @@
     <p class="wa">In den zehn Tagen sind wir zusammen in einer WhatsApp-Gruppe. Da kannst du mir deine Fragen stellen und du siehst, wie es den anderen Frauen mit den Missionen geht.</p>
   </div></section>
 
+  <section class="st"><div class="w"><div class="in">
+    <h2>Was Frauen über meine <span class="it">kleinen Schritte</span> sagen</h2>
+    <div class="st-g">
+      <blockquote>„… Jeden Morgen kamen verschiedene Impulse mit Tipps, die man ganz leicht in den Alltag integrieren kann. Man muss nicht direkt sein ganzes Leben umkrempeln, manchmal sind es die kleinen Schritte, die großes bewirken.“<cite>Tanja, über mein Bootcamp</cite></blockquote>
+      <blockquote>„Besonders schön fand ich, dass sich die Übungen leicht umsetzen und wunderbar in den Alltag integrieren lassen.“<cite>L. K., Jahrgang 1966, über mein Immun-Mentoring</cite></blockquote>
+    </div>
+  </div></div></section>
+
   <section class="rs"><div class="w"><div class="rs-box">
-    <h2>Und für den Januar <span class="it">Stoffwechsel.RESET</span></h2>
-    <p>Stoffwechsel.RESET ist gleich nach dem Kauf für dich offen. Gedacht ist er für die Zeit nach den zehn Tagen, wenn du tiefer einsteigen willst. Du verstehst, warum du nach dem Mittagessen durchhängst, obwohl du gesund isst. Und du siehst, was Insulin damit zu tun hat.</p>
-    <p>Du erfährst auch, welche Öle in deiner Küche stille Entzündungen anheizen können und warum Leber und Schilddrüse für deine Energie wichtig sind. Ein paar Minuten Bewegung vor dem Essen helfen deinem Blutzucker, und auch das zeige ich dir dort. Das arbeitest du in deinem eigenen Tempo durch.</p>
+    <h2>Und im Januar verstehst du, <span class="it">warum</span>.</h2>
+    <p>Nach den zehn Tagen hast du gemerkt, was bei dir wirkt. In Stoffwechsel.RESET verstehst du, warum es wirkt. Und ab da kannst du selbst einschätzen, was dein Körper gerade braucht.</p>
+    <p>Stell dir vor, du isst mittags einen Salat mit Vollkornbrot, eigentlich gesund, und um drei bist du so müde, dass du an den Keksen im Büro nicht vorbeikommst. In RESET siehst du, was da mit deinem Blutzucker und deinem Insulin passiert. Und dann weißt du, an welchen zwei Stellschrauben du drehen kannst, an der Reihenfolge auf deinem Teller und an ein paar Minuten Bewegung vor dem Essen. Genauso geht es dir mit dem Öl in deiner Pfanne, mit dem Schlaf und mit der Frage, was Leber und Schilddrüse mit deiner Energie zu tun haben. Das arbeitest du in deinem eigenen Tempo durch, der Kurs ist gleich nach dem Kauf offen.</p>
+    <figure>
+      <img src="/images/winter-paket/reset-module.jpg" width="1044" height="615" alt="Kursansicht Stoffwechsel.RESET mit den Modulen Willkommen, Fundament und Standortbestimmung, Entzündungs- und Energie-Reset, Hormonfreundliche Ernährung, Nervensystem regulieren sowie Bewegung und Regeneration" loading="lazy">
+      <figcaption>So sieht Stoffwechsel.RESET in deinem Mitgliederbereich aus.</figcaption>
+    </figure>
+    <ul class="mod">
+      <li>Herzlich Willkommen &amp; Disclaimer<span>3 Lektionen</span></li>
+      <li>Modul 1: Fundament &amp; Standortbestimmung<span>3 Lektionen</span></li>
+      <li>Modul 2: Entzündungs- &amp; Energie-Reset<span>6 Lektionen</span></li>
+      <li>Modul 3: Hormonfreundliche Ernährung &amp; Stoffwechselboost<span>4 Lektionen</span></li>
+      <li>Modul 4: Nervensystem regulieren<span>3 Lektionen</span></li>
+      <li>Modul 5: Bewegung &amp; Regeneration<span>3 Lektionen</span></li>
+    </ul>
+    <div class="coach">
+      <p><b>Dazu bis 31.01. mein KI-Küchen-Coach</b>Damit du im Januar nicht vor dem Kühlschrank stehst und überlegst, was du jetzt kochen sollst, bekommst du bis 31.01. Zugang zu meinem KI-Küchen-Coach. Du sagst ihm, welche Mahlzeit ansteht und ob du Lust auf süß oder herzhaft hast, und er schlägt dir etwas vor, das zu dem passt, was du in RESET lernst.</p>
+      <img src="/images/kuechen-coach-rezept.jpg" width="800" height="1624" alt="Rezeptvorschlag aus dem KI-Küchen-Coach: Süßkartoffel-Hack-Pfanne mit Brokkoli" loading="lazy">
+    </div>
   </div></div></section>
 
   <section class="pk" id="paket"><div class="w"><div class="pk-box">
     <h2>Das Winter-Paket</h2>
     <ul>
-      <li>Gesundheit.machbar mit 10 Missionen, gemeinsamer Start am 27.12.</li>
-      <li>WhatsApp-Gruppe vom 27.12. bis 05.01.</li>
+      <li>Gesundheit.machbar mit 10 Missionen, höchstens 15 Minuten am Tag, Start am 27.12.</li>
+      <li>Jeden Morgen ein Impuls von mir in der WhatsApp-Gruppe, vom 27.12. bis 05.01.</li>
       <li>Stoffwechsel.RESET, gleich nach dem Kauf offen</li>
+      <li>KI-Küchen-Coach bis 31.01.2027</li>
       <li>Zugang zu beiden Kursen mindestens 12 Monate</li>
     </ul>
     <div data-ph="97">
@@ -184,13 +234,14 @@
     </div>
     <!-- ThriveCart-Checkout Winter-Paket (Nicole, 24.11.2026) -->
     <a class="btn" id="kauf" href="https://nicole-lurz.thrivecart.com/winter-edition/" data-ph="97 149">Ich bin ab 27.12. dabei</a>
+    <p class="gar" data-ph="97 149">Wenn du nach den ersten drei Missionen merkst, dass es nichts für dich ist, schreib mir bis 30.12. an <a href="mailto:hello@nicole-lurz.com">hello@nicole-lurz.com</a> und du bekommst dein Geld zurück.</p>
     <div class="zu" data-ph="zu" hidden>Das Winter-Paket ist gerade geschlossen. Kurz vor Weihnachten, vom 21. bis 23.12., öffne ich es noch einmal für drei Tage. Wenn du das nicht verpassen willst, trag dich in meinen <a href="/selbsttest/">Newsletter</a> ein.</div>
     <div class="zu" data-ph="ende" hidden>Das Winter-Paket ist geschlossen. Die zehn Tage laufen gerade, ich wünsche allen Frauen in der Gruppe einen guten Start ins neue Jahr.</div>
   </div></div></section>
 
   <section class="me"><div class="w"><div class="me-grid">
     <img src="/images/nicole-hero.jpg" alt="Nicole Lurz" loading="lazy">
-    <div><p class="kicker">Kurz zu mir</p><p>Ich bin Nicole, Heilpraktikerin seit 2011 und Mentorin für Regenerationsmedizin. Ich sehe in der Praxis und im Mentoring immer wieder, dass es die einfachen Dinge im Alltag sind, die etwas verändern, wenn man sie wirklich macht. Aus genau diesen Dingen sind die Missionen entstanden.</p></div>
+    <div><p class="kicker">Kurz zu mir</p><p>Ich bin Nicole, seit 2012 Heilpraktikerin und zertifizierte Mentorin für Regenerationsmedizin. Ich habe mehr als 1.500 Frauen begleitet und sehe immer wieder, dass es die einfachen Dinge im Alltag sind, die etwas verändern, wenn man sie wirklich macht. Aus genau diesen Dingen sind die Missionen entstanden.</p><img class="zert" src="/images/winter-paket/zertifikat.png" width="320" height="320" alt="Zertifikat Chronisch Gesund Mentor, Institut für Regenerationsmedizin" loading="lazy"></div>
   </div></div></section>
 
   <p class="fine">Die Inhalte sind Gesundheitsbildung und ersetzen keine ärztliche oder heilpraktische Behandlung. Wenn du Medikamente nimmst, zum Beispiel gegen Bluthochdruck, sprich Veränderungen bei Ernährung und Nahrungsergänzung vorher mit deiner Ärztin oder deinem Arzt ab. Die WhatsApp-Gruppe ist freiwillig. Deine Nummer ist dort für die anderen Teilnehmerinnen sichtbar, bitte stell keine Befunde oder Laborwerte in die Gruppe.</p>
