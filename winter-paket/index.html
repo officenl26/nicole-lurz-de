@@ -90,6 +90,14 @@
   .st-g{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
   .st blockquote{margin:0;background:#fff;border-radius:18px;padding:1.5rem 1.5rem 1.3rem;border-left:4px solid var(--salbei);line-height:1.7}
   .st cite{display:block;font-style:normal;font-size:.88rem;color:var(--oliv);margin-top:.8rem}
+  /* Kundenstimmen erkennbar machen */
+  .st blockquote,.stimme{position:relative;padding-right:3.6rem}
+  .st blockquote:before,.stimme:before{content:"\201C";position:absolute;top:.5rem;right:1.1rem;font-family:'Spectral',serif;font-size:4.4rem;line-height:1;color:var(--salbei);opacity:.55}
+  .st cite,.stimme cite{display:flex;align-items:center;gap:.6rem;font-weight:600;font-style:normal;margin-top:.9rem}
+  .st cite i,.stimme cite i{flex:none;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--oliv);color:var(--weiss);font-style:normal;font-size:.8rem;display:flex;align-items:center;justify-content:center;letter-spacing:.02em}
+  .st cite small,.stimme cite small{display:block;font-weight:400}
+  .stimme{max-width:720px;margin:2rem auto 0;background:#fff;border-radius:18px;padding:1.4rem 3.6rem 1.4rem 1.6rem;border-left:4px solid var(--salbei);line-height:1.7;font-size:1.06rem}
+  .stimme .kicker{margin:0 0 .6rem}
 
   /* Paket und Preis */
   .pk{padding:0 0 4.5rem}
@@ -280,6 +288,7 @@
     <button class="mehr" type="button" id="mehr" aria-controls="ml" aria-expanded="false">Alle Routinen mit Beschreibung zeigen</button>
     <p class="wa">Nur in dieser Runde gibt es zum Kurs eine WhatsApp-Gruppe. Da schicke ich dir jeden Morgen einen kurzen Anstoß, damit du dranbleibst, auch wenn das Haus voll ist. Dort kannst du mir deine Fragen stellen und du siehst, wie es den anderen Frauen geht.</p>
     <p class="erg">Am 5. Januar weißt du, wo du stehst, und hast drei kleine Dinge gefunden, die du mit in den Januar nimmst.</p>
+    <blockquote class="stimme"><p class="kicker">Kundenstimme</p>„Am Anfang war ich müde, erschöpft, unruhig. Ich wollte was verändern, aber wusste nicht wie.“<cite><i>LM</i><span>L. M., 38 Jahre<small>über meine Begleitung</small></span></cite></blockquote>
   </div></section>
 
   <section class="rs"><div class="w"><div class="rs-box">
@@ -323,10 +332,13 @@
   </div></section>
 
   <section class="st"><div class="w"><div class="in">
+    <p class="kicker">Kundenstimmen</p>
     <h2>Was Frauen über meine <span class="it">kleinen Schritte</span> sagen</h2>
     <div class="st-g">
-      <blockquote>„… Jeden Morgen kamen verschiedene Impulse mit Tipps, die man ganz leicht in den Alltag integrieren kann. Man muss nicht direkt sein ganzes Leben umkrempeln, manchmal sind es die kleinen Schritte, die großes bewirken.“<cite>Tanja, über mein Bootcamp</cite></blockquote>
-      <blockquote>„Besonders schön fand ich, dass sich die Übungen leicht umsetzen und wunderbar in den Alltag integrieren lassen.“<cite>L. K., Teilnehmerin aus meinem Immun-Mentoring</cite></blockquote>
+      <blockquote>„… Jeden Morgen kamen verschiedene Impulse mit Tipps, die man ganz leicht in den Alltag integrieren kann. Man muss nicht direkt sein ganzes Leben umkrempeln, manchmal sind es die kleinen Schritte, die großes bewirken.“<cite><i>T</i><span>Tanja<small>über mein Bootcamp</small></span></cite></blockquote>
+      <blockquote>„Besonders schön fand ich, dass sich die Übungen leicht umsetzen und wunderbar in den Alltag integrieren lassen.“<cite><i>LK</i><span>L. K.<small>Teilnehmerin aus meinem Immun-Mentoring</small></span></cite></blockquote>
+      <blockquote>„Es war so viel dabei, was mir vorher nicht bewusst war. Nicole hat mir Zusammenhänge gezeigt, die kein Arzt gesehen hat, und konkrete Wege, die ich selbst gehen kann.“<cite><i>V</i><span>Verena<small>Unternehmerin und Schneiderin</small></span></cite></blockquote>
+      <blockquote>„Zum ersten Mal hat jemand das Gesamtbild gesehen. Nicht einzelne Symptome, sondern wie alles zusammenhängt.“<cite><i>BN</i><span>B. N.<small>über meine Begleitung</small></span></cite></blockquote>
     </div>
   </div></div></section>
 
